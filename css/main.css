@@ -1,0 +1,90 @@
+/* 전체 너비 - 공통 */
+section{
+    max-width:1600px;
+    margin:0 auto;
+    padding-top:20px;
+}
+
+/* 도서 목록 탭 메뉴 */
+.tab_menu a.on{
+    color:blue;
+}
+
+/* 도서 목록 전체 레이아웃 */
+.dataTables_wrapper{
+    margin-top:10px;
+}
+table{
+    padding-top:10px;
+}
+table.dataTable thead th, table.dataTable thead td{
+    background-color:#ccd4eb;
+}
+
+/* 기존 배경색 스타일 제거 */
+table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1,table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1,table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>*,table.dataTable.display>tbody>tr.even>.sorting_1{
+    box-shadow:none;
+}
+
+/* 호버 시 색 전환 */
+table.dataTable.hover>tbody>tr:hover>*, table.dataTable.display>tbody>tr:hover>*,table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
+    box-shadow: inset 0 0 0 9999px rgb(0 0 0 / 4%);
+}
+
+/* 검색창 */
+input[type=search]{
+    text-indent:10px;
+}
+
+/* 정렬,검색창 */
+.dataTables_wrapper .dataTables_length{
+    height:50px;
+    padding-top:20px;
+    box-sizing: border-box;
+}
+
+/* 테이블 너비 */
+#b_name{
+    width:400px;
+}
+#b_eisbn{
+    width:100px;
+}
+
+
+/* 매출내역 페이지 */
+/* 매출내역 필터 폼 */
+#sales_form .btn_wrap{
+    display:flex;
+    max-width:500px;
+    justify-content: center;
+    margin-top:10px;
+}
+#sales_form .btn_wrap button:first-of-type{
+    margin-right:15px;
+}
+#sales_form input[type=date]{
+    width:auto;
+}
+
+/* 매출내역 필터 테이블 */
+#f_sales_details{
+    max-width:500px;
+}
+#f_sales_details,#f_sales_details th,#f_sales_details td{
+    border:1px solid rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
+}
+#f_sales_details th,#f_sales_details td{
+    padding:8px 10px;
+}
+#f_sales_details th{
+    width:100px;
+}
+.sales_details .b_name,.sales_details .a_name{
+    width:50px;
+    text-align: center;
+}
+#f_sales_details #i_bname{
+    width:300px;
+}
