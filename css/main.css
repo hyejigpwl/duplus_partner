@@ -17,9 +17,18 @@ section{
 table{
     padding-top:10px;
 }
-table.dataTable thead th, table.dataTable thead td{
-    background-color:#ccd4eb;
+table.dataTable tbody th, table.dataTable tbody td{
+    padding:0px 10px;
+    height:48px;
 }
+table.dataTable thead th, table.dataTable thead td{
+    background-color:/*#ccd4eb*/ #fff;
+    padding:0 10px;
+    height:48px;
+    color:#767676;
+    border-top:1px solid #d5d5d5;
+}
+
 
 /* 기존 배경색 스타일 제거 */
 table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1,table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1,table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>*,table.dataTable.display>tbody>tr.even>.sorting_1{
@@ -47,8 +56,9 @@ input[type=search]{
 #b_name{
     width:400px;
 }
+
 #b_eisbn{
-    width:100px;
+    width:150px;
 }
 
 
