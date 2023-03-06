@@ -12,7 +12,7 @@ section{
 
 /* 도서 목록 전체 레이아웃 */
 .dataTables_wrapper{
-    margin-top:10px;
+    margin:10px 0 100px 0;
 }
 table{
     padding-top:10px;
@@ -54,11 +54,17 @@ input[type=search]{
 
 /* 테이블 너비 */
 #b_name{
-    width:400px;
+    width:300px;
 }
-
 #b_eisbn{
     width:150px;
+}
+
+#b_barcode{
+    width:100px;
+}
+#b_type{
+    width:80px;
 }
 
 

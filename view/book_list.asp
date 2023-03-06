@@ -23,8 +23,8 @@
 
         <!-- 도서 목록 START -->
         <div class="tab_menu">
-            <a href="#t_b_list_all_wrap" class="on">[전체 도서 목록]</a>
-            <a href="#t_b_list_noesibn">[ESIBN 미등록 도서 목록]</a>
+            <a href="#none" class="on">[전체 도서 목록]</a>
+            <a href="#none">[ESIBN 미등록 도서 목록]</a>
         </div>
 
         <div class="tab_bwrap">
