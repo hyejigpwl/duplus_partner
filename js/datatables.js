@@ -11722,7 +11722,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			// "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "ÃÑ _TOTAL_ °Ç", // Å×ÀÌºí ¹Ø¿¡ »óÇ° ÃÑ °³¼ö ¸í½Ã 230307 ÇýÁö
 	
 	
 			/**

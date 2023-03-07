@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                             <th scope="row" rowspan="2">상품정보</th>
-                            <td class="b_name">도서명</td>
+                            <td class="b_name txt_l">도서명</td>
                             <td><input type="text" id="i_bname"></td>
                         </tr>
                         <tr>
@@ -63,7 +63,7 @@
                     <thead>
                         <th scope="col">상품코드</th>
                         <th scope="col">파일타입</th>
-                        <th scope="col">도서명</th>
+                        <th scope="col" class="txt_l">도서명</th>
                         <th scope="col">저자</th>
                         <th scope="col">정가</th>
                         <th scope="col">판매가</th>
@@ -82,7 +82,7 @@
                         <tr>
                             <td scope="row" id="b_barcode">E230100002</td>
                             <td id="b_type">EPUB</td>
-                            <td id="b_name">그리스도인의 초자연적 회복력</td>
+                            <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
                             <td id="b_author">존 엘드리지</td>
                             <td id="b_list_price">15,000</td>
                             <td id="b_price">15,000</td>
@@ -100,7 +100,7 @@
                         <tr>
                             <td scope="row" id="b_barcode">E230100002</td>
                             <td id="b_type">EPUB</td>
-                            <td id="b_name">그리스도인의 초자연적 회복력</td>
+                            <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
                             <td id="b_author">존 엘드리지</td>
                             <td id="b_list_price">15,000</td>
                             <td id="b_price">15,000</td>
@@ -118,7 +118,7 @@
                         <tr>
                             <td scope="row" id="b_barcode">E230100002</td>
                             <td id="b_type">EPUB</td>
-                            <td id="b_name">그리스도인의 초자연적 회복력</td>
+                            <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
                             <td id="b_author">존 엘드리지</td>
                             <td id="b_list_price">15,000</td>
                             <td id="b_price">15,000</td>
@@ -136,7 +136,7 @@
                         <tr>
                             <td scope="row" id="b_barcode">E230100002</td>
                             <td id="b_type">EPUB</td>
-                            <td id="b_name">그리스도인의 초자연적 회복력</td>
+                            <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
                             <td id="b_author">존 엘드리지</td>
                             <td id="b_list_price">15,000</td>
                             <td id="b_price">15,000</td>
@@ -162,6 +162,27 @@
             $('#t_sales_details').DataTable({
                 "searching":false,
                 "paging":false,
+
+                
+                // 셀 너비 고정
+                bAutoWidth:false,
+                columnDefs:[
+                    {width:"7%",targets:0},
+                    {width:"7%",targets:1},
+                    {width:"20%",targets:2},
+                    {width:"7%",targets:3},
+                    {width:"5%",targets:4},
+                    {width:"5%",targets:5},
+                    {width:"5%",targets:6},
+                    {width:"5%",targets:7},
+                    {width:"5%",targets:8},
+                    {width:"4%",targets:9},
+                    {width:"4%",targets:10},
+                    {width:"5%",targets:11},
+                    {width:"4%",targets:12},
+                    {width:"5%",targets:13},
+                    {width:"5%",targets:14},
+                ]
             });
         });
 

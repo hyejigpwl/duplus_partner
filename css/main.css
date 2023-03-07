@@ -1,8 +1,22 @@
 /* 전체 너비 - 공통 */
-section{
-    max-width:1600px;
+section.cont{
     margin:0 auto;
-    padding-top:20px;
+    display:flex;
+
+}
+
+/* 헤더 */
+header{
+    height:100vh;
+    width:200px;
+    background-color: #506ee4;
+}
+
+/* 도서 목록 */
+.book_list{
+    padding:30px;
+    max-width:1600px;
+    box-sizing: border-box;
 }
 
 /* 도서 목록 탭 메뉴 */
@@ -15,30 +29,73 @@ section{
     margin:10px 0 100px 0;
 }
 table{
-    padding-top:10px;
+    /*padding-top:10px;*/
+}
+table.dataTable{
+    border-collapse: collapse;
+    /*table-layout:fixed;*/
 }
 table.dataTable tbody th, table.dataTable tbody td{
     padding:0px 10px;
     height:48px;
+    text-align:center;
 }
 table.dataTable thead th, table.dataTable thead td{
     background-color:/*#ccd4eb*/ #fff;
-    padding:0 10px;
+    padding:0 !important;
+    text-align:center;
     height:48px;
     color:#767676;
-    border-top:1px solid #d5d5d5;
+    border-top:1px solid #000;
+    border-bottom:1px solid #d5d5d5;
+}
+.dataTables_wrapper .dataTables_scroll{
+    padding-top:30px;
+}
+table.dataTable.no-footer{
+    border-bottom:1px solid #d5d5d5;
 }
 
-
 /* 기존 배경색 스타일 제거 */
-table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1,table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1,table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>*,table.dataTable.display>tbody>tr.even>.sorting_1{
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody{
+    border-bottom:none;
+}
+table.dataTable.hover>tbody>tr:hover>*, table.dataTable.display>tbody>tr:hover>*{
+    box-shadow:none;
+}
+table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1{
+    box-shadow:none;
+}
+table.dataTable.display tbody tr>.sorting_1, table.dataTable.order-column tbody tr>.sorting_1{
+    box-shadow: none;
+}
+table.dataTable.display>tbody>tr.odd>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.odd>.sorting_1{
     box-shadow:none;
 }
 
-/* 호버 시 색 전환 */
-table.dataTable.hover>tbody>tr:hover>*, table.dataTable.display>tbody>tr:hover>*,table.dataTable.display tbody tr:hover>.sorting_1, table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
-    box-shadow: inset 0 0 0 9999px rgb(0 0 0 / 4%);
+table.dataTable.display>tbody>tr.even>.sorting_1, table.dataTable.order-column.stripe>tbody>tr.even>.sorting_1{
+    box-shadow:none;
 }
+
+/* 기존 thead 정렬 아이콘 제거 */
+table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after{
+    content:"";
+}
+table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before{
+    content:"";
+}
+
+/* 표 스타일 */
+table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>*{
+    box-shadow:none;
+    background-color: #f9f9f9;
+}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody{
+    border-bottom:1px solid #d5d5d5;
+}
+
+
 
 /* 검색창 */
 input[type=search]{
@@ -53,19 +110,23 @@ input[type=search]{
 }
 
 /* 테이블 너비 */
-#b_name{
-    width:300px;
+/*#b_name{
+    width:350px;
+    box-sizing: border-box;
 }
 #b_eisbn{
     width:150px;
+    box-sizing: border-box;
 }
 
 #b_barcode{
     width:100px;
+    box-sizing: border-box;
 }
 #b_type{
-    width:80px;
-}
+    width:95px;
+    box-sizing: border-box;
+}*/
 
 
 /* 매출내역 페이지 */
