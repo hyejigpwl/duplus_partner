@@ -1,3 +1,9 @@
+/* 1300까지 반응형 */
+html{
+    min-width:1200px;
+}
+
+
 /* 전체 너비 - 공통 */
 section.cont{
     margin:0 auto;
@@ -7,26 +13,72 @@ section.cont{
 
 /* 헤더 */
 header{
-    height:100vh;
-    width:200px;
-    background-color: #506ee4;
+    background-color:#2a365f;
+    height:50px;
+    position:fixed;
+    width:100%;
+    z-index:100;
+}
+header h1{
+    color:#fff;
+    line-height:50px;
+    margin-left:20px;
+}
+header h1 span{
+    font-weight:300;
 }
 
-/* 도서 목록 */
-.book_list{
-    padding:30px;
-    max-width:1600px;
+/* 메뉴 */
+nav{
+    width:10.3%;
+    min-width:140px;
+    background-color: #546296;
     box-sizing: border-box;
+    position: fixed;
+    z-index: 90;
+    height: 100%;
+    top: 50px;
+}
+nav>ul>li{
+    height:auto;
+    line-height:50px;
+}
+nav>ul>li>ul>li{
+    height:auto;
+    line-height:50px;
+    background-color: #2a365f;
+}
+nav ul li a{
+    color:#fff;
+    font-size:14px;
+    margin-left:20px;
 }
 
-/* 도서 목록 탭 메뉴 */
-.tab_menu a.on{
-    color:blue;
+/* 페이지 헤더 */
+.cont h2{
+    height:50px;
+    line-height:50px;
+    border-bottom:1px solid #e3e3e3;
+    padding-left:10px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
 }
+.cont h2 svg{
+    margin-right:10px;
+    color:#2a365f;
+    position:relative;
+    top:6px;
+}
+.cont h2 span{
+    font-size:16px;
+}
+
 
 /* 도서 목록 전체 레이아웃 */
 .dataTables_wrapper{
-    margin:10px 0 100px 0;
+    margin:20px 0 100px 0;
 }
 table{
     /*padding-top:10px;*/
@@ -50,7 +102,7 @@ table.dataTable thead th, table.dataTable thead td{
     border-bottom:1px solid #d5d5d5;
 }
 .dataTables_wrapper .dataTables_scroll{
-    padding-top:30px;
+    /*padding-top:30px;*/
 }
 table.dataTable.no-footer{
     border-bottom:1px solid #d5d5d5;
@@ -94,18 +146,22 @@ table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>*{
 .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody{
     border-bottom:1px solid #d5d5d5;
 }
+.dataTables_scrollHead table.dataTable{
+    width:100% !important;
+}
 
 
 
 /* 검색창 */
 input[type=search]{
     text-indent:10px;
+    width:200px;
 }
 
 /* 정렬,검색창 */
 .dataTables_wrapper .dataTables_length{
     height:50px;
-    padding-top:20px;
+    /*padding-top:20px;*/
     box-sizing: border-box;
 }
 
@@ -127,6 +183,70 @@ input[type=search]{
     width:95px;
     box-sizing: border-box;
 }*/
+
+/* 콘텐츠 목록 페이지 */
+.book_list_wrap{
+    /*max-width:1700px;
+    width:100%;*/
+    position:absolute;
+    right:0;
+    top:50px;
+    width:89.7%;
+    min-width:1000px;
+    z-index:80;
+}
+.book_list{
+    padding:30px 20px 0;
+    box-sizing: border-box;
+    position:relative;
+    top:50px;
+}
+.book_list_cont{
+    position:relative;
+}
+.book_list_cont h3{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.excel_down{
+    padding:5px 10px 0;
+    background-color:#767676 ;
+    color:#fff;
+    font-weight:500;
+    width:auto;
+    height:30px;
+    display:inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position:absolute;
+    right:0;
+}
+
+/* 도서 목록 탭 메뉴 */
+.tab_menu a.on{
+    color:blue;
+}
+
+/* 콘텐츠 목록 필터 */
+#content_filter{
+    margin-bottom:50px;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    padding:15px 0;
+}
+#content_filter p{
+    margin-bottom:10px;
+}
+#content_filter .f_title{
+    padding-left:32px;
+    font-weight:700;
+    width:100px;
+    display:inline-block;
+}
+#content_filter .chk{
+    margin-right:20px;
+}
 
 
 /* 매출내역 페이지 */
@@ -164,4 +284,15 @@ input[type=search]{
 }
 #f_sales_details #i_bname{
     width:300px;
+}
+
+
+/* 1300까지 반응형 */
+@media screen and (max-width:1400px){
+    header h1,nav ul li a{
+        margin-left:10px;
+    }
+    .book_list_wrap {
+        left:140px;
+    }
 }
