@@ -1,86 +1,30 @@
+/*----공통css----*/
+
 /* 1300까지 반응형 */
 html{
-    min-width:1200px;
+    min-width:1300px;
 }
 
 
-/* 전체 너비 - 공통 */
-section.cont{
+/* 메인 */
+main{
     margin:0 auto;
-    display:flex;
-
+    margin-bottom:150px;
 }
-
-/* 헤더 */
-header{
-    background-color:#2a365f;
-    height:50px;
-    position:fixed;
-    width:100%;
-    z-index:100;
-}
-header h1{
-    color:#fff;
-    line-height:50px;
-    margin-left:20px;
-}
-header h1 span{
-    font-weight:300;
-}
-
-/* 메뉴 */
-nav{
-    width:10.3%;
-    min-width:140px;
-    background-color: #546296;
-    box-sizing: border-box;
-    position: fixed;
-    z-index: 90;
-    height: 100%;
-    top: 50px;
-}
-nav>ul>li{
-    height:auto;
-    line-height:50px;
-}
-nav>ul>li>ul>li{
-    height:auto;
-    line-height:50px;
-    background-color: #2a365f;
-}
-nav ul li a{
-    color:#fff;
-    font-size:14px;
-    margin-left:20px;
-    display:block;
-    width:100%;
-}
-
-/* 페이지 헤더 */
-.cont h2{
-    height:50px;
-    line-height:50px;
-    border-bottom:1px solid #e3e3e3;
-    padding-left:10px;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    background-color: #fff;
-}
-.cont h2 svg{
-    margin-right:10px;
-    color:#2a365f;
-    position:relative;
-    top:6px;
-}
-.cont h2 span{
-    font-size:16px;
+.page_right{
+    position:absolute;
+    right:0;
+    top:50px;
+    width:89.7%;
+    min-width:1000px;
+    z-index:80;
 }
 
 
-/* 도서 목록 전체 레이아웃 */
+
+/* 테이블 전체 레이아웃 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
 .dataTables_wrapper{
-    margin:20px 0 100px 0;
+    margin:20px 0 0 0;
 }
 table{
     /*padding-top:10px;*/
@@ -111,7 +55,6 @@ table.dataTable.no-footer{
 }
 
 /* 기존 배경색 스타일 제거 */
-
 .dataTables_wrapper.no-footer .dataTables_scrollBody{
     border-bottom:none;
 }
@@ -152,8 +95,6 @@ table.dataTable.stripe>tbody>tr.odd>*, table.dataTable.display>tbody>tr.odd>*{
     width:100% !important;
 }
 
-
-
 /* 검색창 */
 input[type=search]{
     text-indent:10px;
@@ -167,70 +108,7 @@ input[type=search]{
     box-sizing: border-box;
 }
 
-/* 테이블 너비 */
-/*#b_name{
-    width:350px;
-    box-sizing: border-box;
-}
-#b_eisbn{
-    width:150px;
-    box-sizing: border-box;
-}
-
-#b_barcode{
-    width:100px;
-    box-sizing: border-box;
-}
-#b_type{
-    width:95px;
-    box-sizing: border-box;
-}*/
-
-/* 콘텐츠 목록 페이지 */
-.book_list_wrap{
-    /*max-width:1700px;
-    width:100%;*/
-    position:absolute;
-    right:0;
-    top:50px;
-    width:89.7%;
-    min-width:1000px;
-    z-index:80;
-}
-.book_list{
-    padding:30px 20px 0;
-    box-sizing: border-box;
-    position:relative;
-    top:50px;
-}
-.book_list_cont{
-    position:relative;
-}
-.book_list_cont h3{
-    font-size:18px;
-    margin-bottom:20px;
-}
-
-.excel_down{
-    padding:5px 10px 0;
-    background-color:#767676 ;
-    color:#fff;
-    font-weight:500;
-    width:auto;
-    height:30px;
-    display:inline-block;
-    box-sizing: border-box;
-    border-radius: 4px;
-    position:absolute;
-    right:0;
-}
-
-/* 도서 목록 탭 메뉴 */
-.tab_menu a.on{
-    color:blue;
-}
-
-/* 콘텐츠 목록 필터 */
+/* 콘텐츠 목록 필터 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
 #content_filter{
     margin-bottom:50px;
 }
@@ -242,7 +120,10 @@ input[type=search]{
 }
 #content_filter .form_c_wrap{
     display:flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+}
+#content_filter .form_c_wrap p:first-of-type{
+    margin-right:80px;
 }
 #content_filter p{
     margin-bottom:10px;
@@ -302,7 +183,59 @@ input[type=search]{
 #content_filter .btn_wrap{
     text-align: center;
 }
-#content_filter .btn_md{
+
+/* 체크박스 custom */
+#content_filter input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+#content_filter input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+}
+#content_filter input[type="checkbox"] + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    background: url(../img/checkbox_off.png)no-repeat;  
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+#content_filter input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 22px;
+    height: 22px;  
+    background: url(../img/chkBox_btn.png)no-repeat;  
+    background-position: center center;
+    border-radius: 5px;
+}
+
+#content_filter input[type="checkbox"] + label span {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 26px;  
+    letter-spacing: -1px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* 버튼 */
+.btn_md{
     padding: 0 23px;
     min-width: 140px;
     height: 44px;
@@ -310,17 +243,65 @@ input[type=search]{
     font-weight: 600;
     font-size: 15px;
 }
-#content_filter .btn_primary{
+.btn_primary{
     color:#fff;
     border:1px solid #2a365f;
     background-color:#2a365f;
     border-radius: 6px;
 }
 
+/*----상세페이지----*/
+
+/* 콘텐츠 목록 페이지 */
+.book_list_wrap{
+    /*max-width:1700px;
+    width:100%;*/
+}
+.book_list{
+    padding:30px 20px 0;
+    box-sizing: border-box;
+    position:relative;
+    top:50px;
+}
+.book_list_cont{
+    position:relative;
+}
+.book_list_cont h3{
+    font-size:20px;
+    margin-bottom:20px;
+}
+#b_name a{
+    display:inline-block;
+    width:100%;
+    height:49px;
+    line-height:49px;
+}
+
+.excel_down{
+    padding:5px 10px 0;
+    background-color:#767676 ;
+    color:#fff;
+    font-weight:500;
+    width:auto;
+    height:30px;
+    display:inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position:absolute;
+    right:0;
+}
+
+/* 도서 목록 탭 메뉴 */
+/*.tab_menu a.on{
+    color:blue;
+}*/
+
+
+
 
 /* 매출내역 페이지 */
 /* 매출내역 필터 폼 */
-#sales_form .btn_wrap{
+/*#sales_form .btn_wrap{
     display:flex;
     max-width:500px;
     justify-content: center;
@@ -331,10 +312,10 @@ input[type=search]{
 }
 #sales_form input[type=date]{
     width:auto;
-}
+}*/
 
 /* 매출내역 필터 테이블 */
-#f_sales_details{
+/*#f_sales_details{
     max-width:500px;
 }
 #f_sales_details,#f_sales_details th,#f_sales_details td{
@@ -353,15 +334,30 @@ input[type=search]{
 }
 #f_sales_details #i_bname{
     width:300px;
-}
+}*/
 
+
+
+/*----반응형----*/
 
 /* 1300까지 반응형 */
-@media screen and (max-width:1400px){
+@media screen and (max-width:1900px){
+    #content_filter .name_wrap input[type=text],#content_filter select{
+        width:400px;
+    }
+    #content_filter .form_c_wrap p:first-of-type{
+        margin-right:40px;
+    }
+
+}
+@media screen and (max-width:1299px){
     header h1,nav ul li a{
         margin-left:10px;
     }
     .book_list_wrap {
-        left:140px;
+        /*left:140px;*/
+    }
+    #content_filter .name_wrap input[type=text],#content_filter select{
+        width:200px;
     }
 }

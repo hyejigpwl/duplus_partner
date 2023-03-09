@@ -1,0 +1,90 @@
+/* 헤더 */
+header{
+    background-color:#2a365f;
+    height:50px;
+    position:fixed;
+    width:100%;
+    z-index:100;
+}
+.header_top{
+    display:flex;
+    justify-content: space-between;
+    margin:0 20px;
+}
+.header_top span a{
+    color:#fff;
+    line-height:50px;
+}
+.header_top span a#u_id{
+    padding-right:20px;
+}
+.header_top span a#u_id img{
+    margin-right:5px;
+}
+.header_top span a#logout{
+    font-size:13px;
+}
+header h1 a{
+    color:#fff;
+    line-height:50px;
+}
+header h1 span{
+    font-weight:300;
+}
+
+/* 메뉴 */
+.open_gnb{
+    display:inline-block;
+    height:51px;
+}
+nav{
+    width:10.3%;
+    min-width:140px;
+    background-color: #546296;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 90;
+    height: 100%;
+    top: 50px;
+}
+nav>ul>li{
+    height:auto;
+    line-height:50px;
+}
+nav>ul>li>a{
+    cursor:default;
+}
+nav>ul>li>ul>li{
+    height:auto;
+    line-height:50px;
+    background-color: #2a365f;
+}
+nav ul li a{
+    color:#fff;
+    font-size:14px;
+    padding-left:20px;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+}
+
+/* 페이지 헤더 */
+main h2{
+    height:50px;
+    line-height:50px;
+    border-bottom:1px solid #e3e3e3;
+    /*padding-left:10px;*/
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+}
+main h2 svg{
+    padding-left:10px;
+    color:#2a365f;
+    position:relative;
+    top:6px;
+}
+main h2 span{
+    font-size:16px;
+}
