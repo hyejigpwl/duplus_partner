@@ -32,7 +32,8 @@
                 <li><a href="#none">홈화면</a>
                     <ul>
                         <li><a href="#none">대시보드</a></li>
-                        <li><a href="#none">공지사항/문의하기</a></li>
+                        <li><a href="#none">공지사항</a></li>
+                        <li><a href="#none">문의하기</a></li>
                     </ul>
                 </li>
                 <li><a href="#none">콘텐츠</a>
@@ -72,54 +73,110 @@
                     <fieldset>
                         <legend class="blind">콘텐츠 조회 필터</legend>
 
-                        <!-- 상품 START -->
-                        <p>
-                            <span class="f_title">상품</span>
+                        <div class="filter_wrap">
+                            <!-- 상품 START -->
+                            <p class="goods">
+                                <span class="f_title">상품</span>
 
-                            <span class="chk">
-                                <input type="checkbox" id="all">
-                                <label for="all">전체</label>
-                            </span>
+                                <span class="chk">
+                                    <input type="checkbox" id="all">
+                                    <label for="all">전체</label>
+                                </span>
 
-                            <span class="chk">
-                                <input type="checkbox" id="unr_book">
-                                <label for="unr_book">ESIBN 미등록 도서</label>
-                            </span>
-                            
-                            <span class="chk">
-                                <input type="checkbox" id="n_book">
-                                <label for="n_book">일반도서</label>
-                            </span>
-                            
-                            <span class="chk">
-                                <input type="checkbox" id="g_book">
-                                <label for="g_book">장르도서</label>
-                            </span>
-                            
+                                <span class="chk">
+                                    <input type="checkbox" id="unr_book">
+                                    <label for="unr_book">ESIBN 미등록 도서</label>
+                                </span>
+                                
+                                <span class="chk">
+                                    <input type="checkbox" id="n_book">
+                                    <label for="n_book">일반도서</label>
+                                </span>
+                                
+                                <span class="chk">
+                                    <input type="checkbox" id="g_book">
+                                    <label for="g_book">장르도서</label>
+                                </span>
+                                
 
-                            <span class="chk">
-                                <input type="checkbox" id="a_book">
-                                <label for="a_book">오디오(북)</label>
-                            </span>
-                            
+                                <span class="chk">
+                                    <input type="checkbox" id="a_book">
+                                    <label for="a_book">오디오(북)</label>
+                                </span>
+                                
 
-                            <span class="chk">
-                                <input type="checkbox" id="video">
-                                <label for="video">동영상</label>
-                            </span>
+                                <span class="chk">
+                                    <input type="checkbox" id="video">
+                                    <label for="video">동영상</label>
+                                </span>
+                                
+                            </p>
+                            <!-- 상품 END -->
                             
-                        </p>
-                        <!-- 상품 END -->
-                        
-                        <!-- 등록일자 START -->
-                            <p>
+                            <!-- 등록일자 START -->
+                            <p class="regist_date">
                                 <span class="f_title">등록일자</span>
 
                                 <input type="text" name="startDate" value="">
-
+                                ~
                                 <input type="text" name="endDate" value="">
+
+                                <button type="button">1주</button>
+                                <button type="button">1개월</button>
+                                <button type="button">3개월</button>
+                                <button type="button">1년</button>
+                                <button type="button">전체</button>
                             </p>
-                        <!-- 등록일자 END -->
+                            <!-- 등록일자 END -->
+
+                            <div class="form_c_wrap">
+                                <!-- 출판사 START -->
+                                <p class="brand">
+                                    <span class="f_title">브랜드</span>
+                                    <select name="brandCode" id="brandCode">
+                                        <option value="" selected>전체</option>
+                                        <option value="">두란노</option>
+                                        <option value="">한국성서학연구소</option>
+                                    </select>
+                                </p>
+                                <!-- 출판사 END -->
+
+                                <!-- 판매상태 START -->
+                                <p class="state">
+                                    <span class="f_title">판매상태</span>
+                                    <select name="pbcmCode" id="pbcmCode">
+                                        <option value="" selected>전체</option>
+                                        <option value="">승인대기</option>
+                                        <option value="">승인보류</option>
+                                        <option value="">판매대기</option>
+                                        <option value="">판매중단</option>
+                                        <option value="">판매중</option>
+                                    </select>
+                                </p>
+                                <!-- 판매상태 END -->
+                            </div>
+
+                            <div class="form_c_wrap name_wrap last">
+                                <!-- 상품명 START -->
+                                <p class="goods_name">
+                                    <span class="f_title">상품명</span>
+                                    <input type="text">
+                                </p>
+                                <!-- 상품명 END -->
+
+                                <!-- 저자명 START -->
+                                <p class="author_name">
+                                    <span class="f_title">저자명</span>
+                                    <input type="text">
+                                </p>
+                                <!-- 저자명 END -->
+                            </div>
+                        </div>
+                        
+                        <div class="btn_wrap">
+                            <button type="submit" class="btn_md btn_primary">조회</button>
+                        </div>
+                        
                     </fieldset>
                 </form>
                 <!-- 콘텐츠 목록 필터 END -->
