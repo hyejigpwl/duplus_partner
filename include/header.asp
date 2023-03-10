@@ -16,19 +16,25 @@ Response.ContentType="text/html;charset=euc-kr"
 %>
 
     <link rel="stylesheet" href="../css/common.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
 
+    <link rel="stylesheet" href="../css/jquery-ui.min.css">
     <link rel="stylesheet" href="../css/datatables.min.css">
     <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/jquery.monthpicker-0.1.css">
+    
+
 
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/main.css">
 
     <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
     <script src="../js/moment.min.js"></script>
     <script src="../js/datatables.js"></script>
     <script src="../js/daterangepicker.js"></script>
+    <script src="../js/jquery.ui.monthpicker.js"></script>
 <%
 
 %>

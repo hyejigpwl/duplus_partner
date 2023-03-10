@@ -118,6 +118,42 @@ input[type=search]{
     border-radius: 20px;
     padding:25px 32px;
 }
+
+.ui-widget-header{
+    background-color: #fff;
+    border:1px solid #fff;
+}
+.ui-datepicker .ui-datepicker-prev span{
+    background: url(../img/icon_arrow_right.svg) no-repeat center;
+    transform:scaleX(-1);
+}
+
+.ui-datepicker .ui-datepicker-next span{
+    background: url(../img/icon_arrow_right.svg) no-repeat center;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight,.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button{
+    border:1px solid #c5c5c5;
+    background:#fff;
+    color:#454545;
+    line-height:35px !important;
+}
+
+.ui-state-highlight:hover, .ui-widget-content .ui-state-highlight:hover, .ui-widget-header .ui-state-highlight:hover,.ui-state-default:hover, .ui-widget-content .ui-state-default:hover, .ui-widget-header .ui-state-default:hover, .ui-button:hover{
+    border: 1px solid #003eff;
+    background: #007fff;
+    font-weight: normal;
+    color: #fff;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover{
+    border: 1px solid #003eff;
+    background: #007fff;
+    font-weight: normal;
+    color: #fff;
+}
+
+
+
 .form_primary .form_c_wrap{
     display:flex;
     /*justify-content: space-between;*/

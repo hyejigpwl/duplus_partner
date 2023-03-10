@@ -71,9 +71,9 @@
                                 <p class="regist_date">
                                     <span class="f_title">등록일자</span>
     
-                                    <input type="text" name="startDate" value="">
+                                    <input type="text" name="startDate" value="" autocomplete="off">
                                     ~
-                                    <input type="text" name="endDate" value="">
+                                    <input type="text" name="endDate" value="" autocomplete="off">
     
                                     <button type="button">1주</button>
                                     <button type="button">1개월</button>
@@ -608,20 +608,7 @@
             });
             
 
-            // 탭바
-            /*$('.tab_bwrap>div').hide();
-            $('.tab_bwrap>div').first().show();
-
-            $(".tab_menu a").click(function(){
-                $(".tab_menu a").removeClass('on');
-                $(this).addClass('on');
-
-                var i=$(this).index();
-                $('.tab_bwrap>div').hide();
-                $('.tab_bwrap>div').eq(i).show();
-            });*/
-
-            $('input[name="startDate"]').daterangepicker(
+            $('input[name="startDate"],input[name="endDate"]').daterangepicker(
                 {
                 singleDatePicker: true,
                 autoApply:true,
@@ -650,35 +637,7 @@
                 
                 },
             );
-
-            $('input[name="endDate"]').daterangepicker(
-                {
-                singleDatePicker: true,
-                autoApply:true,
-                locale: {
-                    format: "YYYY-MM-DD",
-                    applyLabel: "확인",
-                    cancelLabel: "취소",
-                    customRangeLabel: "Custom",
-                    weekLabel: "W",
-                    daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
-                    monthNames: [
-                    "1월",
-                    "2월",
-                    "3월",
-                    "4월",
-                    "5월",
-                    "6월",
-                    "7월",
-                    "8월",
-                    "9월",
-                    "10월",
-                    "11월",
-                    "12월",
-                    ],
-                },
-                },
-            );
+            
         });
 
         

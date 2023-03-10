@@ -60,9 +60,9 @@
                             <p class="regist_date">
                                 <span class="f_title">판매기간</span>
 
-                                <input type="text" name="startDate" value="">
+                                <input type="text" name="startDate" value="" autocomplete="off">
                                 ~
-                                <input type="text" name="endDate" value="">
+                                <input type="text" name="endDate" value="" autocomplete="off">
                             </p>
                             <!-- 판매기간 END -->
 
@@ -244,12 +244,12 @@
             });
 
 
-            $('input[name="startDate"]').daterangepicker(
+            /*$('input[name="startDate"]').daterangepicker(
                 {
                 singleDatePicker: true,
                 autoApply:true,
                 locale: {
-                    format: "YYYY-MM-DD",
+                    format: "YYYY-MM",
                     applyLabel: "확인",
                     cancelLabel: "취소",
                     customRangeLabel: "Custom",
@@ -280,7 +280,7 @@
                 singleDatePicker: true,
                 autoApply:true,
                 locale: {
-                    format: "YYYY-MM-DD",
+                    format: "YYYY-MM",
                     applyLabel: "확인",
                     cancelLabel: "취소",
                     customRangeLabel: "Custom",
@@ -302,7 +302,19 @@
                     ],
                 },
                 },
-            );
+            );*/
+
+            
+            $('input[name="startDate"],input[name="endDate"]').monthpicker({
+                pattern:"yy-mm",
+                monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+                monthNamesShort:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+                dateFormat:'yy-mm',
+                yearRange:'c-10:c+10',
+                
+            });
+
+
         });
 
         // 한 화면에 20개 항목씩 보이게 수정 230306 혜지
