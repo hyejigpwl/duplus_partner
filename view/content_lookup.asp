@@ -6,64 +6,8 @@
 
     <title>두플러스 컨텐츠 파트너 : 출판사 도서 목록</title>
 
-    <link rel="stylesheet" href="../css/common.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/datatables.min.css">
-    <link rel="stylesheet" href="../css/daterangepicker.css">
-
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/main.css">
-
-    <script src="../js/jquery-1.11.2.min.js"></script>
-    <script src="../js/moment.min.js"></script>
-    <script src="../js/datatables.js"></script>
-    <script src="../js/daterangepicker.js"></script>
-</head>
-<body>
-    <header id="header" class="header">
-        <div class="header_top">
-            <h1><a href="index.asp">DUPLUS <span>PARTNER</span></a></h1>
-
-            <div class="header_info">
-                <span><a href="#none" id="u_id"><img src="../img/profile-circle.png" alt="">두란노서원 (2148204203)님</a></span>
-                <span><a href="#none" id="logout">로그아웃</a></span>
-            </div>
-        </div>
-
-        <!-- 헤더 (좌측) START -->
-        <nav class="gnb">
-            <h2 class="blind">메인메뉴</h2>
-            <ul>
-                <li><a href="#none">홈화면</a>
-                    <ul>
-                        <li><a href="index.asp">대시보드</a></li>
-                        <li><a href="notice.asp">공지사항</a></li>
-                    </ul>
-                </li>
-                <li><a href="#none">콘텐츠</a>
-                    <ul>
-                        <li><a href="content_lookup.asp">콘텐츠 조회</a></li>
-                        <li><a href="content_regist.asp">콘텐츠 등록</a></li>
-                    </ul>
-                </li>
-                <li><a href="#none">결산</a>
-                    <ul>
-                        <li><a href="sales_details.asp">매출내역</a></li>
-                        <li><a href="settlement_details.asp">정산내역</a></li>
-                    </ul>
-                </li>
-                <li><a href="#none">마이페이지</a>
-                    <ul>
-                        <li><a href="my_page.asp">출판사 정보 관리</a></li>
-                        <li><a href="qna.asp">문의하기</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <!-- 헤더 (좌측) END -->
-    </header>
+    <!-- 헤더 START -->
+    <!--#include virtual="/partner/include/header.asp"-->
 
     <div class="page_right">
         <main id="content" class="content p_book_list">
@@ -77,9 +21,9 @@
                 </h2>
                 <!-- 콘텐츠 조회 제목 END -->
     
-                <div class="book_list">
+                <div class="page_wrap">
                     <!-- 콘텐츠 목록 필터 START -->
-                    <form action="" method="post" id="content_filter">
+                    <form action="" method="post" id="content_form" class="form_primary">
                         <fieldset>
                             <legend class="blind">콘텐츠 조회 필터</legend>
     
@@ -191,7 +135,7 @@
                     </form>
                     <!-- 콘텐츠 목록 필터 END -->
     
-                    <div class="book_list_cont">
+                    <div class="table_cont">
                         <h3>콘텐츠 목록</h3>
     
                         <!-- 콘텐츠 목록 START -->
@@ -615,35 +559,9 @@
             </section>
         </main>
         
-        <footer id="footer" class="footer">
-            <div class="btn_wrap">
-                <button type="button" class=" btn_md">문의하기</button>
-                <button type="button" class=" btn_md">제휴안내</button>
-            </div>
-
-            <div class="footer_wrap">
-                <div class="footer_left">
-                    <img src="//www.duranno.com/duplus/img/intro/du_logo.svg" alt="두플러스">
-                    <span class="bold">디지털 콘텐츠 파트너 시스템</span>
-                </div>
-                <div class="footer_right">
-
-                    <div class="flex">
-                        <p>대표자 : 이형기</p>
-                        <address>서울 용산구 서빙고로 65길 38</address>
-                        <p class="bold">대표전화 : 02-2078-3234</p>
-                    </div>
-                    
-                    <div class="flex">
-                        <p>사업자등록번호 : 214-82-04203 사단법인 두란노서원</p>
-                        <p>디지털마케팅본부 두플러스팀</p>
-                    </div>
-
-                    <p>COPYRIGHT&copy; duplus ALL RIGHTS RESERVED</p>
-                </div>
-            </div>
-            
-        </footer>
+        <!-- 푸터 & 하단 탭 & 플로팅 START -->
+        <!--#include virtual="/partner/include/footer.asp"-->
+        <!-- 푸터 & 하단 탭 & 플로팅 END -->
     </div>
     
 
@@ -738,7 +656,7 @@
                 singleDatePicker: true,
                 autoApply:true,
                 locale: {
-                    frmat: "YYYY-MM-DD",
+                    format: "YYYY-MM-DD",
                     applyLabel: "확인",
                     cancelLabel: "취소",
                     customRangeLabel: "Custom",
@@ -761,16 +679,6 @@
                 },
                 },
             );
-
-            // gnb 열기
-            $(".open_gnb").click(function(){
-                $('.gnb').toggle();
-                if($('.gnb').css("display")=="none"){
-                    $(".page_right").css('width','100%')
-                }else{
-                    $(".page_right").css('width','89.7%')
-                }
-            });
         });
 
         
