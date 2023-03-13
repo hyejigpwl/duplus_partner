@@ -55,6 +55,7 @@ button{cursor:pointer;}
 
 .blind{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}
 .bold{font-weight:600;}
+.green{color:green;}
 .flex{display:flex;}
 .clear {clear:both;}
 .clear:after { content:""; display:block; clear:both;}

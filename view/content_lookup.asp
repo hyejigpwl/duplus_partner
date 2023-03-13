@@ -4,7 +4,7 @@
 	<meta charset="euc-kr">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>두플러스 컨텐츠 파트너 : 출판사 도서 목록</title>
+    <title>두플러스 컨텐츠 파트너 : 콘텐츠 조회</title>
 
     <!-- 헤더 START -->
     <!--#include virtual="/partner/include/header.asp"-->
@@ -136,7 +136,7 @@
                     <!-- 콘텐츠 목록 필터 END -->
     
                     <div class="table_cont">
-                        <h3>콘텐츠 목록</h3>
+                        <h3 class="sub_t">콘텐츠 목록</h3>
     
                         <!-- 콘텐츠 목록 START -->
                         <!--<div class="tab_menu">
@@ -612,6 +612,7 @@
                 {
                 singleDatePicker: true,
                 autoApply:true,
+                
                 locale: {
                     format: "YYYY-MM-DD",
                     applyLabel: "확인",
@@ -638,8 +639,10 @@
                 },
             );
             
+            
         });
 
+        
         
 
         // datatables.js 수정

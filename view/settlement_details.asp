@@ -60,9 +60,9 @@
                             <p class="regist_date">
                                 <span class="f_title">판매기간</span>
 
-                                <input type="text" name="startDate" value="" autocomplete="off">
+                                <input type="text" name="startDate" value="2023-03" autocomplete="off">
                                 ~
-                                <input type="text" name="endDate" value="" autocomplete="off">
+                                <input type="text" name="endDate" value="2023-03" autocomplete="off">
                             </p>
                             <!-- 판매기간 END -->
 
@@ -79,7 +79,7 @@
                             <p class="book_name last">
                                 <span class="f_title">상품정보</span>
                                 <select name="">
-                                    <option value="" selected>상품명</option>
+                                    <option value="" selected>도서명</option>
                                     <option value="">저자명</option>
                                 </select>
                                 <input type="text">
@@ -98,7 +98,7 @@
     
                 <!-- 정산내역 START -->
                 <div class="table_cont">
-                    <h3>정산내역 목록</h3>
+                    <h3 class="sub_t">정산내역 목록</h3>
 
                     <div class="excel_down">
                         엑셀 다운로드
@@ -132,9 +132,9 @@
                                     <td id="" class="txt_r">10</td>
                                     <td id="" class="txt_r">82,320</td>
                                     <td id="" class="txt_r">100</td>
-                                    <td id="">O O O</td>
+                                    <td id="" class="txt_r">O O O</td>
                                     <td id="" class="txt_r">2</td>
-                                    <td id="">O O O</td>
+                                    <td id="" class="txt_r">O O O</td>
                                     <td id="" class="txt_r">92,320</td>
                                     <td id="" class="txt_r">_</td>
                                     <td id="">미완료</td>
@@ -168,19 +168,19 @@
                 // 셀 너비 고정
                 bAutoWidth:false,
                 columnDefs:[
-                    {width:"7%",targets:0},
-                    {width:"7%",targets:1},
-                    {width:"6%",targets:2},
+                    {width:"6%",targets:0},
+                    {width:"6%",targets:1},
+                    {width:"5%",targets:2},
                     {width:"6%",targets:3},
                     {width:"6%",targets:4},
                     {width:"6%",targets:5},
                     {width:"6%",targets:6},
-                    {width:"6%",targets:7},
+                    {width:"5%",targets:7},
                     {width:"6%",targets:8},
                     {width:"6%",targets:9},
                     {width:"6%",targets:10},
-                    {width:"7%",targets:11},
-                    {width:"7%",targets:12},
+                    {width:"6%",targets:11},
+                    {width:"6%",targets:12},
                 ]
             });
 
@@ -252,9 +252,11 @@
                 monthNamesShort:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
                 dateFormat:'yy-mm',
                 yearRange:'c-10:c+10',
-                
+              
             });
 
+            var default_date = new Date(2023, 10, 1);
+            $('input[name="startDate"],input[name="endDate"]').datepicker("setDate", default_date);
 
         });
 

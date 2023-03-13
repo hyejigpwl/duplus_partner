@@ -60,9 +60,9 @@
                             <p class="regist_date">
                                 <span class="f_title">판매기간</span>
 
-                                <input type="text" name="startDate" value="" autocomplete="off">
+                                <input type="text" name="startDate" value="2023-03" autocomplete="off">
                                 ~
-                                <input type="text" name="endDate" value="" autocomplete="off">
+                                <input type="text" name="endDate" value="2023-03" autocomplete="off">
                             </p>
                             <!-- 판매기간 END -->
 
@@ -79,7 +79,7 @@
                             <p class="book_name last">
                                 <span class="f_title">상품정보</span>
                                 <select name="">
-                                    <option value="" selected>상품명</option>
+                                    <option value="" selected>도서명</option>
                                     <option value="">저자명</option>
                                 </select>
                                 <input type="text">
@@ -98,7 +98,7 @@
     
                 <!-- 매출내역 START -->
                 <div class="table_cont">
-                    <h3>매출내역 목록</h3>
+                    <h3 class="sub_t">매출내역 목록</h3>
 
                     <div class="excel_down">
                         엑셀 다운로드

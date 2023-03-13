@@ -19,10 +19,13 @@ main{
     min-width:1000px;
     z-index:80;
 }
+h3.sub_t{
+    font-size:20px;
+    margin-bottom:20px;
+}
 
 
-
-/* 테이블 전체 레이아웃 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
+/* 테이블(datatable.js) 전체 레이아웃 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
 .dataTables_wrapper{
     margin:20px 0 0 0;
 }
@@ -108,6 +111,43 @@ input[type=search]{
     box-sizing: border-box;
 }
 
+/* 등록 테이블 레이아웃 : 콘텐츠 등록, 출판사 정보 관리 화면 */
+.table_input{
+    width:100%;
+    border-top:1px solid #000;
+}
+.table_input .th{
+    width:120px;
+}
+.table_input .td{
+    width:40%;
+}
+.table_input th{
+    padding-left: 20px;
+    font-weight: 500;
+    color: #767676;
+    text-align: left;
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+.table_input td{
+    padding: 7px 20px !important;
+    height: 53px;
+    border-bottom: 1px solid #d5d5d5;
+    box-sizing: border-box;
+}
+.table_input .add_info{
+    background-color: #e3e3e3;
+}
+.table_input .add_info th{
+    background-color: #d3d3d3;
+}
+.table_input .long_input input{
+    width:100% !important;
+}
+
 /* 콘텐츠 목록 필터 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
 .form_primary{
     margin-bottom:50px;
@@ -180,7 +220,7 @@ input[type=search]{
     display:inline-block;
     text-align: left;
 }
-.form_primary .chk{
+.form_primary .chk,.form_primary .radio{
     margin-right:20px;
 }
 .form_primary .regist_date input{
@@ -276,6 +316,57 @@ input[type=search]{
     color: rgba(0, 0, 0, 0.5);
 }
 
+/* 라디오버튼 custom */
+.form_primary input[type="radio"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.form_primary input[type="radio"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+}
+.form_primary input[type="radio"] + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    background: url(../img/radio_btn.png)no-repeat;  
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.form_primary input[type="radio"]:checked + label:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 22px;
+    height: 22px;  
+    background: url(../img/radio_btn_chk.png)no-repeat;  
+    background-position: center center;
+    border-radius: 5px;
+}
+
+.form_primary input[type="radio"] + label span {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 26px;  
+    letter-spacing: -1px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
 /* 버튼 */
 .btn_wrap [class^=btn_] + [class^=btn_] {
     margin-left: 6px;
@@ -287,6 +378,35 @@ input[type=search]{
     line-height: 44px;
     font-weight: 600;
     font-size: 15px;
+}
+.btn_line{
+    background-color:#fff;
+    border-radius: 6px;
+    padding:0 14px;
+    height:38px;
+    line-height: 38px;
+    width:90px;
+    font-size:12px;
+}
+.b_btn_line{
+    border:1px solid #2a365f;
+    color:#2a365f;
+}
+.b_btn_line:hover{
+    background-color: #2a365f10;
+}
+.g_btn_line{
+    color:#3c9a17;
+    border:1px solid #3c9a17;
+}
+.g_btn_line:hover{
+    background-color: #3c9a1710;
+}
+.remove_btn,.add_ipt{
+    margin-top:5px;
+}
+.add_ipt{
+    margin-right:3px;
 }
 .btn_primary{
     color:#fff;
@@ -325,10 +445,7 @@ input[type=search]{
 .table_cont{
     position:relative;
 }
-.table_cont h3{
-    font-size:20px;
-    margin-bottom:20px;
-}
+
 #b_name a{
     display:inline-block;
     width:100%;
@@ -400,6 +517,29 @@ input::-webkit-search-results-decoration{
     width:542px;
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
 }
+
+/* 콘텐츠 등록 페이지 */
+/* input 창 너비 */
+.p_content_regist .form_primary .regist_date input,.p_content_regist .form_primary input[type=text]{
+    width:300px;
+}
+.p_content_regist .form_primary select{
+    width:100px;
+}
+
+/* 파일타입 라디오버튼 위치 조정 */
+.p_content_regist .form_primary input#type_epub + label:before,.p_content_regist .form_primary input#type_epub:checked + label:after,.p_content_regist .form_primary input#type_pdf + label:before,.p_content_regist .form_primary input#type_pdf:checked + label:after{
+    top:-3px;
+}
+
+/* 완간 체크박스 마진 */
+.p_content_regist .series_complete{
+    padding-left:20px;
+    margin-left:20px;
+    border-left:1px solid #999;
+}
+
+
 
 /*----반응형----*/
 
