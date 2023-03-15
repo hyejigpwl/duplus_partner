@@ -112,6 +112,12 @@ input[type=search]{
 }
 
 /* 등록 테이블 레이아웃 : 콘텐츠 등록, 출판사 정보 관리 화면 */
+.table_wrap{
+    margin-top:50px;
+}
+.table_wrap:first-of-type{
+    margin-top:0;
+}
 .table_input{
     width:100%;
     border-top:1px solid #000;
@@ -146,6 +152,16 @@ input[type=search]{
 }
 .table_input .long_input input{
     width:100% !important;
+}
+.table_input textarea{
+    padding: 14px;
+    width: 100%;
+    height:130px;
+    color: #000;
+    box-sizing: border-box;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    resize:none;
 }
 
 /* 콘텐츠 목록 필터 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
@@ -261,7 +277,34 @@ input[type=search]{
     text-indent:14px;
     font-size:14px;
 }
-
+.form_primary input[type=file]{
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+.form_primary .file_box .thumb_img{
+    margin-top:10px;
+}
+.form_primary .file_box ul{
+    padding-left:20px;
+}
+.form_primary .file_box ul li{
+    list-style:disc;
+}
+.form_primary .file_box label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #767676;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size:13px;
+    border-radius: 6px;
+}
 .form_primary .btn_wrap{
     text-align: center;
 }
@@ -388,6 +431,18 @@ input[type=search]{
     width:90px;
     font-size:12px;
 }
+
+.gray_btn_line{
+    border:1px solid #949494;
+    color:#000;
+}
+.gray_btn_line:hover{
+    background-color: #94949410;
+}
+.gray_btn_line.mg{
+    margin-top:5px;
+    margin-left:3px;
+}
 .b_btn_line{
     border:1px solid #2a365f;
     color:#2a365f;
@@ -405,8 +460,8 @@ input[type=search]{
 .remove_btn,.add_ipt{
     margin-top:5px;
 }
-.add_ipt{
-    margin-right:3px;
+.remove_btn{
+    margin-left:3px;
 }
 .btn_primary{
     color:#fff;
@@ -427,6 +482,57 @@ input[type=search]{
 .btn_wrap .btn_light_gray:hover{
     border: 1px solid #494949;
     background-color: #494949;
+}
+
+/* 모달 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:100;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal_body{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height:max-content;
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+.modal_body .title_wrap{
+    display:flex;
+    justify-content: space-between;
+    height:48px;
+}
+.modal_body .modal_title{
+    font-size:20px;
+    font-weight:500;
+}
+.modal_body .table_input .th{
+    width:50px;
+}
+.modal_body .table_input .td{
+    width:200px;
+}
+.btn_close_popup{
+    cursor:pointer;
+    opacity:.2;
+}
+.btn_close_popup:hover{
+    opacity:1;
+}
+.modal_body .btn_wrap{
+    margin-top:30px;
 }
 
 /*----상세페이지----*/
