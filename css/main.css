@@ -14,7 +14,7 @@ main{
 .page_right{
     position:absolute;
     right:0;
-    top:50px;
+    top:60px;
     width:89.7%;
     min-width:1000px;
     z-index:80;

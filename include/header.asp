@@ -42,7 +42,7 @@ Response.ContentType="text/html;charset=euc-kr"
 <body>
     <header id="header" class="header">
         <div class="header_top">
-            <h1><a href="index.asp">DUPLUS <span>PARTNER</span></a></h1>
+            <h1><a href="index.asp">Contents Partner System</a></h1>
 
             <div class="header_info">
                 <span><a href="#none" id="u_id"><img src="../img/profile-circle.png" alt="">滴鄂畴辑盔 (2148204203)丛</a></span>
@@ -63,7 +63,7 @@ Response.ContentType="text/html;charset=euc-kr"
                 <li><a href="#none">能刨明</a>
                     <ul>
                         <li><a href="content_lookup.asp">能刨明 炼雀</a></li>
-                        <li><a href="content_regist.asp">能刨明 殿废</a></li>
+                        <li class="on"><a href="content_regist.asp"><span></span>能刨明 殿废</a></li>
                     </ul>
                 </li>
                 <li><a href="#none">搬魂</a>

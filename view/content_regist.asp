@@ -150,8 +150,8 @@
     
                 <div class="page_wrap">
 
-                    <!-- 기본정보 START -->
-                    <div class="base_tab">
+                    <!-- 콘텐츠 등록 START -->
+                    <div class="content_regist">
                         <form action="" method="post" id="base_form" class="form_primary" onsubmit="return form_check()">
                             <fieldset>
                                 <legend class="blind">콘텐츠 등록</legend>
@@ -447,7 +447,7 @@
                                             </tr>
                                             <tr>
                                                 <th scope="row">표지 <span class="green">*</span></th>
-                                                <td class="file_box">
+                                                <td class="file_box" colspan="3">
                                                     <input type="text" class="t_file_name" readonly>
                                                     <label for="t_file">파일선택</label>
                                                     <input type="file" id="t_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail(event)">
@@ -461,7 +461,7 @@
                                             </tr>
                                             <tr>
                                                 <th scope="row">상세 이미지</th>
-                                                <td class="file_box">
+                                                <td class="file_box" colspan="3">
                                                     <input type="text" class="d_file_name" readonly>
                                                     <label for="d_file">파일선택</label>
                                                     <input type="file" id="d_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail2(event)">
@@ -471,6 +471,99 @@
                                                         <li>최대용량 : 1MB 이하</li>
                                                         <li>권장사이즈 : 가로 860px</li>
                                                     </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">체험판 등록</th>
+                                                <td class="file_box" colspan="3">
+                                                    <input type="text" class="f_file_name" readonly>
+                                                    <label for="f_file">파일선택</label>
+                                                    <input type="file" id="f_file" class="under_30mb">
+                                                    <ul class="file_txt" style="margin-top:10px;">
+                                                        <li>최대용량 : 30MB 이하</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="sale_info table_wrap">
+                                    <h3 class="sub_t">판매 정보</h3>
+                                    <table class="table_input">
+                                        <colgroup>
+                                            <col class="th">
+                                            <col class="td">
+                                            <col class="th">
+                                            <col class="td">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">판매 형태 <span class="green">*</span></th>
+                                                <td colspan="3">
+                                                    <select name="">
+                                                        <option value="" selected>전체</option>
+                                                        <option value="">소장</option>
+                                                        <option value="">대여</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">판매가 <span class="green">*</span></th>
+                                                <td colspan="3">
+                                                    <input type="text" id="b_list_price">
+                                                    원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">대여가</th>
+                                                <td>
+                                                    <input type="text" id="b_list_price">
+                                                    원
+                                                </td>
+                                                <th scope="row">대여기간</th>
+                                                <td>
+                                                    <input type="text" id="b_list_price">
+                                                    일
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">서비스 여부 <span class="green">*</span></th>
+                                                <td>
+                                                    <span class="radio">
+                                                        <input type="radio" name="service" id="c_normal" checked>
+                                                        <label for="c_normal">즉시</label>
+                                                    </span>
+                    
+                                                    <span class="radio">
+                                                        <input type="radio" id="c_genre" name="service" >
+                                                        <label for="c_genre">지정</label>
+                                                    </span>
+                                                </td>
+
+                                                <th>서비스 시작일</th>
+                                                <td class="regist_date">
+                                                    <input type="text" name="serviceDate" value="" autocomplete="off"> 
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="message table_wrap">
+                                    <h3 class="sub_t">전달사항</h3>
+                                    <table class="table_input">
+                                        <colgroup>
+                                            <col class="th">
+                                            <col class="td">
+                                            <col class="th">
+                                            <col class="td">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">전달사항</th>
+                                                <td colspan="3">
+                                                    <textarea name="" id="" cols rows="5" placeholder="참고사항, 수정된 내용 등 관리자에게 알려주시면 감사하겠습니다."></textarea>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -486,7 +579,7 @@
                             </fieldset>
                         </form>
                     </div>
-                    <!-- 기본정보 END -->                    
+                    <!-- 콘텐츠 등록 END -->                    
                 </div>
 
             </section>
@@ -560,38 +653,7 @@
             });
             
 
-            $('input[name="startDate"],input[name="endDate"]').daterangepicker(
-                {
-                singleDatePicker: true,
-                autoApply:true,
-                
-                locale: {
-                    format: "YYYY-MM-DD",
-                    applyLabel: "확인",
-                    cancelLabel: "취소",
-                    customRangeLabel: "Custom",
-                    weekLabel: "W",
-                    daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
-                    monthNames: [
-                    "1월",
-                    "2월",
-                    "3월",
-                    "4월",
-                    "5월",
-                    "6월",
-                    "7월",
-                    "8월",
-                    "9월",
-                    "10월",
-                    "11월",
-                    "12월",
-                    ],
-                },
-                
-                },
-            );
-
-            $('input[name="bookDate"],input[name="ebookDate"]').daterangepicker(
+            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"]').daterangepicker(
                 {
                 singleDatePicker: true,
                 autoApply:true,
@@ -727,6 +789,10 @@
             var fileName = $(this).val();
             $(".d_file_name").val(fileName);
         });
+        $("#f_file").on('change',function(){
+            var fileName = $(this).val();
+            $(".f_file_name").val(fileName);
+        });
 
         // 파일 1mb 제한
         $(".under_1mb").bind( 'change', function (e)
@@ -744,7 +810,25 @@
                 $(this).val('');
                 return;
             }
-})
+        });
+
+        // 파일 30mb 제한
+        $(".under_30mb").bind( 'change', function (e)
+        {
+            if( !$(this).val() ) return;
+             
+            var f = this.files[0];
+            var size = f.size || f.fileSize;
+             
+            var limit = 30000000;
+                         
+            if( size > limit )
+            {
+                alert( '파일용량은 30mb 를 넘을수 없습니다.' );
+                $(this).val('');
+                return;
+            }
+        });
 
 
 
