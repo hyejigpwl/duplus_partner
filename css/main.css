@@ -169,7 +169,7 @@ input[type=search]{
     margin-bottom:50px;
 }
 .form_primary .filter_wrap{
-    margin-bottom:50px;
+    /*margin-bottom:50px;*/
     background-color: #f7f7f7;
     border-radius: 20px;
     padding:25px 32px;
@@ -307,6 +307,7 @@ input[type=search]{
 }
 .form_primary .btn_wrap{
     text-align: center;
+    margin-top:50px;
 }
 
 /* 체크박스 custom */
@@ -415,7 +416,7 @@ input[type=search]{
     margin-left: 6px;
 }
 .btn_md{
-    padding: 0 23px;
+    /*padding: 0 23px;*/
     min-width: 140px;
     height: 44px;
     line-height: 44px;
@@ -465,24 +466,24 @@ input[type=search]{
 }
 .btn_primary{
     color:#fff;
-    border:1px solid #2a365f;
-    background-color:#2a365f;
+    border:1px solid #333;
+    background-color:#333;
     border-radius: 6px;
     transition: background-color .2s ease-out, border-color 0.2s ease-out;
 }
-.btn_wrap .btn_primary:hover {
-    border-color: #14164d;
-    background-color: #14164d;
-}
+/*.btn_wrap .btn_primary:hover {
+    border-color: #000;
+    background-color: #000;
+}*/
 .btn_wrap .btn_light_gray {
-    color: #fff;
-    border: 1px solid #767676;
-    background-color: #767676;
+    color: #333;
+    border: 1px solid #333;
+    background-color: #fff;
 }
-.btn_wrap .btn_light_gray:hover{
-    border: 1px solid #494949;
+/*.btn_wrap .btn_light_gray:hover{
+    border: 1px solid #333;
     background-color: #494949;
-}
+}*/
 
 /* 모달 */
 .modal {
@@ -560,18 +561,19 @@ input[type=search]{
 }
 
 .excel_down{
-    padding:5px 10px 0;
-    background-color:#767676 ;
-    color:#fff;
+    padding:5px 15px 7px 35px;
+    background-color:#fff ;
+    color:#333;
     font-weight:500;
     font-size:12px;
     width:auto;
     height:30px;
     display:inline-block;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 6px;
     position:absolute;
     right:0;
+    border:1px solid #333;
 }
 
 .p_book_list .form_primary select{

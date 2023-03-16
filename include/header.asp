@@ -42,11 +42,11 @@ Response.ContentType="text/html;charset=euc-kr"
 <body>
     <header id="header" class="header">
         <div class="header_top">
-            <h1><a href="index.asp">Contents Partner System</a></h1>
+            <h1><a href="index.asp"><img src="../img/logo.svg" alt="두플러스 로고">Contents Partner System</a></h1>
 
             <div class="header_info">
                 <span><a href="#none" id="u_id"><img src="../img/profile-circle.png" alt="">두란노서원 (2148204203)님</a></span>
-                <span><a href="#none" id="logout">로그아웃</a></span>
+                <span id="logout"><a href="#none">로그아웃</a></span>
             </div>
         </div>
 

@@ -101,7 +101,7 @@
                     <h3 class="sub_t">매출내역 목록</h3>
 
                     <div class="excel_down">
-                        엑셀 다운로드
+                        <a href="#none">엑셀 다운로드</a>
                     </div>
 
                     <!-- 매출 내역 목록 START -->
