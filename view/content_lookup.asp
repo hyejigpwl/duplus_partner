@@ -23,7 +23,7 @@
     
                 <div class="page_wrap">
                     <!-- 콘텐츠 목록 필터 START -->
-                    <form action="" method="post" id="content_form" class="form_primary">
+                    <form action="" method="post" id="cont_lookup_form" class="form_primary">
                         <fieldset>
                             <legend class="blind">콘텐츠 조회 필터</legend>
     
@@ -33,36 +33,36 @@
                                     <span class="f_title">상품</span>
     
                                     <span class="chk">
-                                        <input type="checkbox" name="goods" id="all" onclick="selectAll(this)">
+                                        <input type="checkbox" name="goods" id="all" onclick="selectAll(this)" value="all">
                                         <label for="all">전체</label>
                                     </span>
     
                                     <span class="chk">
-                                        <input type="checkbox" id="unr_book" name="goods" >
-                                        <label for="unr_book">ESIBN 미등록 도서</label>
+                                        <input type="checkbox" id="unr_book" name="goods" value="unr_book">
+                                        <label for="unr_book">E-ISBN 미등록 도서</label>
                                     </span>
                                     
                                     <span class="chk">
-                                        <input type="checkbox" id="n_book" name="goods" >
+                                        <input type="checkbox" id="n_book" name="goods" value="n_book">
                                         <label for="n_book">일반도서</label>
                                     </span>
                                     
-                                    <span class="chk">
-                                        <input type="checkbox" id="g_book" name="goods">
+                                    <!--<span class="chk">
+                                        <input type="checkbox" id="g_book" name="goods" value="g_book">
                                         <label for="g_book">장르도서</label>
-                                    </span>
+                                    </span>-->
                                     
     
                                     <span class="chk">
-                                        <input type="checkbox" id="a_book" name="goods">
-                                        <label for="a_book">오디오(북)</label>
+                                        <input type="checkbox" id="a_book" name="goods" value="a_book">
+                                        <label for="a_book">오디오북</label>
                                     </span>
                                     
     
-                                    <span class="chk">
-                                        <input type="checkbox" id="video" name="goods">
+                                    <!--<span class="chk">
+                                        <input type="checkbox" id="video" name="goods" value="video">
                                         <label for="video">동영상</label>
-                                    </span>
+                                    </span>-->
                                     
                                 </p>
                                 <!-- 상품 END -->
@@ -71,15 +71,15 @@
                                 <p class="regist_date">
                                     <span class="f_title">등록일자</span>
     
-                                    <input type="text" name="startDate" value="" autocomplete="off">
+                                    <input type="text" name="startDate" value="" autocomplete="off" id="startDate">
                                     ~
-                                    <input type="text" name="endDate" value="" autocomplete="off">
+                                    <input type="text" name="endDate" value="" autocomplete="off" id="endDate">
     
-                                    <button type="button">1주</button>
-                                    <button type="button">1개월</button>
-                                    <button type="button">3개월</button>
-                                    <button type="button">1년</button>
-                                    <button type="button">전체</button>
+                                    <button type="button" id="btn_period_1w">1주</button>
+                                    <button type="button" id="btn_period_1m">1개월</button>
+                                    <button type="button" id="btn_period_3m">3개월</button>
+                                    <button type="button" id="btn_period_1y">1년</button>
+                                    <button type="button" id="btn_period_all">전체</button>
                                 </p>
                                 <!-- 등록일자 END -->
     
@@ -87,41 +87,41 @@
                                     <!-- 출판사 START -->
                                     <p class="brand">
                                         <span class="f_title">브랜드</span>
-                                        <select name="brandCode" id="brandCode">
-                                            <option value="" selected>전체</option>
-                                            <option value="">두란노</option>
-                                            <option value="">한국성서학연구소</option>
+                                        <select name="brand_code_sel" id="brand_code_sel">
+                                            <option value="all" selected>전체</option>
+                                            <option value="b1">두란노</option>
+                                            <option value="b2">한국성서학연구소</option>
                                         </select>
                                     </p>
                                     <!-- 출판사 END -->
     
-                                    <!-- 판매상태 START -->
+                                    <!-- 상태 START -->
                                     <p class="state">
-                                        <span class="f_title">판매상태</span>
-                                        <select name="pbcmCode" id="pbcmCode">
-                                            <option value="" selected>전체</option>
-                                            <option value="">승인대기</option>
-                                            <option value="">승인보류</option>
-                                            <option value="">판매대기</option>
-                                            <option value="">판매중단</option>
-                                            <option value="">판매중</option>
+                                        <span class="f_title">상태</span>
+                                        <select name="pbcmCode_sel" id="pbcmCode_sel">
+                                            <option value="all" selected>전체</option>
+                                            <option value="approval_wait">승인대기</option>
+                                            <option value="approval_hold">승인보류</option>
+                                            <option value="sale_wait">판매대기</option>
+                                            <option value="sale_stop">판매중단</option>
+                                            <option value="sale">판매중</option>
                                         </select>
                                     </p>
-                                    <!-- 판매상태 END -->
+                                    <!-- 상태 END -->
                                 </div>
     
                                 <div class="form_c_wrap name_wrap last">
                                     <!-- 도서명 START -->
                                     <p class="book_name">
                                         <span class="f_title">도서명</span>
-                                        <input type="text">
+                                        <input type="text" name="b_name">
                                     </p>
                                     <!-- 도서명 END -->
     
                                     <!-- 저자명 START -->
                                     <p class="author_name">
                                         <span class="f_title">저자명</span>
-                                        <input type="text">
+                                        <input type="text" name="a_name">
                                     </p>
                                     <!-- 저자명 END -->
                                 </div>
@@ -161,7 +161,7 @@
                                         <th scope="col" class="txt_l">도서명</th>
                                         <th scope="col">저자</th>
                                         <th scope="col">브랜드</th>
-                                        <th scope="col">EISBN</th>
+                                        <th scope="col">E-ISBN</th>
                                         <th scope="col">정가</th>
                                         <th scope="col">판매가</th>
                                         <th scope="col">대여가</th>

@@ -1,13 +1,13 @@
 <footer id="footer" class="footer">
-    <div class="btn_wrap">
+    <!--<div class="btn_wrap">
         <button type="button" class=" btn_md">문의하기</button>
         <button type="button" class=" btn_md">제휴안내</button>
-    </div>
+    </div>-->
 
     <div class="footer_wrap">
         <div class="footer_left">
             <img src="//www.duranno.com/duplus/img/intro/du_logo.svg" alt="두플러스">
-            <span class="bold">디지털 콘텐츠 파트너 시스템</span>
+            <p class="bold">두플러스 콘텐츠 파트너 시스템</p>
         </div>
         <div class="footer_right">
 

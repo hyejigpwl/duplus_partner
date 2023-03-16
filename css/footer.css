@@ -1,6 +1,6 @@
 /* footer */
 footer{
-    background-color: #f7f7f7;
+    background-color: #FAF8F3;
     margin-top:400px;
 }
 footer .btn_wrap{
@@ -22,10 +22,13 @@ footer .btn_wrap button{
 
 .footer_wrap{
     display:flex;
-    padding:30px 100px;
+    padding:50px 40px 110px 40px;
 }
 .footer_right p{
     line-height:20px;
+    font-size:13px;
+    color:#555;
+    letter-spacing: -0.33px;
 }
 .footer_right .flex address{
     position:relative;
@@ -33,21 +36,25 @@ footer .btn_wrap button{
 }
 .footer_right .flex p:after,.footer_right .flex address:after{
     content:"|";
-    padding:0 10px;
+    padding:0 5px;
 }
 .footer_right .flex p:last-of-type:after{
     content:"";
     padding:0;
 }
 .footer_left{
-    display:flex;
-    margin-right:100px;
+    margin-right:40px;
 }
 .footer_left img{
     width:120px;
     height:40px;
     margin-right:10px;
+    display:block;
 }
-.footer_left span{
-    line-height: 40px;
+.footer_left p{
+    line-height: 19px;
+    font-size:16px;
+    color:#555;
+    font-weight: 600;
+    letter-spacing: -0.4px;
 }

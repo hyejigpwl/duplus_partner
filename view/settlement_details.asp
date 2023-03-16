@@ -22,7 +22,7 @@
 
             <div class="page_wrap">
                 <!-- 필터 START -->
-                <form action="" method="get" id="sales_form" class="form_primary">
+                <form action="" method="get" id="settlement_form" class="form_primary">
                     <fieldset>
                         <!--<div class="filter_wrap">
                             <table id="f_sales_details">
@@ -60,29 +60,29 @@
                             <p class="regist_date">
                                 <span class="f_title">판매기간</span>
 
-                                <input type="text" name="startDate" value="2023-03" autocomplete="off">
+                                <input type="text" name="startDate" value="" autocomplete="off">
                                 ~
-                                <input type="text" name="endDate" value="2023-03" autocomplete="off">
+                                <input type="text" name="endDate" value="" autocomplete="off">
                             </p>
                             <!-- 판매기간 END -->
 
                             <!-- 출판사 START -->
                             <p class="brand">
                                 <span class="f_title">브랜드</span>
-                                <input type="search">
+                                <input type="search" id="brand_srh" name="brand_srh">
                                 <button type="button" class="btn_search"></button> 
-                                <input type="text" class="show_name" disabled>
+                                <input type="text" class="show_name" name="show_name" disabled>
                             </p>
                             <!-- 출판사 END -->
 
                             <!-- 도서명 START -->
                             <p class="book_name last">
                                 <span class="f_title">상품정보</span>
-                                <select name="">
-                                    <option value="" selected>도서명</option>
-                                    <option value="">저자명</option>
+                                <select name="goods_info_sel">
+                                    <option value="book_name" selected>도서명</option>
+                                    <option value="author_name">저자명</option>
                                 </select>
-                                <input type="text">
+                                <input type="text" name="goods_name_txt">
                             </p>
                             <!-- 도서명 END -->
 
@@ -160,6 +160,17 @@
     
 
     <script>
+        // 달력 input 값 현재달로 설정
+        const startDate =  document.querySelector('input[name="startDate"]');
+        const endDate =  document.querySelector('input[name="endDate"]');
+
+        const year=new Date().getFullYear();
+        const month=new Date().getMonth()+1;
+        const now_month=`${year}-${month >= 10 ? month: '0'+ month}`
+
+        startDate.value=now_month;
+        endDate.value=now_month;
+
         $(document).ready(function () {
             $('#t_sales_details').DataTable({
                 "searching":false,

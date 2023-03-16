@@ -538,6 +538,26 @@ input[type=search]{
 
 /*----상세페이지----*/
 
+/* 로그인 페이지 */
+.p_login{
+    background-color: #F1EDDD;
+    height:700px;
+    margin-bottom:0;
+}
+
+
+
+
+
+.footer.login{
+    margin-top:0;
+    padding-top:57px;
+}
+
+
+
+
+
 /* 콘텐츠 목록 페이지 */
 .book_list_wrap{
     /*max-width:1700px;

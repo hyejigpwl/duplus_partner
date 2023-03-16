@@ -108,6 +108,23 @@ nav ul li ul li.on span{
     left:0;
 }
 
+nav ul li ul li:hover{
+    background-color: #515151;
+    position:relative;
+}
+nav ul li ul li:hover a{
+    opacity:1;
+    font-weight:600;
+}
+nav ul li ul li:hover span{
+    background-color: #FFCE00;
+    width:5px;
+    height:50px;
+    display:inline-block;
+    position:absolute;
+    left:0;
+}
+
 /* 페이지 헤더 */
 main h2{
     height:50px;

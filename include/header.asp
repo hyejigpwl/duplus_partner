@@ -46,7 +46,7 @@ Response.ContentType="text/html;charset=euc-kr"
 
             <div class="header_info">
                 <span><a href="#none" id="u_id"><img src="../img/profile-circle.png" alt="">두란노서원 (2148204203)님</a></span>
-                <span id="logout"><a href="#none">로그아웃</a></span>
+                <span id="logout"><a href="login.asp">로그아웃</a></span>
             </div>
         </div>
 
@@ -56,26 +56,26 @@ Response.ContentType="text/html;charset=euc-kr"
             <ul>
                 <li><a href="#none">홈화면</a>
                     <ul>
-                        <li><a href="index.asp">대시보드</a></li>
-                        <li><a href="notice.asp">공지사항</a></li>
+                        <li><a href="index.asp"><span></span>대시보드</a></li>
+                        <li><a href="notice.asp"><span></span>공지사항</a></li>
                     </ul>
                 </li>
-                <li><a href="#none">콘텐츠</a>
+                <li><a href="#none"><span></span>콘텐츠</a>
                     <ul>
-                        <li><a href="content_lookup.asp">콘텐츠 조회</a></li>
+                        <li><a href="content_lookup.asp"><span></span>콘텐츠 조회</a></li>
                         <li class="on"><a href="content_regist.asp"><span></span>콘텐츠 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#none">결산</a>
                     <ul>
-                        <li><a href="sales_details.asp">매출내역</a></li>
-                        <li><a href="settlement_details.asp">정산내역</a></li>
+                        <li><a href="sales_details.asp"><span></span>매출내역</a></li>
+                        <li><a href="settlement_details.asp"><span></span>정산내역</a></li>
                     </ul>
                 </li>
                 <li><a href="#none">마이페이지</a>
                     <ul>
-                        <li><a href="my_page.asp">출판사 정보 관리</a></li>
-                        <li><a href="qna.asp">문의하기</a></li>
+                        <li><a href="my_page.asp"><span></span>출판사 정보 관리</a></li>
+                        <li><a href="qna.asp"><span></span>문의하기</a></li>
                     </ul>
                 </li>
             </ul>
