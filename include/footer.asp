@@ -6,7 +6,7 @@
 
     <div class="footer_wrap">
         <div class="footer_left">
-            <img src="//www.duranno.com/duplus/img/intro/du_logo.svg" alt="두플러스">
+            <img src="../img/img_logo_footer.svg" alt="두플러스">
             <p class="bold">두플러스 콘텐츠 파트너 시스템</p>
         </div>
         <div class="footer_right">

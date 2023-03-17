@@ -13,35 +13,72 @@
     <link rel="stylesheet" href="../css/main.css">
 
     <script src="../js/jquery-1.11.2.min.js"></script>
+    <script>
+        // 유효성 검사
+        function form_check(){
+            const u_id=document.getElementById("u_id");
+            const u_pw=document.getElementById("u_pw");
+
+            /* 아이디 입력 여부 */
+            if(u_id.value==""){
+                var txt=document.getElementById("txt_err");
+                txt.textContent="아이디를 입력하세요.";
+                u_id.focus();
+                return false;
+            }
+
+            /* 비밀번호 입력 여부 */
+            if(u_pw.value==""){
+                var txt=document.getElementById("txt_err");
+                txt.textContent="비밀번호를 입력하세요.";
+                u_pw.focus();
+                return false;
+            } else if(u_pw.value!=u_pw.value){
+                txt.textContent="비밀번호 오류입니다. 다시 로그인해주세요";
+                u_pw.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body style="overflow-y:hidden;">
     <main id="content" class="content p_login">
         <div class="login_wrap">
-            <form id="login_form" action="" method="post">
+            <form id="login_form" action="" method="post" onsubmit="return form_check()">
                 <h1>
                     <p><img src="../img/du_logo.svg" alt=""></p>
                     <p>두플러스 콘텐츠 파트너 시스템</p>
                 </h1>
                 <p>
-                    <input type="text" placeholder="아이디">
+                    <input type="text" placeholder="아이디" id="u_id" name="u_id" autocomplete="off">
                 </p>
                 <p>
-                    <input type="password" placeholder="비밀번호">
+                    <input type="password" placeholder="비밀번호" id="u_pw"
+                    name="u_pw" autocomplete="off">
                 </p>
-                <p>
-                    <input type="checkbox" id="id_chk" name="id_chk" value="Y">
-                    <label for="id_chk">
-                        아이디 저장
-                    </label>
-                    <span>비밀번호 재설정</span>
+                <p class="flex">
+                    <span>
+                        <input type="checkbox" id="id_chk" name="id_chk" value="Y">
+                        <label for="id_chk">
+                            아이디 저장
+                        </label>
+                    </span>
+                    
+                    <span><a href="pw_reset.asp">비밀번호 재설정</a></span>
                 </p>
                 
-                <button type="submit">로그인</button>
+                <button type="submit" class="btn_login">로그인</button>
+
+                <p id="txt_err"></p>
+                <p class="bottom_txt">로그인 및 이용 관련 문의는 duplus@duranno.com<br>또는 제휴 담당자에게 연락 바랍니다.</p>
             </form>
            
         </div>
 
+        <div class="btm_bg">
+            <img src="../img/img_loginbg.svg" alt="">
+        </div>
     </main>
 
     <footer id="footer" class="footer login">
@@ -52,7 +89,7 @@
     
         <div class="footer_wrap">
             <div class="footer_left">
-                <img src="//www.duranno.com/duplus/img/intro/du_logo.svg" alt="두플러스">
+                <img src="../img/img_logo_footer.svg" alt="두플러스">
                 <p class="bold">두플러스 콘텐츠 파트너 시스템</p>
             </div>
             <div class="footer_right">

@@ -111,6 +111,46 @@ input[type=search]{
     box-sizing: border-box;
 }
 
+/* 페이징 */
+/* 클릭 */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    border:none;
+    background-color:#333;
+    border-radius: 6px;
+    color:#fff !important;
+    width:35px; height:35px;
+    line-height:24px;
+}
+
+/* 호버 */
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    width:35px;
+    height:35px;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+    border:none;
+    background-color:#333;
+    border-radius: 6px;
+    color:#fff !important;
+    width:35px; height:35px;
+    line-height:24px;
+}
+
+/* 페이지 이동 아이콘 */
+#t_b_list_all_next,#t_b_list_all_previous{
+    width:60px; height:auto;
+    line-height:24px;
+}
+#t_b_list_all_next:hover,#t_b_list_all_previous:hover{
+    width:60px; height:auto;
+    /*background-color: #333;*/
+}
+
+#t_sales_details_previous,#t_sales_details_next{
+    width:60px; height:auto;
+    line-height:24px;
+}
+
 /* 등록 테이블 레이아웃 : 콘텐츠 등록, 출판사 정보 관리 화면 */
 .table_wrap{
     margin-top:50px;
@@ -242,7 +282,7 @@ input[type=search]{
 .form_primary .regist_date input{
     width:155px;
     height:38px;
-    background:#fff url(../img/icon_date.svg) no-repeat right;
+    background:#fff url(../img/icon_date.svg) no-repeat center right 10px;
     font-size:14px;
 }
 .form_primary .regist_date button{
@@ -274,7 +314,7 @@ input[type=search]{
     height:38px; line-height:38px;
     border-radius: 6px;
     box-sizing: border-box;
-    text-indent:14px;
+    text-indent:10px;
     font-size:14px;
 }
 .form_primary input[type=file]{
@@ -335,7 +375,7 @@ input[type=search]{
     width: 22px;
     height: 22px;
     text-align: center;
-    background: url(../img/checkbox_off.png)no-repeat;  
+    background: url(../img/btn_checkcircle.svg)no-repeat;  
     box-sizing: border-box;
     border-radius: 5px;
 }
@@ -347,7 +387,7 @@ input[type=search]{
     left: 0;
     width: 22px;
     height: 22px;  
-    background: url(../img/chkBox_btn.png)no-repeat;  
+    background: url(../img/btn_checkcircle_on.svg)no-repeat;  
     background-position: center center;
     border-radius: 5px;
 }
@@ -541,17 +581,142 @@ input[type=search]{
 /* 로그인 페이지 */
 .p_login{
     background-color: #F1EDDD;
-    height:700px;
+    height:630px;
     margin-bottom:0;
+    padding-top:60px;
+}
+.login_wrap{
+    background-color: #fff;
+    width:480px;
+    margin:auto;
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px #0000001A;
+    padding:60px 90px;
+    box-sizing: border-box;
+}
+.login_wrap h1{
+    text-align: center;
+    margin-bottom:19px;
+}
+.login_wrap h1 img{
+    margin-bottom:15px;
+}
+.login_wrap h1 p{
+    font-size:24px;
+    letter-spacing: -0.6px;
+}
+.login_wrap input[type=text],.login_wrap input[type=password]{
+    height:48px;
+    width:300px;
+    background-color: #F8F8F8 ;
+    box-shadow: inset 0px 2px 4px #00000014;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    font-size:16px;
+}
+.login_wrap input[type=text]{
+    margin-bottom:12px;
+}
+.login_wrap input[type=password]{
+    margin-bottom:14px;
+}
+.login_wrap .flex{
+    justify-content: space-between;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+transition: background-color 5000s;
+-webkit-text-fill-color: #333 !important;
+}
 
+.login_wrap .btn_login{
+    border-radius: 6px;
+    background-color: #555;
+    width:300px;
+    height:56px;
+    line-height:56px;
+    color:#fff;
+    margin-top:22px;
+    font-size:16px;
+}
+.login_wrap #txt_err{
+    color:#FF3400;
+    text-align: center;
+    margin-top:9px;
+    height:20px;
+}
+.login_wrap .bottom_txt{
+    margin-top:70px;
+    color:#999;
+    text-align: center;
+}
 
+/* 체크박스 custom */
+.login_wrap input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.login_wrap input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+.login_wrap input[type="checkbox"] + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    background: url(../img/btn_check_null.svg)no-repeat;  
+    box-sizing: border-box;
+    border-radius: 5px;
+}
 
+.login_wrap input[type="checkbox"]:checked + label:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 24px;
+    height: 24px;  
+    background: url(../img/btn_checked.svg)no-repeat;  
+    background-position: center center;
+    border-radius: 5px;
+}
+
+.login_wrap input[type="checkbox"] + label span {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 26px;  
+    letter-spacing: -1px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.btm_bg{
+    display:flex;
+    justify-content: center;
+    position:relative;
+    top:-95px;
+}
 
 .footer.login{
     margin-top:0;
     padding-top:57px;
+}
+.footer.login .footer_wrap{
+    max-width:768px;
+    margin:0 auto;
 }
 
 
@@ -594,6 +759,7 @@ input[type=search]{
     position:absolute;
     right:0;
     border:1px solid #333;
+    background: url(../img/);
 }
 
 .p_book_list .form_primary select{
@@ -671,7 +837,7 @@ input::-webkit-search-results-decoration{
 
 /*----반응형----*/
 
-/* 1300까지 반응형 - 1100까지 가능 (아이패드 가로모드) */
+/* 1300까지 반응형 -(아이패드 가로모드) */
 @media screen and (max-width:1900px){
     .p_book_list .form_primary .name_wrap input[type=text],.p_book_list .form_primary select{
         width:400px;
@@ -686,7 +852,7 @@ input::-webkit-search-results-decoration{
         margin-left:10px;
     }
     main h2{
-        padding-left:20px !important;
+        /*padding-left:20px !important;*/
     }
     .book_list_wrap {
         /*left:140px;*/

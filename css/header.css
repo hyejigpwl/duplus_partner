@@ -65,6 +65,7 @@ nav{
 nav>ul>li{
     height:auto;
     line-height:50px;
+    margin-bottom:10px;
 }
 nav>ul>li>a{
     cursor:default;
@@ -72,6 +73,11 @@ nav>ul>li>a{
     font-size:13px !important;
     opacity:1 !important;
     color:#B9B08A !important;
+}
+nav>ul>li>a>img{
+    margin-right:5px;
+    position:relative;
+    top:-3px;
 }
 nav>ul>li>ul>li{
     height:auto;
@@ -136,12 +142,19 @@ main h2{
     z-index: 100;
     background-color: #fff;
 }
-main h2 svg{
-    padding-left:10px;
-    color:#2a365f;
+main h2 a{
+    padding-left:50px;
+    background: url(../img/btn_sideclose.svg) no-repeat;
+    display:inline-block;
+    height:44px;
     position:relative;
-    top:6px;
+    top:2px;
+}
+main h2 a.on{
+    background: url(../img/btn_sideopen.svg) no-repeat;
 }
 main h2 span{
     font-size:20px;
+    position:relative;
+    top:-2px;
 }
