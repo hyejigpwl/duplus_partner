@@ -35,6 +35,9 @@ Response.ContentType="text/html;charset=euc-kr"
     <script src="../js/datatables.js"></script>
     <script src="../js/daterangepicker.js"></script>
     <script src="../js/jquery.ui.monthpicker.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1"></script>-->
+    <script src="../js/chart.js"></script>
+    
 <%
 
 %>
@@ -45,7 +48,7 @@ Response.ContentType="text/html;charset=euc-kr"
             <h1><a href="index.asp"><img src="../img/logo.svg" alt="두플러스 로고">Contents Partner System</a></h1>
 
             <div class="header_info">
-                <span><a href="#none" id="u_id"><img src="../img/img_profile.svg" alt="">두란노서원 (2148204203)님</a></span>
+                <span><a href="my_page.asp" id="u_id"><img src="../img/img_profile.svg" alt="">두란노서원 (2148204203)님</a></span>
                 <span id="logout"><a href="login.asp">로그아웃</a></span>
             </div>
         </div>
@@ -57,7 +60,7 @@ Response.ContentType="text/html;charset=euc-kr"
                 <li><a href="#none"><img src="../img/icon_home.svg" alt="">홈화면</a>
                     <ul>
                         <li><a href="index.asp"><span></span>대시보드</a></li>
-                        <li><a href="notice.asp"><span></span>공지사항</a></li>
+                        <!--<li><a href="notice.asp"><span></span>공지사항</a></li>-->
                     </ul>
                 </li>
                 <li><a href="#none"><img src="../img/icon_contents.svg" alt="">콘텐츠</a>

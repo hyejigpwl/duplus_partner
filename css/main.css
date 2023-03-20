@@ -137,7 +137,7 @@ input[type=search]{
 }
 
 /* 페이지 이동 아이콘 */
-#t_b_list_all_next,#t_b_list_all_previous{
+#t_b_list_all_next,#t_b_list_all_previous,#t_notice_next,#t_notice_previous,#t_qna_next,#t_qna_previous{
     width:60px; height:auto;
     line-height:24px;
 }
@@ -720,7 +720,88 @@ transition: background-color 5000s;
 }
 
 
+/* 대시보드 페이지 */
+.p_dash_board .page_wrap{
+    max-width:1700px;
+    margin:0 auto;
+}
+.p_dash_board .cont_current ul{
+    display:flex;
+    gap:0 16px;
+}
+.p_dash_board .cont_current ul li a{
+    width: 160px;
+    height: 115px;
+    border-radius: 20px;
+    border: 1px solid #d5d5d5;
+    padding:20px;
+    box-sizing: border-box;
+    text-align: center;
+    display:block;
+}
+.p_dash_board .cont_current ul li a:hover{
+    border:1px solid #333;
+}
+.p_dash_board .cont_current ul li span{
+    display:block;
+    margin: 0 auto 15px;
+    font-size: 16px;
+    color: #767676;
+    line-height: 24px;
+}
+.p_dash_board .cont_current ul li span:last-of-type{
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 30px;
+    color: #292929;
+    line-height: 40px;
+    z-index: 0;
+}
+.p_dash_board .cont_current ul li span:last-of-type:after{
+    position: absolute;
+    left: 50%;
+    bottom: 7px;
+    width: 100%;
+    height: 6px;
+    background-color: #b8badf;
+    transform: translateX(-50%);
+    content: "";
+    z-index: -1; 
+}
+.p_dash_board .flex{
+    justify-content: space-between;
+    gap:0 20px;
+}
+.p_dash_board .dataTables_wrapper{
+    width:820px;
+}
 
+.p_dash_board .graph_wrap{
+    margin-top:70px;
+}
+.p_dash_board .notice_wrap{
+    margin-top:70px;
+}
+.p_dash_board tr td {
+    vertical-align:top;
+    line-height:50px;
+}
+.p_dash_board tr td a{
+    display:block;
+    height:100%;
+    line-height:50px;
+}
+
+.p_dash_board .faq_container{
+
+}
+.p_dash_board .faq_answer{
+    background-color: #c0c0c0;
+    margin-bottom:15px;
+    padding:10px;
+    line-height:24px;
+}
 
 
 /* 콘텐츠 목록 페이지 */
@@ -728,7 +809,7 @@ transition: background-color 5000s;
     /*max-width:1700px;
     width:100%;*/
 }
-.page_wrap{
+.page_wrap{ /* 공통 */
     padding:30px 20px 0;
     box-sizing: border-box;
     position:relative;
