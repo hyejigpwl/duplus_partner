@@ -137,18 +137,8 @@
                     <div class="table_cont">
                         <h3 class="sub_t">콘텐츠 목록</h3>
     
-                        <!-- 콘텐츠 목록 START -->
-                        <!--<div class="tab_menu">
-                            <a href="#none" class="on">[전체 도서 목록]</a>
-                            <a href="#none">[ESIBN 미등록 도서 목록]</a>
-                        </div>-->
-    
-                        <div class="excel_down">
-                            엑셀 다운로드
-                        </div>
-    
                         <div class="tab_bwrap">
-                            
+                            <!-- 콘텐츠 목록은 20개씩 리스트 -->
                             <!-- 전체 도서 목록 START -->
                             <div id="t_b_list_all_wrap">
                                 <table id="t_b_list_all" class="display">
@@ -192,7 +182,7 @@
                                             <td scope="row">21</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -209,7 +199,7 @@
                                             <td scope="row">20</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -226,7 +216,7 @@
                                             <td scope="row">19</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -243,7 +233,7 @@
                                             <td scope="row">18</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -260,7 +250,7 @@
                                             <td scope="row">17</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -277,7 +267,7 @@
                                             <td scope="row">16</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -294,7 +284,7 @@
                                             <td scope="row">15</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -311,7 +301,7 @@
                                             <td scope="row">14</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -328,7 +318,7 @@
                                             <td scope="row">13</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">그리스도인의 초자연적 회복력</td>
+                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
                                             <td>존 엘드리지</td>
                                             <td>두란노</td>
                                             <td>9788953143876</td>
@@ -345,7 +335,7 @@
                                             <td scope="row">12</td>
                                             <td>E230100001</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">삶으로 가르치는 것만 남는다</td>
+                                            <td class="txt_l"><a href="content_regist.asp">삶으로 가르치는 것만 남는다</a></td>
                                             <td>김요셉</td>
                                             <td>두란노</td>
                                             <td>9788953143753</td>
@@ -362,7 +352,7 @@
                                             <td scope="row">11</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -379,7 +369,7 @@
                                             <td scope="row">10</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -396,7 +386,7 @@
                                             <td scope="row">9</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -413,7 +403,7 @@
                                             <td scope="row">8</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -430,7 +420,7 @@
                                             <td scope="row">7</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -447,7 +437,7 @@
                                             <td scope="row">6</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -464,7 +454,7 @@
                                             <td scope="row">5</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -481,7 +471,7 @@
                                             <td scope="row">4</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -498,7 +488,7 @@
                                             <td scope="row">3</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -515,7 +505,7 @@
                                             <td scope="row">2</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -532,7 +522,7 @@
                                             <td scope="row">1</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l">더 바이블 플러스 : 신약 1 (사복음서)</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
                                             <td>두란노 편집부</td>
                                             <td>두란노</td>
                                             <td>9788953143746</td>
@@ -581,6 +571,17 @@
             $('#t_b_list_all').DataTable({
                 aaSorting : [],
                 "searching":false,
+
+                dom:'Bfrtip',
+                
+                buttons: [
+                    {
+                        extend: 'excel'
+                        ,text: '엑셀다운로드'
+                        ,filename: '콘텐츠 목록'
+				        ,title: '엑셀파일 안에 쓰일 제목'
+                    },
+                ],
 
                 // 세로 스크롤
                 // scrollY: '489px',

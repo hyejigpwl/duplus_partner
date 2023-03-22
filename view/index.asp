@@ -25,11 +25,11 @@
                 <section class="cont_current">
                     <h3 class="blind">디지털 콘텐츠 현황</h3>
                     <ul>
-                        <li><a href="#none"><span>임시저장</span><span id="save_num">1</span></a></li>
-                        <li><a href="#none"><span>승인대기</span><span id="stand_num">16</span></a></li>
-                        <li><a href="#none"><span>보류</span><span id="hold_num">1</span></a></li>
-                        <li><a href="#none"><span>판매중지</span><span id="stop_num">1</span></a></li>
-                        <li><a href="#none"><span>등록완료</span><span id="complete_num">856</span></a></li>
+                        <li><a href="content_lookup.asp"><span>임시저장</span><span id="save_num">1</span></a></li>
+                        <li><a href="content_lookup.asp"><span>승인대기</span><span id="stand_num">16</span></a></li>
+                        <li><a href="content_lookup.asp"><span>보류</span><span id="hold_num">1</span></a></li>
+                        <li><a href="content_lookup.asp"><span>판매중지</span><span id="stop_num">1</span></a></li>
+                        <li><a href="content_lookup.asp"><span>등록완료</span><span id="complete_num">856</span></a></li>
                     </ul>
                 </section>
                 <!-- 디지털 콘텐츠 현황 END -->
@@ -40,7 +40,7 @@
                     <section class="sales_current">
                         <h3 class="sub_t">디지털콘텐츠 매출 현황</h3>
                         <p style="font-size:10px;">(단위:천원)</p>
-                        <canvas id="myChart_1" style="width:820px;"></canvas>   
+                        <canvas id="myChart_1" style="width:100%;"></canvas>   
                     </section>
                     <!-- 디지털 콘텐츠 매출 현황 END -->
 
@@ -48,7 +48,7 @@
                     <section class="sales_revenue">
                         <h3 class="sub_t">디지털콘텐츠 판매 수익</h3>
                         <p style="font-size:10px;">(단위:천원)</p>
-                        <canvas id="myChart_2" style="width:820px;"></canvas>  
+                        <canvas id="myChart_2" style="width:100%;"></canvas>  
                     </section>
                     <!-- 디지털콘텐츠 판매 수익 END -->
                 </div>
@@ -57,8 +57,8 @@
                 <div class="flex notice_wrap">
                     <!-- 공지사항 START -->
                     <section class="notice">
-                        <h3 class="sub_t">공지사항</h3>
-                        <table id="t_notice" class="display">
+                        <h3 class="sub_t">공지사항<a href="notice.asp" class="more">더보기</a></h3>
+                        <table id="t_notice" class="display t_acco">
                             <thead>
                                 <th scope="col">No</th>
                                 <th scope="col">제목</th>
@@ -162,24 +162,6 @@
                                     <td>2022-10-11</td>
                                 </tr>
 
-                                <tr>    
-                                    <td scope="row">6</td>
-                                    <td class="txt_l">
-                                        <div class="faq_container">
-                                            <a href="#none">[안내] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>2022-10-11</td>
-                                </tr>
                             </tbody>
                         </table>
                     </section>
@@ -187,8 +169,8 @@
 
                     <!-- 문의하기 START -->
                     <section class="qna">
-                        <h3 class="sub_t">문의하기</h3>
-                        <table id="t_qna" class="display">
+                        <h3 class="sub_t">문의하기<a href="notice.asp" class="more">더보기</a></h3>
+                        <table id="t_qna" class="display t_acco">
                             <thead>
                                 <th scope="col">No</th>
                                 <th scope="col">제목</th>
@@ -292,24 +274,6 @@
                                     <td>2022-10-11</td>
                                 </tr>
 
-                                <tr>    
-                                    <td scope="row">6</td>
-                                    <td class="txt_l">
-                                        <div class="faq_container">
-                                            <a href="#none">[미답변] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>2022-10-11</td>
-                                </tr>
                             </tbody>
                         </table>
                     </section>
@@ -469,6 +433,8 @@
                 "searching":false,
                 pageLength:5,
                 "lengthChange":false,
+                paging:false,
+                info:false,
 
                 // 셀 너비 고정
                 bAutoWidth:false,
@@ -486,6 +452,8 @@
             });
         })
     </script>
+
+
 </body>
 </head>
 </html>

@@ -99,9 +99,7 @@
                 <div class="table_cont">
                     <h3 class="sub_t">매출내역 목록</h3>
 
-                    <div class="excel_down">
-                        <a href="#none">엑셀 다운로드</a>
-                    </div>
+                    <!-- 매출내역, 정산내역은 12개씩 리스트 -->
 
                     <!-- 매출 내역 목록 START -->
                     <div id="t_sales_details_wrap">
@@ -198,6 +196,221 @@
                                     <td id="b_settlement" class="txt_r">29,400</td>
                                 </tr>
                                 
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+                    
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100112</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">삶으로 가르치는 것만 남는다</td>
+                                    <td id="b_author">김요셉</td>
+                                    <td id="b_list_price" class="txt_r">9,000</td>
+                                    <td id="b_price" class="txt_r">4,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+                    
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100112</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">삶으로 가르치는 것만 남는다</td>
+                                    <td id="b_author">김요셉</td>
+                                    <td id="b_list_price" class="txt_r">9,000</td>
+                                    <td id="b_price" class="txt_r">4,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+                    
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100112</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">삶으로 가르치는 것만 남는다</td>
+                                    <td id="b_author">김요셉</td>
+                                    <td id="b_list_price" class="txt_r">9,000</td>
+                                    <td id="b_price" class="txt_r">4,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
+
+                                <tr>
+                                    <td scope="row" id="b_barcode">E230100002</td>
+                                    <td id="b_type">EPUB</td>
+                                    <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
+                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_list_price" class="txt_r">15,000</td>
+                                    <td id="b_price" class="txt_r">15,000</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
+                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_supply_copy" class="txt_r">2</td>
+                                    <td id="b_rent_sales" class="txt_r">30,000</td>
+                                    <td id="b_keep_num" class="txt_r">5</td>
+                                    <td id="b_keep_sakes" class="txt_r">75,000</td>
+                                    <td id="b_rental_num" class="txt_r">5</td>
+                                    <td id="b_rental_sales" class="txt_r">37,500</td>
+                                    <td id="b_settlement" class="txt_r">29,400</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -212,8 +425,14 @@
         <!--#include virtual="/partner/include/footer.asp"-->
         <!-- 푸터 & 하단 탭 & 플로팅 END -->
     </div>
-    
-    
+
+      <!--<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>-->
+
 
     <script>
         // 달력 input 값 현재달로 설정
@@ -231,7 +450,17 @@
         $(document).ready(function () {
             $('#t_sales_details').DataTable({
                 "searching":false,
-                
+                dom:'Bfrtip',
+                "pageLength":12,
+
+                buttons: [
+                    {
+                        extend: 'excel'
+                        ,text: '엑셀다운로드'
+                        ,filename: '매출내역 목록'
+				        ,title: '엑셀파일 안에 쓰일 제목'
+                    },
+                ],
                 
                 // 셀 너비 고정
                 bAutoWidth:false,
@@ -253,7 +482,6 @@
                     {width:"6%",targets:14},
                 ]
             });
-
 
             /*$('input[name="startDate"]').daterangepicker(
                 {
@@ -334,9 +562,14 @@
         // ~개씩 보기로 수정 230306 혜지
         // 11888줄
 
-
+        
         
     </script>
 </body>
+
+
+
+
+
 
 </html>

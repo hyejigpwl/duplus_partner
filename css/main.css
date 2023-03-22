@@ -3,6 +3,10 @@
 /* 1300까지 반응형 */
 html{
     min-width:1300px;
+    -webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
 }
 
 
@@ -23,7 +27,6 @@ h3.sub_t{
     font-size:20px;
     margin-bottom:20px;
 }
-
 
 /* 테이블(datatable.js) 전체 레이아웃 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
 .dataTables_wrapper{
@@ -202,6 +205,9 @@ input[type=search]{
     border: 1px solid #d5d5d5;
     border-radius: 6px;
     resize:none;
+}
+.table_input #notice_cont{
+    white-space: pre-line;
 }
 
 /* 콘텐츠 목록 필터 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
@@ -722,9 +728,10 @@ transition: background-color 5000s;
 
 /* 대시보드 페이지 */
 .p_dash_board .page_wrap{
-    max-width:1700px;
+    /*max-width:1700px;*/
     margin:0 auto;
 }
+
 .p_dash_board .cont_current ul{
     display:flex;
     gap:0 16px;
@@ -769,12 +776,17 @@ transition: background-color 5000s;
     content: "";
     z-index: -1; 
 }
+
+.p_dash_board .sales_current,.p_dash_board .sales_revenue{
+    width:50%;
+}
+
 .p_dash_board .flex{
     justify-content: space-between;
     gap:0 20px;
 }
 .p_dash_board .dataTables_wrapper{
-    width:820px;
+    width:100%;
 }
 
 .p_dash_board .graph_wrap{
@@ -783,20 +795,37 @@ transition: background-color 5000s;
 .p_dash_board .notice_wrap{
     margin-top:70px;
 }
-.p_dash_board tr td {
+.p_dash_board .notice_wrap section{
+    width:50%;
+}
+.p_dash_board .notice_wrap h3{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.p_dash_board .notice_wrap h3 a{
+    font-size:14px;
+    font-weight:normal;
+}
+
+/* 아코디언 테이블 공통 - 대시보드, 문의하기 */
+.t_acco tr td {
     vertical-align:top;
     line-height:50px;
 }
-.p_dash_board tr td a{
+.t_acco tr td a{
     display:block;
     height:100%;
     line-height:50px;
 }
-
-.p_dash_board .faq_container{
-
+.t_acco tr td a:hover{
+    text-decoration: underline;
 }
-.p_dash_board .faq_answer{
+
+.t_acco .faq_container{
+    
+}
+.t_acco .faq_answer{
     background-color: #c0c0c0;
     margin-bottom:15px;
     padding:10px;
@@ -804,7 +833,8 @@ transition: background-color 5000s;
 }
 
 
-/* 콘텐츠 목록 페이지 */
+
+/* 콘텐츠 목록 페이지,공지사항 페이지 */
 .book_list_wrap{
     /*max-width:1700px;
     width:100%;*/
@@ -818,6 +848,10 @@ transition: background-color 5000s;
 .table_cont{
     position:relative;
 }
+.table_cont h3.sub_t{
+    position:relative;
+    top:50px;
+}
 
 #b_name a{
     display:inline-block;
@@ -826,7 +860,11 @@ transition: background-color 5000s;
     line-height:49px;
 }
 
-.excel_down{
+#t_b_list_all a:hover{
+    text-decoration:underline;
+}
+
+a.buttons-excel{
     padding:5px 15px 7px 35px;
     background-color:#fff ;
     color:#333;
@@ -837,10 +875,22 @@ transition: background-color 5000s;
     display:inline-block;
     box-sizing: border-box;
     border-radius: 6px;
-    position:absolute;
-    right:0;
+    background-image: none;
     border:1px solid #333;
-    background: url(../img/);
+    margin-bottom:10px;
+}
+a.buttons-excel:hover{
+    background-image: none;
+    background-color: #fff !important;
+}
+
+a.dt-button:hover:not(.disabled){
+    background-image: none;
+    background-color: #fff !important;
+}
+
+div.dt-buttons {
+    float:right;
 }
 
 .p_book_list .form_primary select{
@@ -849,13 +899,28 @@ transition: background-color 5000s;
 .p_book_list .form_primary .name_wrap input[type=text]{
     width:638px;
 }
+.p_book_list .form_primary .regist_date input[name=txtDate]{
+    width:210px;
+}
+.dataTables_wrapper .dataTables_length{
+    float:right;
+}
 
-/* 도서 목록 탭 메뉴 */
-/*.tab_menu a.on{
-    color:blue;
-}*/
+/* 공지사항 상세 페이지 */
+.p_notice .table_input .td{
+    width:41%;
+}
 
-
+/* 문의하기 페이지 */
+.p_qna .table_input .td{
+    width:90%;
+}
+.p_qna .form_primary input[type=text]{
+    width:100%;
+}
+.p_qna #qna_file_name{
+    width:300px;
+}
 
 
 /* 매출내역 페이지 */

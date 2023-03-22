@@ -22,8 +22,7 @@ Response.ContentType="text/html;charset=euc-kr"
     <link rel="stylesheet" href="../css/datatables.min.css">
     <link rel="stylesheet" href="../css/daterangepicker.css">
     <link rel="stylesheet" href="../css/jquery.monthpicker-0.1.css">
-    
-
+    <link rel="stylesheet" href="../css/buttons.dataTables.min.css">
 
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -37,6 +36,15 @@ Response.ContentType="text/html;charset=euc-kr"
     <script src="../js/jquery.ui.monthpicker.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1"></script>-->
     <script src="../js/chart.js"></script>
+
+     <!-- 엑셀 다운로드 START -->
+     <script src="../js/dataTables.buttons.min.js"></script>
+     <script src="../js/jszip.min.js"></script>
+     <script src="../js/pdfmake.min.js"></script>
+     <script src="../js/vfs_fonts.js"></script>
+      <script src="../js/buttons.html5.min.js"></script>
+      <script src="../js/buttons.print.min.js"></script>
+      <!-- 엑셀 다운로드 END -->
     
 <%
 
@@ -60,7 +68,7 @@ Response.ContentType="text/html;charset=euc-kr"
                 <li><a href="#none"><img src="../img/icon_home.svg" alt="">홈화면</a>
                     <ul>
                         <li><a href="index.asp"><span></span>대시보드</a></li>
-                        <!--<li><a href="notice.asp"><span></span>공지사항</a></li>-->
+                        <li><a href="notice.asp"><span></span>공지사항</a></li>
                     </ul>
                 </li>
                 <li><a href="#none"><img src="../img/icon_contents.svg" alt="">콘텐츠</a>
@@ -98,5 +106,11 @@ Response.ContentType="text/html;charset=euc-kr"
                     $(".page_right").css('width','89.7%')
                 }
             });
+
+            // gnb 스타일
+            $("nav ul li ul li").removeClass('on');
+            $("nav ul li ul li").click(function(){
+                $(this).addClass('on')
+            })
         });
     </script>
