@@ -807,6 +807,16 @@ transition: background-color 5000s;
     font-size:14px;
     font-weight:normal;
 }
+.p_dash_board table.dataTable.row-border tbody th,.p_dash_board table.dataTable.row-border tbody td,.p_dash_board table.dataTable.display tbody th,.p_dash_board table.dataTable.display tbody td{
+    border-top:none !important;
+}
+.p_dash_board tr th{
+    font-size:13px;
+}
+.p_dash_board .t_acco table .td {
+    width:54%;
+}
+
 
 /* 아코디언 테이블 공통 - 대시보드, 문의하기 */
 .t_acco tr td {
@@ -826,10 +836,45 @@ transition: background-color 5000s;
     
 }
 .t_acco .faq_answer{
-    background-color: #c0c0c0;
+    background-color: #e0e0e0;
     margin-bottom:15px;
-    padding:10px;
+    /*padding:10px 0;*/
     line-height:24px;
+    border-top:2px solid #333;
+    box-sizing: border-box;
+}
+.t_acco table .td{
+    width:64%;
+}
+.t_acco table .th{
+    width:8%;
+}
+.t_acco .faq_answer table td{
+    text-align: left;
+}
+.t_acco .faq_answer table td.q_cont,.t_acco .faq_answer table td.a_cont{
+    line-height:24px;
+    white-space:pre-line;
+    padding:0 10px 10px;
+}
+.t_acco .faq_answer table td.a_cont{
+    padding-top:10px; 
+}
+.t_acco .faq_answer table tr.q_cont th{
+    vertical-align: top;
+}
+.p_qna table.dataTable tbody tr,.p_dash_board table.dataTable tbody tr{
+    border-top:1px solid #e0e0e0;
+}
+.t_acco .faq_answer table tr.faq_table_title{
+    border-bottom:1px solid #333;
+}
+.t_acco .faq_answer table tr.faq_table_title #answerer{
+    margin-right:15px;
+}
+
+.p_qna table.dataTable.row-border tbody th,.p_qna table.dataTable.row-border tbody td,.p_qna table.dataTable.display tbody th,.p_qna table.dataTable.display tbody td{
+    border-top:none !important;
 }
 
 

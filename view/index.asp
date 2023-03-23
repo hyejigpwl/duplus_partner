@@ -70,8 +70,8 @@
                                     <td scope="row">1</td>
                                     <td class="txt_l ">
                                         <div class="faq_container">
-                                            <a href="#none">[안내] [POD관리 TIP] 저작권이 걱정되시나요? (폰트, 내용, 이미지 등)</a>
-                                            <div class="faq_answer">
+                                            <a href="notice_detail.asp">[안내] [POD관리 TIP] 저작권이 걱정되시나요? (폰트, 내용, 이미지 등)</a>
+                                            <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -79,7 +79,7 @@
                                                 <br>
                                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                                                 laborum.</p>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </td>
                                     <td>2023-03-09</td>
@@ -90,8 +90,8 @@
                                     <td scope="row">2</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[알림] [POD관리 TIP] POD 등록 전, 전문적인 원고/표지 디자인 및 편집이 필요하세요?</a>
-                                            <div class="faq_answer">
+                                            <a href="notice_detail.asp">[알림] [POD관리 TIP] POD 등록 전, 전문적인 원고/표지 디자인 및 편집이 필요하세요?</a>
+                                            <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -99,7 +99,7 @@
                                                 <br>
                                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                                                 laborum.</p>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </td>
                                     <td>2023-03-02</td>
@@ -109,8 +109,8 @@
                                     <td scope="row">3</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[공지] [POD관리 TIP] POD 등록 후, 승인 반려되어 당황하셨나요? 이 글을 확인해주세요</a>
-                                            <div class="faq_answer">
+                                            <a href="notice_detail.asp">[공지] [POD관리 TIP] POD 등록 후, 승인 반려되어 당황하셨나요? 이 글을 확인해주세요</a>
+                                            <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -118,7 +118,7 @@
                                                 <br>
                                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                                                 laborum.</p>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </td>
                                     <td>2023-02-21</td>
@@ -128,8 +128,8 @@
                                     <td scope="row">4</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[공지] 콘텐츠 판매금지 처리 안내</a>
-                                            <div class="faq_answer">
+                                            <a href="notice_detail.asp">[공지] 콘텐츠 판매금지 처리 안내</a>
+                                            <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -137,7 +137,7 @@
                                                 <br>
                                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                                                 laborum.</p>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </td>
                                     <td>2022-10-13</td>
@@ -147,8 +147,8 @@
                                     <td scope="row">5</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[안내] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
-                                            <div class="faq_answer">
+                                            <a href="notice_detail.asp">[안내] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
+                                            <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                                                 aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -156,7 +156,7 @@
                                                 <br>
                                                 <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                                                 laborum.</p>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </td>
                                     <td>2022-10-11</td>
@@ -182,16 +182,64 @@
                                     <td scope="row">1</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[답변완료] [POD관리 TIP] 저작권이 걱정되시나요? (폰트, 내용, 이미지 등)</a>
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <a href="#none">[미답변] [POD관리 TIP] 저작권이 걱정되시나요? (폰트, 내용, 이미지 등)</a>
+                                            <!-- 문의 내용 START -->
+                                            <div class="faq_answer question_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">문의 종류</th>
+                                                            <td id="question_type">기타 문의</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">문의 도서</th>
+                                                            <td id="question_book">()</td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row">문의 내용</th>
+                                                            <td id="q_list_cont" class="q_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
+                                            <!-- 문의 내용 END -->
+
+                                            <!-- [미답변]일때는 등록된 답변 없음 -->
+                                            <!-- 등록된 답변 START -->
+                                            <!--<div class="faq_answer answer_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">등록된 답변</th>
+                                                            <td><span id="answerer">관리자</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row" class="blind">답변 내용</th>
+                                                            <td id="a_list_cont" class="a_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>-->
+                                            <!-- 등록된 답변 END -->
                                         </div>
                                     </td>
                                     <td>2023-03-09</td>
@@ -201,17 +249,64 @@
                                     <td scope="row">2</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[답변완료] [POD관리 TIP] POD 등록 전, 전문적인 원고/표지 디자인 및 편집이 필요하세요?</a>
-                                        
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <a href="#none">[미답변] [POD관리 TIP] 저작권이 걱정되시나요? (폰트, 내용, 이미지 등)</a>
+                                            <!-- 문의 내용 START -->
+                                            <div class="faq_answer question_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">문의 종류</th>
+                                                            <td id="question_type">기타 문의</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">문의 도서</th>
+                                                            <td id="question_book">()</td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row">문의 내용</th>
+                                                            <td id="q_list_cont" class="q_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
+                                            <!-- 문의 내용 END -->
+
+                                            <!-- [미답변]일때는 등록된 답변 없음 -->
+                                            <!-- 등록된 답변 START -->
+                                            <!--<div class="faq_answer answer_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">등록된 답변</th>
+                                                            <td><span id="answerer">관리자</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row" class="blind">답변 내용</th>
+                                                            <td id="a_list_cont" class="a_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>-->
+                                            <!-- 등록된 답변 END -->
                                         </div>
                                     </td>
                                     <td>2023-03-02</td>
@@ -221,15 +316,58 @@
                                     <td scope="row">3</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">	[답변완료] [POD관리 TIP] POD 등록 후, 승인 반려되어 당황하셨나요? 이 글을 확인해주세요</a>
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <a href="#none">[완료] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
+                                            <div class="faq_answer question_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">문의 종류</th>
+                                                            <td id="">기타 문의</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">문의 도서</th>
+                                                            <td id="">()</td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row">문의 내용</th>
+                                                            <td id="" class="q_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="faq_answer answer_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">등록된 답변</th>
+                                                            <td><span id="answerer">관리자</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row" class="blind">답변 내용</th>
+                                                            <td id="" class="a_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </td>
@@ -240,15 +378,58 @@
                                     <td scope="row">4</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">	[미답변] 콘텐츠 판매금지 처리 안내</a>
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <a href="#none">[완료] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
+                                            <div class="faq_answer question_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">문의 종류</th>
+                                                            <td id="">기타 문의</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">문의 도서</th>
+                                                            <td id="">()</td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row">문의 내용</th>
+                                                            <td id="" class="q_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="faq_answer answer_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">등록된 답변</th>
+                                                            <td><span id="answerer">관리자</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row" class="blind">답변 내용</th>
+                                                            <td id="" class="a_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </td>
@@ -259,15 +440,58 @@
                                     <td scope="row">5</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[미답변] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
-                                            <div class="faq_answer">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur.</p>
-                                                <br>
-                                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <a href="#none">[완료] POD 정산내역 일시 조회 불가 안내 (10/11~)</a>
+                                            <div class="faq_answer question_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">문의 종류</th>
+                                                            <td id="">기타 문의</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">문의 도서</th>
+                                                            <td id="">()</td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row">문의 내용</th>
+                                                            <td id="" class="q_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <div class="faq_answer answer_wrap">
+                                                <table>
+                                                    <colgroup>
+                                                        <col class="th">
+                                                        <col class="td">
+                                                    </colgroup>
+
+                                                    <tbody>
+                                                        <tr class="faq_table_title">
+                                                            <th scope="row">등록된 답변</th>
+                                                            <td><span id="answerer">관리자</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                        </tr>
+
+                                                        <tr class="q_cont">
+                                                            <th scope="row" class="blind">답변 내용</th>
+                                                            <td id="a_list_cont" class="a_cont">리디 셀렉트 서비스 참여에 대한 안내를 받고 싶습니다.
+                                                            일부 출판사를 대상으로 제한적으로 운영하시는지, 아니면 희망 출판사도 대상으로 절차나 방법 등 서비스에 대한 안내를 받길 희망하구요
+                                                            답변 또는 메일 요청드립니다.
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </td>
