@@ -714,33 +714,7 @@
       }
 
         $(document).ready(function () {
-            $('#t_b_list_all').DataTable({
-                aaSorting : [],
-                "searching":false,
-
-                // 세로 스크롤
-                // scrollY: '489px',
-                // scrollCollapse: true,
-
-                // 셀 너비 고정
-                bAutoWidth:false,
-                columnDefs:[
-                    {width:"4%",targets:0},
-                    {width:"6%",targets:1},
-                    {width:"7%",targets:2},
-                    {width:"16%",targets:3},
-                    {width:"8%",targets:4},
-                    {width:"5%",targets:5},
-                    {width:"10%",targets:6},
-                    {width:"4%",targets:7},
-                    {width:"5%",targets:8},
-                    {width:"5%",targets:9},
-                    {width:"6%",targets:10},
-                    {width:"6%",targets:11},
-                    {width:"5%",targets:12},
-                    {width:"10%",targets:13},
-                ]
-            });
+           
             
 
             $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"]').daterangepicker(

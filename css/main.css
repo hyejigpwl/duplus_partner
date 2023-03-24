@@ -196,6 +196,9 @@ input[type=search]{
 .table_input .long_input input{
     width:100% !important;
 }
+.table_input .middle_input input{
+    width:40% !important;
+}
 .table_input textarea{
     padding: 14px;
     width: 100%;
@@ -530,6 +533,7 @@ input[type=search]{
     border: 1px solid #333;
     background-color: #494949;
 }*/
+
 
 /* 모달 */
 .modal {
@@ -898,6 +902,7 @@ transition: background-color 5000s;
     top:50px;
 }
 
+
 #b_name a{
     display:inline-block;
     width:100%;
@@ -1003,10 +1008,12 @@ input::-webkit-search-results-decoration{
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
 }
 
-/* 콘텐츠 등록 페이지 */
+/* 콘텐츠 등록 페이지, 출판사 정보 관리 페이지, 비밀번호 재설정 페이지 */
 /* input 창 너비 */
-.p_content_regist .form_primary .regist_date input,.p_content_regist .form_primary input[type=text]{
+.p_content_regist .form_primary .regist_date input,.p_content_regist .form_primary input[type=text],.p_content_regist .form_primary input[type=password],.p_pw_reset .form_primary .regist_date input,.p_pw_reset .form_primary input[type=text],.p_pw_reset .form_primary input[type=password]{
     width:300px;
+    height:38px;
+    box-sizing: border-box;
 }
 .p_content_regist .form_primary select{
     width:100px;
@@ -1023,7 +1030,19 @@ input::-webkit-search-results-decoration{
     margin-left:20px;
     border-left:1px solid #999;
 }
+.p_content_regist .title_txt{
+    margin-left:20px;
+    font-size:13px;
+    font-weight:600;
+}
 
+/* 비밀번호 재설정 페이지 */
+.p_pw_reset{
+    max-width:786px;
+}
+.p_pw_reset .content_regist{
+    margin-top:170px;
+}
 
 
 /*----반응형----*/

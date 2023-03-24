@@ -663,16 +663,16 @@
                     {width:"5%",targets:3},
                 ],
 
-                
+                // DataTables 초기화 옵션, 아코디언탭
+                "drawCallback": function() {
+                    $("#t_qna_wrapper .faq_answer").hide();
+                    $("#t_qna_wrapper .faq_container a").off('click').on('click',function(){
+                        $(this).parent().find('.faq_answer').slideToggle('fast');
+                    });
+                }
             });
 
 
-
-            // 문의하기 아코디언 탭
-            $("#t_qna_wrapper .faq_answer").hide();
-            $("#t_qna_wrapper .faq_container a").on('click',function(){
-                $(this).parent().find('.faq_answer').slideToggle('fast');
-            });
 
         })
     </script>
