@@ -664,8 +664,8 @@
                 bAutoWidth:false,
                 columnDefs:[
                     {width:"10%",targets:0},
-                    {width:"75%",targets:1},
-                    {width:"15%",targets:2},
+                    {width:"70%",targets:1},
+                    {width:"20%",targets:2},
                 ]
             });
 

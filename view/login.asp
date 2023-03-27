@@ -42,10 +42,10 @@
     </script>
 </head>
 
-<body style="overflow-y:hidden;">
+<body>
     <main id="content" class="content p_login">
         <div class="login_wrap">
-            <form id="login_form" action="" method="post" onsubmit="return form_check()">
+            <form id="login_form" action="" method="post" onsubmit="">
                 <h1>
                     <p><img src="../img/du_logo.svg" alt=""></p>
                     <p>두플러스 콘텐츠 파트너 시스템</p>
@@ -68,7 +68,7 @@
                     <span><a href="pw_reset.asp">비밀번호 재설정</a></span>
                 </p>
                 
-                <button type="submit" class="btn_login">로그인</button>
+                <button type="button" class="btn_login" onclick="location.href='index.asp'">로그인</button>
 
                 <p id="txt_err"></p>
                 <p class="bottom_txt">로그인 및 이용 관련 문의는 duplus@duranno.com<br>또는 제휴 담당자에게 연락 바랍니다.</p>

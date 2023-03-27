@@ -15,10 +15,42 @@
 
     <script src="../js/jquery-1.11.2.min.js"></script>
 
+    <script>
+        // 유효성 검사
+        function form_check(){
+            const u_pw=document.getElementById("u_pw");
+            const u_pw_chk=document.getElementById("u_pw_chk");
+            const cert_num=document.getElementById("cert_num");
+
+            /* 비밀번호 입력 여부 */
+            if (u_pw.value == ""){
+                var txt=document.getElementById("err_pwd");
+                txt.textContent="비밀번호를 입력해주세요.";
+                u_pw.focus();
+                return false;
+            }
+
+             /*비밀번호 확인*/
+             if (u_pw.value!=u_pw_chk.value){
+                var txt=document.getElementById("err_repwd");
+                txt.textContent="비밀번호가 일치하지 않습니다.";
+                u_pw_chk.focus();
+                return false;
+            };
+
+            /* 인증여부 입력 여부 */
+            if (cert_num.value == ""){
+                var txt=document.getElementById("err_cert");
+                txt.textContent="인증번호를 입력해주세요.";
+                cert_num.focus();
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <header id="header" class="header">
-        <div class="header_top">
+        <div class="header_top" style="margin:0 auto; max-width:768px;">
             <h1><a href="#none"><img src="../img/logo.svg" alt="두플러스 로고">Contents Partner System</a></h1>
 
             <!--<div class="header_info">
@@ -31,7 +63,7 @@
     <main id="content" class="content p_pw_reset">
         <!-- 출판사 정보 관리 START -->
         <div class="content_regist">
-            <form action="" method="post" id="my_page_form" class="form_primary" onsubmit="return form_check()">
+            <form action="pw_fin.asp" method="post" id="my_page_form" class="form_primary" onsubmit="return form_check()">
                 <fieldset>
                     <legend class="blind">비밀번호 재설정</legend>
 
@@ -48,13 +80,16 @@
                                 <tr>
                                     <th scope="row">비밀번호</th>
                                     <td colspan="3">
-                                        <input type="password" name="u_id" placeholder="변경할 비밀번호">
+                                        <input type="password" name="u_pw" id="u_pw" placeholder="변경할 비밀번호">
+                                        <p class="info_txt">* 비밀번호는 영문 대문자 및 소문자, 숫자, 특수문자 중 2종류를 포함하는 경우 10자리, 3종류를 포함하는 경우 8자리 이상으로 구성되어야 합니다.</p>
+                                        <p id="err_pwd" class="info_txt err_txt"></p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">비밀번호 변경</th>
                                     <td colspan="3">
-                                        <input type="password" name="u_pw" id="u_pw" placeholder="변경할 비밀번호 재입력">
+                                        <input type="password" name="u_pw_chk" id="u_pw_chk" placeholder="변경할 비밀번호 재입력">
+                                        <p id="err_repwd" class="info_txt err_txt"></p>
                                     </td>
                                  
                                 </tr>
@@ -63,7 +98,7 @@
                         </table>
                     </div>
                     
-                    <div class="content_mgr table_wrap">
+                    <div class="email_wrap table_wrap">
                         <h3 class="sub_t">이메일 인증</h3>
                         <table class="table_input">
                             <colgroup>
@@ -76,7 +111,7 @@
                                 <tr>
                                     <th scope="row">이메일</th>
                                     <td colspan="3">
-                                        <input type="text" id="cont_m_name" name="cont_m_name" value="" placeholder="등록된 이메일">
+                                        <input type="text" id="u_email" name="u_email" value="" placeholder="등록된 이메일">
 
                                         <button type="button" class="btn_line gray_btn_line">번호 발송</button>
                                     </td>
@@ -84,9 +119,11 @@
                                 <tr>
                                     <th scope="row">인증번호</th>
                                     <td colspan="3">
-                                        <input type="text" id="cont_m_name" name="cont_m_name" value="" placeholder="인증번호">
+                                        <input type="text" id="cert_num" name="cert_num" value="" placeholder="인증번호">
 
                                         <button type="button" class="btn_line gray_btn_line">인증</button>
+
+                                        <p id="err_cert" class="info_txt err_txt"></p>
 
                                         <!-- 이메일 인증 실패 시 버튼 START -->
                                         <!--<button type="button" class="btn_line gray_btn_line">재인증</button>-->
@@ -102,8 +139,8 @@
 
                     <!-- 하단 버튼 START -->
                     <div class="btn_wrap">
-                        <button type="submit" class="btn_md btn_primary">변경하기</button>
-                        <button type="reset" class="btn_md btn_primary btn_light_gray">로그인 페이지로</button>
+                        <button type="submit" class="btn_md btn_primary btn_open_popup">변경하기</button>
+                        <button type="reset" class="btn_md btn_primary btn_light_gray" onclick="location.href='login.asp'">로그인 페이지로</button>
                     </div>
                     <!-- 하단 버튼 END -->
 
@@ -143,5 +180,9 @@
         </div>
         
     </footer>
+
+    <script>
+
+    </script>
 </body>
 </html>

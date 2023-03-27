@@ -536,14 +536,17 @@ input[type=search]{
 
 
 /* 모달 */
+.a_modal,.s_modal{
+    display:none;
+}
+
 .modal {
     position: fixed;
     top: 0;
     left: 0;
-    z-index:100;
+    z-index:110;
     width: 100vw;
     height: 100vh;
-    display: none;
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -623,6 +626,9 @@ input[type=search]{
     border: 1px solid #DDDDDD;
     border-radius: 6px;
     font-size:16px;
+}
+.login_wrap input[type=text]::placeholder,.login_wrap input[type=password]::placeholder{
+    font-size:14px;
 }
 .login_wrap input[type=text]{
     margin-bottom:12px;
@@ -1036,13 +1042,55 @@ input::-webkit-search-results-decoration{
     font-weight:600;
 }
 
+/* 판매중지사유 모달 */
+#stop_sell_form p{
+    margin-bottom:10px;
+    text-align: left !important;
+} 
+
 /* 비밀번호 재설정 페이지 */
 .p_pw_reset{
-    max-width:786px;
+    max-width:768px;
 }
 .p_pw_reset .content_regist{
     margin-top:170px;
 }
+.p_pw_reset .table_input .td{
+    width:35%;
+}
+.p_pw_reset input[type=text],.p_pw_reset input[type=password]{
+    font-size:14px;
+}
+.p_pw_reset input[type=text]::placeholder,.p_pw_reset input[type=password]::placeholder{
+    font-size:14px;
+}
+.p_pw_reset .info_txt{
+    font-size:13px;
+    margin-top:5px;
+    margin-bottom:0;
+}
+.p_pw_reset .err_txt{
+    color:red;
+}
+
+/* 비밀번호 재설정 완료 페이지 */
+.p_pw_reset .pw_fin{
+    margin-top:170px;
+    text-align: center;
+    margin-bottom:250px;
+}
+
+.pw_fin img{
+    width:200px;
+}
+.pw_fin p{
+    margin-top:20px;
+    font-size:22px;
+}
+.pw_fin .btn_wrap{
+    margin-top:30px;
+}
+
 
 
 /*----반응형----*/

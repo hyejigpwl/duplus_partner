@@ -187,8 +187,8 @@
         }
     </script>
 
-    <!-- 모달 START -->
-    <div class="modal">
+    <!-- 저자 소개내용 모달 START -->
+    <div class="modal a_modal">
         <div class="modal_body">
             <p class="title_wrap"><span class="modal_title">소개내용</span><span><img class="btn_close_popup" src="../img/btn_ly_close.png" alt="닫기"></span></p>
             <table class="table_input">
@@ -207,7 +207,48 @@
             </div>
         </div>
     </div>
-    <!-- 모달 END -->
+    <!-- 저자 소개내용 모달 END -->
+
+    <!-- 판매중지 모달 START -->
+    <div class="modal s_modal">
+        <form action="" method="post" id="stop_sell_form" class="form_primary">
+        <div class="modal_body">
+            <p class="title_wrap"><span class="modal_title">판매중지사유</span><span><img class="btn_close_popup" src="../img/btn_ly_close.png" alt="닫기"></span></p>
+            <table class="table_input">
+                <colgroup>
+                    <col class="th">
+                    <col class="td">
+                </colgroup>
+                <tbody>
+                    <th>판매중지사유</th>
+                    <td>
+                            <p class="radio" style="margin-top:10px;">
+                                <input type="radio" name="reason" id="expire" value="expire" checked>
+                                <label for="expire">저작권 만료로 판매중단 예정입니다.</label>
+                            </p>
+
+                            <p class="radio">
+                                <input type="radio" name="reason" id="revision" value="revision">
+                                <label for="revision">개정판을 업로드 할 예정입니다.</label>
+                            </p>
+
+                            <p class="radio" style="margin-bottom:0 !important;">
+                                <input type="radio" name="reason" id="etc" value="etc">
+                                <label for="etc">기타</label> 
+                                <p class="" style="margin-top:10px; margin-bottom:0px !important"><textarea rows="5" cols id="etc_txt" name="reason"></textarea></p>
+                            </p>
+
+                    </td>
+                </tbody>
+            </table>
+            <div class="btn_wrap">
+                <button type="submit" class="btn_primary btn_md" id="a_info_modal_save">확인</button>
+                <button type="button" class="btn_primary btn_md btn_light_gray">닫기</button>
+            </div>
+        </form>
+        </div>
+    </div>
+    <!-- 판매중지 모달 END -->
 
     <div class="page_right">
         <main id="content" class="content p_content_regist">
@@ -432,7 +473,7 @@
                                                 <td colspan="3" class="author btn_add_wrap">
                                                     <input type="text" id="author_info" name="author_info">
 
-                                                    <button type="button" class="btn_line gray_btn_line btn_open_popup">소개내용</button>
+                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
 
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
@@ -647,22 +688,22 @@
                                 <div class="btn_wrap">
                                     <button type="submit" class="btn_md btn_primary">저장하기</button>
                                     <button type="reset" class="btn_md btn_primary btn_light_gray">취소(초기화)</button>
-                                    <!--<button type="submit" class="btn_md btn_primary">승인신청</button>-->
+                                    <button type="submit" class="btn_md btn_primary">승인신청</button>
                                 </div>
                                 <!-- 초기 작성 시 하단 버튼 END -->
 
                                 <!-- 승인 완료 이후 도서 목록에서 들어왔을 때 하단 버튼 START -->
-                                <!--<div class="btn_wrap">
+                                <div class="btn_wrap">
                                     <button type="submit" class="btn_md btn_primary">수정하기</button>
-                                    <button type="reset" class="btn_md btn_primary btn_light_gray">판매중지요청</button>
-                                </div>-->
+                                    <button type="reset" class="btn_md btn_primary btn_light_gray s_open_popup">판매중지요청</button>
+                                </div>
                                 <!-- 승인 완료 이후 도서 목록에서 들어왔을 때 하단 버튼 END -->
                                  
                                 <!-- 저장 후 도서 정보 view 화면에서 하단 버튼 START -->
-                                <!--<div class="btn_wrap">
+                                <div class="btn_wrap">
                                     <button type="submit" class="btn_md btn_primary">승인신청</button>
                                     <button type="reset" class="btn_md btn_primary btn_light_gray">수정하기</button>
-                                </div>-->
+                                </div>
                                 <!-- 저장 후 도서 정보 view 화면에서 하단 버튼 END -->
                                 
 
@@ -711,7 +752,11 @@
         };
 
         reader.readAsDataURL(event.target.files[0]);
-      }
+      };
+
+      // 판매중지사유
+
+      
 
         $(document).ready(function () {
            
@@ -775,7 +820,7 @@
             });
 
             // 저자 추가, 삭제 버튼
-            var fieldHtml2='<div><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg btn_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+            var fieldHtml2='<div><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
 
             $(".author .add_btn").click(function(){
                 $(".author.btn_add_wrap").append(fieldHtml2);
@@ -819,9 +864,9 @@
             });
 
 
-            // modal 띄우기
-            $(".btn_open_popup").click(function(){
-                $(".modal").css({
+            // 저자 소개내용 modal 띄우기
+            $(".btn_add_wrap").on('click','.a_open_popup',function(){
+                $(".a_modal").css({
                     "display":"block",
                 });
                 $("body").css({
@@ -829,14 +874,40 @@
                 })
 
                 $(".btn_close_popup,.modal .btn_wrap button").click(function(){
-                    $(".modal").css({
+                    $(".a_modal").css({
                         "display":"none",
                     });
                     $("body").css({
                         "overflow":"auto",
                     });
                 })
-            })
+            });
+
+            // 판매중지 소개내용 modal 띄우기
+            $(".s_open_popup").click(function(){
+                $(".s_modal").css({
+                    "display":"block",
+                });
+                $("body").css({
+                    "overflow":"hidden",
+                })
+
+                $(".btn_close_popup,.modal .btn_wrap button").click(function(){
+                    $(".s_modal").css({
+                        "display":"none",
+                    });
+                    $("body").css({
+                        "overflow":"auto",
+                    });
+                })
+            });
+
+            // 판매중지에서 기타 텍스트 입력 시 기타 라디오 선택
+            $("textarea[id=etc_txt]").on('click',function(){
+                $("input:radio[id='etc']").prop("checked",true);
+                $("input:radio[id='expire'],input:radio[id='revision']").removeAttr("checked");
+            });
+
         });
 
         // input=file 파일명 연결

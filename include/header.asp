@@ -85,7 +85,7 @@ Response.ContentType="text/html;charset=euc-kr"
                 </li>
                 <li><a href="#none"><img src="../img/icon_my.svg" alt="">마이페이지</a>
                     <ul>
-                        <li><a href="my_page.asp"><span></span>출판사 정보 관리</a></li>
+                        <li><a href="my_page.asp"><span></span>출판사 정보</a></li>
                         <li><a href="qna.asp"><span></span>문의하기</a></li>
                     </ul>
                 </li>
