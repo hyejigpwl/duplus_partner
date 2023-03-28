@@ -1072,6 +1072,12 @@ input::-webkit-search-results-decoration{
 .p_pw_reset .err_txt{
     color:red;
 }
+.p_pw_reset #cert_num_wrap{
+    display:none;
+}
+.p_pw_reset #pw_reset_wrap{
+    display:none;
+}
 
 /* 비밀번호 재설정 완료 페이지 */
 .p_pw_reset .pw_fin{

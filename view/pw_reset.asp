@@ -21,6 +21,9 @@
             const u_pw=document.getElementById("u_pw");
             const u_pw_chk=document.getElementById("u_pw_chk");
             const cert_num=document.getElementById("cert_num");
+            const my_page_form=document.getElementById("my_page_form");
+            const pw_fin_modal=document.getElementById("pw_fin_modal");
+            const pw_fin_btn=document.getElementById("pw_fin_btn");
 
             /* 비밀번호 입력 여부 */
             if (u_pw.value == ""){
@@ -38,17 +41,44 @@
                 return false;
             };
 
-            /* 인증여부 입력 여부 */
-            if (cert_num.value == ""){
-                var txt=document.getElementById("err_cert");
-                txt.textContent="인증번호를 입력해주세요.";
-                cert_num.focus();
-                return false;
+            // 완료 팝업 띄우기
+            pw_fin_modal.style.display="block";
+
+            // 팝업에서 로그인 페이지로 클릭시 submit 되게
+            pw_fin_btn.addEventListener('click',submit);
+            function submit(){
+                my_page_form.submit();
+                location.href="login.asp";
             }
+           
         }
+
+    
     </script>
 </head>
 <body>
+
+    <!-- 비밀번호 완료 모달 START -->
+    <div class="modal a_modal" id="pw_fin_modal">
+        <div class="modal_body">
+            <p class="title_wrap"><span class="modal_title">비밀번호 변경이 완료되었습니다.</span><span><!--<img class="btn_close_popup" src="../img/btn_ly_close.png" alt="닫기">--></span></p>
+            <!--<table class="table_input">
+                <colgroup>
+                    <col class="th">
+                    <col class="td">
+                </colgroup>
+                <tbody>
+                    <th>소개내용</th>
+                    <td><textarea name="a_info_txt" id="a_info_txt" cols rows="5"></textarea></td>
+                </tbody>
+            </table>-->
+            <div class="btn_wrap">
+                <button type="button" class="btn_primary btn_md" id="pw_fin_btn">로그인 페이지로</button>
+            </div>
+        </div>
+    </div>
+    <!-- 비밀번호 완료 모달 END -->
+
     <header id="header" class="header">
         <div class="header_top" style="margin:0 auto; max-width:768px;">
             <h1><a href="#none"><img src="../img/logo.svg" alt="두플러스 로고">Contents Partner System</a></h1>
@@ -63,11 +93,56 @@
     <main id="content" class="content p_pw_reset">
         <!-- 출판사 정보 관리 START -->
         <div class="content_regist">
-            <form action="pw_fin.asp" method="post" id="my_page_form" class="form_primary" onsubmit="return form_check()">
+            <form action="" method="post" id="my_page_form" class="form_primary">
                 <fieldset>
                     <legend class="blind">비밀번호 재설정</legend>
 
-                    <div class="basic_info table_wrap">
+                    <div class="email_wrap table_wrap">
+                        <h3 class="sub_t">본인 인증</h3>
+                        <table class="table_input">
+                            <colgroup>
+                                <col class="th">
+                                <col class="td">
+                                <col class="th">
+                                <col class="td">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">아이디</th>
+                                    <td colspan="3">
+                                        <input type="text" id="u_id" name="u_id" value="" placeholder="아이디">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">이메일</th>
+                                    <td colspan="3">
+                                        <input type="text" id="u_email" name="u_email" value="" placeholder="등록된 이메일">
+
+                                        <button type="button" class="btn_line gray_btn_line" id="send_num_btn" onclick="sendNum()">번호 발송</button>
+                                    </td>
+                                </tr>
+
+                                <tr id="cert_num_wrap">
+                                    <th scope="row">인증번호</th>
+                                    <td colspan="3">
+                                        <input type="text" id="cert_num" name="cert_num" value="" placeholder="인증번호">
+
+                                        <button type="button" class="btn_line gray_btn_line" id="cert_btn" onclick="cert()">인증</button>
+
+                                        <p id="err_cert" class="info_txt err_txt"></p>
+
+                                        <!-- 이메일 인증 실패 시 버튼 START -->
+                                        <!--<button type="button" class="btn_line gray_btn_line">재인증</button>-->
+                                         <!-- 이메일 인증 실패 시 버튼 END -->
+                                    </td>
+                                   
+                                </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table_wrap" id="pw_reset_wrap">
                         <h3 class="sub_t">비밀번호 재설정</h3>
                         <table class="table_input">
                             <colgroup>
@@ -78,17 +153,17 @@
                             </colgroup>
                             <tbody>
                                 <tr>
-                                    <th scope="row">비밀번호</th>
+                                    <th scope="row">새 비밀번호</th>
                                     <td colspan="3">
-                                        <input type="password" name="u_pw" id="u_pw" placeholder="변경할 비밀번호">
+                                        <input type="password" name="u_pw" id="u_pw" placeholder="새 비밀번호">
                                         <p class="info_txt">* 비밀번호는 영문 대문자 및 소문자, 숫자, 특수문자 중 2종류를 포함하는 경우 10자리, 3종류를 포함하는 경우 8자리 이상으로 구성되어야 합니다.</p>
                                         <p id="err_pwd" class="info_txt err_txt"></p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">비밀번호 변경</th>
+                                    <th scope="row">새 비밀번호 재입력</th>
                                     <td colspan="3">
-                                        <input type="password" name="u_pw_chk" id="u_pw_chk" placeholder="변경할 비밀번호 재입력">
+                                        <input type="password" name="u_pw_chk" id="u_pw_chk" placeholder="새 비밀번호 재입력">
                                         <p id="err_repwd" class="info_txt err_txt"></p>
                                     </td>
                                  
@@ -97,49 +172,10 @@
                             </tbody>
                         </table>
                     </div>
-                    
-                    <div class="email_wrap table_wrap">
-                        <h3 class="sub_t">이메일 인증</h3>
-                        <table class="table_input">
-                            <colgroup>
-                                <col class="th">
-                                <col class="td">
-                                <col class="th">
-                                <col class="td">
-                            </colgroup>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">이메일</th>
-                                    <td colspan="3">
-                                        <input type="text" id="u_email" name="u_email" value="" placeholder="등록된 이메일">
-
-                                        <button type="button" class="btn_line gray_btn_line">번호 발송</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">인증번호</th>
-                                    <td colspan="3">
-                                        <input type="text" id="cert_num" name="cert_num" value="" placeholder="인증번호">
-
-                                        <button type="button" class="btn_line gray_btn_line">인증</button>
-
-                                        <p id="err_cert" class="info_txt err_txt"></p>
-
-                                        <!-- 이메일 인증 실패 시 버튼 START -->
-                                        <!--<button type="button" class="btn_line gray_btn_line">재인증</button>-->
-                                         <!-- 이메일 인증 실패 시 버튼 END -->
-                                    </td>
-                                   
-                                </tr>
-                               
-                            </tbody>
-                        </table>
-                    </div>
-
 
                     <!-- 하단 버튼 START -->
                     <div class="btn_wrap">
-                        <button type="submit" class="btn_md btn_primary btn_open_popup">변경하기</button>
+                        <button type="button" class="btn_md btn_primary btn_open_popup" onclick="form_check() ">변경하기</button>
                         <button type="reset" class="btn_md btn_primary btn_light_gray" onclick="location.href='login.asp'">로그인 페이지로</button>
                     </div>
                     <!-- 하단 버튼 END -->
@@ -151,13 +187,13 @@
         <!-- 출판사 정보 관리 END -->                    
     </main>
 
-    <footer id="footer" class="footer login" style="padding-top:0;">
+    <!--<footer id="footer" class="footer login" style="padding-top:0;">-->
         <!--<div class="btn_wrap">
             <button type="button" class=" btn_md">문의하기</button>
             <button type="button" class=" btn_md">제휴안내</button>
         </div>-->
     
-        <div class="footer_wrap">
+        <!--<div class="footer_wrap">
             <div class="footer_left">
                 <img src="../img/img_logo_footer.svg" alt="두플러스">
                 <p class="bold">두플러스 콘텐츠 파트너 시스템</p>
@@ -179,10 +215,44 @@
             </div>
         </div>
         
-    </footer>
+    </footer>-->
 
     <script>
+        // '번호 발송'을 클릭했을 때
+        const u_id=document.getElementById("u_id");
+        const u_email=document.getElementById("u_email");
+        const cert_num_wrap=document.getElementById("cert_num_wrap");
 
+        function sendNum(){
+            // 아이디, 이메일이 존재할 경우
+            if(u_id.value!="" && u_email.value!=""){
+                alert("등록된 이메일로 인증번호를 발송했습니다.");
+                cert_num_wrap.style.display="table-row";
+
+            } else{
+                alert("등록된 정보가 없습니다.")
+            }
+        }
+
+
+        // '인증'을 클릭했을 때
+        const cert_num=document.getElementById("cert_num");
+        const pw_reset_wrap=document.getElementById("pw_reset_wrap");
+
+        function cert(){
+            if(cert_num.value!=""){
+                alert("인증되었습니다.");
+                pw_reset_wrap.style.display="block";
+            } else{
+                alert(" 잘못된 인증번호입니다. 다시 입력해주세요.");
+                cert_num.focus();
+            }
+        }
+
+
+        $(document).ready(function(){
+
+        })
     </script>
 </body>
 </html>

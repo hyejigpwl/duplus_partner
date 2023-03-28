@@ -42,13 +42,13 @@
         
     </main>
 
-    <footer id="footer" class="footer login" style="padding-top:0;">
+    <!--<footer id="footer" class="footer login" style="padding-top:0;">-->
         <!--<div class="btn_wrap">
             <button type="button" class=" btn_md">문의하기</button>
             <button type="button" class=" btn_md">제휴안내</button>
         </div>-->
     
-        <div class="footer_wrap">
+        <!--<div class="footer_wrap">
             <div class="footer_left">
                 <img src="../img/img_logo_footer.svg" alt="두플러스">
                 <p class="bold">두플러스 콘텐츠 파트너 시스템</p>
@@ -70,6 +70,6 @@
             </div>
         </div>
         
-    </footer>
+    </footer>-->
 </body>
 </html>
