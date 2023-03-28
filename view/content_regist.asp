@@ -14,8 +14,9 @@
         function form_check(){
             const b_name=document.getElementById("b_name");
             const sub_name=document.getElementById("sub_name");
-            const brand_name=document.getElementById("brand_name");
-            const author_name=document.getElementById("author_name");
+            //const brand_name=document.getElementById("brand_name");
+            //const author_name=document.getElementById("author_name");
+            const author_info=document.getElementById("author_info");
             const b_list_price=document.getElementById("b_list_price");
             const eb_list_price=document.getElementById("eb_list_price");
             const isbn_num=document.getElementById("isbn_num");
@@ -24,7 +25,6 @@
 
             const book_info=document.getElementById("book_info");
             const book_list=document.getElementById("book_list");
-            const author_info=document.getElementById("author_info");
             const category_1=document.getElementById("category_1");
             const category_2=document.getElementById("category_2");
 
@@ -49,17 +49,11 @@
                 return false;
             }
 
-            /* 브랜드명 입력 여부 */
-            if(brand_name.value==""){
-                alert("브랜드명을 입력하세요.");
-                brand_name.focus();
-                return false;
-            }
 
-            /* 저자명 입력 여부 */
-            if(author_name.value==""){
-                alert("저자명을 입력하세요.");
-                author_name.focus();
+             /* 저자 입력 여부 */
+             if(author_info.value==""){
+                alert("저자를 입력하세요.");
+                author_info.focus();
                 return false;
             }
 
@@ -138,12 +132,7 @@
                 return false;
             }
 
-            /* 저자 입력 여부 */
-            if(author_info.value==""){
-                alert("저자를 입력하세요.");
-                author_info.focus();
-                return false;
-            }
+           
 
             /* 카테고리1 입력 여부 */
             if(category_1.value==""){
@@ -307,7 +296,7 @@
                                                 <td><span id="b_code">(자동으로)</span></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">파일 타입 <span class="green">*</span></th>
+                                                <th scope="row">파일 타입 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <span class="radio">
                                                         <input type="radio" name="file_type" id="type_epub" value="epub" checked>
@@ -344,13 +333,13 @@
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
-                                                <th>도서명 <span class="green">*</span></th>
+                                                <th>도서명 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="b_name" name="b_name">
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
-                                                <th>부제 <span class="green">*</span></th>
+                                                <th>부제 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="sub_name" name="sub_name">
                                                 </td>
@@ -366,15 +355,13 @@
                                                 <td>
                                                     <span id="publisher">(비활성/브랜드 명에 따라 자동)</span>
                                                 </td>
-                                                <th>브랜드명 <span class="green">*</span></th>
+                                                <th>브랜드명 <span class="orange">*</span></th>
                                                 <td class="brand btn_add_wrap">
-                                                    <input type="text" id="brand_name" name="brand_name">
-                                        
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                    <select name="sel_brand" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <th>저자명 <span class="green">*</span></th>
+                                            <!--<tr>
+                                                <th>저자명 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <select name="sel_author_name">
                                                         <option value="author" selected>저자</option>
@@ -383,47 +370,64 @@
                                                     </select>
                                                     <input type="text" id="author_name" name="author_name">
                                                 </td>
-                                            </tr>
+                                            </tr>-->
+
                                             <tr>
-                                                <th>종이책 출간일 <span class="green">*</span></th>
+                                                <th scope="row">저자 <span class="orange">*</span></th>
+                                                <td colspan="3" class="author btn_add_wrap">
+                                                    <select name="sel_author_name">
+                                                        <option value="author" selected>저자</option>
+                                                        <option value="translator">역자</option>
+                                                        <option value="painter">그린이</option>
+                                                    </select>
+                                                    <input type="text" id="author_info" name="author_info">
+
+                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
+
+                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>종이책 출간일 <span class="orange">*</span></th>
                                                 <td class="regist_date">
                                                     <input type="text" name="bookDate" value="" autocomplete="off"> 
                                                 </td>
-                                                <th>전자책 출간일 <span class="green">*</span></th>
+                                                <th>전자책 출간일 <span class="orange">*</span></th>
                                                 <td class="regist_date">
                                                     <input type="text" name="ebookDate" value="" autocomplete="off">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>종이책 정가 <span class="green">*</span></th>
+                                                <th>종이책 정가 <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="b_list_price" name="b_list_price">
                                                     원
                                                 </td>
-                                                <th>전자책 정가 <span class="green">*</span></th>
+                                                <th>전자책 정가 <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="eb_list_price" name="eb_list_price">
                                                     원
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>ISBN 13자리 <span class="green">*</span></th>
+                                                <th>ISBN 13자리 <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="isbn_num" name="isbn_num">
                                                 </td>
-                                                <th>E-ISBN 13자리 <span class="green">*</span></th>
+                                                <th>E-ISBN 13자리 <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="e_isbn_num" name="e_isbn_num">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>페이지 수 <span class="green">*</span></th>
+                                                <th>페이지 수 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="page_num" name="page_num">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>도서 구분 <span class="green">*</span></th>
+                                                <th>도서 구분 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <span class="radio">
                                                         <input type="radio" name="book_devision" id="book_domestic" value="domestic_book" checked>
@@ -451,7 +455,7 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">책소개 <span class="green">*</span></th>
+                                                <th scope="row">책소개 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <textarea rows="5" cols id="book_info" name="book_info_txt"></textarea>
                                                 </td>
@@ -463,30 +467,21 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">목차 <span class="green">*</span></th>
+                                                <th scope="row">목차 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <textarea rows="5" cols id="book_list" name="book_list"></textarea>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <th scope="row">저자 <span class="green">*</span></th>
-                                                <td colspan="3" class="author btn_add_wrap">
-                                                    <input type="text" id="author_info" name="author_info">
-
-                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
-
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
-                                                </td>
-                                            </tr>
+                                           
                                             
                                             <tr>
-                                                <th>카테고리1 (주제별) <span class="green">*</span></th>
+                                                <th>카테고리1 (주제별) <span class="orange">*</span></th>
                                                 <td class="cat1 btn_add_wrap">
                                                     <input type="text" id="category_1" name="category_1">
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
-                                                <th>카테고리2 (대상별) <span class="green">*</span></th>
+                                                <th>카테고리2 (대상별) <span class="orange">*</span></th>
                                                 <td class="cat2 btn_add_wrap">
                                                     <input type="text" id="category_2" name="category_2">
                                         
@@ -538,7 +533,7 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">도서 파일 <span class="green">*</span></th>
+                                                <th scope="row">도서 파일 <span class="orange">*</span></th>
                                                 <td class="file_box">
                                                     <input type="text" id="b_file_name" name="b_file_name" readonly>
                                                     <label for="b_file">파일선택</label>
@@ -560,7 +555,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">표지 <span class="green">*</span></th>
+                                                <th scope="row">표지 <span class="orange">*</span></th>
                                                 <td class="file_box" colspan="3">
                                                     <input type="text" id="t_file_name" name="t_file_name" readonly>
                                                     <label for="t_file">파일선택</label>
@@ -613,7 +608,7 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">판매 형태 <span class="green">*</span></th>
+                                                <th scope="row">판매 형태 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <select name="sale_type_sel">
                                                         <option value="all" selected>전체</option>
@@ -623,7 +618,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">판매가 <span class="green">*</span></th>
+                                                <th scope="row">판매가 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="b_price" name="b_price">
                                                     원
@@ -642,7 +637,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">서비스 여부 <span class="green">*</span></th>
+                                                <th scope="row">서비스 여부 <span class="orange">*</span></th>
                                                 <td>
                                                     <span class="radio">
                                                         <input type="radio" name="service" id="now" value="now" checked>
@@ -686,7 +681,7 @@
 
                                 <!-- 초기 작성 시 하단 버튼 START -->
                                 <div class="btn_wrap">
-                                    <button type="submit" class="btn_md btn_primary">저장하기</button>
+                                    <button type="button" class="btn_md btn_primary">저장하기</button>
                                     <button type="reset" class="btn_md btn_primary btn_light_gray">취소(초기화)</button>
                                     <button type="submit" class="btn_md btn_primary">승인신청</button>
                                 </div>
@@ -820,7 +815,7 @@
             });
 
             // 저자 추가, 삭제 버튼
-            var fieldHtml2='<div><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+            var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
 
             $(".author .add_btn").click(function(){
                 $(".author.btn_add_wrap").append(fieldHtml2);

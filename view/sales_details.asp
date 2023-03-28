@@ -65,17 +65,8 @@
                             </p>
                             <!-- 판매기간 END -->
 
-                            <!-- 출판사 START -->
-                            <p class="brand">
-                                <span class="f_title">브랜드</span>
-                                <input type="search" id="brand_srh" name="brand_srh">
-                                <button type="button" class="btn_search"></button> 
-                                <input type="text" class="show_name" name="show_name" disabled>
-                            </p>
-                            <!-- 출판사 END -->
-
                             <!-- 도서명 START -->
-                            <p class="book_name last">
+                            <p class="book_name">
                                 <span class="f_title">상품정보</span>
                                 <select name="goods_info_sel">
                                     <option value="book_name" selected>도서명</option>
@@ -84,6 +75,13 @@
                                 <input type="text" name="goods_name_txt">
                             </p>
                             <!-- 도서명 END -->
+
+                             <!-- 출판사 START -->
+                             <p class="brand last">
+                                <span class="f_title">브랜드</span>
+                                <select name="sel_brand" style="width:328px;"><option value="" selected>두란노</option><option value="">성서학연구소</option><option value="">두란노</option></select>
+                            </p>
+                            <!-- 출판사 END -->
 
                         </div>
         

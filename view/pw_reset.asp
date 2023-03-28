@@ -129,8 +129,6 @@
 
                                         <button type="button" class="btn_line gray_btn_line" id="cert_btn" onclick="cert()">인증</button>
 
-                                        <p id="err_cert" class="info_txt err_txt"></p>
-
                                         <!-- 이메일 인증 실패 시 버튼 START -->
                                         <!--<button type="button" class="btn_line gray_btn_line">재인증</button>-->
                                          <!-- 이메일 인증 실패 시 버튼 END -->

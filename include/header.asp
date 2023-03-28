@@ -16,7 +16,9 @@ Response.ContentType="text/html;charset=euc-kr"
 %>
 
     <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="../css/noto_sans_kr.css">
+    <link rel="stylesheet" href="../css/roboto.css">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">-->
 
     <link rel="stylesheet" href="../css/jquery-ui.min.css">
     <link rel="stylesheet" href="../css/datatables.min.css">
