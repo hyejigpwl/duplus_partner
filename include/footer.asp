@@ -1,25 +1,25 @@
 <footer id="footer" class="footer">
     <!--<div class="btn_wrap">
-        <button type="button" class=" btn_md">¹®ÀÇÇÏ±â</button>
-        <button type="button" class=" btn_md">Á¦ÈÞ¾È³»</button>
+        <button type="button" class=" btn_md">ë¬¸ì˜í•˜ê¸°</button>
+        <button type="button" class=" btn_md">ì œíœ´ì•ˆë‚´</button>
     </div>-->
 
     <div class="footer_wrap">
         <div class="footer_left">
-            <img src="../img/img_logo_footer.svg" alt="µÎÇÃ·¯½º">
-            <p class="bold">µÎÇÃ·¯½º ÄÜÅÙÃ÷ ÆÄÆ®³Ê ½Ã½ºÅÛ</p>
+            <img src="../img/img_logo_footer.svg" alt="ë‘í”ŒëŸ¬ìŠ¤">
+            <p class="bold">ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ</p>
         </div>
         <div class="footer_right">
 
             <div class="flex">
-                <p>´ëÇ¥ÀÚ : ÀÌÇü±â</p>
-                <address>¼­¿ï ¿ë»ê±¸ ¼­ºù°í·Î 65±æ 38</address>
-                <p class="bold">´ëÇ¥ÀüÈ­ : 02-2078-3234</p>
+                <p>ëŒ€í‘œìž : ì´í˜•ê¸°</p>
+                <address>ì„œìš¸ ìš©ì‚°êµ¬ ì„œë¹™ê³ ë¡œ 65ê¸¸ 38</address>
+                <p class="bold">ëŒ€í‘œì „í™” : 02-2078-3234</p>
             </div>
             
             <div class="flex">
-                <p>»ç¾÷ÀÚµî·Ï¹øÈ£ : 214-82-04203 »ç´Ü¹ýÀÎ µÎ¶õ³ë¼­¿ø</p>
-                <p>µðÁöÅÐ¸¶ÄÉÆÃº»ºÎ µÎÇÃ·¯½ºÆÀ</p>
+                <p>ì‚¬ì—…ìžë“±ë¡ë²ˆí˜¸ : 214-82-04203 ì‚¬ë‹¨ë²•ì¸ ë‘ëž€ë…¸ì„œì›</p>
+                <p>ë””ì§€í„¸ë§ˆì¼€íŒ…ë³¸ë¶€ ë‘í”ŒëŸ¬ìŠ¤íŒ€</p>
             </div>
 
             <p>COPYRIGHT&copy; duplus ALL RIGHTS RESERVED</p>

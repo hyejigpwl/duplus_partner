@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ" />
+    <meta name="keywords" content="ë‘í”ŒëŸ¬ìŠ¤, ë‘í”Œ, ë‘ëž€ë…¸, ë³µìŒ, ì½˜í…ì¸ , ì˜¤ë¦¬ì§€ë„, ì˜¤ë””ì˜¤ë¶, ì „ìžì±…, ê°•ì˜, êµ¬ë…, íí‹°, ì‹ ì•™, êµíšŒ, ëª©íšŒ" />
+    <meta name="author" content="duranno" />-->
+    <title>ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ</title>
+    <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- íŒŒë¹„ì½˜ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //êµ¬ê¸€ ì•„ì´ì½˜í°íŠ¸ --> 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:title" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">-->
 
-    <title>µÎÇÃ·¯½º ÄÁÅÙÃ÷ ÆÄÆ®³Ê : °øÁö»çÇ× »ó¼¼</title>
-
-    <!-- Çì´õ START -->
+    <!-- í—¤ë” START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
     <div class="page_right">
         <main id="content" class="content p_notice">
             <section class="">
-                <!-- Á¦¸ñ START -->
+                <!-- ì œëª© START -->
                 <h2>
-                    <a href="#none" title="¸Þ´º¿­±â" class="open_gnb">
-                        <span>°øÁö»çÇ×</span>
+                    <a href="#none" title="ë©”ë‰´ì—´ê¸°" class="open_gnb">
+                        <span>ê³µì§€ì‚¬í•­</span>
                     </a>
                     
                 </h2>
-                <!-- Á¦¸ñ END -->
+                <!-- ì œëª© END -->
     
                 <div class="page_wrap">
 
-                    <!-- °øÁö»çÇ× »ó¼¼ START -->
+                    <!-- ê³µì§€ì‚¬í•­ ìƒì„¸ START -->
                     <div class="notice_wrap">
                         <div class="basic_info table_wrap">
                             <table class="table_input">
@@ -35,107 +46,107 @@
                                 </colgroup>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">°øÁö±¸ºÐ</th>
+                                        <th scope="row">ê³µì§€êµ¬ë¶„</th>
                                         <td>
-                                            <span id="notice_cate">¾Ë¸²</span>
+                                            <span id="notice_cate">ì•Œë¦¼</span>
                                         </td>
-                                        <th scope="row">Á¶È¸°Ç¼ö</th>
+                                        <th scope="row">ì¡°íšŒê±´ìˆ˜</th>
                                         <td><span id="view_num">162</span></td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Á¦¸ñ</th>
+                                        <th scope="row">ì œëª©</th>
                                         <td colspan="3">
-                                            <span id="notice_title">[POD°ü¸® TIP] ÀúÀÛ±ÇÀÌ °ÆÁ¤µÇ½Ã³ª¿ä? (ÆùÆ®, ³»¿ë, ÀÌ¹ÌÁö µî)</span>
+                                            <span id="notice_title">[PODê´€ë¦¬ TIP] ì €ìž‘ê¶Œì´ ê±±ì •ë˜ì‹œë‚˜ìš”? (í°íŠ¸, ë‚´ìš©, ì´ë¯¸ì§€ ë“±)</span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">³»¿ë</th>
+                                        <th scope="row">ë‚´ìš©</th>
                                         <td colspan="3">
                                             <p id="notice_cont">
-                                                ¾È³çÇÏ¼¼¿ä. 
-                                                ±³º¸¹®°í POD ¼­ºñ½º ¿î¿µÆÀÀÔ´Ï´Ù. ?
+                                                ì•ˆë…•í•˜ì„¸ìš”. 
+                                                êµë³´ë¬¸ê³  POD ì„œë¹„ìŠ¤ ìš´ì˜íŒ€ìž…ë‹ˆë‹¤. ?
 
-                                                »óÇ°µî·Ï½Ã °ÆÁ¤µÇ´Â ÀúÀÛ±Ç °ü·Ã ³»¿ëÀ» Á¤¸®ÇØ¼­ ÀüÇØµå¸³´Ï´Ù.
+                                                ìƒí’ˆë“±ë¡ì‹œ ê±±ì •ë˜ëŠ” ì €ìž‘ê¶Œ ê´€ë ¨ ë‚´ìš©ì„ ì •ë¦¬í•´ì„œ ì „í•´ë“œë¦½ë‹ˆë‹¤.
 
-                                                [Ã¼Å©ÇØÁÖ¼¼¿ä]
+                                                [ì²´í¬í•´ì£¼ì„¸ìš”]
 
-                                                * ÆÛÇÃ(Publish¿Í PeopleÀÇ ÇÕ¼º¾î·Î ¡®ÃâÆÇÇÏ´Â »ç¶÷¡¯ÀÇ ÀÇ¹Ì¸¦ ´ã¾Æ ´©±¸³ª ¼Õ½±°Ô Á÷Á¢ ÃâÆÇÇÒ ¼ö ÀÖ´Â ±³º¸¹®°í ¸¸ÀÇ °³ÀÎÃâÆÇºê·£µå¸í)·Î Ãâ°£ÇÏ½Ã´Â 
+                                                * í¼í”Œ(Publishì™€ Peopleì˜ í•©ì„±ì–´ë¡œ â€˜ì¶œíŒí•˜ëŠ” ì‚¬ëžŒâ€™ì˜ ì˜ë¯¸ë¥¼ ë‹´ì•„ ëˆ„êµ¬ë‚˜ ì†ì‰½ê²Œ ì§ì ‘ ì¶œíŒí•  ìˆ˜ ìžˆëŠ” êµë³´ë¬¸ê³  ë§Œì˜ ê°œì¸ì¶œíŒë¸Œëžœë“œëª…)ë¡œ ì¶œê°„í•˜ì‹œëŠ” 
 
-                                                °³ÀÎÀÛ°¡´ÔµéÀÇ µµ¼­ ÀúÀÛ±ÇÀº ¿ÂÀüÈ÷ ÀÛ°¡´Ô²² ÀÖ½À´Ï´Ù.?
+                                                ê°œì¸ìž‘ê°€ë‹˜ë“¤ì˜ ë„ì„œ ì €ìž‘ê¶Œì€ ì˜¨ì „ížˆ ìž‘ê°€ë‹˜ê»˜ ìžˆìŠµë‹ˆë‹¤.?
 
-                                                * »óÇ°Á¤º¸¸¦ µî·ÏÇÔ¿¡ ÀÖ¾î¼­ ÀúÀÛ±Ç, ÃÊ»ó±Ç µî Á¦3ÀÚÀÇ ±Ç¸®¸¦ Ä§ÇØÇØ¼­´Â ¾ÈµÇ¸ç,
+                                                * ìƒí’ˆì •ë³´ë¥¼ ë“±ë¡í•¨ì— ìžˆì–´ì„œ ì €ìž‘ê¶Œ, ì´ˆìƒê¶Œ ë“± ì œ3ìžì˜ ê¶Œë¦¬ë¥¼ ì¹¨í•´í•´ì„œëŠ” ì•ˆë˜ë©°,
 
-                                                ÀÌ¸¦ À§¹ÝÇÏ¿© ¹ß»ýÇÑ ±Ç¸®ºÐÀï¿¡ ´ëÇÑ ¸ðµç Ã¥ÀÓÀº ÀúÀÛ±ÇÀÚÀÌ½Å ÀÛ°¡´Ô²² ÀÖÀ¸¹Ç·Î ²À²À À¯³äÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.
+                                                ì´ë¥¼ ìœ„ë°˜í•˜ì—¬ ë°œìƒí•œ ê¶Œë¦¬ë¶„ìŸì— ëŒ€í•œ ëª¨ë“  ì±…ìž„ì€ ì €ìž‘ê¶Œìžì´ì‹  ìž‘ê°€ë‹˜ê»˜ ìžˆìœ¼ë¯€ë¡œ ê¼­ê¼­ ìœ ë…í•´ì£¼ì‹œê¸° ë°”ëžë‹ˆë‹¤.
 
-                                                * ÃâÆÇ»ç¸íÀ¸·Î Ãâ°£ÇÏ½Ã´Â ÃâÆÇ»ç ´ã´çÀÚ´Ôµéµµ Âü°íÇØÁÖ¼¼¿ä.
+                                                * ì¶œíŒì‚¬ëª…ìœ¼ë¡œ ì¶œê°„í•˜ì‹œëŠ” ì¶œíŒì‚¬ ë‹´ë‹¹ìžë‹˜ë“¤ë„ ì°¸ê³ í•´ì£¼ì„¸ìš”.
 
-                                                ÀúÀÛ±Ç ¹®Á¦°¡ ¹ß»ýÇÒ ¼ö ÀÖ´Â ´ëÇ¥ÀûÀÎ »óÈ²Àº ¾Æ·¡¿Í °°½À´Ï´Ù. ? 
+                                                ì €ìž‘ê¶Œ ë¬¸ì œê°€ ë°œìƒí•  ìˆ˜ ìžˆëŠ” ëŒ€í‘œì ì¸ ìƒí™©ì€ ì•„ëž˜ì™€ ê°™ìŠµë‹ˆë‹¤. ? 
 
-                                                1. ÀúÀÛ±ÇÀ» Ä§ÇØÇÏ´Â ¿ä¼Ò°¡ Æ÷ÇÔµÉ °æ¿ì 
+                                                1. ì €ìž‘ê¶Œì„ ì¹¨í•´í•˜ëŠ” ìš”ì†Œê°€ í¬í•¨ë  ê²½ìš° 
 
-                                                ¹ýÀûÀ¸·Î ¹®Á¦°¡ ÀÖ´Â ÃâÆÇ¹°(ÀúÀÛ±Ç ¹Ì ÇØ°á µî)ÀÇ »óÇ°Àº È®ÀÎÀÌ °¡´ÉÇÏ´Ù¸é ÆÇ¸Å½ÅÃ» ¹Ý·Á µå¸®°í ÀÖ½À´Ï´Ù. 
-                                                ÇÏÁö¸¸ ½ÇÁúÀûÀ¸·Î´Â È®ÀÎÀÌ ºÒ°¡ÇÑ °æ¿ì°¡ ¸¹À¸¹Ç·Î
+                                                ë²•ì ìœ¼ë¡œ ë¬¸ì œê°€ ìžˆëŠ” ì¶œíŒë¬¼(ì €ìž‘ê¶Œ ë¯¸ í•´ê²° ë“±)ì˜ ìƒí’ˆì€ í™•ì¸ì´ ê°€ëŠ¥í•˜ë‹¤ë©´ íŒë§¤ì‹ ì²­ ë°˜ë ¤ ë“œë¦¬ê³  ìžˆìŠµë‹ˆë‹¤. 
+                                                í•˜ì§€ë§Œ ì‹¤ì§ˆì ìœ¼ë¡œëŠ” í™•ì¸ì´ ë¶ˆê°€í•œ ê²½ìš°ê°€ ë§Žìœ¼ë¯€ë¡œ
 
-                                                ÀúÀÛ±ÇÀ» Ä§ÇØÇÏÁö ¾Ê¾Ò´Ù´Â °¡Á¤ÇÏ¿¡ ½É»ç¸¦ ÇÏ°í ÀÖ½À´Ï´Ù.
+                                                ì €ìž‘ê¶Œì„ ì¹¨í•´í•˜ì§€ ì•Šì•˜ë‹¤ëŠ” ê°€ì •í•˜ì— ì‹¬ì‚¬ë¥¼ í•˜ê³  ìžˆìŠµë‹ˆë‹¤.
 
-                                                ÀúÀÛ±ÇÀ» Ä§ÇØÇÏ´Â ¿ä¼Ò(ÆùÆ®, ³»¿ë, ÀÌ¹ÌÁö µî)°¡ Æ÷ÇÔµÅ, ¹ß»ýÇÏ´Â ¹®Á¦¿¡ ´ëÇÑ ¸ðµç Ã¥ÀÓÀº ÀúÀÛ±ÇÀÚÀÌ½Å ÀÛ°¡´Ô²² ÀÖÀ¸¹Ç·Î µî·Ï Àü¿¡ ÁÖÀÇ ±í°Ô È®ÀÎÇØÁÖ¼¼¿ä
-
-
-                                                ¡Ú ½±°Ô °£°úÇÒ ¼ö ÀÖ´Â ¼­Ã¼
-
-                                                ÀúÀÛ±ÇÀÌ º°µµ·Î ÀÖ´Â À¯·á ¼­Ã¼ÀÎÁö »çÀü¿¡ È®ÀÎÇÏ½Ã±â¸¦ ±ÇÀå µå¸³´Ï´Ù.
-
-                                                ÀúÀÛ±Ç °ü·ÃÇÏ¿© È®ÀÎ ¹× ¹®ÀÇ °¡´ÉÇÑ ¸µÅ©¸¦ ÀüÇØµå¸³´Ï´Ù.
-
-                                                ÇÑ±¹ ÀúÀÛ±Ç À§¿øÈ¸ : https://www.copyright.or.kr/main.do
-
-                                                ±³º¸¹®°í¿¡¼­ ¹«·á·Î Á¦°øÇØµå¸®´Â ¼Õ±Û¾¾¼­Ã¼¿Í 
-
-                                                ÇÑ±¹ÃâÆÇÀÎÈ¸ÀÇ¿¡¼­ ¹«·á·Î Á¦°øÇÏ´Â KoPub¼­Ã¼µµ Âü°íÇÏ½Ã¸é ÁÁÀ» °Í °°½À´Ï´Ù.
+                                                ì €ìž‘ê¶Œì„ ì¹¨í•´í•˜ëŠ” ìš”ì†Œ(í°íŠ¸, ë‚´ìš©, ì´ë¯¸ì§€ ë“±)ê°€ í¬í•¨ë¼, ë°œìƒí•˜ëŠ” ë¬¸ì œì— ëŒ€í•œ ëª¨ë“  ì±…ìž„ì€ ì €ìž‘ê¶Œìžì´ì‹  ìž‘ê°€ë‹˜ê»˜ ìžˆìœ¼ë¯€ë¡œ ë“±ë¡ ì „ì— ì£¼ì˜ ê¹Šê²Œ í™•ì¸í•´ì£¼ì„¸ìš”
 
 
+                                                â˜… ì‰½ê²Œ ê°„ê³¼í•  ìˆ˜ ìžˆëŠ” ì„œì²´
 
-                                                - ±³º¸¹®°í ¼Õ±Û¾¾ ¼­Ã¼ : https://www.kyobobook.co.kr/handwriting/font
+                                                ì €ìž‘ê¶Œì´ ë³„ë„ë¡œ ìžˆëŠ” ìœ ë£Œ ì„œì²´ì¸ì§€ ì‚¬ì „ì— í™•ì¸í•˜ì‹œê¸°ë¥¼ ê¶Œìž¥ ë“œë¦½ë‹ˆë‹¤.
 
-                                                - KoPub¼­Ã¼ : https://www.kopus.org/biz-electronic-font2/   (ÃßÃµÇÕ´Ï´Ù ??)
+                                                ì €ìž‘ê¶Œ ê´€ë ¨í•˜ì—¬ í™•ì¸ ë° ë¬¸ì˜ ê°€ëŠ¥í•œ ë§í¬ë¥¼ ì „í•´ë“œë¦½ë‹ˆë‹¤.
+
+                                                í•œêµ­ ì €ìž‘ê¶Œ ìœ„ì›íšŒ : https://www.copyright.or.kr/main.do
+
+                                                êµë³´ë¬¸ê³ ì—ì„œ ë¬´ë£Œë¡œ ì œê³µí•´ë“œë¦¬ëŠ” ì†ê¸€ì”¨ì„œì²´ì™€ 
+
+                                                í•œêµ­ì¶œíŒì¸íšŒì˜ì—ì„œ ë¬´ë£Œë¡œ ì œê³µí•˜ëŠ” KoPubì„œì²´ë„ ì°¸ê³ í•˜ì‹œë©´ ì¢‹ì„ ê²ƒ ê°™ìŠµë‹ˆë‹¤.
 
 
-                                                ¡Ú °¡»ç ¹× ¾Ç°î µîÀ» »ç¿ëÇÏ½Ç °æ¿ì¿¡µµ
 
-                                                ÀúÀÛ±ÇÀÌ º°µµ·Î ÀÖ´Â À½¾ÇÀúÀÛ¹°ÀÎÁö »çÀü¿¡ È®ÀÎÇÏ½Ã±â¸¦ ±ÇÀå µå¸³´Ï´Ù.
+                                                - êµë³´ë¬¸ê³  ì†ê¸€ì”¨ ì„œì²´ : https://www.kyobobook.co.kr/handwriting/font
 
-                                                ÀúÀÛ±Ç °ü·ÃÇÏ¿© È®ÀÎ ¹× ¹®ÀÇ°¡´ÉÇÑ ¸µÅ©¸¦ ÀüÇØµå¸³´Ï´Ù.
+                                                - KoPubì„œì²´ : https://www.kopus.org/biz-electronic-font2/   (ì¶”ì²œí•©ë‹ˆë‹¤ ??)
 
-                                                ÇÑ±¹À½¾ÇÀúÀÛ±ÇÇùÈ¸ : https://www.komca.or.kr/
 
-                                                À½¾ÇÀúÀÛ¹° »ç¿ë½ÂÀÎ ÀýÂ÷ ¹× ¹æ¹ý¿¡ ´ëÇØ¼­´Â
+                                                â˜… ê°€ì‚¬ ë° ì•…ê³¡ ë“±ì„ ì‚¬ìš©í•˜ì‹¤ ê²½ìš°ì—ë„
 
-                                                ÇÑ±¹À½¾ÇÀúÀÛ±ÇÇùÈ¸ º¹Á¦ÆÀ ÃâÆÇ ´ã´çÀÚ(02-2660-0524)¿¡°Ô ¿¬¶ôÁÖ½Ã¸é
+                                                ì €ìž‘ê¶Œì´ ë³„ë„ë¡œ ìžˆëŠ” ìŒì•…ì €ìž‘ë¬¼ì¸ì§€ ì‚¬ì „ì— í™•ì¸í•˜ì‹œê¸°ë¥¼ ê¶Œìž¥ ë“œë¦½ë‹ˆë‹¤.
 
-                                                ÀÚ¼¼ÇÑ ¾È³»°¡ °¡´ÉÇÏ´Ù°í ÇÏ´Ï Âü°í ºÎÅ¹µå¸³´Ï´Ù.
+                                                ì €ìž‘ê¶Œ ê´€ë ¨í•˜ì—¬ í™•ì¸ ë° ë¬¸ì˜ê°€ëŠ¥í•œ ë§í¬ë¥¼ ì „í•´ë“œë¦½ë‹ˆë‹¤.
 
-                                                2. Ãâ°£ ÁØºñÁßÀÌ½Å µµ¼­°¡ Å¸ ÃâÆÇ»ç¿¡¼­ ÀÌ¹Ì Ãâ°£ ¿Ï·áµÈ µµ¼­ÀÏ °æ¿ì
-                                                ÃßÈÄ ÀúÀÛ±Ç ¹× ÃâÆÇ±Ç °ü·Ã ¹®Á¦°¡ ¹ß»ýÇÒ ¼ö ÀÖÀ¸¹Ç·Î, ÃâÆÇ±ÇÀÌ ¸¸·áµÇ¾ú´ÂÁö µîÀ» È®ÀÎÇØÁÖ¼¼¿ä
-                                                »ó¼¼ÇÑ ³»¿ëÀº °è¾à³»¿ë¸¶´Ù ´Ù¸¦ ¼ö ÀÖÀ¸¹Ç·Î ÇÊ¿ä½Ã ÃâÆÇ»ç¿Í ¹Ì¸® ÇùÀÇÇÏ½Å ÈÄ ÆÛÇÃ¿¡¼­ Ãâ°£À» ÁøÇàÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù. 
-                                                ÀÌ °úÁ¤À» ÁøÇàÇÏÁö ¾Ê°í Ãâ°£ ÈÄ °ü·Ã ¹®Á¦ ¹ß»ý½Ã ¸ðµç Ã¥ÀÓÀº ÀÛ°¡´Ô²² ÀÖÀ¸´Ï È®ÀÎÇØÁÖ¼¼¿ä
+                                                í•œêµ­ìŒì•…ì €ìž‘ê¶Œí˜‘íšŒ : https://www.komca.or.kr/
+
+                                                ìŒì•…ì €ìž‘ë¬¼ ì‚¬ìš©ìŠ¹ì¸ ì ˆì°¨ ë° ë°©ë²•ì— ëŒ€í•´ì„œëŠ”
+
+                                                í•œêµ­ìŒì•…ì €ìž‘ê¶Œí˜‘íšŒ ë³µì œíŒ€ ì¶œíŒ ë‹´ë‹¹ìž(02-2660-0524)ì—ê²Œ ì—°ë½ì£¼ì‹œë©´
+
+                                                ìžì„¸í•œ ì•ˆë‚´ê°€ ê°€ëŠ¥í•˜ë‹¤ê³  í•˜ë‹ˆ ì°¸ê³  ë¶€íƒë“œë¦½ë‹ˆë‹¤.
+
+                                                2. ì¶œê°„ ì¤€ë¹„ì¤‘ì´ì‹  ë„ì„œê°€ íƒ€ ì¶œíŒì‚¬ì—ì„œ ì´ë¯¸ ì¶œê°„ ì™„ë£Œëœ ë„ì„œì¼ ê²½ìš°
+                                                ì¶”í›„ ì €ìž‘ê¶Œ ë° ì¶œíŒê¶Œ ê´€ë ¨ ë¬¸ì œê°€ ë°œìƒí•  ìˆ˜ ìžˆìœ¼ë¯€ë¡œ, ì¶œíŒê¶Œì´ ë§Œë£Œë˜ì—ˆëŠ”ì§€ ë“±ì„ í™•ì¸í•´ì£¼ì„¸ìš”
+                                                ìƒì„¸í•œ ë‚´ìš©ì€ ê³„ì•½ë‚´ìš©ë§ˆë‹¤ ë‹¤ë¥¼ ìˆ˜ ìžˆìœ¼ë¯€ë¡œ í•„ìš”ì‹œ ì¶œíŒì‚¬ì™€ ë¯¸ë¦¬ í˜‘ì˜í•˜ì‹  í›„ í¼í”Œì—ì„œ ì¶œê°„ì„ ì§„í–‰í•´ì£¼ì‹œê¸° ë°”ëžë‹ˆë‹¤. 
+                                                ì´ ê³¼ì •ì„ ì§„í–‰í•˜ì§€ ì•Šê³  ì¶œê°„ í›„ ê´€ë ¨ ë¬¸ì œ ë°œìƒì‹œ ëª¨ë“  ì±…ìž„ì€ ìž‘ê°€ë‹˜ê»˜ ìžˆìœ¼ë‹ˆ í™•ì¸í•´ì£¼ì„¸ìš”
                                                
 
-                                                ?ÀúÀÛ±Ç¿¡ ´ëÇÑ ºÎºÐÀº ¹ýÀûÀÎ ¹®Á¦°¡ ÀÖÀ¸¹Ç·Î 
+                                                ?ì €ìž‘ê¶Œì— ëŒ€í•œ ë¶€ë¶„ì€ ë²•ì ì¸ ë¬¸ì œê°€ ìžˆìœ¼ë¯€ë¡œ 
 
-                                                ±³º¸¹®°í¿¡¼­ ÀÚÀÇÀûÀ¸·Î ÆÇ´ÜÇÒ ¼ö ¾øÀ½À» ¾çÇØ ºÎÅ¹µå¸®¸ç, 
-                                                º¸´Ù ÀÚ¼¼ÇÑ »çÇ×Àº [ÇÑ±¹ÀúÀÛ±ÇÀ§¿øÈ¸]¿¡ ¹®ÀÇÇÏ½Ã±â ¹Ù¶ø´Ï´Ù. 
-                                                ÇÑ±¹ÀúÀÛ±ÇÀ§¿øÈ¸?https://www.copyright.or.kr/main.do 
+                                                êµë³´ë¬¸ê³ ì—ì„œ ìžì˜ì ìœ¼ë¡œ íŒë‹¨í•  ìˆ˜ ì—†ìŒì„ ì–‘í•´ ë¶€íƒë“œë¦¬ë©°, 
+                                                ë³´ë‹¤ ìžì„¸í•œ ì‚¬í•­ì€ [í•œêµ­ì €ìž‘ê¶Œìœ„ì›íšŒ]ì— ë¬¸ì˜í•˜ì‹œê¸° ë°”ëžë‹ˆë‹¤. 
+                                                í•œêµ­ì €ìž‘ê¶Œìœ„ì›íšŒ?https://www.copyright.or.kr/main.do 
 
 
-                                                ´ç½ÅÀÇ ²ÞÀÌ Ã¥ÀÌ µÇ´Â °÷, ±³º¸¹®°í POD??
+                                                ë‹¹ì‹ ì˜ ê¿ˆì´ ì±…ì´ ë˜ëŠ” ê³³, êµë³´ë¬¸ê³  POD??
 
-                                                ¼ö¾øÀÌ °íÃÄ ¾´ ±ÛÀÌ ÀÛÇ°À¸·Î ÅÂ¾î³ª´Â °í´ÜÇÔÀ» ¾Ë±â¿¡,
-                                                ´ç½ÅÀÇ ²ÞÀÌ ÃâÆÇµÉ ¼ö ÀÖµµ·Ï ¾Æ³¦¾øÀÌ Áö¿øÇÕ´Ï´Ù.  
+                                                ìˆ˜ì—†ì´ ê³ ì³ ì“´ ê¸€ì´ ìž‘í’ˆìœ¼ë¡œ íƒœì–´ë‚˜ëŠ” ê³ ë‹¨í•¨ì„ ì•Œê¸°ì—,
+                                                ë‹¹ì‹ ì˜ ê¿ˆì´ ì¶œíŒë  ìˆ˜ ìžˆë„ë¡ ì•„ë‚Œì—†ì´ ì§€ì›í•©ë‹ˆë‹¤.  
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Ã·ºÎÆÄÀÏ</th>
+                                        <th scope="row">ì²¨ë¶€íŒŒì¼</th>
                                         <td colspan="3">
                                             
                                         </td>
@@ -144,22 +155,22 @@
                             </table>
                         </div>
 
-                        <!-- ¸ñ·Ï ¹öÆ° START -->
+                        <!-- ëª©ë¡ ë²„íŠ¼ START -->
                         <div class="btn_wrap" style="text-align:center; margin-top:50px;">
-                            <button type="button" class="btn_md btn_primary" onclick="location.href='notice.asp'">¸ñ·Ï</button>
+                            <button type="button" class="btn_md btn_primary" onclick="location.href='notice.asp'">ëª©ë¡</button>
                         </div>
-                        <!-- ¸ñ·Ï ¹öÆ° END -->
+                        <!-- ëª©ë¡ ë²„íŠ¼ END -->
                     </div>
-                    <!-- °øÁö»çÇ× »ó¼¼ END -->                    
+                    <!-- ê³µì§€ì‚¬í•­ ìƒì„¸ END -->                    
                 </div>
 
             </section>
         </main>
         
 
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ START -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… START -->
         <!--#include virtual="/partner/include/footer.asp"-->
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ END -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… END -->
 
     </div>
 

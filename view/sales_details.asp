@@ -1,52 +1,63 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ" />
+    <meta name="keywords" content="ë‘í”ŒëŸ¬ìŠ¤, ë‘í”Œ, ë‘ëž€ë…¸, ë³µìŒ, ì½˜í…ì¸ , ì˜¤ë¦¬ì§€ë„, ì˜¤ë””ì˜¤ë¶, ì „ìžì±…, ê°•ì˜, êµ¬ë…, íí‹°, ì‹ ì•™, êµíšŒ, ëª©íšŒ" />
+    <meta name="author" content="duranno" />-->
+    <title>ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ</title>
+    <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- íŒŒë¹„ì½˜ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //êµ¬ê¸€ ì•„ì´ì½˜í°íŠ¸ --> 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:title" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">-->
 
-    <title>µÎÇÃ·¯½º ÄÁÅÙÃ÷ ÆÄÆ®³Ê : ¸ÅÃâ ³»¿ª</title>
-
-    <!-- Çì´õ START -->
+    <!-- í—¤ë” START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
     <div class="page_right">
         <main id="content" class="content p_sales_details">
-            <!-- ¸ÅÃâ³»¿ª Á¦¸ñ START -->
+            <!-- ë§¤ì¶œë‚´ì—­ ì œëª© START -->
             <h2>
-                <a href="#none" title="¸Þ´º¿­±â" class="open_gnb">
-                    <span>¸ÅÃâ³»¿ª</span>
+                <a href="#none" title="ë©”ë‰´ì—´ê¸°" class="open_gnb">
+                    <span>ë§¤ì¶œë‚´ì—­</span>
                 </a>
             </h2>
-            <!-- ¸ÅÃâ³»¿ª Á¦¸ñ END -->
+            <!-- ë§¤ì¶œë‚´ì—­ ì œëª© END -->
 
             <div class="page_wrap">
-                <!-- ÇÊÅÍ START -->
+                <!-- í•„í„° START -->
                 <form action="" method="get" id="sales_form" class="form_primary">
                     <fieldset>
                         <!--<div class="filter_wrap">
                             <table id="f_sales_details">
-                                <caption>¸ÅÃâ ³»¿ª ÇÊÅÍ</caption>
+                                <caption>ë§¤ì¶œ ë‚´ì—­ í•„í„°</caption>
                                 <tbody>
                                     <tr>
-                                        <th scope="row" class="f_title">ÆÇ¸Å±â°£</th>-->
-                                        <!--<td colspan="2">[ ½ÃÀÛ ¿ù ] ~ [ Á¾·á ¿ù ]</td>-->
+                                        <th scope="row" class="f_title">íŒë§¤ê¸°ê°„</th>-->
+                                        <!--<td colspan="2">[ ì‹œìž‘ ì›” ] ~ [ ì¢…ë£Œ ì›” ]</td>-->
                                         <!--<td colspan="2">
                                             <span>
-                                                <label for="start">[½ÃÀÛ ¿ù]</label><input type="month" id="start">
+                                                <label for="start">[ì‹œìž‘ ì›”]</label><input type="month" id="start">
                                             </span>
                                             ~
                                             <span>
-                                                <label for="finish">[Á¾·á ¿ù]</label><input type="month" id="finish">
+                                                <label for="finish">[ì¢…ë£Œ ì›”]</label><input type="month" id="finish">
                                             </span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row" rowspan="2" class="f_title">»óÇ°Á¤º¸</th>
-                                        <td class="b_name txt_l">µµ¼­¸í</td>
+                                        <th scope="row" rowspan="2" class="f_title">ìƒí’ˆì •ë³´</th>
+                                        <td class="b_name txt_l">ë„ì„œëª…</td>
                                         <td><input type="text" id="i_bname"></td>
                                     </tr>
                                     <tr>
-                                        <td class="a_name">ÀúÀÚ¸í</td>
+                                        <td class="a_name">ì €ìžëª…</td>
                                         <td><input type="text" id="i_aname"></td>
                                     </tr>
                                 </tbody>
@@ -55,78 +66,78 @@
                         
                         <div class="filter_wrap">
                             
-                            <!-- ÆÇ¸Å±â°£ START -->
+                            <!-- íŒë§¤ê¸°ê°„ START -->
                             <p class="regist_date">
-                                <span class="f_title">ÆÇ¸Å±â°£</span>
+                                <span class="f_title">íŒë§¤ê¸°ê°„</span>
 
                                 <input type="text" name="startDate" value="" autocomplete="off">
                                 ~
                                 <input type="text" name="endDate" value="" autocomplete="off">
                             </p>
-                            <!-- ÆÇ¸Å±â°£ END -->
+                            <!-- íŒë§¤ê¸°ê°„ END -->
 
-                            <!-- µµ¼­¸í START -->
+                            <!-- ë„ì„œëª… START -->
                             <p class="book_name">
-                                <span class="f_title">»óÇ°Á¤º¸</span>
+                                <span class="f_title">ìƒí’ˆì •ë³´</span>
                                 <select name="goods_info_sel">
-                                    <option value="book_name" selected>µµ¼­¸í</option>
-                                    <option value="author_name">ÀúÀÚ¸í</option>
+                                    <option value="book_name" selected>ë„ì„œëª…</option>
+                                    <option value="author_name">ì €ìžëª…</option>
                                 </select>
                                 <input type="text" name="goods_name_txt">
                             </p>
-                            <!-- µµ¼­¸í END -->
+                            <!-- ë„ì„œëª… END -->
 
-                             <!-- ÃâÆÇ»ç START -->
+                             <!-- ì¶œíŒì‚¬ START -->
                              <p class="brand last">
-                                <span class="f_title">ºê·£µå</span>
-                                <select name="sel_brand" style="width:328px;"><option value="" selected>µÎ¶õ³ë</option><option value="">¼º¼­ÇÐ¿¬±¸¼Ò</option><option value="">µÎ¶õ³ë</option></select>
+                                <span class="f_title">ë¸Œëžœë“œ</span>
+                                <select name="sel_brand" style="width:328px;"><option value="" selected>ë‘ëž€ë…¸</option><option value="">ì„±ì„œí•™ì—°êµ¬ì†Œ</option><option value="">ë‘ëž€ë…¸</option></select>
                             </p>
-                            <!-- ÃâÆÇ»ç END -->
+                            <!-- ì¶œíŒì‚¬ END -->
 
                         </div>
         
                         <div class="btn_wrap">
-                            <button type="submit" class="btn_primary btn_md">Á¶È¸</button>
-                            <button type="reset" class="btn_primary btn_md btn_light_gray">ÃÊ±âÈ­</button>
+                            <button type="submit" class="btn_primary btn_md">ì¡°íšŒ</button>
+                            <button type="reset" class="btn_primary btn_md btn_light_gray">ì´ˆê¸°í™”</button>
                         </div>
                     </fieldset>
                 </form>
-                <!-- ÇÊÅÍ END -->
+                <!-- í•„í„° END -->
     
-                <!-- ¸ÅÃâ³»¿ª START -->
+                <!-- ë§¤ì¶œë‚´ì—­ START -->
                 <div class="table_cont">
-                    <h3 class="sub_t">¸ÅÃâ³»¿ª ¸ñ·Ï</h3>
+                    <h3 class="sub_t">ë§¤ì¶œë‚´ì—­ ëª©ë¡</h3>
 
-                    <!-- ¸ÅÃâ³»¿ª, Á¤»ê³»¿ªÀº 12°³¾¿ ¸®½ºÆ® -->
+                    <!-- ë§¤ì¶œë‚´ì—­, ì •ì‚°ë‚´ì—­ì€ 12ê°œì”© ë¦¬ìŠ¤íŠ¸ -->
 
-                    <!-- ¸ÅÃâ ³»¿ª ¸ñ·Ï START -->
+                    <!-- ë§¤ì¶œ ë‚´ì—­ ëª©ë¡ START -->
                     <div id="t_sales_details_wrap">
                         <table id="t_sales_details" class="display">
-                            <caption>¸ÅÃâ ³»¿ª</caption>
+                            <caption>ë§¤ì¶œ ë‚´ì—­</caption>
                             <thead>
-                                <th scope="col">»óÇ°ÄÚµå</th>
-                                <th scope="col">ÆÄÀÏÅ¸ÀÔ</th>
-                                <th scope="col" class="txt_l">µµ¼­¸í</th>
-                                <th scope="col">ÀúÀÚ</th>
-                                <th scope="col">Á¤°¡</th>
-                                <th scope="col">ÆÇ¸Å°¡</th>
-                                <th scope="col">´ë¿©°¡</th>
-                                <th scope="col">±¸µ¶ ´ë¿©</th>
-                                <th scope="col">°ø±Þ Copy</th>
-                                <th scope="col">±¸µ¶ ¸ÅÃâ</th>
-                                <th scope="col">¼ÒÀå</th>
-                                <th scope="col">¼ÒÀå ¸ÅÃâ</th>
-                                <th scope="col">´ë¿©</th>
-                                <th scope="col">´ë¿© ¸ÅÃâ</th>
-                                <th scope="col">Á¤»ê¾×</th>
+                                <th scope="col">ìƒí’ˆì½”ë“œ</th>
+                                <th scope="col">íŒŒì¼íƒ€ìž…</th>
+                                <th scope="col" class="txt_l">ë„ì„œëª…</th>
+                                <th scope="col">ì €ìž</th>
+                                <th scope="col">ì •ê°€</th>
+                                <th scope="col">íŒë§¤ê°€</th>
+                                <th scope="col">ëŒ€ì—¬ê°€</th>
+                                <th scope="col">êµ¬ë… ëŒ€ì—¬</th>
+                                <th scope="col">ê³µê¸‰ Copy</th>
+                                <th scope="col">êµ¬ë… ë§¤ì¶œ</th>
+                                <th scope="col">ì†Œìž¥</th>
+                                <th scope="col">ì†Œìž¥ ë§¤ì¶œ</th>
+                                <th scope="col">ëŒ€ì—¬</th>
+                                <th scope="col">ëŒ€ì—¬ ë§¤ì¶œ</th>
+                                <th scope="col">ì •ì‚°ì•¡</th>
                             </thead>
                     
                             <tbody>
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -143,8 +154,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -161,8 +172,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100112</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">»îÀ¸·Î °¡¸£Ä¡´Â °Í¸¸ ³²´Â´Ù</td>
-                                    <td id="b_author">±è¿ä¼Á</td>
+                                    <td id="b_name" class="txt_l">ì‚¶ìœ¼ë¡œ ê°€ë¥´ì¹˜ëŠ” ê²ƒë§Œ ë‚¨ëŠ”ë‹¤</td>
+                                    <td id="b_author">ê¹€ìš”ì…‰</td>
                                     <td id="b_list_price" class="txt_r">9,000</td>
                                     <td id="b_price" class="txt_r">4,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -179,8 +190,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -197,8 +208,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -215,8 +226,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -233,8 +244,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100112</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">»îÀ¸·Î °¡¸£Ä¡´Â °Í¸¸ ³²´Â´Ù</td>
-                                    <td id="b_author">±è¿ä¼Á</td>
+                                    <td id="b_name" class="txt_l">ì‚¶ìœ¼ë¡œ ê°€ë¥´ì¹˜ëŠ” ê²ƒë§Œ ë‚¨ëŠ”ë‹¤</td>
+                                    <td id="b_author">ê¹€ìš”ì…‰</td>
                                     <td id="b_list_price" class="txt_r">9,000</td>
                                     <td id="b_price" class="txt_r">4,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -251,8 +262,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -269,8 +280,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -287,8 +298,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -305,8 +316,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100112</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">»îÀ¸·Î °¡¸£Ä¡´Â °Í¸¸ ³²´Â´Ù</td>
-                                    <td id="b_author">±è¿ä¼Á</td>
+                                    <td id="b_name" class="txt_l">ì‚¶ìœ¼ë¡œ ê°€ë¥´ì¹˜ëŠ” ê²ƒë§Œ ë‚¨ëŠ”ë‹¤</td>
+                                    <td id="b_author">ê¹€ìš”ì…‰</td>
                                     <td id="b_list_price" class="txt_r">9,000</td>
                                     <td id="b_price" class="txt_r">4,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -323,8 +334,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -341,8 +352,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -359,8 +370,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -377,8 +388,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100112</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">»îÀ¸·Î °¡¸£Ä¡´Â °Í¸¸ ³²´Â´Ù</td>
-                                    <td id="b_author">±è¿ä¼Á</td>
+                                    <td id="b_name" class="txt_l">ì‚¶ìœ¼ë¡œ ê°€ë¥´ì¹˜ëŠ” ê²ƒë§Œ ë‚¨ëŠ”ë‹¤</td>
+                                    <td id="b_author">ê¹€ìš”ì…‰</td>
                                     <td id="b_list_price" class="txt_r">9,000</td>
                                     <td id="b_price" class="txt_r">4,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -395,8 +406,8 @@
                                 <tr>
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
-                                    <td id="b_name" class="txt_l">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</td>
-                                    <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
+                                    <td id="b_name" class="txt_l">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</td>
+                                    <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
@@ -412,16 +423,16 @@
                             </tbody>
                         </table>
                     </div>
-                    <!-- ¸ÅÃâ ³»¿ª ¸ñ·Ï END -->
+                    <!-- ë§¤ì¶œ ë‚´ì—­ ëª©ë¡ END -->
                 </div>
-                <!-- ¸ÅÃâ³»¿ª END -->
+                <!-- ë§¤ì¶œë‚´ì—­ END -->
             </div>
             
         </main>
 
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ START -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… START -->
         <!--#include virtual="/partner/include/footer.asp"-->
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ END -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… END -->
     </div>
 
       <!--<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
@@ -433,7 +444,7 @@
 
 
     <script>
-        // ´Þ·Â input °ª ÇöÀç´Þ·Î ¼³Á¤
+        // ë‹¬ë ¥ input ê°’ í˜„ìž¬ë‹¬ë¡œ ì„¤ì •
         const startDate =  document.querySelector('input[name="startDate"]');
         const endDate =  document.querySelector('input[name="endDate"]');
 
@@ -454,13 +465,13 @@
                 buttons: [
                     {
                         extend: 'excel'
-                        ,text: '¿¢¼¿´Ù¿î·Îµå'
-                        ,filename: '¸ÅÃâ³»¿ª ¸ñ·Ï'
-				        ,title: '¿¢¼¿ÆÄÀÏ ¾È¿¡ ¾²ÀÏ Á¦¸ñ'
+                        ,text: 'ì—‘ì…€ë‹¤ìš´ë¡œë“œ'
+                        ,filename: 'ë§¤ì¶œë‚´ì—­ ëª©ë¡'
+				        ,title: 'ì—‘ì…€íŒŒì¼ ì•ˆì— ì“°ì¼ ì œëª©'
                     },
                 ],
                 
-                // ¼¿ ³Êºñ °íÁ¤
+                // ì…€ ë„ˆë¹„ ê³ ì •
                 bAutoWidth:false,
                 columnDefs:[
                     {width:"6%",targets:0},
@@ -487,24 +498,24 @@
                 autoApply:true,
                 locale: {
                     format: "YYYY-MM",
-                    applyLabel: "È®ÀÎ",
-                    cancelLabel: "Ãë¼Ò",
+                    applyLabel: "í™•ì¸",
+                    cancelLabel: "ì·¨ì†Œ",
                     customRangeLabel: "Custom",
                     weekLabel: "W",
-                    daysOfWeek: ["ÀÏ", "¿ù", "È­", "¼ö", "¸ñ", "±Ý", "Åä"],
+                    daysOfWeek: ["ì¼", "ì›”", "í™”", "ìˆ˜", "ëª©", "ê¸ˆ", "í† "],
                     monthNames: [
-                    "1¿ù",
-                    "2¿ù",
-                    "3¿ù",
-                    "4¿ù",
-                    "5¿ù",
-                    "6¿ù",
-                    "7¿ù",
-                    "8¿ù",
-                    "9¿ù",
-                    "10¿ù",
-                    "11¿ù",
-                    "12¿ù",
+                    "1ì›”",
+                    "2ì›”",
+                    "3ì›”",
+                    "4ì›”",
+                    "5ì›”",
+                    "6ì›”",
+                    "7ì›”",
+                    "8ì›”",
+                    "9ì›”",
+                    "10ì›”",
+                    "11ì›”",
+                    "12ì›”",
                     ],
                 },
                 
@@ -518,24 +529,24 @@
                 autoApply:true,
                 locale: {
                     format: "YYYY-MM",
-                    applyLabel: "È®ÀÎ",
-                    cancelLabel: "Ãë¼Ò",
+                    applyLabel: "í™•ì¸",
+                    cancelLabel: "ì·¨ì†Œ",
                     customRangeLabel: "Custom",
                     weekLabel: "W",
-                    daysOfWeek: ["ÀÏ", "¿ù", "È­", "¼ö", "¸ñ", "±Ý", "Åä"],
+                    daysOfWeek: ["ì¼", "ì›”", "í™”", "ìˆ˜", "ëª©", "ê¸ˆ", "í† "],
                     monthNames: [
-                    "1¿ù",
-                    "2¿ù",
-                    "3¿ù",
-                    "4¿ù",
-                    "5¿ù",
-                    "6¿ù",
-                    "7¿ù",
-                    "8¿ù",
-                    "9¿ù",
-                    "10¿ù",
-                    "11¿ù",
-                    "12¿ù",
+                    "1ì›”",
+                    "2ì›”",
+                    "3ì›”",
+                    "4ì›”",
+                    "5ì›”",
+                    "6ì›”",
+                    "7ì›”",
+                    "8ì›”",
+                    "9ì›”",
+                    "10ì›”",
+                    "11ì›”",
+                    "12ì›”",
                     ],
                 },
                 },
@@ -544,8 +555,8 @@
             
             $('input[name="startDate"],input[name="endDate"]').monthpicker({
                 pattern:"yy-mm",
-                monthNames:['1¿ù','2¿ù','3¿ù','4¿ù','5¿ù','6¿ù','7¿ù','8¿ù','9¿ù','10¿ù','11¿ù','12¿ù'],
-                monthNamesShort:['1¿ù','2¿ù','3¿ù','4¿ù','5¿ù','6¿ù','7¿ù','8¿ù','9¿ù','10¿ù','11¿ù','12¿ù'],
+                monthNames:['1ì›”','2ì›”','3ì›”','4ì›”','5ì›”','6ì›”','7ì›”','8ì›”','9ì›”','10ì›”','11ì›”','12ì›”'],
+                monthNamesShort:['1ì›”','2ì›”','3ì›”','4ì›”','5ì›”','6ì›”','7ì›”','8ì›”','9ì›”','10ì›”','11ì›”','12ì›”'],
                 dateFormat:'yy-mm',
                 yearRange:'c-10:c+10',
                 
@@ -554,11 +565,11 @@
 
         });
 
-        // ÇÑ È­¸é¿¡ 20°³ Ç×¸ñ¾¿ º¸ÀÌ°Ô ¼öÁ¤ 230306 ÇýÁö
-        // 10447ÁÙ, 11453ÁÙ
+        // í•œ í™”ë©´ì— 20ê°œ í•­ëª©ì”© ë³´ì´ê²Œ ìˆ˜ì • 230306 í˜œì§€
+        // 10447ì¤„, 11453ì¤„
         
-        // ~°³¾¿ º¸±â·Î ¼öÁ¤ 230306 ÇýÁö
-        // 11888ÁÙ
+        // ~ê°œì”© ë³´ê¸°ë¡œ ìˆ˜ì • 230306 í˜œì§€
+        // 11888ì¤„
 
         
         

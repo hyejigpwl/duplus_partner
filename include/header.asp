@@ -1,20 +1,19 @@
 <%
 
 	'-----------------------------------------
- 	' 2023 µÎÇÃ·¯½º cms
+ 	' 2023 ë‘í”ŒëŸ¬ìŠ¤ cms
 	' Update Date :	2023-03
 	'-----------------------------------------
 
 
-Response.CharSet="euc-kr"
+Response.CharSet="utf-8"
 'Session.codepage="949"
 Response.codepage="949"
-Response.ContentType="text/html;charset=euc-kr"
+Response.ContentType="text/html;charset=utf-8"
 
 'if position  = "" then position = "main" 
 
 %>
-
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/noto_sans_kr.css">
     <link rel="stylesheet" href="../css/roboto.css">
@@ -39,14 +38,14 @@ Response.ContentType="text/html;charset=euc-kr"
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1"></script>-->
     <script src="../js/chart.js"></script>
 
-     <!-- ¿¢¼¿ ´Ù¿î·Îµå START -->
+     <!-- ì—‘ì…€ ë‹¤ìš´ë¡œë“œ START -->
      <script src="../js/dataTables.buttons.min.js"></script>
      <script src="../js/jszip.min.js"></script>
      <script src="../js/pdfmake.min.js"></script>
      <script src="../js/vfs_fonts.js"></script>
       <script src="../js/buttons.html5.min.js"></script>
       <script src="../js/buttons.print.min.js"></script>
-      <!-- ¿¢¼¿ ´Ù¿î·Îµå END -->
+      <!-- ì—‘ì…€ ë‹¤ìš´ë¡œë“œ END -->
     
 <%
 
@@ -55,50 +54,50 @@ Response.ContentType="text/html;charset=euc-kr"
 <body>
     <header id="header" class="header">
         <div class="header_top">
-            <h1><a href="index.asp"><img src="../img/logo.svg" alt="µÎÇÃ·¯½º ·Î°í">Contents Partner System</a></h1>
+            <h1><a href="index.asp"><img src="../img/logo.svg" alt="ë‘í”ŒëŸ¬ìŠ¤ ë¡œê³ ">Contents Partner System</a></h1>
 
             <div class="header_info">
-                <span><a href="my_page.asp" id="u_id"><img src="../img/img_profile.svg" alt="">µÎ¶õ³ë¼­¿ø (2148204203)´Ô</a></span>
-                <span id="logout"><a href="login.asp">·Î±×¾Æ¿ô</a></span>
+                <span><a href="my_page.asp" id="u_id"><img src="../img/img_profile.svg" alt="">ë‘ë€ë…¸ì„œì› (2148204203)ë‹˜</a></span>
+                <span id="logout"><a href="login.asp">ë¡œê·¸ì•„ì›ƒ</a></span>
             </div>
         </div>
 
-        <!-- Çì´õ (ÁÂÃø) START -->
+        <!-- í—¤ë” (ì¢Œì¸¡) START -->
         <nav class="gnb">
-            <h2 class="blind">¸ŞÀÎ¸Ş´º</h2>
+            <h2 class="blind">ë©”ì¸ë©”ë‰´</h2>
             <ul>
-                <li><a href="#none"><img src="../img/icon_home.svg" alt="">È¨È­¸é</a>
+                <li><a href="#none"><img src="../img/icon_home.svg" alt="">í™ˆí™”ë©´</a>
                     <ul>
-                        <li><a href="index.asp"><span></span>´ë½Ãº¸µå</a></li>
-                        <li><a href="notice.asp"><span></span>°øÁö»çÇ×</a></li>
+                        <li><a href="index.asp"><span></span>ëŒ€ì‹œë³´ë“œ</a></li>
+                        <li><a href="notice.asp"><span></span>ê³µì§€ì‚¬í•­</a></li>
                     </ul>
                 </li>
-                <li><a href="#none"><img src="../img/icon_contents.svg" alt="">ÄÜÅÙÃ÷</a>
+                <li><a href="#none"><img src="../img/icon_contents.svg" alt="">ì½˜í…ì¸ </a>
                     <ul>
-                        <li><a href="content_lookup.asp"><span></span>ÄÜÅÙÃ÷ Á¶È¸</a></li>
-                        <li class="on"><a href="content_regist.asp"><span></span>ÄÜÅÙÃ÷ µî·Ï</a></li>
+                        <li><a href="content_lookup.asp"><span></span>ì½˜í…ì¸  ì¡°íšŒ</a></li>
+                        <li class="on"><a href="content_regist.asp"><span></span>ì½˜í…ì¸  ë“±ë¡</a></li>
                     </ul>
                 </li>
-                <li><a href="#none"><img src="../img/icon_graph.svg" alt="">°á»ê</a>
+                <li><a href="#none"><img src="../img/icon_graph.svg" alt="">ê²°ì‚°</a>
                     <ul>
-                        <li><a href="sales_details.asp"><span></span>¸ÅÃâ³»¿ª</a></li>
-                        <li><a href="settlement_details.asp"><span></span>Á¤»ê³»¿ª</a></li>
+                        <li><a href="sales_details.asp"><span></span>ë§¤ì¶œë‚´ì—­</a></li>
+                        <li><a href="settlement_details.asp"><span></span>ì •ì‚°ë‚´ì—­</a></li>
                     </ul>
                 </li>
-                <li><a href="#none"><img src="../img/icon_my.svg" alt="">¸¶ÀÌÆäÀÌÁö</a>
+                <li><a href="#none"><img src="../img/icon_my.svg" alt="">ë§ˆì´í˜ì´ì§€</a>
                     <ul>
-                        <li><a href="my_page.asp"><span></span>ÃâÆÇ»ç Á¤º¸</a></li>
-                        <li><a href="qna.asp"><span></span>¹®ÀÇÇÏ±â</a></li>
+                        <li><a href="my_page.asp"><span></span>ì¶œíŒì‚¬ ì •ë³´</a></li>
+                        <li><a href="qna.asp"><span></span>ë¬¸ì˜í•˜ê¸°</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <!-- Çì´õ (ÁÂÃø) END -->
+        <!-- í—¤ë” (ì¢Œì¸¡) END -->
     </header>
 
     <script>
         $(document).ready(function(){
-            // gnb ¿­±â
+            // gnb ì—´ê¸°
             $(".open_gnb").click(function(){
                 $(this).toggleClass("on");
                 $('.gnb').toggle();
@@ -109,7 +108,7 @@ Response.ContentType="text/html;charset=euc-kr"
                 }
             });
 
-            // gnb ½ºÅ¸ÀÏ
+            // gnb ìŠ¤íƒ€ì¼
             $("nav ul li ul li").removeClass('on');
             $("nav ul li ul li").click(function(){
                 $(this).addClass('on')

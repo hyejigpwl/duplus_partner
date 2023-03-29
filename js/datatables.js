@@ -1353,9 +1353,9 @@
 	// - kr - Swedish krona, Norwegian krone and Danish krone
 	// - \u2009 is thin space and \u202F is narrow no-break space, both used in many
 	// - ? - Bitcoin
-	// - ¥Î - Ethereum
+	// - Î - Ethereum
 	//   standards as thousands separators.
-	var _re_formatted_numeric = /['\u00A0,$?¢æ?%\u2009\u202F\u20BD\u20a9\u20BArfk?¥Î]/gi;
+	var _re_formatted_numeric = /['\u00A0,$?â‚¬?%\u2009\u202F\u20BD\u20a9\u20BArfk?Î]/gi;
 	
 	
 	var _empty = function ( d ) {
@@ -10444,7 +10444,7 @@
 		 *      } );
 		 *    } );
 		 */
-		"aLengthMenu": [ 20, 40, 60, 100 ], // ÇÑ È­¸é¿¡ 20°³ Ç×¸ñ¾¿ º¸ÀÌ°Ô ¼öÁ¤ 230306 ÇıÁö
+		"aLengthMenu": [ 20, 40, 60, 100 ], // í•œ í™”ë©´ì— 20ê°œ í•­ëª©ì”© ë³´ì´ê²Œ ìˆ˜ì • 230306 í˜œì§€
 	
 	
 		/**
@@ -11450,7 +11450,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"iDisplayLength": 20, // ÇÑ È­¸é¿¡ 20°³ Ç×¸ñ¾¿ º¸ÀÌ°Ô ¼öÁ¤ 230306 
+		"iDisplayLength": 20, // í•œ í™”ë©´ì— 20ê°œ í•­ëª©ì”© ë³´ì´ê²Œ ìˆ˜ì • 230306 
 	
 	
 		/**
@@ -11628,7 +11628,7 @@
 				 * Text to use for the 'next' pagination button (to take the user to the
 				 * next page).
 				 *  @type string
-				 *  @default ´ÙÀ½
+				 *  @default ë‹¤ìŒ
 				 *
 				 *  @dtopt Language
 				 *  @name DataTable.defaults.language.paginate.next
@@ -11644,14 +11644,14 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "´ÙÀ½",
+				"sNext": "ë‹¤ìŒ",
 	
 	
 				/**
 				 * Text to use for the 'previous' pagination button (to take the user to
 				 * the previous page).
 				 *  @type string
-				 *  @default ÀÌÀü
+				 *  @default ì´ì „
 				 *
 				 *  @dtopt Language
 				 *  @name DataTable.defaults.language.paginate.previous
@@ -11667,7 +11667,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "ÀÌÀü"
+				"sPrevious": "ì´ì „"
 			},
 	
 			/**
@@ -11723,7 +11723,7 @@
 			 *    } );
 			 */
 			// "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
-			"sInfo": "ÃÑ _TOTAL_ °Ç", // Å×ÀÌºí ¹Ø¿¡ »óÇ° ÃÑ °³¼ö ¸í½Ã 230307 ÇıÁö
+			"sInfo": "ì´ _TOTAL_ ê±´", // í…Œì´ë¸” ë°‘ì— ìƒí’ˆ ì´ ê°œìˆ˜ ëª…ì‹œ 230307 í˜œì§€
 	
 	
 			/**
@@ -11886,7 +11886,7 @@
 			 */
 			
 			//"sLengthMenu": "Show _MENU_ entries",
-			"sLengthMenu": "_MENU_°³¾¿ º¸±â",// ~°³¾¿ º¸±â·Î ¼öÁ¤ 230306 ÇıÁö
+			"sLengthMenu": "_MENU_ê°œì”© ë³´ê¸°",// ~ê°œì”© ë³´ê¸°ë¡œ ìˆ˜ì • 230306 í˜œì§€
 	
 	
 			/**
@@ -11940,7 +11940,7 @@
 			 * control over where it appears in the string. If "_INPUT_" is not given
 			 * then the input box is appended to the string automatically.
 			 *  @type string
-			 *  @default °Ë»ö:
+			 *  @default ê²€ìƒ‰:
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.search
@@ -11965,7 +11965,7 @@
 			 *      } );
 			 *    } );
 			 */
-			//"sSearch": "°Ë»ö:",
+			//"sSearch": "ê²€ìƒ‰:",
 			"sSearch": "",
 	
 	
@@ -11977,7 +11977,7 @@
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.searchPlaceholder
 			 */
-			"sSearchPlaceholder": "ÀúÀÚ ¶Ç´Â µµ¼­¸íÀ¸·Î °Ë»ö",
+			"sSearchPlaceholder": "ì €ì ë˜ëŠ” ë„ì„œëª…ìœ¼ë¡œ ê²€ìƒ‰",
 	
 	
 			/**
@@ -12024,7 +12024,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù."
+			"sZeroRecords": "ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤."
 		},
 	
 	

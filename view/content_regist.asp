@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ" />
+    <meta name="keywords" content="ë‘í”ŒëŸ¬ìŠ¤, ë‘í”Œ, ë‘ëž€ë…¸, ë³µìŒ, ì½˜í…ì¸ , ì˜¤ë¦¬ì§€ë„, ì˜¤ë””ì˜¤ë¶, ì „ìžì±…, ê°•ì˜, êµ¬ë…, íí‹°, ì‹ ì•™, êµíšŒ, ëª©íšŒ" />
+    <meta name="author" content="duranno" />-->
+    <title>ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ</title>
+    <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- íŒŒë¹„ì½˜ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //êµ¬ê¸€ ì•„ì´ì½˜í°íŠ¸ --> 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:title" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">-->
 
-    <title>µÎÇÃ·¯½º ÄÁÅÙÃ÷ ÆÄÆ®³Ê : ÄÜÅÙÃ÷ µî·Ï</title>
-
-    <!-- Çì´õ START -->
+    <!-- í—¤ë” START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
     <script>
-        // À¯È¿¼º °Ë»ç
+        // ìœ íš¨ì„± ê²€ì‚¬
         function form_check(){
             const b_name=document.getElementById("b_name");
             const sub_name=document.getElementById("sub_name");
@@ -35,24 +46,24 @@
             
 
 
-            /* µµ¼­¸í ÀÔ·Â ¿©ºÎ */
+            /* ë„ì„œëª… ìž…ë ¥ ì—¬ë¶€ */
             if(b_name.value==""){
-                alert("µµ¼­¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ë„ì„œëª…ì„ ìž…ë ¥í•˜ì„¸ìš”.");
                 b_name.focus();
                 return false;
             }
 
-            /* ºÎÁ¦ ÀÔ·Â ¿©ºÎ */
+            /* ë¶€ì œ ìž…ë ¥ ì—¬ë¶€ */
             if(sub_name.value==""){
-                alert("ºÎÁ¦¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ë¶€ì œë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 sub_name.focus();
                 return false;
             }
 
 
-             /* ÀúÀÚ ÀÔ·Â ¿©ºÎ */
+             /* ì €ìž ìž…ë ¥ ì—¬ë¶€ */
              if(author_info.value==""){
-                alert("ÀúÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì €ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 author_info.focus();
                 return false;
             }
@@ -60,115 +71,115 @@
 
             const regExp = /^[0-9]*$/;
 
-            /* Á¾ÀÌÃ¥ Á¤°¡ ÀÔ·Â ¿©ºÎ, ¼ýÀÚ, 13ÀÚ¸® */
+            /* ì¢…ì´ì±… ì •ê°€ ìž…ë ¥ ì—¬ë¶€, ìˆ«ìž, 13ìžë¦¬ */
             if(b_list_price.value==""){
-                alert("Á¾ÀÌÃ¥ Á¤°¡¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì¢…ì´ì±… ì •ê°€ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 b_list_price.focus();
                 return false;
             } else if (!regExp.test(b_list_price.value)){
-                alert("¼ýÀÚ¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+                alert("ìˆ«ìžë§Œ ìž…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
                 b_list_price.focus();
                 return false;
             }
             
 
-            /* ÀüÀÚÃ¥ Á¤°¡ ÀÔ·Â ¿©ºÎ, ¼ýÀÚ */
+            /* ì „ìžì±… ì •ê°€ ìž…ë ¥ ì—¬ë¶€, ìˆ«ìž */
             if(eb_list_price.value==""){
-                alert("ÀüÀÚÃ¥ Á¤°¡¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì „ìžì±… ì •ê°€ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 eb_list_price.focus();
                 return false;
             } else if (!regExp.test(eb_list_price.value)){
-                alert("¼ýÀÚ¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+                alert("ìˆ«ìžë§Œ ìž…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
                 eb_list_price.focus();
                 return false;
             }
 
             const regExp2 = /^[0-9]{13,13}$/;
 
-            /* isbn ÀÔ·Â ¿©ºÎ, ¼ýÀÚ¸¸, 13ÀÚ¸®ÀÎÁö È®ÀÎ */
+            /* isbn ìž…ë ¥ ì—¬ë¶€, ìˆ«ìžë§Œ, 13ìžë¦¬ì¸ì§€ í™•ì¸ */
             if(isbn_num.value==""){
-                alert("ISBNÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ISBNì„ ìž…ë ¥í•˜ì„¸ìš”.");
                 isbn_num.focus();
                 return false;
             } else if(!regExp2.test(isbn_num.value)){
-                alert("ISBN 13ÀÚ¸® ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ISBN 13ìžë¦¬ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 isbn_num.focus();
                 return false;
             }
 
-             /* e_isbn ÀÔ·Â ¿©ºÎ, ¼ýÀÚ¸¸, 13ÀÚ¸®ÀÎÁö È®ÀÎ */
+             /* e_isbn ìž…ë ¥ ì—¬ë¶€, ìˆ«ìžë§Œ, 13ìžë¦¬ì¸ì§€ í™•ì¸ */
              if(e_isbn_num.value==""){
-                alert("E-ISBNÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("E-ISBNì„ ìž…ë ¥í•˜ì„¸ìš”.");
                 e_isbn_num.focus();
                 return false;
             } else if(!regExp2.test(e_isbn_num.value)){
-                alert("E-ISBN 13ÀÚ¸® ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("E-ISBN 13ìžë¦¬ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 e_isbn_num.focus();
                 return false;
             }
 
-            /* ÆäÀÌÁö ¼ö ÀÔ·Â ¿©ºÎ, ¼ýÀÚ¸¸ */
+            /* íŽ˜ì´ì§€ ìˆ˜ ìž…ë ¥ ì—¬ë¶€, ìˆ«ìžë§Œ */
             if(page_num.value==""){
-                alert("ÆäÀÌÁö ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("íŽ˜ì´ì§€ ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 page_num.focus();
                 return false;
             } else if (!regExp.test(page_num.value)){
-                alert("¼ýÀÚ¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+                alert("ìˆ«ìžë§Œ ìž…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
                 page_num.focus();
                 return false;
             }
 
-            /* Ã¥¼Ò°³ ÀÔ·Â ¿©ºÎ */
+            /* ì±…ì†Œê°œ ìž…ë ¥ ì—¬ë¶€ */
             if(book_info.value==""){
-                alert("Ã¥¼Ò°³¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì±…ì†Œê°œë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 book_info.focus();
                 return false;
             }
 
-            /* ¸ñÂ÷ ÀÔ·Â ¿©ºÎ */
+            /* ëª©ì°¨ ìž…ë ¥ ì—¬ë¶€ */
             if(book_list.value==""){
-                alert("¸ñÂ÷¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ëª©ì°¨ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 book_list.focus();
                 return false;
             }
 
            
 
-            /* Ä«Å×°í¸®1 ÀÔ·Â ¿©ºÎ */
+            /* ì¹´í…Œê³ ë¦¬1 ìž…ë ¥ ì—¬ë¶€ */
             if(category_1.value==""){
-                alert("Ä«Å×°í¸®1(ÁÖÁ¦º°)À» ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì¹´í…Œê³ ë¦¬1(ì£¼ì œë³„)ì„ ìž…ë ¥í•˜ì„¸ìš”.");
                 category_1.focus();
                 return false;
             }
 
-            /* Ä«Å×°í¸®2 ÀÔ·Â ¿©ºÎ */
+            /* ì¹´í…Œê³ ë¦¬2 ìž…ë ¥ ì—¬ë¶€ */
             if(category_2.value==""){
-                alert("Ä«Å×°í¸®2(´ë»óº°)À» ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ì¹´í…Œê³ ë¦¬2(ëŒ€ìƒë³„)ì„ ìž…ë ¥í•˜ì„¸ìš”.");
                 category_2.focus();
                 return false;
             }
 
-            /* µµ¼­ÆÄÀÏ ÀÔ·Â ¿©ºÎ */
+            /* ë„ì„œíŒŒì¼ ìž…ë ¥ ì—¬ë¶€ */
             if(b_file_name.value==""){
-                alert("µµ¼­ÆÄÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("ë„ì„œíŒŒì¼ì„ ìž…ë ¥í•˜ì„¸ìš”.");
                 b_file_name.focus();
                 return false;
             }
 
-            /* Ç¥Áö ÀÔ·Â ¿©ºÎ */
+            /* í‘œì§€ ìž…ë ¥ ì—¬ë¶€ */
             if(t_file_name.value==""){
-                alert("Ç¥Áö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("í‘œì§€ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 t_file_name.focus();
                 return false;
             }
             
-            /* ÆÇ¸Å°¡ ÀÔ·Â ¿©ºÎ, ¼ýÀÚ¸¸ */
+            /* íŒë§¤ê°€ ìž…ë ¥ ì—¬ë¶€, ìˆ«ìžë§Œ */
             if(b_price.value==""){
-                alert("ÆÇ¸Å°¡¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+                alert("íŒë§¤ê°€ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
                 b_price.focus();
                 return false;
             } else if (!regExp.test(b_price.value)){
-                alert("¼ýÀÚ¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+                alert("ìˆ«ìžë§Œ ìž…ë ¥ ê°€ëŠ¥í•©ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
                 b_price.focus();
                 return false;
             }
@@ -176,54 +187,54 @@
         }
     </script>
 
-    <!-- ÀúÀÚ ¼Ò°³³»¿ë ¸ð´Þ START -->
+    <!-- ì €ìž ì†Œê°œë‚´ìš© ëª¨ë‹¬ START -->
     <div class="modal a_modal">
         <div class="modal_body">
-            <p class="title_wrap"><span class="modal_title">¼Ò°³³»¿ë</span><span><img class="btn_close_popup" src="../img/btn_ly_close.png" alt="´Ý±â"></span></p>
+            <p class="title_wrap"><span class="modal_title">ì†Œê°œë‚´ìš©</span><span><img class="btn_close_popup" src="../img/btn_ly_close.png" alt="ë‹«ê¸°"></span></p>
             <table class="table_input">
                 <colgroup>
                     <col class="th">
                     <col class="td">
                 </colgroup>
                 <tbody>
-                    <th>¼Ò°³³»¿ë</th>
+                    <th>ì†Œê°œë‚´ìš©</th>
                     <td><textarea name="a_info_txt" id="a_info_txt" cols rows="5"></textarea></td>
                 </tbody>
             </table>
             <div class="btn_wrap">
-                <button type="button" class="btn_primary btn_md" id="a_info_modal_save">È®ÀÎ</button>
-                <button type="button" class="btn_primary btn_md btn_light_gray">´Ý±â</button>
+                <button type="button" class="btn_primary btn_md" id="a_info_modal_save">í™•ì¸</button>
+                <button type="button" class="btn_primary btn_md btn_light_gray">ë‹«ê¸°</button>
             </div>
         </div>
     </div>
-    <!-- ÀúÀÚ ¼Ò°³³»¿ë ¸ð´Þ END -->
+    <!-- ì €ìž ì†Œê°œë‚´ìš© ëª¨ë‹¬ END -->
 
-    <!-- ÆÇ¸ÅÁßÁö ¸ð´Þ START -->
+    <!-- íŒë§¤ì¤‘ì§€ ëª¨ë‹¬ START -->
     <div class="modal s_modal">
         <form action="" method="post" id="stop_sell_form" class="form_primary">
         <div class="modal_body">
-            <p class="title_wrap"><span class="modal_title">ÆÇ¸ÅÁßÁö»çÀ¯</span><span><img class="btn_close_popup" src="../img/btn_ly_close.png" alt="´Ý±â"></span></p>
+            <p class="title_wrap"><span class="modal_title">íŒë§¤ì¤‘ì§€ì‚¬ìœ </span><span><img class="btn_close_popup" src="../img/btn_ly_close.png" alt="ë‹«ê¸°"></span></p>
             <table class="table_input">
                 <colgroup>
                     <col class="th">
                     <col class="td">
                 </colgroup>
                 <tbody>
-                    <th>ÆÇ¸ÅÁßÁö»çÀ¯</th>
+                    <th>íŒë§¤ì¤‘ì§€ì‚¬ìœ </th>
                     <td>
                             <p class="radio" style="margin-top:10px;">
                                 <input type="radio" name="reason" id="expire" value="expire" checked>
-                                <label for="expire">ÀúÀÛ±Ç ¸¸·á·Î ÆÇ¸ÅÁß´Ü ¿¹Á¤ÀÔ´Ï´Ù.</label>
+                                <label for="expire">ì €ìž‘ê¶Œ ë§Œë£Œë¡œ íŒë§¤ì¤‘ë‹¨ ì˜ˆì •ìž…ë‹ˆë‹¤.</label>
                             </p>
 
                             <p class="radio">
                                 <input type="radio" name="reason" id="revision" value="revision">
-                                <label for="revision">°³Á¤ÆÇÀ» ¾÷·Îµå ÇÒ ¿¹Á¤ÀÔ´Ï´Ù.</label>
+                                <label for="revision">ê°œì •íŒì„ ì—…ë¡œë“œ í•  ì˜ˆì •ìž…ë‹ˆë‹¤.</label>
                             </p>
 
                             <p class="radio" style="margin-bottom:0 !important;">
                                 <input type="radio" name="reason" id="etc" value="etc">
-                                <label for="etc">±âÅ¸</label> 
+                                <label for="etc">ê¸°íƒ€</label> 
                                 <p class="" style="margin-top:10px; margin-bottom:0px !important"><textarea rows="5" cols id="etc_txt" name="reason"></textarea></p>
                             </p>
 
@@ -231,36 +242,36 @@
                 </tbody>
             </table>
             <div class="btn_wrap">
-                <button type="submit" class="btn_primary btn_md" id="a_info_modal_save">È®ÀÎ</button>
-                <button type="button" class="btn_primary btn_md btn_light_gray">´Ý±â</button>
+                <button type="submit" class="btn_primary btn_md" id="a_info_modal_save">í™•ì¸</button>
+                <button type="button" class="btn_primary btn_md btn_light_gray">ë‹«ê¸°</button>
             </div>
         </form>
         </div>
     </div>
-    <!-- ÆÇ¸ÅÁßÁö ¸ð´Þ END -->
+    <!-- íŒë§¤ì¤‘ì§€ ëª¨ë‹¬ END -->
 
     <div class="page_right">
         <main id="content" class="content p_content_regist">
             <section class="">
-                <!-- Á¦¸ñ START -->
+                <!-- ì œëª© START -->
                 <h2>
-                    <a href="#none" title="¸Þ´º¿­±â" class="open_gnb">
-                        <span>ÄÜÅÙÃ÷ µî·Ï</span>
+                    <a href="#none" title="ë©”ë‰´ì—´ê¸°" class="open_gnb">
+                        <span>ì½˜í…ì¸  ë“±ë¡</span>
                     </a>
                     
                 </h2>
-                <!-- Á¦¸ñ END -->
+                <!-- ì œëª© END -->
     
                 <div class="page_wrap">
 
-                    <!-- ÄÜÅÙÃ÷ µî·Ï START -->
+                    <!-- ì½˜í…ì¸  ë“±ë¡ START -->
                     <div class="content_regist">
                         <form action="" method="post" id="cont_regist_form" class="form_primary" onsubmit="return form_check()">
                             <fieldset>
-                                <legend class="blind">ÄÜÅÙÃ÷ µî·Ï</legend>
+                                <legend class="blind">ì½˜í…ì¸  ë“±ë¡</legend>
     
                                 <div class="basic_info table_wrap">
-                                    <h3 class="sub_t">±âº» Á¤º¸</h3>
+                                    <h3 class="sub_t">ê¸°ë³¸ ì •ë³´</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -270,33 +281,33 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">±¸ºÐ</th>
+                                                <th scope="row">êµ¬ë¶„</th>
                                                 <td>
                                                     <span class="radio">
                                                         <input type="radio" name="category" id="c_normal" value="normal_book" checked>
-                                                        <label for="c_normal">ÀÏ¹Ýµµ¼­</label>
+                                                        <label for="c_normal">ì¼ë°˜ë„ì„œ</label>
                                                     </span>
                     
                                                     <span class="radio">
                                                         <input type="radio" id="c_genre" name="category" value="genre_book">
-                                                        <label for="c_genre">Àå¸£µµ¼­</label>
+                                                        <label for="c_genre">ìž¥ë¥´ë„ì„œ</label>
                                                     </span>
 
                                                     <span class="radio">
                                                         <input type="radio" id="c_audio" name="category" value="audio_book">
-                                                        <label for="c_audio">¿Àµð¿ÀºÏ</label>
+                                                        <label for="c_audio">ì˜¤ë””ì˜¤ë¶</label>
                                                     </span>
 
                                                     <span class="radio">
                                                         <input type="radio" id="c_video" name="category" value="video">
-                                                        <label for="c_video">µ¿¿µ»ó</label>
+                                                        <label for="c_video">ë™ì˜ìƒ</label>
                                                     </span>
                                                 </td>
-                                                <th scope="row">»óÇ°ÄÚµå</th>
-                                                <td><span id="b_code">(ÀÚµ¿À¸·Î)</span></td>
+                                                <th scope="row">ìƒí’ˆì½”ë“œ</th>
+                                                <td><span id="b_code">(ìžë™ìœ¼ë¡œ)</span></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">ÆÄÀÏ Å¸ÀÔ <span class="orange">*</span></th>
+                                                <th scope="row">íŒŒì¼ íƒ€ìž… <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <span class="radio">
                                                         <input type="radio" name="file_type" id="type_epub" value="epub" checked>
@@ -310,133 +321,133 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>½Ã¸®Áî ¿©ºÎ</th>
+                                                <th>ì‹œë¦¬ì¦ˆ ì—¬ë¶€</th>
                                                 <td colspan="3">
                                                     <span class="chk">
                                                         <input type="checkbox" id="series_chk" name="series_chk" value="Y">
-                                                        <label for="series_chk">½Ã¸®Áî ¿©ºÎ</label>
+                                                        <label for="series_chk">ì‹œë¦¬ì¦ˆ ì—¬ë¶€</label>
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr class="series_add_info add_info">
-                                                <th>½Ã¸®Áî¸í</th>
+                                                <th>ì‹œë¦¬ì¦ˆëª…</th>
                                                 <td>
                                                     <input type="text" name="series_name">
                                                 </td>
-                                                <th>±Ç¼ö</th>
+                                                <th>ê¶Œìˆ˜</th>
                                                 <td>
                                                     <input type="text" name="series_num">
                                                     <span class="chk series_complete">
                                                         <input type="checkbox" id="complete" name="complete" value="Y">
-                                                        <label for="complete">¿Ï°£</label>
+                                                        <label for="complete">ì™„ê°„</label>
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
-                                                <th>µµ¼­¸í <span class="orange">*</span></th>
+                                                <th>ë„ì„œëª… <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="b_name" name="b_name">
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
-                                                <th>ºÎÁ¦ <span class="orange">*</span></th>
+                                                <th>ë¶€ì œ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="sub_name" name="sub_name">
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
-                                                <th>¿ø¼­¸í</th>
+                                                <th>ì›ì„œëª…</th>
                                                 <td colspan="3">
                                                     <input type="text" name="origin_name">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>ÃâÆÇ»ç</th>
+                                                <th>ì¶œíŒì‚¬</th>
                                                 <td>
-                                                    <span id="publisher">(ºñÈ°¼º/ºê·£µå ¸í¿¡ µû¶ó ÀÚµ¿)</span>
+                                                    <span id="publisher">(ë¹„í™œì„±/ë¸Œëžœë“œ ëª…ì— ë”°ë¼ ìžë™)</span>
                                                 </td>
-                                                <th>ºê·£µå¸í <span class="orange">*</span></th>
+                                                <th>ë¸Œëžœë“œëª… <span class="orange">*</span></th>
                                                 <td class="brand btn_add_wrap">
-                                                    <select name="sel_brand" style="width:200px;"><option value="" selected>µÎ¶õ³ë</option><option value="">ÇÑ±¹¼º¼­ÇÐ¿¬±¸¼Ò</option><option value="">µÎ¶õ³ë</option></select>
+                                                    <select name="sel_brand" style="width:200px;"><option value="" selected>ë‘ëž€ë…¸</option><option value="">í•œêµ­ì„±ì„œí•™ì—°êµ¬ì†Œ</option><option value="">ë‘ëž€ë…¸</option></select>
                                                 </td>
                                             </tr>
                                             <!--<tr>
-                                                <th>ÀúÀÚ¸í <span class="orange">*</span></th>
+                                                <th>ì €ìžëª… <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <select name="sel_author_name">
-                                                        <option value="author" selected>ÀúÀÚ</option>
-                                                        <option value="translator">¿ªÀÚ</option>
-                                                        <option value="painter">±×¸°ÀÌ</option>
+                                                        <option value="author" selected>ì €ìž</option>
+                                                        <option value="translator">ì—­ìž</option>
+                                                        <option value="painter">ê·¸ë¦°ì´</option>
                                                     </select>
                                                     <input type="text" id="author_name" name="author_name">
                                                 </td>
                                             </tr>-->
 
                                             <tr>
-                                                <th scope="row">ÀúÀÚ <span class="orange">*</span></th>
+                                                <th scope="row">ì €ìž <span class="orange">*</span></th>
                                                 <td colspan="3" class="author btn_add_wrap">
                                                     <select name="sel_author_name">
-                                                        <option value="author" selected>ÀúÀÚ</option>
-                                                        <option value="translator">¿ªÀÚ</option>
-                                                        <option value="painter">±×¸°ÀÌ</option>
+                                                        <option value="author" selected>ì €ìž</option>
+                                                        <option value="translator">ì—­ìž</option>
+                                                        <option value="painter">ê·¸ë¦°ì´</option>
                                                     </select>
                                                     <input type="text" id="author_info" name="author_info">
 
-                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">¼Ò°³³»¿ë</button>
+                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">ì†Œê°œë‚´ìš©</button>
 
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ Ãß°¡</button>
+                                                    <button type="button" class="btn_line b_btn_line add_btn">+ ì¶”ê°€</button>
                                                 </td>
                                             </tr>
 
                                             <tr>
-                                                <th>Á¾ÀÌÃ¥ Ãâ°£ÀÏ <span class="orange">*</span></th>
+                                                <th>ì¢…ì´ì±… ì¶œê°„ì¼ <span class="orange">*</span></th>
                                                 <td class="regist_date">
                                                     <input type="text" name="bookDate" value="" autocomplete="off"> 
                                                 </td>
-                                                <th>ÀüÀÚÃ¥ Ãâ°£ÀÏ <span class="orange">*</span></th>
+                                                <th>ì „ìžì±… ì¶œê°„ì¼ <span class="orange">*</span></th>
                                                 <td class="regist_date">
                                                     <input type="text" name="ebookDate" value="" autocomplete="off">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Á¾ÀÌÃ¥ Á¤°¡ <span class="orange">*</span></th>
+                                                <th>ì¢…ì´ì±… ì •ê°€ <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="b_list_price" name="b_list_price">
-                                                    ¿ø
+                                                    ì›
                                                 </td>
-                                                <th>ÀüÀÚÃ¥ Á¤°¡ <span class="orange">*</span></th>
+                                                <th>ì „ìžì±… ì •ê°€ <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="eb_list_price" name="eb_list_price">
-                                                    ¿ø
+                                                    ì›
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>ISBN 13ÀÚ¸® <span class="orange">*</span></th>
+                                                <th>ISBN 13ìžë¦¬ <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="isbn_num" name="isbn_num">
                                                 </td>
-                                                <th>E-ISBN 13ÀÚ¸® <span class="orange">*</span></th>
+                                                <th>E-ISBN 13ìžë¦¬ <span class="orange">*</span></th>
                                                 <td>
                                                     <input type="text" id="e_isbn_num" name="e_isbn_num">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>ÆäÀÌÁö ¼ö <span class="orange">*</span></th>
+                                                <th>íŽ˜ì´ì§€ ìˆ˜ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="page_num" name="page_num">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>µµ¼­ ±¸ºÐ <span class="orange">*</span></th>
+                                                <th>ë„ì„œ êµ¬ë¶„ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <span class="radio">
                                                         <input type="radio" name="book_devision" id="book_domestic" value="domestic_book" checked>
-                                                        <label for="book_domestic">±¹³»¼­</label>
+                                                        <label for="book_domestic">êµ­ë‚´ì„œ</label>
                                                     </span>
                     
                                                     <span class="radio">
                                                         <input type="radio" id="book_translation" name="book_devision" value="translation_book">
-                                                        <label for="book_translation">¹ø¿ª¼­</label>
+                                                        <label for="book_translation">ë²ˆì—­ì„œ</label>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -445,7 +456,7 @@
                                 </div>
                                 
                                 <div class="sub_info table_wrap">
-                                    <h3 class="sub_t">ºÎ°¡ Á¤º¸</h3>
+                                    <h3 class="sub_t">ë¶€ê°€ ì •ë³´</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -455,19 +466,19 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">Ã¥¼Ò°³ <span class="orange">*</span></th>
+                                                <th scope="row">ì±…ì†Œê°œ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <textarea rows="5" cols id="book_info" name="book_info_txt"></textarea>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">ÃâÆÇ»ç¼­Æò</th>
+                                                <th scope="row">ì¶œíŒì‚¬ì„œí‰</th>
                                                 <td colspan="3">
                                                     <textarea rows="5" cols name="brand_review"></textarea>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">¸ñÂ÷ <span class="orange">*</span></th>
+                                                <th scope="row">ëª©ì°¨ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <textarea rows="5" cols id="book_list" name="book_list"></textarea>
                                                 </td>
@@ -475,42 +486,42 @@
                                            
                                             
                                             <tr>
-                                                <th>Ä«Å×°í¸®1 (ÁÖÁ¦º°) <span class="orange">*</span></th>
+                                                <th>ì¹´í…Œê³ ë¦¬1 (ì£¼ì œë³„) <span class="orange">*</span></th>
                                                 <td class="cat1 btn_add_wrap">
                                                     <input type="text" id="category_1" name="category_1">
                                         
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ Ãß°¡</button>
+                                                    <button type="button" class="btn_line b_btn_line add_btn">+ ì¶”ê°€</button>
                                                 </td>
-                                                <th>Ä«Å×°í¸®2 (´ë»óº°) <span class="orange">*</span></th>
+                                                <th>ì¹´í…Œê³ ë¦¬2 (ëŒ€ìƒë³„) <span class="orange">*</span></th>
                                                 <td class="cat2 btn_add_wrap">
                                                     <input type="text" id="category_2" name="category_2">
                                         
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ Ãß°¡</button>
+                                                    <button type="button" class="btn_line b_btn_line add_btn">+ ì¶”ê°€</button>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>Ä«Å×°í¸®3 (»óÈ²º°)</th>
+                                                <th>ì¹´í…Œê³ ë¦¬3 (ìƒí™©ë³„)</th>
                                                 <td colspan="3">
-                                                    <span id="category_3">(ºñÈ°¼º/ÃßÈÄ)</span>
+                                                    <span id="category_3">(ë¹„í™œì„±/ì¶”í›„)</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>°Ë»ö Å°¿öµå</th>
+                                                <th>ê²€ìƒ‰ í‚¤ì›Œë“œ</th>
                                                 <td colspan="3" class="">
                                                     <input type="text" name="search_key"> 
                                                 </td>
                                                 
                                             </tr>
                                             <tr>
-                                                <th>È«º¸ ¿µ»ó</th>
+                                                <th>í™ë³´ ì˜ìƒ</th>
                                                 <td>
                                                     <select name="pro_video_sel">
-                                                        <option value="youtube" selected>À¯Æ©ºê</option>
-                                                        <option value="vimeo">ºñ¸Þ¿À</option>
+                                                        <option value="youtube" selected>ìœ íŠœë¸Œ</option>
+                                                        <option value="vimeo">ë¹„ë©”ì˜¤</option>
                                                     </select>
                                                     <input type="text" name="video_url">
                                                 </td>
-                                                <th>¹Ì¸®º¸±â ¿©ºÎ</th>
+                                                <th>ë¯¸ë¦¬ë³´ê¸° ì—¬ë¶€</th>
                                                 <td>
                                                     <select name="preview_sel">
                                                         <option value="Y" selected>Y</option>
@@ -523,7 +534,7 @@
                                 </div>
 
                                 <div class="resource table_wrap">
-                                    <h3 class="sub_t">¸®¼Ò½º</h3>
+                                    <h3 class="sub_t">ë¦¬ì†ŒìŠ¤</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -533,14 +544,14 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">µµ¼­ ÆÄÀÏ <span class="orange">*</span></th>
+                                                <th scope="row">ë„ì„œ íŒŒì¼ <span class="orange">*</span></th>
                                                 <td class="file_box">
                                                     <input type="text" id="b_file_name" name="b_file_name" readonly>
-                                                    <label for="b_file">ÆÄÀÏ¼±ÅÃ</label>
+                                                    <label for="b_file">íŒŒì¼ì„ íƒ</label>
                                                     <input type="file" id="b_file">
                                                 </td>
 
-                                                <th>´Ù¿î·Îµå ¿©ºÎ</th>
+                                                <th>ë‹¤ìš´ë¡œë“œ ì—¬ë¶€</th>
                                                 <td>
                                                     <select name="down_sel">
                                                         <option value="Y" selected>Y</option>
@@ -549,47 +560,47 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">ÆÄÀÏ»çÀÌÁî</th>
+                                                <th scope="row">íŒŒì¼ì‚¬ì´ì¦ˆ</th>
                                                 <td colspan="3">
-                                                    <span id="file_size">(ÀÚµ¿À¸·Î »Ñ¸²)</span>
+                                                    <span id="file_size">(ìžë™ìœ¼ë¡œ ë¿Œë¦¼)</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Ç¥Áö <span class="orange">*</span></th>
+                                                <th scope="row">í‘œì§€ <span class="orange">*</span></th>
                                                 <td class="file_box" colspan="3">
                                                     <input type="text" id="t_file_name" name="t_file_name" readonly>
-                                                    <label for="t_file">ÆÄÀÏ¼±ÅÃ</label>
+                                                    <label for="t_file">íŒŒì¼ì„ íƒ</label>
                                                     <input type="file" id="t_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail(event)">
                                                     <div id="image_container" class="thumb_img"></div>
                                                     <ul class="file_txt">
-                                                        <li>Áö¿øÆ÷¸Ë : .jpg, .png</li>
-                                                        <li>ÃÖ´ë¿ë·® : 1MB ÀÌÇÏ</li>
-                                                        <li>±ÇÀå»çÀÌÁî : °¡·Î 700px</li>
+                                                        <li>ì§€ì›í¬ë§· : .jpg, .png</li>
+                                                        <li>ìµœëŒ€ìš©ëŸ‰ : 1MB ì´í•˜</li>
+                                                        <li>ê¶Œìž¥ì‚¬ì´ì¦ˆ : ê°€ë¡œ 700px</li>
                                                     </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">»ó¼¼ ÀÌ¹ÌÁö</th>
+                                                <th scope="row">ìƒì„¸ ì´ë¯¸ì§€</th>
                                                 <td class="file_box" colspan="3">
                                                     <input type="text" id="d_file_name" name="d_file_name" readonly>
-                                                    <label for="d_file">ÆÄÀÏ¼±ÅÃ</label>
+                                                    <label for="d_file">íŒŒì¼ì„ íƒ</label>
                                                     <input type="file" id="d_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail2(event)">
                                                     <div id="image_container2" class="thumb_img"></div>
                                                     <ul class="file_txt">
-                                                        <li>Áö¿øÆ÷¸Ë : .jpg, .png</li>
-                                                        <li>ÃÖ´ë¿ë·® : 1MB ÀÌÇÏ</li>
-                                                        <li>±ÇÀå»çÀÌÁî : °¡·Î 860px</li>
+                                                        <li>ì§€ì›í¬ë§· : .jpg, .png</li>
+                                                        <li>ìµœëŒ€ìš©ëŸ‰ : 1MB ì´í•˜</li>
+                                                        <li>ê¶Œìž¥ì‚¬ì´ì¦ˆ : ê°€ë¡œ 860px</li>
                                                     </ul>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">Ã¼ÇèÆÇ µî·Ï</th>
+                                                <th scope="row">ì²´í—˜íŒ ë“±ë¡</th>
                                                 <td class="file_box" colspan="3">
                                                     <input type="text" id="f_file_name" name="f_file_name" readonly>
-                                                    <label for="f_file">ÆÄÀÏ¼±ÅÃ</label>
+                                                    <label for="f_file">íŒŒì¼ì„ íƒ</label>
                                                     <input type="file" id="f_file" class="under_30mb">
                                                     <ul class="file_txt" style="margin-top:10px;">
-                                                        <li>ÃÖ´ë¿ë·® : 30MB ÀÌÇÏ</li>
+                                                        <li>ìµœëŒ€ìš©ëŸ‰ : 30MB ì´í•˜</li>
                                                     </ul>
                                                 </td>
                                             </tr>
@@ -598,7 +609,7 @@
                                 </div>
 
                                 <div class="sale_info table_wrap">
-                                    <h3 class="sub_t">ÆÇ¸Å Á¤º¸</h3>
+                                    <h3 class="sub_t">íŒë§¤ ì •ë³´</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -608,49 +619,49 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">ÆÇ¸Å ÇüÅÂ <span class="orange">*</span></th>
+                                                <th scope="row">íŒë§¤ í˜•íƒœ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <select name="sale_type_sel">
-                                                        <option value="all" selected>ÀüÃ¼</option>
-                                                        <option value="keep">¼ÒÀå</option>
-                                                        <option value="rent">´ë¿©</option>
+                                                        <option value="all" selected>ì „ì²´</option>
+                                                        <option value="keep">ì†Œìž¥</option>
+                                                        <option value="rent">ëŒ€ì—¬</option>
                                                     </select>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">ÆÇ¸Å°¡ <span class="orange">*</span></th>
+                                                <th scope="row">íŒë§¤ê°€ <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <input type="text" id="b_price" name="b_price">
-                                                    ¿ø
+                                                    ì›
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">´ë¿©°¡</th>
+                                                <th scope="row">ëŒ€ì—¬ê°€</th>
                                                 <td>
                                                     <input type="text" id="b_rental_price" name="b_rental_price">
-                                                    ¿ø
+                                                    ì›
                                                 </td>
-                                                <th scope="row">´ë¿©±â°£</th>
+                                                <th scope="row">ëŒ€ì—¬ê¸°ê°„</th>
                                                 <td>
                                                     <input type="text" id="rental_period" name="rental_period">
-                                                    ÀÏ
+                                                    ì¼
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">¼­ºñ½º ¿©ºÎ <span class="orange">*</span></th>
+                                                <th scope="row">ì„œë¹„ìŠ¤ ì—¬ë¶€ <span class="orange">*</span></th>
                                                 <td>
                                                     <span class="radio">
                                                         <input type="radio" name="service" id="now" value="now" checked>
-                                                        <label for="now">Áï½Ã</label>
+                                                        <label for="now">ì¦‰ì‹œ</label>
                                                     </span>
                     
                                                     <span class="radio">
                                                         <input type="radio" id="appointed" value="appointed" name="service" >
-                                                        <label for="appointed">ÁöÁ¤</label>
+                                                        <label for="appointed">ì§€ì •</label>
                                                     </span>
                                                 </td>
 
-                                                <th>¼­ºñ½º ½ÃÀÛÀÏ</th>
+                                                <th>ì„œë¹„ìŠ¤ ì‹œìž‘ì¼</th>
                                                 <td class="regist_date">
                                                     <input type="text" name="serviceDate" autocomplete="off"> 
                                                 </td>
@@ -660,7 +671,7 @@
                                 </div>
 
                                 <div class="message table_wrap">
-                                    <h3 class="sub_t">Àü´Þ»çÇ×</h3>
+                                    <h3 class="sub_t">ì „ë‹¬ì‚¬í•­</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -670,51 +681,51 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">Àü´Þ»çÇ×</th>
+                                                <th scope="row">ì „ë‹¬ì‚¬í•­</th>
                                                 <td colspan="3">
-                                                    <textarea name="message" id="" cols rows="5" placeholder="Âü°í»çÇ×, ¼öÁ¤µÈ ³»¿ë µî °ü¸®ÀÚ¿¡°Ô ¾Ë·ÁÁÖ½Ã¸é °¨»çÇÏ°Ú½À´Ï´Ù."></textarea>
+                                                    <textarea name="message" id="" cols rows="5" placeholder="ì°¸ê³ ì‚¬í•­, ìˆ˜ì •ëœ ë‚´ìš© ë“± ê´€ë¦¬ìžì—ê²Œ ì•Œë ¤ì£¼ì‹œë©´ ê°ì‚¬í•˜ê² ìŠµë‹ˆë‹¤."></textarea>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
 
-                                <!-- ÃÊ±â ÀÛ¼º ½Ã ÇÏ´Ü ¹öÆ° START -->
+                                <!-- ì´ˆê¸° ìž‘ì„± ì‹œ í•˜ë‹¨ ë²„íŠ¼ START -->
                                 <div class="btn_wrap">
-                                    <button type="button" class="btn_md btn_primary">ÀúÀåÇÏ±â</button>
-                                    <button type="reset" class="btn_md btn_primary btn_light_gray">Ãë¼Ò(ÃÊ±âÈ­)</button>
-                                    <button type="submit" class="btn_md btn_primary">½ÂÀÎ½ÅÃ»</button>
+                                    <button type="button" class="btn_md btn_primary">ì €ìž¥í•˜ê¸°</button>
+                                    <button type="reset" class="btn_md btn_primary btn_light_gray">ì·¨ì†Œ(ì´ˆê¸°í™”)</button>
+                                    <!--<button type="submit" class="btn_md btn_primary">ìŠ¹ì¸ì‹ ì²­</button>-->
                                 </div>
-                                <!-- ÃÊ±â ÀÛ¼º ½Ã ÇÏ´Ü ¹öÆ° END -->
+                                <!-- ì´ˆê¸° ìž‘ì„± ì‹œ í•˜ë‹¨ ë²„íŠ¼ END -->
 
-                                <!-- ½ÂÀÎ ¿Ï·á ÀÌÈÄ µµ¼­ ¸ñ·Ï¿¡¼­ µé¾î¿ÔÀ» ¶§ ÇÏ´Ü ¹öÆ° START -->
+                                <!-- ìµœì´ˆ ì €ìž¥ ì´í›„ ë„ì„œ ì •ë³´ view í™”ë©´ì—ì„œ(ìž…ë ¥í•œ ì •ë³´ê°€ ì €ìž¥ëœ ìƒíƒœ) í™œì„±í™”ë˜ëŠ” ë²„íŠ¼ START -->
                                 <div class="btn_wrap">
-                                    <button type="submit" class="btn_md btn_primary">¼öÁ¤ÇÏ±â</button>
-                                    <button type="reset" class="btn_md btn_primary btn_light_gray s_open_popup">ÆÇ¸ÅÁßÁö¿äÃ»</button>
+                                    <button type="submit" class="btn_md btn_primary">ìŠ¹ì¸ì‹ ì²­</button>
+                                    <button type="reset" class="btn_md btn_primary btn_light_gray">ìˆ˜ì •í•˜ê¸°</button>
                                 </div>
-                                <!-- ½ÂÀÎ ¿Ï·á ÀÌÈÄ µµ¼­ ¸ñ·Ï¿¡¼­ µé¾î¿ÔÀ» ¶§ ÇÏ´Ü ¹öÆ° END -->
+                                <!-- ìµœì´ˆ ì €ìž¥ ì´í›„ ë„ì„œ ì •ë³´ view í™”ë©´ì—ì„œ(ìž…ë ¥í•œ ì •ë³´ê°€ ì €ìž¥ëœ ìƒíƒœ) í™œì„±í™”ë˜ëŠ” ë²„íŠ¼ END -->
                                  
-                                <!-- ÀúÀå ÈÄ µµ¼­ Á¤º¸ view È­¸é¿¡¼­ ÇÏ´Ü ¹öÆ° START -->
+                                <!-- ìŠ¹ì¸ ì™„ë£Œ ì´í›„ ë„ì„œ ëª©ë¡ì—ì„œ ë“¤ì–´ì™”ì„ ë•Œ í•˜ë‹¨ ë²„íŠ¼ START -->
                                 <div class="btn_wrap">
-                                    <button type="submit" class="btn_md btn_primary">½ÂÀÎ½ÅÃ»</button>
-                                    <button type="reset" class="btn_md btn_primary btn_light_gray">¼öÁ¤ÇÏ±â</button>
+                                    <button type="submit" class="btn_md btn_primary">ìˆ˜ì •í•˜ê¸°</button>
+                                    <button type="reset" class="btn_md btn_primary btn_light_gray s_open_popup">íŒë§¤ì¤‘ì§€ìš”ì²­</button>
                                 </div>
-                                <!-- ÀúÀå ÈÄ µµ¼­ Á¤º¸ view È­¸é¿¡¼­ ÇÏ´Ü ¹öÆ° END -->
+                                <!-- ìŠ¹ì¸ ì™„ë£Œ ì´í›„ ë„ì„œ ëª©ë¡ì—ì„œ ë“¤ì–´ì™”ì„ ë•Œ í•˜ë‹¨ ë²„íŠ¼ END -->
                                 
 
                             </fieldset>
                         </form>
                     </div>
-                    <!-- ÄÜÅÙÃ÷ µî·Ï END -->                    
+                    <!-- ì½˜í…ì¸  ë“±ë¡ END -->                    
                 </div>
 
             </section>
         </main>
         
 
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ START -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… START -->
         <!--#include virtual="/partner/include/footer.asp"-->
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ END -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… END -->
 
     </div>
     
@@ -723,7 +734,7 @@
 
     <script>
 
-        // ÆÄÀÏ ¾÷·Îµå-Ç¥Áö
+        // íŒŒì¼ ì—…ë¡œë“œ-í‘œì§€
         function setThumbnail(event) {
         var reader = new FileReader();
 
@@ -736,7 +747,7 @@
         reader.readAsDataURL(event.target.files[0]);
       }
 
-      // ÆÄÀÏ ¾÷·Îµå-»ó¼¼
+      // íŒŒì¼ ì—…ë¡œë“œ-ìƒì„¸
       function setThumbnail2(event) {
         var reader = new FileReader();
 
@@ -749,7 +760,6 @@
         reader.readAsDataURL(event.target.files[0]);
       };
 
-      // ÆÇ¸ÅÁßÁö»çÀ¯
 
       
 
@@ -764,31 +774,31 @@
                 
                 locale: {
                     format: "YYYY-MM-DD",
-                    applyLabel: "È®ÀÎ",
-                    cancelLabel: "Ãë¼Ò",
+                    applyLabel: "í™•ì¸",
+                    cancelLabel: "ì·¨ì†Œ",
                     customRangeLabel: "Custom",
                     weekLabel: "W",
-                    daysOfWeek: ["ÀÏ", "¿ù", "È­", "¼ö", "¸ñ", "±Ý", "Åä"],
+                    daysOfWeek: ["ì¼", "ì›”", "í™”", "ìˆ˜", "ëª©", "ê¸ˆ", "í† "],
                     monthNames: [
-                    "1¿ù",
-                    "2¿ù",
-                    "3¿ù",
-                    "4¿ù",
-                    "5¿ù",
-                    "6¿ù",
-                    "7¿ù",
-                    "8¿ù",
-                    "9¿ù",
-                    "10¿ù",
-                    "11¿ù",
-                    "12¿ù",
+                    "1ì›”",
+                    "2ì›”",
+                    "3ì›”",
+                    "4ì›”",
+                    "5ì›”",
+                    "6ì›”",
+                    "7ì›”",
+                    "8ì›”",
+                    "9ì›”",
+                    "10ì›”",
+                    "11ì›”",
+                    "12ì›”",
                     ],
                 },
                 
                 },
             );
             
-            // ½Ã¸®Áî Á¤º¸ Ãß°¡
+            // ì‹œë¦¬ì¦ˆ ì •ë³´ ì¶”ê°€
             $(".series_add_info").hide();
             $("input:checkbox[name='series_chk']").click(function(){
                 if($(this).is(":checked")){
@@ -798,8 +808,8 @@
                 }
             });
 
-            // ºê·£µå¸í Ãß°¡, »èÁ¦ ¹öÆ°
-            var fieldHtml='<div><input type="text" class="add_ipt"><button type="button" class="btn_line g_btn_line remove_btn">- »èÁ¦</button></div>';
+            // ë¸Œëžœë“œëª… ì¶”ê°€, ì‚­ì œ ë²„íŠ¼
+            var fieldHtml='<div><input type="text" class="add_ipt"><button type="button" class="btn_line g_btn_line remove_btn">- ì‚­ì œ</button></div>';
 
             $(".brand .add_btn").click(function(){
                 $(".brand.btn_add_wrap").append(fieldHtml);
@@ -814,8 +824,8 @@
                 $(this).parent('div').remove();
             });
 
-            // ÀúÀÚ Ãß°¡, »èÁ¦ ¹öÆ°
-            var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>ÀúÀÚ</option><option value="translator">¿ªÀÚ</option><option value="painter">±×¸°ÀÌ</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">¼Ò°³³»¿ë</button><button type="button" class="btn_line g_btn_line remove_btn">- »èÁ¦</button></div>';
+            // ì €ìž ì¶”ê°€, ì‚­ì œ ë²„íŠ¼
+            var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>ì €ìž</option><option value="translator">ì—­ìž</option><option value="painter">ê·¸ë¦°ì´</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">ì†Œê°œë‚´ìš©</button><button type="button" class="btn_line g_btn_line remove_btn">- ì‚­ì œ</button></div>';
 
             $(".author .add_btn").click(function(){
                 $(".author.btn_add_wrap").append(fieldHtml2);
@@ -830,7 +840,7 @@
                 $(this).parent('div').remove();
             });
 
-            // Ä«Å×°í¸®1 Ãß°¡, »èÁ¦ ¹öÆ°
+            // ì¹´í…Œê³ ë¦¬1 ì¶”ê°€, ì‚­ì œ ë²„íŠ¼
             $(".cat1 .add_btn").click(function(){
                 $(".cat1.btn_add_wrap").append(fieldHtml);
             });
@@ -844,7 +854,7 @@
                 $(this).parent('div').remove();
             });
 
-            // Ä«Å×°í¸®2 Ãß°¡, »èÁ¦ ¹öÆ°
+            // ì¹´í…Œê³ ë¦¬2 ì¶”ê°€, ì‚­ì œ ë²„íŠ¼
             $(".cat2 .add_btn").click(function(){
                 $(".cat2.btn_add_wrap").append(fieldHtml);
             });
@@ -859,7 +869,7 @@
             });
 
 
-            // ÀúÀÚ ¼Ò°³³»¿ë modal ¶ç¿ì±â
+            // ì €ìž ì†Œê°œë‚´ìš© modal ë„ìš°ê¸°
             $(".btn_add_wrap").on('click','.a_open_popup',function(){
                 $(".a_modal").css({
                     "display":"block",
@@ -878,7 +888,7 @@
                 })
             });
 
-            // ÆÇ¸ÅÁßÁö ¼Ò°³³»¿ë modal ¶ç¿ì±â
+            // íŒë§¤ì¤‘ì§€ ì†Œê°œë‚´ìš© modal ë„ìš°ê¸°
             $(".s_open_popup").click(function(){
                 $(".s_modal").css({
                     "display":"block",
@@ -897,7 +907,7 @@
                 })
             });
 
-            // ÆÇ¸ÅÁßÁö¿¡¼­ ±âÅ¸ ÅØ½ºÆ® ÀÔ·Â ½Ã ±âÅ¸ ¶óµð¿À ¼±ÅÃ
+            // íŒë§¤ì¤‘ì§€ì—ì„œ ê¸°íƒ€ í…ìŠ¤íŠ¸ ìž…ë ¥ ì‹œ ê¸°íƒ€ ë¼ë””ì˜¤ ì„ íƒ
             $("textarea[id=etc_txt]").on('click',function(){
                 $("input:radio[id='etc']").prop("checked",true);
                 $("input:radio[id='expire'],input:radio[id='revision']").removeAttr("checked");
@@ -905,7 +915,7 @@
 
         });
 
-        // input=file ÆÄÀÏ¸í ¿¬°á
+        // input=file íŒŒì¼ëª… ì—°ê²°
         $("#b_file").on('change',function(){
             var fileName = $(this).val();
             $("#b_file_name").val(fileName);
@@ -924,7 +934,7 @@
             $("#f_file_name").val(fileName);
         });
 
-        // ÆÄÀÏ 1mb Á¦ÇÑ
+        // íŒŒì¼ 1mb ì œí•œ
         $(".under_1mb").bind( 'change', function (e)
         {
             if( !$(this).val() ) return;
@@ -936,13 +946,13 @@
                          
             if( size > limit )
             {
-                alert( 'ÆÄÀÏ¿ë·®Àº 1mb ¸¦ ³ÑÀ»¼ö ¾ø½À´Ï´Ù.' );
+                alert( 'íŒŒì¼ìš©ëŸ‰ì€ 1mb ë¥¼ ë„˜ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤.' );
                 $(this).val('');
                 return;
             }
         });
 
-        // ÆÄÀÏ 30mb Á¦ÇÑ
+        // íŒŒì¼ 30mb ì œí•œ
         $(".under_30mb").bind( 'change', function (e)
         {
             if( !$(this).val() ) return;
@@ -954,7 +964,7 @@
                          
             if( size > limit )
             {
-                alert( 'ÆÄÀÏ¿ë·®Àº 30mb ¸¦ ³ÑÀ»¼ö ¾ø½À´Ï´Ù.' );
+                alert( 'íŒŒì¼ìš©ëŸ‰ì€ 30mb ë¥¼ ë„˜ì„ìˆ˜ ì—†ìŠµë‹ˆë‹¤.' );
                 $(this).val('');
                 return;
             }
@@ -962,15 +972,15 @@
 
 
 
-        // datatables.js ¼öÁ¤
-        // ÇÑ È­¸é¿¡ 20°³ Ç×¸ñ¾¿ º¸ÀÌ°Ô ¼öÁ¤ 230306 ÇýÁö
-        // 10447ÁÙ, 11453ÁÙ
+        // datatables.js ìˆ˜ì •
+        // í•œ í™”ë©´ì— 20ê°œ í•­ëª©ì”© ë³´ì´ê²Œ ìˆ˜ì • 230306 í˜œì§€
+        // 10447ì¤„, 11453ì¤„
         
-        // ~°³¾¿ º¸±â·Î ¼öÁ¤ 230306 ÇýÁö
-        // 11888ÁÙ
+        // ~ê°œì”© ë³´ê¸°ë¡œ ìˆ˜ì • 230306 í˜œì§€
+        // 11888ì¤„
 
-        // Å×ÀÌºí ¹Ø¿¡ »óÇ° ÃÑ °³¼ö ¸í½Ã 230307 ÇýÁö
-        // 11725ÁÙ
+        // í…Œì´ë¸” ë°‘ì— ìƒí’ˆ ì´ ê°œìˆ˜ ëª…ì‹œ 230307 í˜œì§€
+        // 11725ì¤„
 
         
     </script>

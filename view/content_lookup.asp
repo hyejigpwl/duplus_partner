@@ -1,163 +1,175 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ" />
+    <meta name="keywords" content="ë‘í”ŒëŸ¬ìŠ¤, ë‘í”Œ, ë‘ëž€ë…¸, ë³µìŒ, ì½˜í…ì¸ , ì˜¤ë¦¬ì§€ë„, ì˜¤ë””ì˜¤ë¶, ì „ìžì±…, ê°•ì˜, êµ¬ë…, íí‹°, ì‹ ì•™, êµíšŒ, ëª©íšŒ" />
+    <meta name="author" content="duranno" />-->
+    <title>ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ</title>
+    <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- íŒŒë¹„ì½˜ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //êµ¬ê¸€ ì•„ì´ì½˜í°íŠ¸ --> 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:title" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">-->
+    
 
-    <title>µÎÇÃ·¯½º ÄÁÅÙÃ÷ ÆÄÆ®³Ê : ÄÜÅÙÃ÷ Á¶È¸</title>
-
-    <!-- Çì´õ START -->
+    <!-- í—¤ë” START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
     <div class="page_right">
         <main id="content" class="content p_book_list">
             <section class="book_list_wrap">
-                <!-- ÄÜÅÙÃ÷ Á¶È¸ Á¦¸ñ START -->
+                <!-- ì½˜í…ì¸  ì¡°íšŒ ì œëª© START -->
                 <h2>
-                    <a href="#none" title="¸Þ´º¿­±â" class="open_gnb">
-                        <span>ÄÜÅÙÃ÷ Á¶È¸</span> 
+                    <a href="#none" title="ë©”ë‰´ì—´ê¸°" class="open_gnb">
+                        <span>ì½˜í…ì¸  ì¡°íšŒ</span> 
                     </a>
                 </h2>
-                <!-- ÄÜÅÙÃ÷ Á¶È¸ Á¦¸ñ END -->
+                <!-- ì½˜í…ì¸  ì¡°íšŒ ì œëª© END -->
     
                 <div class="page_wrap">
-                    <!-- ÄÜÅÙÃ÷ ¸ñ·Ï ÇÊÅÍ START -->
+                    <!-- ì½˜í…ì¸  ëª©ë¡ í•„í„° START -->
                     <form action="" method="post" id="cont_lookup_form" class="form_primary">
                         <fieldset>
-                            <legend class="blind">ÄÜÅÙÃ÷ Á¶È¸ ÇÊÅÍ</legend>
+                            <legend class="blind">ì½˜í…ì¸  ì¡°íšŒ í•„í„°</legend>
     
                             <div class="filter_wrap">
-                                <!-- »óÇ° START -->
+                                <!-- ìƒí’ˆ START -->
                                 <p class="goods">
-                                    <span class="f_title">»óÇ°</span>
+                                    <span class="f_title">ìƒí’ˆ</span>
     
                                     <span class="chk">
                                         <input type="checkbox" name="goods" id="all" onclick="selectAll(this)" value="all">
-                                        <label for="all">ÀüÃ¼</label>
+                                        <label for="all">ì „ì²´</label>
                                     </span>
     
                                     <span class="chk">
                                         <input type="checkbox" id="unr_book" name="goods" value="unr_book">
-                                        <label for="unr_book">E-ISBN ¹Ìµî·Ï µµ¼­</label>
+                                        <label for="unr_book">E-ISBN ë¯¸ë“±ë¡ ë„ì„œ</label>
                                     </span>
                                     
                                     <span class="chk">
                                         <input type="checkbox" id="n_book" name="goods" value="n_book">
-                                        <label for="n_book">ÀÏ¹Ýµµ¼­</label>
+                                        <label for="n_book">ì¼ë°˜ë„ì„œ</label>
                                     </span>
                                     
                                     <!--<span class="chk">
                                         <input type="checkbox" id="g_book" name="goods" value="g_book">
-                                        <label for="g_book">Àå¸£µµ¼­</label>
+                                        <label for="g_book">ìž¥ë¥´ë„ì„œ</label>
                                     </span>-->
                                     
     
                                     <span class="chk">
                                         <input type="checkbox" id="a_book" name="goods" value="a_book">
-                                        <label for="a_book">¿Àµð¿ÀºÏ</label>
+                                        <label for="a_book">ì˜¤ë””ì˜¤ë¶</label>
                                     </span>
                                     
     
                                     <!--<span class="chk">
                                         <input type="checkbox" id="video" name="goods" value="video">
-                                        <label for="video">µ¿¿µ»ó</label>
+                                        <label for="video">ë™ì˜ìƒ</label>
                                     </span>-->
                                     
                                 </p>
-                                <!-- »óÇ° END -->
+                                <!-- ìƒí’ˆ END -->
                                 
-                                <!-- µî·ÏÀÏÀÚ START -->
+                                <!-- ë“±ë¡ì¼ìž START -->
                                 <p class="regist_date">
-                                    <span class="f_title">µî·ÏÀÏÀÚ</span>
+                                    <span class="f_title">ë“±ë¡ì¼ìž</span>
     
                                     <input type="text" name="startDate" value="" autocomplete="off" id="startDate">
                                     ~
                                     <input type="text" name="endDate" value="" autocomplete="off" id="endDate">
     
-                                    <button type="button" id="btn_period_1w">1ÁÖ</button>
-                                    <button type="button" id="btn_period_1m">1°³¿ù</button>
-                                    <button type="button" id="btn_period_3m">3°³¿ù</button>
-                                    <button type="button" id="btn_period_1y">1³â</button>
-                                    <button type="button" id="btn_period_all">ÀüÃ¼</button>
+                                    <button type="button" id="btn_period_1w">1ì£¼</button>
+                                    <button type="button" id="btn_period_1m">1ê°œì›”</button>
+                                    <button type="button" id="btn_period_3m">3ê°œì›”</button>
+                                    <button type="button" id="btn_period_1y">1ë…„</button>
+                                    <button type="button" id="btn_period_all">ì „ì²´</button>
                                 </p>
-                                <!-- µî·ÏÀÏÀÚ END -->
+                                <!-- ë“±ë¡ì¼ìž END -->
     
                                 <div class="form_c_wrap">
-                                    <!-- ÃâÆÇ»ç START -->
+                                    <!-- ì¶œíŒì‚¬ START -->
                                     <p class="brand">
-                                        <span class="f_title">ºê·£µå</span>
+                                        <span class="f_title">ë¸Œëžœë“œ</span>
                                         <select name="brand_code_sel" id="brand_code_sel">
-                                            <option value="all" selected>ÀüÃ¼</option>
-                                            <option value="b1">µÎ¶õ³ë</option>
-                                            <option value="b2">ÇÑ±¹¼º¼­ÇÐ¿¬±¸¼Ò</option>
+                                            <option value="all" selected>ì „ì²´</option>
+                                            <option value="b1">ë‘ëž€ë…¸</option>
+                                            <option value="b2">í•œêµ­ì„±ì„œí•™ì—°êµ¬ì†Œ</option>
                                         </select>
                                     </p>
-                                    <!-- ÃâÆÇ»ç END -->
+                                    <!-- ì¶œíŒì‚¬ END -->
     
-                                    <!-- »óÅÂ START -->
+                                    <!-- ìƒíƒœ START -->
                                     <p class="state">
-                                        <span class="f_title">»óÅÂ</span>
+                                        <span class="f_title">ìƒíƒœ</span>
                                         <select name="pbcmCode_sel" id="pbcmCode_sel">
-                                            <option value="all" selected>ÀüÃ¼</option>
-                                            <option value="approval_wait">½ÂÀÎ´ë±â</option>
-                                            <option value="approval_hold">½ÂÀÎº¸·ù</option>
-                                            <option value="sale_wait">ÆÇ¸Å´ë±â</option>
-                                            <option value="sale_stop">ÆÇ¸ÅÁß´Ü</option>
-                                            <option value="sale">ÆÇ¸ÅÁß</option>
+                                            <option value="all" selected>ì „ì²´</option>
+                                            <option value="approval_wait">ìŠ¹ì¸ëŒ€ê¸°</option>
+                                            <option value="approval_hold">ìŠ¹ì¸ë³´ë¥˜</option>
+                                            <option value="sale_wait">íŒë§¤ëŒ€ê¸°</option>
+                                            <option value="sale_stop">íŒë§¤ì¤‘ë‹¨</option>
+                                            <option value="sale">íŒë§¤ì¤‘</option>
                                         </select>
                                     </p>
-                                    <!-- »óÅÂ END -->
+                                    <!-- ìƒíƒœ END -->
                                 </div>
     
                                 <div class="form_c_wrap name_wrap last">
-                                    <!-- µµ¼­¸í START -->
+                                    <!-- ë„ì„œëª… START -->
                                     <p class="book_name">
-                                        <span class="f_title">µµ¼­¸í</span>
+                                        <span class="f_title">ë„ì„œëª…</span>
                                         <input type="text" name="b_name">
                                     </p>
-                                    <!-- µµ¼­¸í END -->
+                                    <!-- ë„ì„œëª… END -->
     
-                                    <!-- ÀúÀÚ¸í START -->
+                                    <!-- ì €ìžëª… START -->
                                     <p class="author_name">
-                                        <span class="f_title">ÀúÀÚ¸í</span>
+                                        <span class="f_title">ì €ìžëª…</span>
                                         <input type="text" name="a_name">
                                     </p>
-                                    <!-- ÀúÀÚ¸í END -->
+                                    <!-- ì €ìžëª… END -->
                                 </div>
                             </div>
                             
                             <div class="btn_wrap">
-                                <button type="submit" class="btn_md btn_primary">Á¶È¸</button>
+                                <button type="submit" class="btn_md btn_primary">ì¡°íšŒ</button>
                             </div>
                             
                         </fieldset>
                     </form>
-                    <!-- ÄÜÅÙÃ÷ ¸ñ·Ï ÇÊÅÍ END -->
+                    <!-- ì½˜í…ì¸  ëª©ë¡ í•„í„° END -->
     
                     <div class="table_cont">
-                        <h3 class="sub_t">ÄÜÅÙÃ÷ ¸ñ·Ï</h3>
+                        <h3 class="sub_t">ì½˜í…ì¸  ëª©ë¡</h3>
     
                         <div class="tab_bwrap">
-                            <!-- ÄÜÅÙÃ÷ ¸ñ·ÏÀº 20°³¾¿ ¸®½ºÆ® -->
-                            <!-- ÀüÃ¼ µµ¼­ ¸ñ·Ï START -->
+                            <!-- ì½˜í…ì¸  ëª©ë¡ì€ 20ê°œì”© ë¦¬ìŠ¤íŠ¸ -->
+                            <!-- ì „ì²´ ë„ì„œ ëª©ë¡ START -->
                             <div id="t_b_list_all_wrap">
                                 <table id="t_b_list_all" class="display">
-                                    <caption>µµ¼­ ¸ñ·Ï</caption>
+                                    <caption>ë„ì„œ ëª©ë¡</caption>
                                     <thead>
                                         <th scope="col">No.</th>
-                                        <th scope="col">»óÇ°ÄÚµå</th>
-                                        <th scope="col">ÆÄÀÏÅ¸ÀÔ</th>
-                                        <th scope="col" class="txt_l">µµ¼­¸í</th>
-                                        <th scope="col">ÀúÀÚ</th>
-                                        <th scope="col">ºê·£µå</th>
+                                        <th scope="col">ìƒí’ˆì½”ë“œ</th>
+                                        <th scope="col">íŒŒì¼íƒ€ìž…</th>
+                                        <th scope="col" class="txt_l">ë„ì„œëª…</th>
+                                        <th scope="col">ì €ìž</th>
+                                        <th scope="col">ë¸Œëžœë“œ</th>
                                         <th scope="col">E-ISBN</th>
-                                        <th scope="col">Á¤°¡</th>
-                                        <th scope="col">ÆÇ¸Å°¡</th>
-                                        <th scope="col">´ë¿©°¡</th>
-                                        <th scope="col">Ä«Å×°í¸®</th>
-                                        <th scope="col">½Ã¸®Áî</th>
-                                        <th scope="col">»óÅÂ</th>
-                                        <th scope="col">µî·ÏÀÏ</th>
+                                        <th scope="col">ì •ê°€</th>
+                                        <th scope="col">íŒë§¤ê°€</th>
+                                        <th scope="col">ëŒ€ì—¬ê°€</th>
+                                        <th scope="col">ì¹´í…Œê³ ë¦¬</th>
+                                        <th scope="col">ì‹œë¦¬ì¦ˆ</th>
+                                        <th scope="col">ìƒíƒœ</th>
+                                        <th scope="col">ë“±ë¡ì¼</th>
                                     </thead>
                             
                                     <tbody>
@@ -165,16 +177,16 @@
                                             <td scope="row" id="num">22</td>
                                             <td id="b_barcode">E230100002</td>
                                             <td id="b_type">EPUB</td>
-                                            <td id="b_name" class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td id="b_author">Á¸ ¿¤µå¸®Áö</td>
-                                            <td id="b_brand">µÎ¶õ³ë</td>
+                                            <td id="b_name" class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td id="b_author">ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td id="b_brand">ë‘ëž€ë…¸</td>
                                             <td  id="b_eisbn">9788953143876</td>
                                             <td id="b_list_price" class="txt_r">15,000</td>
                                             <td id="b_price" class="txt_r">15,000</td>
                                             <td id="b_rental_price" class="txt_r">17,500</td>
-                                            <td id="b_category">¹ÏÀ½°ú¼ºÀå</td>
+                                            <td id="b_category">ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td id="b_series">N</td>
-                                            <td id="b_state">½ÂÀÎ´ë±â</td>
+                                            <td id="b_state">ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td id="b_regist_date">2023-01-05</td>
                                         </tr>
                             
@@ -182,16 +194,16 @@
                                             <td scope="row">21</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">5,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -199,16 +211,16 @@
                                             <td scope="row">20</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -216,16 +228,16 @@
                                             <td scope="row">19</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -233,16 +245,16 @@
                                             <td scope="row">18</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -250,16 +262,16 @@
                                             <td scope="row">17</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -267,16 +279,16 @@
                                             <td scope="row">16</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -284,16 +296,16 @@
                                             <td scope="row">15</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -301,16 +313,16 @@
                                             <td scope="row">14</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                             
@@ -318,16 +330,16 @@
                                             <td scope="row">13</td>
                                             <td>E230100002</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">±×¸®½ºµµÀÎÀÇ ÃÊÀÚ¿¬Àû È¸º¹·Â</a></td>
-                                            <td>Á¸ ¿¤µå¸®Áö</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ê·¸ë¦¬ìŠ¤ë„ì¸ì˜ ì´ˆìžì—°ì  íšŒë³µë ¥</a></td>
+                                            <td>ì¡´ ì—˜ë“œë¦¬ì§€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143876</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">15,000</td>
                                             <td class="txt_r">7,500</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2023-01-05</td>
                                         </tr>
                                         
@@ -335,16 +347,16 @@
                                             <td scope="row">12</td>
                                             <td>E230100001</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">»îÀ¸·Î °¡¸£Ä¡´Â °Í¸¸ ³²´Â´Ù</a></td>
-                                            <td>±è¿ä¼Á</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ì‚¶ìœ¼ë¡œ ê°€ë¥´ì¹˜ëŠ” ê²ƒë§Œ ë‚¨ëŠ”ë‹¤</a></td>
+                                            <td>ê¹€ìš”ì…‰</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143753</td>
                                             <td class="txt_r">9,800</td>
                                             <td class="txt_r">8,820</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎ´ë±â</td>
+                                            <td>ìŠ¹ì¸ëŒ€ê¸°</td>
                                             <td>2022-12-23</td>
                                         </tr>
                             
@@ -352,16 +364,16 @@
                                             <td scope="row">11</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -369,16 +381,16 @@
                                             <td scope="row">10</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -386,16 +398,16 @@
                                             <td scope="row">9</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -403,16 +415,16 @@
                                             <td scope="row">8</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -420,16 +432,16 @@
                                             <td scope="row">7</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -437,16 +449,16 @@
                                             <td scope="row">6</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -454,16 +466,16 @@
                                             <td scope="row">5</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -471,16 +483,16 @@
                                             <td scope="row">4</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -488,16 +500,16 @@
                                             <td scope="row">3</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -505,16 +517,16 @@
                                             <td scope="row">2</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                             
@@ -522,25 +534,25 @@
                                             <td scope="row">1</td>
                                             <td>E230100012</td>
                                             <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">´õ ¹ÙÀÌºí ÇÃ·¯½º : ½Å¾à 1 (»çº¹À½¼­)</a></td>
-                                            <td>µÎ¶õ³ë ÆíÁýºÎ</td>
-                                            <td>µÎ¶õ³ë</td>
+                                            <td class="txt_l"><a href="content_regist.asp">ë” ë°”ì´ë¸” í”ŒëŸ¬ìŠ¤ : ì‹ ì•½ 1 (ì‚¬ë³µìŒì„œ)</a></td>
+                                            <td>ë‘ëž€ë…¸ íŽ¸ì§‘ë¶€</td>
+                                            <td>ë‘ëž€ë…¸</td>
                                             <td>9788953143746</td>
                                             <td class="txt_r">9,100</td>
                                             <td class="txt_r">8,190</td>
                                             <td class="txt_r">0</td>
-                                            <td>¹ÏÀ½°ú¼ºÀå</td>
+                                            <td>ë¯¿ìŒê³¼ì„±ìž¥</td>
                                             <td>N</td>
-                                            <td>½ÂÀÎº¸·ù</td>
+                                            <td>ìŠ¹ì¸ë³´ë¥˜</td>
                                             <td>2022-12-21</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <!-- ÀüÃ¼ µµ¼­ ¸ñ·Ï END -->
+                            <!-- ì „ì²´ ë„ì„œ ëª©ë¡ END -->
     
                         </div>
-                        <!-- ÄÜÅÙÃ÷ ¸ñ·Ï END -->
+                        <!-- ì½˜í…ì¸  ëª©ë¡ END -->
                     </div>
                     
                 </div>
@@ -548,16 +560,16 @@
             </section>
         </main>
         
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ START -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… START -->
         <!--#include virtual="/partner/include/footer.asp"-->
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ END -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… END -->
     </div>
     
 
     
 
     <script>
-        // Ã¼Å©¹Ú½º ÀüÃ¼ Å¬¸¯½Ã
+        // ì²´í¬ë°•ìŠ¤ ì „ì²´ í´ë¦­ì‹œ
         function selectAll(selectAll)  {
         const checkboxes 
             = document.getElementsByName('goods');
@@ -577,17 +589,17 @@
                 buttons: [
                     {
                         extend: 'excel'
-                        ,text: '¿¢¼¿´Ù¿î·Îµå'
-                        ,filename: 'ÄÜÅÙÃ÷ ¸ñ·Ï'
-				        ,title: '¿¢¼¿ÆÄÀÏ ¾È¿¡ ¾²ÀÏ Á¦¸ñ'
+                        ,text: 'ì—‘ì…€ë‹¤ìš´ë¡œë“œ'
+                        ,filename: 'ì½˜í…ì¸  ëª©ë¡'
+				        ,title: 'ì—‘ì…€íŒŒì¼ ì•ˆì— ì“°ì¼ ì œëª©'
                     },
                 ],
 
-                // ¼¼·Î ½ºÅ©·Ñ
+                // ì„¸ë¡œ ìŠ¤í¬ë¡¤
                 // scrollY: '489px',
                 // scrollCollapse: true,
 
-                // ¼¿ ³Êºñ °íÁ¤
+                // ì…€ ë„ˆë¹„ ê³ ì •
                 bAutoWidth:false,
                 columnDefs:[
                     {width:"4%",targets:0},
@@ -615,24 +627,24 @@
                 
                 locale: {
                     format: "YYYY-MM-DD",
-                    applyLabel: "È®ÀÎ",
-                    cancelLabel: "Ãë¼Ò",
+                    applyLabel: "í™•ì¸",
+                    cancelLabel: "ì·¨ì†Œ",
                     customRangeLabel: "Custom",
                     weekLabel: "W",
-                    daysOfWeek: ["ÀÏ", "¿ù", "È­", "¼ö", "¸ñ", "±Ý", "Åä"],
+                    daysOfWeek: ["ì¼", "ì›”", "í™”", "ìˆ˜", "ëª©", "ê¸ˆ", "í† "],
                     monthNames: [
-                    "1¿ù",
-                    "2¿ù",
-                    "3¿ù",
-                    "4¿ù",
-                    "5¿ù",
-                    "6¿ù",
-                    "7¿ù",
-                    "8¿ù",
-                    "9¿ù",
-                    "10¿ù",
-                    "11¿ù",
-                    "12¿ù",
+                    "1ì›”",
+                    "2ì›”",
+                    "3ì›”",
+                    "4ì›”",
+                    "5ì›”",
+                    "6ì›”",
+                    "7ì›”",
+                    "8ì›”",
+                    "9ì›”",
+                    "10ì›”",
+                    "11ì›”",
+                    "12ì›”",
                     ],
                 },
                 
@@ -645,15 +657,15 @@
         
         
 
-        // datatables.js ¼öÁ¤
-        // ÇÑ È­¸é¿¡ 20°³ Ç×¸ñ¾¿ º¸ÀÌ°Ô ¼öÁ¤ 230306 ÇýÁö
-        // 10447ÁÙ, 11453ÁÙ
+        // datatables.js ìˆ˜ì •
+        // í•œ í™”ë©´ì— 20ê°œ í•­ëª©ì”© ë³´ì´ê²Œ ìˆ˜ì • 230306 í˜œì§€
+        // 10447ì¤„, 11453ì¤„
         
-        // ~°³¾¿ º¸±â·Î ¼öÁ¤ 230306 ÇýÁö
-        // 11888ÁÙ
+        // ~ê°œì”© ë³´ê¸°ë¡œ ìˆ˜ì • 230306 í˜œì§€
+        // 11888ì¤„
 
-        // Å×ÀÌºí ¹Ø¿¡ »óÇ° ÃÑ °³¼ö ¸í½Ã 230307 ÇýÁö
-        // 11725ÁÙ
+        // í…Œì´ë¸” ë°‘ì— ìƒí’ˆ ì´ ê°œìˆ˜ ëª…ì‹œ 230307 í˜œì§€
+        // 11725ì¤„
 
         
     </script>

@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="ÎëêÌîåÎü¨Ïä§ ÏΩòÌÖêÏ∏† ÌååÌä∏ÎÑà ÏãúÏä§ÌÖú" />
+    <meta name="keywords" content="ÎëêÌîåÎü¨Ïä§, ÎëêÌîå, ÎëêÎûÄÎÖ∏, Î≥µÏùå, ÏΩòÌÖêÏ∏†, Ïò§Î¶¨ÏßÄÎÑê, Ïò§ÎîîÏò§Î∂Å, Ï†ÑÏûêÏ±Ö, Í∞ïÏùò, Íµ¨ÎèÖ, ÌÅêÌã∞, Ïã†Ïïô, ÍµêÌöå, Î™©Ìöå" />
+    <meta name="author" content="duranno" />-->
+    <title>ÎëêÌîåÎü¨Ïä§ ÏΩòÌÖêÏ∏† ÌååÌä∏ÎÑà ÏãúÏä§ÌÖú</title>
+    <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- ÌååÎπÑÏΩò -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //Íµ¨Í∏Ä ÏïÑÏù¥ÏΩòÌè∞Ìä∏ --> 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ÎëêÌîåÎü¨Ïä§ ÏΩòÌÖêÏ∏† ÌååÌä∏ÎÑà ÏãúÏä§ÌÖú">
+	<meta property="og:title" content="ÎëêÌîåÎü¨Ïä§ ÏΩòÌÖêÏ∏† ÌååÌä∏ÎÑà ÏãúÏä§ÌÖú">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="ÎëêÌîåÎü¨Ïä§ ÏΩòÌÖêÏ∏† ÌååÌä∏ÎÑà ÏãúÏä§ÌÖú">-->
 
-    <title>µŒ«√∑ØΩ∫ ƒ¡≈Ÿ√˜ ∆ƒ∆Æ≥  : √‚∆«ªÁ ¡§∫∏ ∞¸∏Æ</title>
-
-    <!-- «Ï¥ı START -->
+    <!-- Ìó§Îçî START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
     <script>
-        // ¿Ø»øº∫ ∞ÀªÁ
+        // Ïú†Ìö®ÏÑ± Í≤ÄÏÇ¨
         function form_check(){
             const u_pw=document.getElementById("u_pw");
             const u_pw_chk=document.getElementById("u_pw_chk");
 
-            /* ∫Òπ–π¯»£ ¿œƒ° ø©∫Œ */
+            /* ÎπÑÎ∞ÄÎ≤àÌò∏ ÏùºÏπò Ïó¨Î∂Ä */
             if(u_pw.value!==u_pw_chk.value){
-                alert("∫Òπ–π¯»£∞° ¿œƒ°«œ¡ˆ æ Ω¿¥œ¥Ÿ.");
+                alert("ÎπÑÎ∞ÄÎ≤àÌò∏Í∞Ä ÏùºÏπòÌïòÏßÄ ÏïäÏäµÎãàÎã§.");
                 u_pw_chk.focus();
                 return false;
             }
@@ -28,25 +39,25 @@
     <div class="page_right">
         <main id="content" class="content p_content_regist">
             <section class="">
-                <!-- ¡¶∏Ò START -->
+                <!-- Ï†úÎ™© START -->
                 <h2>
-                    <a href="#none" title="∏ﬁ¥∫ø≠±‚" class="open_gnb">
-                        <span>√‚∆«ªÁ ¡§∫∏ ∞¸∏Æ</span>
+                    <a href="#none" title="Î©îÎâ¥Ïó¥Í∏∞" class="open_gnb">
+                        <span>Ï∂úÌåêÏÇ¨ Ï†ïÎ≥¥ Í¥ÄÎ¶¨</span>
                     </a>
                     
                 </h2>
-                <!-- ¡¶∏Ò END -->
+                <!-- Ï†úÎ™© END -->
     
                 <div class="page_wrap">
 
-                    <!-- √‚∆«ªÁ ¡§∫∏ ∞¸∏Æ START -->
+                    <!-- Ï∂úÌåêÏÇ¨ Ï†ïÎ≥¥ Í¥ÄÎ¶¨ START -->
                     <div class="content_regist">
                         <form action="" method="post" id="my_page_form" class="form_primary" onsubmit="return form_check()">
                             <fieldset>
-                                <legend class="blind">√‚∆«ªÁ ¡§∫∏ ∞¸∏Æ</legend>
+                                <legend class="blind">Ï∂úÌåêÏÇ¨ Ï†ïÎ≥¥ Í¥ÄÎ¶¨</legend>
     
                                 <div class="basic_info table_wrap">
-                                    <h3 class="sub_t">±‚∫ª ¡§∫∏</h3>
+                                    <h3 class="sub_t">Í∏∞Î≥∏ Ï†ïÎ≥¥</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -56,48 +67,48 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">æ∆¿Ãµ</th>
+                                                <th scope="row">ÏïÑÏù¥Îîî</th>
                                                 <td colspan="3">
                                                     <input type="text" value="2148204203" name="u_id" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">∫Òπ–π¯»£ ∫Ø∞Ê</th>
+                                                <th scope="row">ÎπÑÎ∞ÄÎ≤àÌò∏ Î≥ÄÍ≤Ω</th>
                                                 <td>
                                                     <input type="password" name="u_pw" id="u_pw">
                                                 </td>
-                                                <th scope="row">∫Òπ–π¯»£ »Æ¿Œ</th>
+                                                <th scope="row">ÎπÑÎ∞ÄÎ≤àÌò∏ ÌôïÏù∏</th>
                                                 <td>
                                                     <input type="password" name="u_pw_chk" id="u_pw_chk">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>√‚∆«ªÁ∏Ì</th>
+                                                <th>Ï∂úÌåêÏÇ¨Î™Ö</th>
                                                 <td colspan="3">
-                                                    <input type="text" value="µŒ∂ı≥Îº≠ø¯" name="brand_name" disabled>
+                                                    <input type="text" value="ÎëêÎûÄÎÖ∏ÏÑúÏõê" name="brand_name" disabled>
                                                 </td>
                                             </tr>
                                             <tr class="">
-                                                <th>¥Î«•¿⁄∏Ì</th>
+                                                <th>ÎåÄÌëúÏûêÎ™Ö</th>
                                                 <td>
-                                                    <input type="text" value="«œøÎ¡∂" name="repre_name" disabled>
+                                                    <input type="text" value="ÌïòÏö©Ï°∞" name="repre_name" disabled>
                                                 </td>
-                                                <th>ªÁæ˜¿⁄π¯»£</th>
+                                                <th>ÏÇ¨ÏóÖÏûêÎ≤àÌò∏</th>
                                                 <td>
                                                     <input type="text" value="2148204203" name="business_num" disabled>
                                                 </td>
                                             </tr>
                                             <tr class="">
-                                                <th>¡÷º“</th>
+                                                <th>Ï£ºÏÜå</th>
                                                 <td colspan="3">
                                                     <p>
                                                         <input type="text" id="address" name="address">
-                                                        <button type="button" class="btn_line gray_btn_line">¡÷º“∞Àªˆ</button>
+                                                        <button type="button" class="btn_line gray_btn_line">Ï£ºÏÜåÍ≤ÄÏÉâ</button>
                                                     </p>
                                                     
                                                     <p class="middle_input last">
-                                                        <input type="text" id="basic_address" name="basic_address" value="º≠øÔ øÎªÍ±∏ º≠∫˘∞Ì∑Œ65±Ê 38">
-                                                        <input type="text" id="detail_address" name="detail_address" value="µŒ∂ı≥Î∫Ùµ˘ 501»£ (ªÁ) µŒ∂ı≥Îº≠ø¯">
+                                                        <input type="text" id="basic_address" name="basic_address" value="ÏÑúÏö∏ Ïö©ÏÇ∞Íµ¨ ÏÑúÎπôÍ≥†Î°ú65Í∏∏ 38">
+                                                        <input type="text" id="detail_address" name="detail_address" value="ÎëêÎûÄÎÖ∏ÎπåÎî© 501Ìò∏ (ÏÇ¨) ÎëêÎûÄÎÖ∏ÏÑúÏõê">
                                                     </p> 
                                                 </td>
                                             </tr>
@@ -106,7 +117,7 @@
                                 </div>
                                 
                                 <div class="content_mgr table_wrap">
-                                    <h3 class="sub_t">ƒ‹≈Ÿ√˜ ¥„¥Á¿⁄</h3>
+                                    <h3 class="sub_t">ÏΩòÌÖêÏ∏† Îã¥ÎãπÏûê</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -116,26 +127,26 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">¿Ã∏ß</th>
+                                                <th scope="row">Ïù¥Î¶Ñ</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="cont_m_name" name="cont_m_name" value="¡§ø¡»Ò">
+                                                    <input type="text" id="cont_m_name" name="cont_m_name" value="Ï†ïÏò•Ìù¨">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">¿¸»≠π¯»£</th>
+                                                <th scope="row">Ï†ÑÌôîÎ≤àÌò∏</th>
                                                 <td>
                                                     <input type="text" id="cont_m_phe" name="cont_m_phe" value="000-0000-0000">
                                                     <span class="chk">
                                                         <input type="checkbox" id="cont_phone_rec" name="cont_phone_rec" value="Y">
-                                                        <label for="cont_phone_rec">ºˆΩ≈ ø©∫Œ</label>
+                                                        <label for="cont_phone_rec">ÏàòÏã† Ïó¨Î∂Ä</label>
                                                     </span>
                                                 </td>
-                                                <th scope="row">¿Ã∏ﬁ¿œ</th>
+                                                <th scope="row">Ïù¥Î©îÏùº</th>
                                                 <td>
                                                     <input type="text" id="cont_m_eml" name="cont_m_eml" value="000-0000-0000">
                                                     <span class="chk">
                                                         <input type="checkbox" id="cont_mail_rec" name="cont_mail_rec" value="Y">
-                                                        <label for="cont_mail_rec">ºˆΩ≈ ø©∫Œ</label>
+                                                        <label for="cont_mail_rec">ÏàòÏã† Ïó¨Î∂Ä</label>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -145,7 +156,7 @@
                                 </div>
 
                                 <div class="cal_mgr table_wrap">
-                                    <h3 class="sub_t">¡§ªÍ ¥„¥Á¿⁄</h3>
+                                    <h3 class="sub_t">Ï†ïÏÇ∞ Îã¥ÎãπÏûê</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -155,26 +166,26 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">¿Ã∏ß</th>
+                                                <th scope="row">Ïù¥Î¶Ñ</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="cal_m_name" name="cal_m_name" value="¡§ø¡»Ò">
+                                                    <input type="text" id="cal_m_name" name="cal_m_name" value="Ï†ïÏò•Ìù¨">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">¿¸»≠π¯»£</th>
+                                                <th scope="row">Ï†ÑÌôîÎ≤àÌò∏</th>
                                                 <td>
                                                     <input type="text" id="cal_m_phe" name="cal_m_phe" value="000-0000-0000">
                                                     <span class="chk">
                                                         <input type="checkbox" id="cal_phone_rec" name="cal_phone_rec" value="Y">
-                                                        <label for="cal_phone_rec">ºˆΩ≈ ø©∫Œ</label>
+                                                        <label for="cal_phone_rec">ÏàòÏã† Ïó¨Î∂Ä</label>
                                                     </span>
                                                 </td>
-                                                <th scope="row">¿Ã∏ﬁ¿œ</th>
+                                                <th scope="row">Ïù¥Î©îÏùº</th>
                                                 <td>
                                                     <input type="text" id="cal_m_eml" name="cal_m_eml" value="000-0000-0000">
                                                     <span class="chk">
                                                         <input type="checkbox" id="cal_mail_rec" name="cal_mail_rec" value="Y">
-                                                        <label for="cal_mail_rec">ºˆΩ≈ ø©∫Œ</label>
+                                                        <label for="cal_mail_rec">ÏàòÏã† Ïó¨Î∂Ä</label>
                                                     </span>
                                                 </td>
                                             </tr>
@@ -185,8 +196,8 @@
 
                                 <div class="stmt_info table_wrap">
                                     <div class="flex" style="align-items: center;">
-                                        <h3 class="sub_t">¡§ªÍ ¡§∫∏</h3>
-                                        <p class="title_txt">¡§ªÍ¡§∫∏ ∫Ø∞Ê Ω√, duplus@duranno.com ∂«¥¬ ¡¶»ﬁ ¥„¥Á¿⁄ø°∞‘ ø¨∂Ù πŸ∂¯¥œ¥Ÿ. (ªÁæ˜¿⁄µÓ∑œ¡ı, ≈Î¿ÂªÁ∫ª « ºˆ)</p>
+                                        <h3 class="sub_t">Ï†ïÏÇ∞ Ï†ïÎ≥¥</h3>
+                                        <p class="title_txt">Ï†ïÏÇ∞Ï†ïÎ≥¥ Î≥ÄÍ≤Ω Ïãú, duplus@duranno.com ÎòêÎäî Ï†úÌú¥ Îã¥ÎãπÏûêÏóêÍ≤å Ïó∞ÎùΩ Î∞îÎûçÎãàÎã§. (ÏÇ¨ÏóÖÏûêÎì±Î°ùÏ¶ù, ÌÜµÏû•ÏÇ¨Î≥∏ ÌïÑÏàò)</p>
                                     </div>
                                     
                                     <table class="table_input">
@@ -198,19 +209,19 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">¿∫«‡</th>
+                                                <th scope="row">ÏùÄÌñâ</th>
                                                 <td colspan="3">
                                                     <input type="text" id="bank" name="bank" value="">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">∞Ë¡¬π¯»£</th>
+                                                <th scope="row">Í≥ÑÏ¢åÎ≤àÌò∏</th>
                                                 <td colspan="3">
                                                     <input type="text" id="account_num" name="account_num" value="">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">øπ±›¡÷</th>
+                                                <th scope="row">ÏòàÍ∏àÏ£º</th>
                                                 <td colspan="3">
                                                     <input type="text" id="account_hdr" name="account_hdr" value="">
                                                 </td>
@@ -220,7 +231,7 @@
                                 </div>
 
                                 <div class="contract_info table_wrap">
-                                    <h3 class="sub_t">∞Ëæ‡ ¡§∫∏</h3>
+                                    <h3 class="sub_t">Í≥ÑÏïΩ Ï†ïÎ≥¥</h3>
                                     
                                     <table class="table_input">
                                         <colgroup>
@@ -233,32 +244,32 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">∞Ëæ‡ µÓ∑œ¿œ</th>
+                                                <th scope="row">Í≥ÑÏïΩ Îì±Î°ùÏùº</th>
                                                 <td colspan="2">
                                                     <input type="text" id="ctt_date" name="ctt_date" value="20100126">
                                                 </td>
-                                                <th scope="row">∞Ëæ‡ ¥„¥Á¿⁄</th>
+                                                <th scope="row">Í≥ÑÏïΩ Îã¥ÎãπÏûê</th>
                                                 <td colspan="2">
                                                     <input type="text" id="ctt_mgr" name="ctt_mgr" value="">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row" rowspan="3">¡§ªÍ¿≤</th>
-                                                <th>±∏µ∂</th>
+                                                <th scope="row" rowspan="3">Ï†ïÏÇ∞Ïú®</th>
+                                                <th>Íµ¨ÎèÖ</th>
                                                 <td colspan="4">
-                                                    <span id="stm_sb">12»∏ ≥Î√‚ Ω√ 1 Copy 80%</span>
+                                                    <span id="stm_sb">12Ìöå ÎÖ∏Ï∂ú Ïãú 1 Copy 80%</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>º“¿Â/¥Îø©</th>
+                                                <th>ÏÜåÏû•/ÎåÄÏó¨</th>
                                                 <td colspan="4">
-                                                    <span id="stm_rt">∆«∏≈∞° 70%</span>
+                                                    <span id="stm_rt">ÌåêÎß§Í∞Ä 70%</span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">¡¶¿€ µÓ∑œ</th>
+                                                <th scope="row">Ï†úÏûë Îì±Î°ù</th>
                                                 <td colspan="4">
-                                                    <span id="stm_pd">§©§∑§©§∑§©</span>
+                                                    <span id="stm_pd">„Ñπ„Öá„Ñπ„Öá„Ñπ</span>
                                                 </td>
                                             </tr>                                          
                                         </tbody>
@@ -266,7 +277,7 @@
                                 </div>
 
                                 <div class="add_info table_wrap">
-                                    <h3 class="sub_t">√ﬂ∞° ¡§∫∏</h3>
+                                    <h3 class="sub_t">Ï∂îÍ∞Ä Ï†ïÎ≥¥</h3>
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -276,31 +287,31 @@
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">√‚∆«ªÁ ∑Œ∞Ì</th>
+                                                <th scope="row">Ï∂úÌåêÏÇ¨ Î°úÍ≥†</th>
                                                 <td class="file_box">
                                                     <input type="text" id="l_file_name" name="l_file_name" readonly>
-                                                    <label for="l_file">∆ƒ¿œº±≈√</label>
+                                                    <label for="l_file">ÌååÏùºÏÑ†ÌÉù</label>
                                                     <input type="file" id="l_file" onchange="setThumbnail(event)">
                                                     <div id="image_container" class="thumb_img"></div>
 
                                                     <ul class="file_txt">
-                                                        <li>¡ˆø¯∆˜∏À : .jpg, .png</li>
-                                                        <li>√÷¥ÎøÎ∑Æ : 1MB ¿Ã«œ</li>
-                                                        <li>±«¿ÂªÁ¿Ã¡Ó : ∞°∑Œ 860px</li>
+                                                        <li>ÏßÄÏõêÌè¨Îß∑ : .jpg, .png</li>
+                                                        <li>ÏµúÎåÄÏö©Îüâ : 1MB Ïù¥Ìïò</li>
+                                                        <li>Í∂åÏû•ÏÇ¨Ïù¥Ï¶à : Í∞ÄÎ°ú 860px</li>
                                                     </ul>
                                                 </td>
 
-                                                <th scope="row">»´∫∏ ¿ÃπÃ¡ˆ</th>
+                                                <th scope="row">ÌôçÎ≥¥ Ïù¥ÎØ∏ÏßÄ</th>
                                                 <td class="file_box">
                                                     <input type="text" id="p_file_name" name="p_file_name" readonly>
-                                                    <label for="p_file">∆ƒ¿œº±≈√</label>
+                                                    <label for="p_file">ÌååÏùºÏÑ†ÌÉù</label>
                                                     <input type="file" id="p_file" onchange="setThumbnail2(event)">
                                                     <div id="image_container2" class="thumb_img"></div>
 
                                                     <ul class="file_txt">
-                                                        <li>¡ˆø¯∆˜∏À : .jpg, .png</li>
-                                                        <li>√÷¥ÎøÎ∑Æ : 1MB ¿Ã«œ</li>
-                                                        <li>±«¿ÂªÁ¿Ã¡Ó : ∞°∑Œ 860px</li>
+                                                        <li>ÏßÄÏõêÌè¨Îß∑ : .jpg, .png</li>
+                                                        <li>ÏµúÎåÄÏö©Îüâ : 1MB Ïù¥Ìïò</li>
+                                                        <li>Í∂åÏû•ÏÇ¨Ïù¥Ï¶à : Í∞ÄÎ°ú 860px</li>
                                                     </ul>
                                                 </td>
                                             </tr>
@@ -309,26 +320,26 @@
                                     </table>
                                 </div>
 
-                                <!-- «œ¥‹ πˆ∆∞ START -->
+                                <!-- ÌïòÎã® Î≤ÑÌäº START -->
                                 <div class="btn_wrap">
-                                    <button type="submit" class="btn_md btn_primary">¿˙¿Â«œ±‚</button>
-                                    <button type="reset" class="btn_md btn_primary btn_light_gray">√Îº“(√ ±‚»≠)</button>
+                                    <button type="submit" class="btn_md btn_primary">Ï†ÄÏû•ÌïòÍ∏∞</button>
+                                    <button type="reset" class="btn_md btn_primary btn_light_gray">Ï∑®ÏÜå(Ï¥àÍ∏∞Ìôî)</button>
                                 </div>
-                                <!-- «œ¥‹ πˆ∆∞ END -->
+                                <!-- ÌïòÎã® Î≤ÑÌäº END -->
 
                             </fieldset>
                         </form>
                     </div>
-                    <!-- √‚∆«ªÁ ¡§∫∏ ∞¸∏Æ END -->                    
+                    <!-- Ï∂úÌåêÏÇ¨ Ï†ïÎ≥¥ Í¥ÄÎ¶¨ END -->                    
                 </div>
 
             </section>
         </main>
         
 
-        <!-- «™≈Õ & «œ¥‹ ≈« & «√∑Œ∆√ START -->
+        <!-- Ìë∏ÌÑ∞ & ÌïòÎã® ÌÉ≠ & ÌîåÎ°úÌåÖ START -->
         <!--#include virtual="/partner/include/footer.asp"-->
-        <!-- «™≈Õ & «œ¥‹ ≈« & «√∑Œ∆√ END -->
+        <!-- Ìë∏ÌÑ∞ & ÌïòÎã® ÌÉ≠ & ÌîåÎ°úÌåÖ END -->
 
     </div>
     
@@ -337,7 +348,7 @@
 
     <script>
 
-        // ∆ƒ¿œ æ˜∑ŒµÂ-«•¡ˆ
+        // ÌååÏùº ÏóÖÎ°úÎìú-ÌëúÏßÄ
         function setThumbnail(event) {
         var reader = new FileReader();
 
@@ -350,7 +361,7 @@
         reader.readAsDataURL(event.target.files[0]);
       }
 
-      // ∆ƒ¿œ æ˜∑ŒµÂ-ªÛºº
+      // ÌååÏùº ÏóÖÎ°úÎìú-ÏÉÅÏÑ∏
       function setThumbnail2(event) {
         var reader = new FileReader();
 
@@ -374,24 +385,24 @@
                 
                 locale: {
                     format: "YYYY-MM-DD",
-                    applyLabel: "»Æ¿Œ",
-                    cancelLabel: "√Îº“",
+                    applyLabel: "ÌôïÏù∏",
+                    cancelLabel: "Ï∑®ÏÜå",
                     customRangeLabel: "Custom",
                     weekLabel: "W",
-                    daysOfWeek: ["¿œ", "ø˘", "»≠", "ºˆ", "∏Ò", "±›", "≈‰"],
+                    daysOfWeek: ["Ïùº", "Ïõî", "Ìôî", "Ïàò", "Î™©", "Í∏à", "ÌÜ†"],
                     monthNames: [
-                    "1ø˘",
-                    "2ø˘",
-                    "3ø˘",
-                    "4ø˘",
-                    "5ø˘",
-                    "6ø˘",
-                    "7ø˘",
-                    "8ø˘",
-                    "9ø˘",
-                    "10ø˘",
-                    "11ø˘",
-                    "12ø˘",
+                    "1Ïõî",
+                    "2Ïõî",
+                    "3Ïõî",
+                    "4Ïõî",
+                    "5Ïõî",
+                    "6Ïõî",
+                    "7Ïõî",
+                    "8Ïõî",
+                    "9Ïõî",
+                    "10Ïõî",
+                    "11Ïõî",
+                    "12Ïõî",
                     ],
                 },
                 
@@ -401,7 +412,7 @@
        
         });
 
-        // input=file ∆ƒ¿œ∏Ì ø¨∞·
+        // input=file ÌååÏùºÎ™Ö Ïó∞Í≤∞
         $("#l_file").on('change',function(){
             var fileName = $(this).val();
             $("#l_file_name").val(fileName);

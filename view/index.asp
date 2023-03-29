@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ" />
+    <meta name="keywords" content="ë‘í”ŒëŸ¬ìŠ¤, ë‘í”Œ, ë‘ëž€ë…¸, ë³µìŒ, ì½˜í…ì¸ , ì˜¤ë¦¬ì§€ë„, ì˜¤ë””ì˜¤ë¶, ì „ìžì±…, ê°•ì˜, êµ¬ë…, íí‹°, ì‹ ì•™, êµíšŒ, ëª©íšŒ" />
+    <meta name="author" content="duranno" />-->
+    <title>ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ</title>
+    <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- íŒŒë¹„ì½˜ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //êµ¬ê¸€ ì•„ì´ì½˜í°íŠ¸ --> 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:title" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="ë‘í”ŒëŸ¬ìŠ¤ ì½˜í…ì¸  íŒŒíŠ¸ë„ˆ ì‹œìŠ¤í…œ">-->
 
-    <title>µÎÇÃ·¯½º ÄÁÅÙÃ÷ ÆÄÆ®³Ê : ´ë½Ãº¸µå</title>
-
-    
-    <!-- Çì´õ START -->
+    <!-- í—¤ë” START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
     <div class="page_right">
         <main id="content" class="content p_dash_board">
-            <!-- Á¦¸ñ START -->
+            <!-- ì œëª© START -->
             <h2>
-                <a href="#none" title="¸Þ´º¿­±â" class="open_gnb">
-                    <span>´ë½Ãº¸µå</span>
+                <a href="#none" title="ë©”ë‰´ì—´ê¸°" class="open_gnb">
+                    <span>ëŒ€ì‹œë³´ë“œ</span>
                 </a>
             </h2>
-            <!-- Á¦¸ñ END -->
+            <!-- ì œëª© END -->
 
             <div class="page_wrap">
-                <!-- µðÁöÅÐ ÄÜÅÙÃ÷ ÇöÈ² START -->
+                <!-- ë””ì§€í„¸ ì½˜í…ì¸  í˜„í™© START -->
                 <section class="cont_current">
-                    <h3 class="blind">µðÁöÅÐ ÄÜÅÙÃ÷ ÇöÈ²</h3>
+                    <h3 class="blind">ë””ì§€í„¸ ì½˜í…ì¸  í˜„í™©</h3>
                     <ul>
-                        <li><a href="content_lookup.asp"><span>ÀÓ½ÃÀúÀå</span><span id="save_num">1</span></a></li>
-                        <li><a href="content_lookup.asp"><span>½ÂÀÎ´ë±â</span><span id="stand_num">16</span></a></li>
-                        <li><a href="content_lookup.asp"><span>º¸·ù</span><span id="hold_num">1</span></a></li>
-                        <li><a href="content_lookup.asp"><span>ÆÇ¸ÅÁßÁö</span><span id="stop_num">1</span></a></li>
-                        <li><a href="content_lookup.asp"><span>µî·Ï¿Ï·á</span><span id="complete_num">856</span></a></li>
+                        <li><a href="content_lookup.asp"><span>ìž„ì‹œì €ìž¥</span><span id="save_num">1</span></a></li>
+                        <li><a href="content_lookup.asp"><span>ìŠ¹ì¸ëŒ€ê¸°</span><span id="stand_num">16</span></a></li>
+                        <li><a href="content_lookup.asp"><span>ë³´ë¥˜</span><span id="hold_num">1</span></a></li>
+                        <li><a href="content_lookup.asp"><span>íŒë§¤ì¤‘ì§€</span><span id="stop_num">1</span></a></li>
+                        <li><a href="content_lookup.asp"><span>ë“±ë¡ì™„ë£Œ</span><span id="complete_num">856</span></a></li>
                     </ul>
                 </section>
-                <!-- µðÁöÅÐ ÄÜÅÙÃ÷ ÇöÈ² END -->
+                <!-- ë””ì§€í„¸ ì½˜í…ì¸  í˜„í™© END -->
 
 
                 <div class="flex graph_wrap">
-                    <!-- µðÁöÅÐ ÄÜÅÙÃ÷ ¸ÅÃâ ÇöÈ² START -->
+                    <!-- ë””ì§€í„¸ ì½˜í…ì¸  ë§¤ì¶œ í˜„í™© START -->
                     <section class="sales_current">
-                        <h3 class="sub_t">µðÁöÅÐÄÜÅÙÃ÷ ¸ÅÃâ ÇöÈ²</h3>
-                        <p style="font-size:10px;">(´ÜÀ§:Ãµ¿ø)</p>
+                        <h3 class="sub_t">ë””ì§€í„¸ì½˜í…ì¸  ë§¤ì¶œ í˜„í™©</h3>
+                        <p style="font-size:10px;">(ë‹¨ìœ„:ì²œì›)</p>
                         <canvas id="myChart_1" style="width:100%;"></canvas>   
                     </section>
-                    <!-- µðÁöÅÐ ÄÜÅÙÃ÷ ¸ÅÃâ ÇöÈ² END -->
+                    <!-- ë””ì§€í„¸ ì½˜í…ì¸  ë§¤ì¶œ í˜„í™© END -->
 
-                    <!-- µðÁöÅÐÄÜÅÙÃ÷ ÆÇ¸Å ¼öÀÍ START -->
+                    <!-- ë””ì§€í„¸ì½˜í…ì¸  íŒë§¤ ìˆ˜ìµ START -->
                     <section class="sales_revenue">
-                        <h3 class="sub_t">µðÁöÅÐÄÜÅÙÃ÷ ÆÇ¸Å ¼öÀÍ</h3>
-                        <p style="font-size:10px;">(´ÜÀ§:Ãµ¿ø)</p>
+                        <h3 class="sub_t">ë””ì§€í„¸ì½˜í…ì¸  íŒë§¤ ìˆ˜ìµ</h3>
+                        <p style="font-size:10px;">(ë‹¨ìœ„:ì²œì›)</p>
                         <canvas id="myChart_2" style="width:100%;"></canvas>  
                     </section>
-                    <!-- µðÁöÅÐÄÜÅÙÃ÷ ÆÇ¸Å ¼öÀÍ END -->
+                    <!-- ë””ì§€í„¸ì½˜í…ì¸  íŒë§¤ ìˆ˜ìµ END -->
                 </div>
 
 
                 <div class="flex notice_wrap">
-                    <!-- °øÁö»çÇ× START -->
+                    <!-- ê³µì§€ì‚¬í•­ START -->
                     <section class="notice">
-                        <h3 class="sub_t">°øÁö»çÇ×<a href="notice.asp" class="more">´õº¸±â</a></h3>
+                        <h3 class="sub_t">ê³µì§€ì‚¬í•­<a href="notice.asp" class="more">ë”ë³´ê¸°<img src="../img/icon_arrow_right.svg"></a></h3>
                         <table id="t_notice" class="display t_acco">
                             <thead>
                                 <th scope="col">No</th>
-                                <th scope="col">Á¦¸ñ</th>
-                                <th scope="col">ÀÛ¼ºÀÏ</th>
+                                <th scope="col">ì œëª©</th>
+                                <th scope="col">ìž‘ì„±ì¼</th>
                             </thead>
 
                             <tbody>
@@ -70,7 +80,7 @@
                                     <td scope="row">1</td>
                                     <td class="txt_l ">
                                         <div class="faq_container">
-                                            <a href="notice_detail.asp">[¾È³»] [POD°ü¸® TIP] ÀúÀÛ±ÇÀÌ °ÆÁ¤µÇ½Ã³ª¿ä? (ÆùÆ®, ³»¿ë, ÀÌ¹ÌÁö µî)</a>
+                                            <a href="notice_detail.asp">[ì•ˆë‚´] [PODê´€ë¦¬ TIP] ì €ìž‘ê¶Œì´ ê±±ì •ë˜ì‹œë‚˜ìš”? (í°íŠ¸, ë‚´ìš©, ì´ë¯¸ì§€ ë“±)</a>
                                             <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -90,7 +100,7 @@
                                     <td scope="row">2</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="notice_detail.asp">[¾Ë¸²] [POD°ü¸® TIP] POD µî·Ï Àü, Àü¹®ÀûÀÎ ¿ø°í/Ç¥Áö µðÀÚÀÎ ¹× ÆíÁýÀÌ ÇÊ¿äÇÏ¼¼¿ä?</a>
+                                            <a href="notice_detail.asp">[ì•Œë¦¼] [PODê´€ë¦¬ TIP] POD ë“±ë¡ ì „, ì „ë¬¸ì ì¸ ì›ê³ /í‘œì§€ ë””ìžì¸ ë° íŽ¸ì§‘ì´ í•„ìš”í•˜ì„¸ìš”?</a>
                                             <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -109,7 +119,7 @@
                                     <td scope="row">3</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="notice_detail.asp">[°øÁö] [POD°ü¸® TIP] POD µî·Ï ÈÄ, ½ÂÀÎ ¹Ý·ÁµÇ¾î ´çÈ²ÇÏ¼Ì³ª¿ä? ÀÌ ±ÛÀ» È®ÀÎÇØÁÖ¼¼¿ä</a>
+                                            <a href="notice_detail.asp">[ê³µì§€] [PODê´€ë¦¬ TIP] POD ë“±ë¡ í›„, ìŠ¹ì¸ ë°˜ë ¤ë˜ì–´ ë‹¹í™©í•˜ì…¨ë‚˜ìš”? ì´ ê¸€ì„ í™•ì¸í•´ì£¼ì„¸ìš”</a>
                                             <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -128,7 +138,7 @@
                                     <td scope="row">4</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="notice_detail.asp">[°øÁö] ÄÜÅÙÃ÷ ÆÇ¸Å±ÝÁö Ã³¸® ¾È³»</a>
+                                            <a href="notice_detail.asp">[ê³µì§€] ì½˜í…ì¸  íŒë§¤ê¸ˆì§€ ì²˜ë¦¬ ì•ˆë‚´</a>
                                             <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -147,7 +157,7 @@
                                     <td scope="row">5</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="notice_detail.asp">[¾È³»] POD Á¤»ê³»¿ª ÀÏ½Ã Á¶È¸ ºÒ°¡ ¾È³» (10/11~)</a>
+                                            <a href="notice_detail.asp">[ì•ˆë‚´] POD ì •ì‚°ë‚´ì—­ ì¼ì‹œ ì¡°íšŒ ë¶ˆê°€ ì•ˆë‚´ (10/11~)</a>
                                             <!--<div class="faq_answer">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                                                 et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -165,16 +175,16 @@
                             </tbody>
                         </table>
                     </section>
-                    <!-- °øÁö»çÇ× END -->
+                    <!-- ê³µì§€ì‚¬í•­ END -->
 
-                    <!-- ¹®ÀÇÇÏ±â START -->
+                    <!-- ë¬¸ì˜í•˜ê¸° START -->
                     <section class="qna">
-                        <h3 class="sub_t">¹®ÀÇÇÏ±â<a href="notice.asp" class="more">´õº¸±â</a></h3>
+                        <h3 class="sub_t">ë¬¸ì˜í•˜ê¸°<a href="notice.asp" class="more">ë”ë³´ê¸°<img src="../img/icon_arrow_right.svg"></a></h3>
                         <table id="t_qna" class="display t_acco">
                             <thead>
                                 <th scope="col">No</th>
-                                <th scope="col">Á¦¸ñ</th>
-                                <th scope="col">ÀÛ¼ºÀÏ</th>
+                                <th scope="col">ì œëª©</th>
+                                <th scope="col">ìž‘ì„±ì¼</th>
                             </thead>
 
                             <tbody>
@@ -182,8 +192,8 @@
                                     <td scope="row">1</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[¹Ì´äº¯] [POD°ü¸® TIP] ÀúÀÛ±ÇÀÌ °ÆÁ¤µÇ½Ã³ª¿ä? (ÆùÆ®, ³»¿ë, ÀÌ¹ÌÁö µî)</a>
-                                            <!-- ¹®ÀÇ ³»¿ë START -->
+                                            <a href="#none">[ë¯¸ë‹µë³€] [PODê´€ë¦¬ TIP] ì €ìž‘ê¶Œì´ ê±±ì •ë˜ì‹œë‚˜ìš”? (í°íŠ¸, ë‚´ìš©, ì´ë¯¸ì§€ ë“±)</a>
+                                            <!-- ë¬¸ì˜ ë‚´ìš© START -->
                                             <div class="faq_answer question_wrap">
                                                 <table>
                                                     <colgroup>
@@ -193,29 +203,29 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">¹®ÀÇ Á¾·ù</th>
-                                                            <td id="question_type">±âÅ¸ ¹®ÀÇ</td>
+                                                            <th scope="row">ë¬¸ì˜ ì¢…ë¥˜</th>
+                                                            <td id="question_type">ê¸°íƒ€ ë¬¸ì˜</td>
                                                         </tr>
 
                                                         <tr>
-                                                            <th scope="row">¹®ÀÇ µµ¼­</th>
+                                                            <th scope="row">ë¬¸ì˜ ë„ì„œ</th>
                                                             <td id="question_book">()</td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row">¹®ÀÇ ³»¿ë</th>
-                                                            <td id="q_list_cont" class="q_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row">ë¬¸ì˜ ë‚´ìš©</th>
+                                                            <td id="q_list_cont" class="q_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <!-- ¹®ÀÇ ³»¿ë END -->
+                                            <!-- ë¬¸ì˜ ë‚´ìš© END -->
 
-                                            <!-- [¹Ì´äº¯]ÀÏ¶§´Â µî·ÏµÈ ´äº¯ ¾øÀ½ -->
-                                            <!-- µî·ÏµÈ ´äº¯ START -->
+                                            <!-- [ë¯¸ë‹µë³€]ì¼ë•ŒëŠ” ë“±ë¡ëœ ë‹µë³€ ì—†ìŒ -->
+                                            <!-- ë“±ë¡ëœ ë‹µë³€ START -->
                                             <!--<div class="faq_answer answer_wrap">
                                                 <table>
                                                     <colgroup>
@@ -225,21 +235,21 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">µî·ÏµÈ ´äº¯</th>
-                                                            <td><span id="answerer">°ü¸®ÀÚ</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                            <th scope="row">ë“±ë¡ëœ ë‹µë³€</th>
+                                                            <td><span id="answerer">ê´€ë¦¬ìž</span id="answer_time">2023-03-23 10:01:00<span></span></td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row" class="blind">´äº¯ ³»¿ë</th>
-                                                            <td id="a_list_cont" class="a_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row" class="blind">ë‹µë³€ ë‚´ìš©</th>
+                                                            <td id="a_list_cont" class="a_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>-->
-                                            <!-- µî·ÏµÈ ´äº¯ END -->
+                                            <!-- ë“±ë¡ëœ ë‹µë³€ END -->
                                         </div>
                                     </td>
                                     <td>2023-03-09</td>
@@ -249,8 +259,8 @@
                                     <td scope="row">2</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[¹Ì´äº¯] [POD°ü¸® TIP] ÀúÀÛ±ÇÀÌ °ÆÁ¤µÇ½Ã³ª¿ä? (ÆùÆ®, ³»¿ë, ÀÌ¹ÌÁö µî)</a>
-                                            <!-- ¹®ÀÇ ³»¿ë START -->
+                                            <a href="#none">[ë¯¸ë‹µë³€] [PODê´€ë¦¬ TIP] ì €ìž‘ê¶Œì´ ê±±ì •ë˜ì‹œë‚˜ìš”? (í°íŠ¸, ë‚´ìš©, ì´ë¯¸ì§€ ë“±)</a>
+                                            <!-- ë¬¸ì˜ ë‚´ìš© START -->
                                             <div class="faq_answer question_wrap">
                                                 <table>
                                                     <colgroup>
@@ -260,29 +270,29 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">¹®ÀÇ Á¾·ù</th>
-                                                            <td id="question_type">±âÅ¸ ¹®ÀÇ</td>
+                                                            <th scope="row">ë¬¸ì˜ ì¢…ë¥˜</th>
+                                                            <td id="question_type">ê¸°íƒ€ ë¬¸ì˜</td>
                                                         </tr>
 
                                                         <tr>
-                                                            <th scope="row">¹®ÀÇ µµ¼­</th>
+                                                            <th scope="row">ë¬¸ì˜ ë„ì„œ</th>
                                                             <td id="question_book">()</td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row">¹®ÀÇ ³»¿ë</th>
-                                                            <td id="q_list_cont" class="q_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row">ë¬¸ì˜ ë‚´ìš©</th>
+                                                            <td id="q_list_cont" class="q_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <!-- ¹®ÀÇ ³»¿ë END -->
+                                            <!-- ë¬¸ì˜ ë‚´ìš© END -->
 
-                                            <!-- [¹Ì´äº¯]ÀÏ¶§´Â µî·ÏµÈ ´äº¯ ¾øÀ½ -->
-                                            <!-- µî·ÏµÈ ´äº¯ START -->
+                                            <!-- [ë¯¸ë‹µë³€]ì¼ë•ŒëŠ” ë“±ë¡ëœ ë‹µë³€ ì—†ìŒ -->
+                                            <!-- ë“±ë¡ëœ ë‹µë³€ START -->
                                             <!--<div class="faq_answer answer_wrap">
                                                 <table>
                                                     <colgroup>
@@ -292,21 +302,21 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">µî·ÏµÈ ´äº¯</th>
-                                                            <td><span id="answerer">°ü¸®ÀÚ</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                            <th scope="row">ë“±ë¡ëœ ë‹µë³€</th>
+                                                            <td><span id="answerer">ê´€ë¦¬ìž</span id="answer_time">2023-03-23 10:01:00<span></span></td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row" class="blind">´äº¯ ³»¿ë</th>
-                                                            <td id="a_list_cont" class="a_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row" class="blind">ë‹µë³€ ë‚´ìš©</th>
+                                                            <td id="a_list_cont" class="a_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>-->
-                                            <!-- µî·ÏµÈ ´äº¯ END -->
+                                            <!-- ë“±ë¡ëœ ë‹µë³€ END -->
                                         </div>
                                     </td>
                                     <td>2023-03-02</td>
@@ -316,7 +326,7 @@
                                     <td scope="row">3</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[¿Ï·á] POD Á¤»ê³»¿ª ÀÏ½Ã Á¶È¸ ºÒ°¡ ¾È³» (10/11~)</a>
+                                            <a href="#none">[ì™„ë£Œ] POD ì •ì‚°ë‚´ì—­ ì¼ì‹œ ì¡°íšŒ ë¶ˆê°€ ì•ˆë‚´ (10/11~)</a>
                                             <div class="faq_answer question_wrap">
                                                 <table>
                                                     <colgroup>
@@ -326,20 +336,20 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">¹®ÀÇ Á¾·ù</th>
-                                                            <td id="">±âÅ¸ ¹®ÀÇ</td>
+                                                            <th scope="row">ë¬¸ì˜ ì¢…ë¥˜</th>
+                                                            <td id="">ê¸°íƒ€ ë¬¸ì˜</td>
                                                         </tr>
 
                                                         <tr>
-                                                            <th scope="row">¹®ÀÇ µµ¼­</th>
+                                                            <th scope="row">ë¬¸ì˜ ë„ì„œ</th>
                                                             <td id="">()</td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row">¹®ÀÇ ³»¿ë</th>
-                                                            <td id="" class="q_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row">ë¬¸ì˜ ë‚´ìš©</th>
+                                                            <td id="" class="q_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -355,15 +365,15 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">µî·ÏµÈ ´äº¯</th>
-                                                            <td><span id="answerer">°ü¸®ÀÚ</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                            <th scope="row">ë“±ë¡ëœ ë‹µë³€</th>
+                                                            <td><span id="answerer">ê´€ë¦¬ìž</span id="answer_time">2023-03-23 10:01:00<span></span></td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row" class="blind">´äº¯ ³»¿ë</th>
-                                                            <td id="" class="a_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row" class="blind">ë‹µë³€ ë‚´ìš©</th>
+                                                            <td id="" class="a_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -378,7 +388,7 @@
                                     <td scope="row">4</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[¿Ï·á] POD Á¤»ê³»¿ª ÀÏ½Ã Á¶È¸ ºÒ°¡ ¾È³» (10/11~)</a>
+                                            <a href="#none">[ì™„ë£Œ] POD ì •ì‚°ë‚´ì—­ ì¼ì‹œ ì¡°íšŒ ë¶ˆê°€ ì•ˆë‚´ (10/11~)</a>
                                             <div class="faq_answer question_wrap">
                                                 <table>
                                                     <colgroup>
@@ -388,20 +398,20 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">¹®ÀÇ Á¾·ù</th>
-                                                            <td id="">±âÅ¸ ¹®ÀÇ</td>
+                                                            <th scope="row">ë¬¸ì˜ ì¢…ë¥˜</th>
+                                                            <td id="">ê¸°íƒ€ ë¬¸ì˜</td>
                                                         </tr>
 
                                                         <tr>
-                                                            <th scope="row">¹®ÀÇ µµ¼­</th>
+                                                            <th scope="row">ë¬¸ì˜ ë„ì„œ</th>
                                                             <td id="">()</td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row">¹®ÀÇ ³»¿ë</th>
-                                                            <td id="" class="q_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row">ë¬¸ì˜ ë‚´ìš©</th>
+                                                            <td id="" class="q_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -417,15 +427,15 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">µî·ÏµÈ ´äº¯</th>
-                                                            <td><span id="answerer">°ü¸®ÀÚ</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                            <th scope="row">ë“±ë¡ëœ ë‹µë³€</th>
+                                                            <td><span id="answerer">ê´€ë¦¬ìž</span id="answer_time">2023-03-23 10:01:00<span></span></td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row" class="blind">´äº¯ ³»¿ë</th>
-                                                            <td id="" class="a_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row" class="blind">ë‹µë³€ ë‚´ìš©</th>
+                                                            <td id="" class="a_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -440,7 +450,7 @@
                                     <td scope="row">5</td>
                                     <td class="txt_l">
                                         <div class="faq_container">
-                                            <a href="#none">[¿Ï·á] POD Á¤»ê³»¿ª ÀÏ½Ã Á¶È¸ ºÒ°¡ ¾È³» (10/11~)</a>
+                                            <a href="#none">[ì™„ë£Œ] POD ì •ì‚°ë‚´ì—­ ì¼ì‹œ ì¡°íšŒ ë¶ˆê°€ ì•ˆë‚´ (10/11~)</a>
                                             <div class="faq_answer question_wrap">
                                                 <table>
                                                     <colgroup>
@@ -450,20 +460,20 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">¹®ÀÇ Á¾·ù</th>
-                                                            <td id="">±âÅ¸ ¹®ÀÇ</td>
+                                                            <th scope="row">ë¬¸ì˜ ì¢…ë¥˜</th>
+                                                            <td id="">ê¸°íƒ€ ë¬¸ì˜</td>
                                                         </tr>
 
                                                         <tr>
-                                                            <th scope="row">¹®ÀÇ µµ¼­</th>
+                                                            <th scope="row">ë¬¸ì˜ ë„ì„œ</th>
                                                             <td id="">()</td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row">¹®ÀÇ ³»¿ë</th>
-                                                            <td id="" class="q_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row">ë¬¸ì˜ ë‚´ìš©</th>
+                                                            <td id="" class="q_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -479,15 +489,15 @@
 
                                                     <tbody>
                                                         <tr class="faq_table_title">
-                                                            <th scope="row">µî·ÏµÈ ´äº¯</th>
-                                                            <td><span id="answerer">°ü¸®ÀÚ</span id="answer_time">2023-03-23 10:01:00<span></span></td>
+                                                            <th scope="row">ë“±ë¡ëœ ë‹µë³€</th>
+                                                            <td><span id="answerer">ê´€ë¦¬ìž</span id="answer_time">2023-03-23 10:01:00<span></span></td>
                                                         </tr>
 
                                                         <tr class="q_cont">
-                                                            <th scope="row" class="blind">´äº¯ ³»¿ë</th>
-                                                            <td id="a_list_cont" class="a_cont">¸®µð ¼¿·ºÆ® ¼­ºñ½º Âü¿©¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ°í ½Í½À´Ï´Ù.
-                                                            ÀÏºÎ ÃâÆÇ»ç¸¦ ´ë»óÀ¸·Î Á¦ÇÑÀûÀ¸·Î ¿î¿µÇÏ½Ã´ÂÁö, ¾Æ´Ï¸é Èñ¸Á ÃâÆÇ»çµµ ´ë»óÀ¸·Î ÀýÂ÷³ª ¹æ¹ý µî ¼­ºñ½º¿¡ ´ëÇÑ ¾È³»¸¦ ¹Þ±æ Èñ¸ÁÇÏ±¸¿ä
-                                                            ´äº¯ ¶Ç´Â ¸ÞÀÏ ¿äÃ»µå¸³´Ï´Ù.
+                                                            <th scope="row" class="blind">ë‹µë³€ ë‚´ìš©</th>
+                                                            <td id="a_list_cont" class="a_cont">ë¦¬ë”” ì…€ë ‰íŠ¸ ì„œë¹„ìŠ¤ ì°¸ì—¬ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê³  ì‹¶ìŠµë‹ˆë‹¤.
+                                                            ì¼ë¶€ ì¶œíŒì‚¬ë¥¼ ëŒ€ìƒìœ¼ë¡œ ì œí•œì ìœ¼ë¡œ ìš´ì˜í•˜ì‹œëŠ”ì§€, ì•„ë‹ˆë©´ í¬ë§ ì¶œíŒì‚¬ë„ ëŒ€ìƒìœ¼ë¡œ ì ˆì°¨ë‚˜ ë°©ë²• ë“± ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì•ˆë‚´ë¥¼ ë°›ê¸¸ í¬ë§í•˜êµ¬ìš”
+                                                            ë‹µë³€ ë˜ëŠ” ë©”ì¼ ìš”ì²­ë“œë¦½ë‹ˆë‹¤.
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -501,7 +511,7 @@
                             </tbody>
                         </table>
                     </section>
-                    <!-- ¹®ÀÇÇÏ±â END -->
+                    <!-- ë¬¸ì˜í•˜ê¸° END -->
                 </div>
                 
             </div>
@@ -509,9 +519,9 @@
             
         </main>
 
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ START -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… START -->
         <!--#include virtual="/partner/include/footer.asp"-->
-        <!-- ÇªÅÍ & ÇÏ´Ü ÅÇ & ÇÃ·ÎÆÃ END -->
+        <!-- í‘¸í„° & í•˜ë‹¨ íƒ­ & í”Œë¡œíŒ… END -->
     </div>
 
     <script>
@@ -652,7 +662,7 @@
 
 
         $(document).ready(function(){
-            // °øÁö»çÇ×, ¹®ÀÇÇÏ±â Ç¥
+            // ê³µì§€ì‚¬í•­, ë¬¸ì˜í•˜ê¸° í‘œ
             $('#t_notice,#t_qna').DataTable({
                 "searching":false,
                 pageLength:5,
@@ -660,7 +670,7 @@
                 paging:false,
                 info:false,
 
-                // ¼¿ ³Êºñ °íÁ¤
+                // ì…€ ë„ˆë¹„ ê³ ì •
                 bAutoWidth:false,
                 columnDefs:[
                     {width:"10%",targets:0},
@@ -669,7 +679,7 @@
                 ]
             });
 
-            // °øÁö»çÇ× ¹®ÀÇÇÏ±â ¾ÆÄÚµð¾ð ÅÇ
+            // ê³µì§€ì‚¬í•­ ë¬¸ì˜í•˜ê¸° ì•„ì½”ë””ì–¸ íƒ­
             $(".faq_answer").hide();
             $(".faq_container a").click(function(){
                 $(this).parent().find('.faq_answer').slideToggle('fast')
