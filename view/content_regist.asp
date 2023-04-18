@@ -488,13 +488,17 @@
                                             <tr>
                                                 <th>카테고리1 (주제별) <span class="orange">*</span></th>
                                                 <td class="cat1 btn_add_wrap">
-                                                    <input type="text" id="category_1" name="category_1">
+                                                    <!--<input type="text" id="category_1" name="category_1">-->
+
+                                                    <select name="category_1" id="category_1" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
                                                 <th>카테고리2 (대상별) <span class="orange">*</span></th>
                                                 <td class="cat2 btn_add_wrap">
-                                                    <input type="text" id="category_2" name="category_2">
+                                                    <!--<input type="text" id="category_2" name="category_2">-->
+
+                                                    <select name="category_2" id="category_2" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
@@ -507,8 +511,12 @@
                                             </tr>
                                             <tr>
                                                 <th>검색 키워드</th>
-                                                <td colspan="3" class="">
-                                                    <input type="text" name="search_key"> 
+                                                <td colspan="3" class="key btn_add_wrap">
+                                                    <!--<input type="text" name="search_key"> -->
+
+                                                    <select name="search_key" id="search_key" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
+                                        
+                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
                                                 
                                             </tr>
@@ -808,67 +816,45 @@
                 }
             });
 
-            // 브랜드명 추가, 삭제 버튼
-            var fieldHtml='<div><input type="text" class="add_ipt"><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-
-            $(".brand .add_btn").click(function(){
-                $(".brand.btn_add_wrap").append(fieldHtml);
-            });
-
-            $(".brand .remove_btn").click(function(){
-                $(this).parent('div').remove();
-            })
-
-            $(".brand.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                $(this).parent('div').remove();
-            });
 
             // 저자 추가, 삭제 버튼
-            var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+            var fieldHtml1='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
 
             $(".author .add_btn").click(function(){
-                $(".author.btn_add_wrap").append(fieldHtml2);
+                $(".author.btn_add_wrap").append(fieldHtml1);
             });
 
-            $(".author .remove_btn").click(function(){
+            $(".author .remove_btn,.cat1 .remove_btn,.cat2 .remove_btn,.key .remove_btn").click(function(){
                 $(this).parent('div').remove();
             })
 
-            $(".author.btn_add_wrap").on('click', '.remove_btn', function(e){
+            $(".author.btn_add_wrap,.cat1.btn_add_wrap,.cat2.btn_add_wrap,.key.btn_add_wrap").on('click', '.remove_btn', function(e){
                 e.preventDefault();
                 $(this).parent('div').remove();
             });
 
             // 카테고리1 추가, 삭제 버튼
+            var fieldHtml2='<div><select name="category_1" id="category_1" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+
             $(".cat1 .add_btn").click(function(){
-                $(".cat1.btn_add_wrap").append(fieldHtml);
+                $(".cat1.btn_add_wrap").append(fieldHtml2);
             });
 
-            $(".cat1 .remove_btn").click(function(){
-                $(this).parent('div').remove();
-            })
-
-            $(".cat1.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                $(this).parent('div').remove();
-            });
 
             // 카테고리2 추가, 삭제 버튼
+             var fieldHtml3='<div><select name="category_2" id="category_2" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
             $(".cat2 .add_btn").click(function(){
-                $(".cat2.btn_add_wrap").append(fieldHtml);
-            });
-
-            $(".cat2 .remove_btn").click(function(){
-                $(this).parent('div').remove();
-            })
-
-            $(".cat2.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                $(this).parent('div').remove();
+                $(".cat2.btn_add_wrap").append(fieldHtml3);
             });
 
 
+            // 검색 키워드 추가, 삭제 버튼
+            var fieldHtml4='<div><select name="search_key" id="search_key" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+            $(".key .add_btn").click(function(){
+                $(".key.btn_add_wrap").append(fieldHtml4);
+            });
+
+         
             // 저자 소개내용 modal 띄우기
             $(".btn_add_wrap").on('click','.a_open_popup',function(){
                 $(".a_modal").css({

@@ -512,7 +512,7 @@ input[type=search]{
 .g_btn_line:hover{
     background-color: #3c9a1710;
 }
-.remove_btn,.add_ipt{
+.remove_btn,.add_ipt,.add_sel{
     margin-top:5px;
 }
 .remove_btn{
@@ -951,7 +951,7 @@ a.buttons-excel:hover{
 }
 
 a.dt-button:hover:not(.disabled){
-    background-image: none;
+    background: url(../img/icon_download.svg) no-repeat 13px center;
     background-color: #fff !important;
 }
 

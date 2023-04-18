@@ -1,15 +1,46 @@
+<OBJECT PROGID=ASP.PagingHelperMall 		ID=phm  RunAt=Server></OBJECT>
+<OBJECT PROGID=Scripting.FileSystemObject   	id=fso 		RUNAT=server> </OBJECT>
+<OBJECT PROGID=DAL.DBHelper id=dbh RUNAT=server> </OBJECT>
+<!--#include file="connect.asp"-->
 <%
+Response.CharSet="utf-8"
+'Session.codepage="949"
+Response.codepage="65001"
+Response.ContentType="text/html;charset=utf-8"
+
+' 테스트로 회원 정보 가져와 보자 ..
 
 	'-----------------------------------------
  	' 2023 두플러스 cms
 	' Update Date :	2023-03
 	'-----------------------------------------
+  '*********************************************	
+              paramInfo = Array( _
+                dbh.mp( "@id",		advarchar, 	16,     "2148204203") _
+              )
+              set rs=dbh.RunSPReturnRS("up_sel_ptn_ContentPublisher",paramInfo , conn_duplus)	
+              if not (rs.eof or rs.bof) then 
+              data = rs.getRows()
+              end if 
+              rs.close 
+              set rs = nothing
+
+              if isArray(data) then 
+                for i = 0 to Ubound(data,2)
+                    ' response.write data(0,0) & "<br>"
+                    ' response.write data(1,0) & "<br>"
+                    ' response.write data(2,0) & "<br>"
+                    ' response.write data(3,0) & "<br>"
+                next
+              end if 
+              'response.end 
 
 
-Response.CharSet="utf-8"
-'Session.codepage="949"
-Response.codepage="949"
-Response.ContentType="text/html;charset=utf-8"
+            	
+
+
+
+
 
 'if position  = "" then position = "main" 
 
@@ -100,13 +131,28 @@ Response.ContentType="text/html;charset=utf-8"
             // gnb 열기
             $(".open_gnb").click(function(){
                 $(this).toggleClass("on");
-                $('.gnb').toggle();
+                $('.gnb').toggle();                
                 if($('.gnb').css("display")=="none"){
                     $(".page_right").css('width','100%')
+                    localStorage.setItem("open_gnb", "close");
                 }else{
                     $(".page_right").css('width','89.7%')
+                    localStorage.setItem("open_gnb", "open");
                 }
             });
+
+
+            let open_gnb = localStorage.getItem("open_gnb");
+            if(open_gnb =='close'){
+                    $(".page_right").css('width','100%')
+                    $('.gnb').css("display","none")
+                    $(".open_gnb").addClass("on")
+            }else{
+                    $('.gnb').css("display","block")
+                    $(".open_gnb").removeClass('on')
+                    $(".page_right").css('width','89.7%')
+            }
+
 
             // gnb 스타일
             $("nav ul li ul li").removeClass('on');
