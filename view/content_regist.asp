@@ -619,16 +619,25 @@
                                 <div class="sale_info table_wrap">
                                     <h3 class="sub_t">판매 정보</h3>
                                     <table class="table_input">
+                                        <!--<colgroup>
+                                            <col class="th">
+                                            <col class="td">
+                                            <col class="th">
+                                            <col class="td">
+                                        </colgroup>-->
+
                                         <colgroup>
-                                            <col class="th">
-                                            <col class="td">
-                                            <col class="th">
-                                            <col class="td">
+                                            <col style="width:8.8%;">
+                                            <col style="width:8.8%;">
+                                            <col style="width:30%;">
+                                            <col style="width:10%;">
+                                            <col style="width:20%;">
+                                            <col style="width:20%;">
                                         </colgroup>
                                         <tbody>
                                             <tr>
                                                 <th scope="row">판매 형태 <span class="orange">*</span></th>
-                                                <td colspan="3">
+                                                <td colspan="5">
                                                     <select name="sale_type_sel">
                                                         <option value="all" selected>전체</option>
                                                         <option value="keep">소장</option>
@@ -638,26 +647,26 @@
                                             </tr>
                                             <tr>
                                                 <th scope="row">판매가 <span class="orange">*</span></th>
-                                                <td colspan="3">
+                                                <td colspan="5">
                                                     <input type="text" id="b_price" name="b_price">
                                                     원
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">대여가</th>
-                                                <td>
+                                                <td colspan="2">
                                                     <input type="text" id="b_rental_price" name="b_rental_price">
                                                     원
                                                 </td>
                                                 <th scope="row">대여기간</th>
-                                                <td>
+                                                <td colspan="2">
                                                     <input type="text" id="rental_period" name="rental_period">
                                                     일
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">서비스 여부 <span class="orange">*</span></th>
-                                                <td>
+                                                <td colspan="2">
                                                     <span class="radio">
                                                         <input type="radio" name="service" id="now" value="now" checked>
                                                         <label for="now">즉시</label>
@@ -670,10 +679,57 @@
                                                 </td>
 
                                                 <th>서비스 시작일</th>
-                                                <td class="regist_date">
+                                                <td class="regist_date" colspan="2">
                                                     <input type="text" name="serviceDate" autocomplete="off"> 
                                                 </td>
                                             </tr>
+
+                                            <!-- 정산율 START -->
+                                            <tr>
+                                                <th scope="row" rowspan="3">정산율</th>
+                                                <th>구독정산(매입)가</th>
+                                                <td colspan="1">
+                                                    <input type="text" id="sub_set" name="sub_set">
+                                                    원
+                                                </td>
+
+                                                <th>구독정산 기준 판매수량</th>
+                                                <td colspan="3">
+                                                    <input type="text" id="sales_qt" name="sales_qt">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>소장정산(매입)가</th>
+                                                <td colspan="1">
+                                                    <input type="text" id="col_set" name="col_set">
+                                                    원
+                                                </td>
+
+                                                <th>대여정산(매입)가</th>
+                                                <td colspan="3">
+                                                    <input type="text" id="rent_set" name="rent_set">
+                                                    원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">제작 등록</th>
+                                                <td colspan="1">
+                                                    <!--<span id="stm_pd">ㄹㅇㄹㅇㄹ</span>-->
+
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="pd_rgt" name="pd_rgt" value="Y">
+                                                        <label for="pd_rgt">리소스제작위탁 여부</label>
+                                                    </span>
+                                                </td>
+
+                                                <th scope="row">독점기간</th>
+                                                <td class="regist_date" colspan="3">
+                                                    <span class="chk">
+                                                        <input type="text" name="ecs_prd" autocomplete="off"> 까지 
+                                                    </span>
+                                                </td>
+                                            </tr>      
+                                            <!-- 정산율 END -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -775,7 +831,7 @@
            
             
 
-            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"]').daterangepicker(
+            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"],input[name="ecs_prd"]').daterangepicker(
                 {
                 singleDatePicker: true,
                 autoApply:true,
