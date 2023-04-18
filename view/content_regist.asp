@@ -659,7 +659,7 @@ end if
                                                     <input type="text" id="b_price" name="b_price">
                                                     원
                                                 </td>
-                                            </tr
+                                            </tr>
                                             <tr>
                                                 <th scope="row">대여가</th>
                                                 <td colspan="2">
