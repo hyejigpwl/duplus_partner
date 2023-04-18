@@ -272,7 +272,7 @@
                                     <td id="note" class=""></td>
                                 </tr>
 
-                                <tr>
+                                <tr
                                     <td scope="row" id="d_ocr" ></td>
                                     <td id="target_prd"></td>
                                     <td id="dsn" class="">현잔액</td>
