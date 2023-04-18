@@ -205,85 +205,6 @@
                                     <td id="unset_blc" class="txt_r">-</td>
                                     <td id="note" class=""></td>
                                 </tr>
-
-                                <tr>
-                                    <td scope="row" id="d_ocr" >2023-04-10</td>
-                                    <td id="target_prd">2023-03</td>
-                                    <td id="dsn" class="">지급</td>
-                                    <td id="pdc" class="txt_r"></td>
-                                    <td id="s_sales" class="txt_r"></td>
-                                    <td id="c_sales" class="txt_r"></td>
-                                    <td id="r_sales" class="txt_r"></td>
-                                    <td id="pm_at" class="txt_r">150,000</td>
-                                    <td id="unset_blc" class="txt_r">-</td>
-                                    <td id="note" class=""></td>
-                                </tr>
-                              
-                                <tr>
-                                    <td scope="row" id="d_ocr" >2023-05-01</td>
-                                    <td id="target_prd">2023-04</td>
-                                    <td id="dsn" class="">매출</td>
-                                    <td id="pdc" class="txt_r"></td>
-                                    <td id="s_sales" class="txt_r">150,000</td>
-                                    <td id="c_sales" class="txt_r">70,000</td>
-                                    <td id="r_sales" class="txt_r">30,000</td>
-                                    <td id="pm_at" class="txt_r"></td>
-                                    <td id="unset_blc" class="txt_r">250,000</td>
-                                    <td id="note" class=""></td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="d_ocr" >2023-05-10</td>
-                                    <td id="target_prd">2023-04</td>
-                                    <td id="dsn" class="">지급</td>
-                                    <td id="pdc" class="txt_r"></td>
-                                    <td id="s_sales" class="txt_r"></td>
-                                    <td id="c_sales" class="txt_r"></td>
-                                    <td id="r_sales" class="txt_r"></td>
-                                    <td id="pm_at" class="txt_r">250,000</td>
-                                    <td id="unset_blc" class="txt_r">-</td>
-                                    <td id="note" class=""></td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="d_ocr" ></td>
-                                    <td id="target_prd"></td>
-                                    <td id="dsn" class="">현잔액</td>
-                                    <td id="pdc" class="txt_r"></td>
-                                    <td id="s_sales" class="txt_r"></td>
-                                    <td id="c_sales" class="txt_r"></td>
-                                    <td id="r_sales" class="txt_r"></td>
-                                    <td id="pm_at" class="txt_r"></td>
-                                    <td id="unset_blc" class="txt_r">-</td>
-                                    <td id="note" class=""></td>
-                                </tr>
-
-                                
-                                <tr>
-                                    <td scope="row" id="d_ocr" >2023-05-10</td>
-                                    <td id="target_prd">2023-04</td>
-                                    <td id="dsn" class="">지급</td>
-                                    <td id="pdc" class="txt_r"></td>
-                                    <td id="s_sales" class="txt_r"></td>
-                                    <td id="c_sales" class="txt_r"></td>
-                                    <td id="r_sales" class="txt_r"></td>
-                                    <td id="pm_at" class="txt_r">250,000</td>
-                                    <td id="unset_blc" class="txt_r">-</td>
-                                    <td id="note" class=""></td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="d_ocr" ></td>
-                                    <td id="target_prd"></td>
-                                    <td id="dsn" class="">현잔액</td>
-                                    <td id="pdc" class="txt_r"></td>
-                                    <td id="s_sales" class="txt_r"></td>
-                                    <td id="c_sales" class="txt_r"></td>
-                                    <td id="r_sales" class="txt_r"></td>
-                                    <td id="pm_at" class="txt_r"></td>
-                                    <td id="unset_blc" class="txt_r">-</td>
-                                    <td id="note" class=""></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -319,7 +240,7 @@
                 "pageLength":12,
 
                 dom:'Bfrtip',
-                
+                aaSorting:[],
                 buttons: [
                     {
                         extend: 'excel'
