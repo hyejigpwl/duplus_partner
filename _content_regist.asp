@@ -496,17 +496,13 @@ end if
                                             <tr>
                                                 <th>카테고리1 (주제별) <span class="orange">*</span></th>
                                                 <td class="cat1 btn_add_wrap">
-                                                    <!--<input type="text" id="category_1" name="category_1">-->
-
-                                                    <select name="category_1" id="category_1" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
+                                                    <input type="text" id="category_1" name="category_1">
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
                                                 <th>카테고리2 (대상별) <span class="orange">*</span></th>
                                                 <td class="cat2 btn_add_wrap">
-                                                    <!--<input type="text" id="category_2" name="category_2">-->
-
-                                                    <select name="category_2" id="category_2" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
+                                                    <input type="text" id="category_2" name="category_2">
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
                                                 </td>
@@ -519,12 +515,8 @@ end if
                                             </tr>
                                             <tr>
                                                 <th>검색 키워드</th>
-                                                <td colspan="3" class="key btn_add_wrap">
-                                                    <!--<input type="text" name="search_key"> -->
-
-                                                    <select name="search_key" id="search_key" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
-                                        
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                <td colspan="3" class="">
+                                                    <input type="text" name="search_key"> 
                                                 </td>
                                                 
                                             </tr>
@@ -627,25 +619,16 @@ end if
                                 <div class="sale_info table_wrap">
                                     <h3 class="sub_t">판매 정보</h3>
                                     <table class="table_input">
-                                        <!--<colgroup>
-                                            <col class="th">
-                                            <col class="td">
-                                            <col class="th">
-                                            <col class="td">
-                                        </colgroup>-->
-
                                         <colgroup>
-                                            <col style="width:8.8%;">
-                                            <col style="width:8.8%;">
-                                            <col style="width:30%;">
-                                            <col style="width:10%;">
-                                            <col style="width:20%;">
-                                            <col style="width:20%;">
+                                            <col class="th">
+                                            <col class="td">
+                                            <col class="th">
+                                            <col class="td">
                                         </colgroup>
                                         <tbody>
                                             <tr>
                                                 <th scope="row">판매 형태 <span class="orange">*</span></th>
-                                                <td colspan="5">
+                                                <td colspan="3">
                                                     <select name="sale_type_sel">
                                                         <option value="all" selected>전체</option>
                                                         <option value="keep">소장</option>
@@ -655,26 +638,26 @@ end if
                                             </tr>
                                             <tr>
                                                 <th scope="row">판매가 <span class="orange">*</span></th>
-                                                <td colspan="5">
+                                                <td colspan="3">
                                                     <input type="text" id="b_price" name="b_price">
                                                     원
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">대여가</th>
-                                                <td colspan="2">
+                                                <td>
                                                     <input type="text" id="b_rental_price" name="b_rental_price">
                                                     원
                                                 </td>
                                                 <th scope="row">대여기간</th>
-                                                <td colspan="2">
+                                                <td>
                                                     <input type="text" id="rental_period" name="rental_period">
                                                     일
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">서비스 여부 <span class="orange">*</span></th>
-                                                <td colspan="2">
+                                                <td>
                                                     <span class="radio">
                                                         <input type="radio" name="service" id="now" value="now" checked>
                                                         <label for="now">즉시</label>
@@ -687,57 +670,10 @@ end if
                                                 </td>
 
                                                 <th>서비스 시작일</th>
-                                                <td class="regist_date" colspan="2">
+                                                <td class="regist_date">
                                                     <input type="text" name="serviceDate" autocomplete="off"> 
                                                 </td>
                                             </tr>
-
-                                            <!-- 정산율 START -->
-                                            <tr>
-                                                <th scope="row" rowspan="3">정산율</th>
-                                                <th>구독정산(매입)가</th>
-                                                <td colspan="1">
-                                                    <input type="text" id="sub_set" name="sub_set">
-                                                    원
-                                                </td>
-
-                                                <th>구독정산 기준 판매수량</th>
-                                                <td colspan="3">
-                                                    <input type="text" id="sales_qt" name="sales_qt">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>소장정산(매입)가</th>
-                                                <td colspan="1">
-                                                    <input type="text" id="col_set" name="col_set">
-                                                    원
-                                                </td>
-
-                                                <th>대여정산(매입)가</th>
-                                                <td colspan="3">
-                                                    <input type="text" id="rent_set" name="rent_set">
-                                                    원
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">제작 등록</th>
-                                                <td colspan="1">
-                                                    <!--<span id="stm_pd">ㄹㅇㄹㅇㄹ</span>-->
-
-                                                    <span class="chk">
-                                                        <input type="checkbox" id="pd_rgt" name="pd_rgt" value="Y">
-                                                        <label for="pd_rgt">리소스제작위탁 여부</label>
-                                                    </span>
-                                                </td>
-
-                                                <th scope="row">독점기간</th>
-                                                <td class="regist_date" colspan="3">
-                                                    <span class="chk">
-                                                        <input type="text" name="ecs_prd" autocomplete="off"> 까지 
-                                                    </span>
-                                                </td>
-                                            </tr>      
-                                            <!-- 정산율 END -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -839,7 +775,7 @@ end if
            
             
 
-            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"],input[name="ecs_prd"]').daterangepicker(
+            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"]').daterangepicker(
                 {
                 singleDatePicker: true,
                 autoApply:true,
@@ -880,45 +816,67 @@ end if
                 }
             });
 
+            // 브랜드명 추가, 삭제 버튼
+            var fieldHtml='<div><input type="text" class="add_ipt"><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
 
-            // 저자 추가, 삭제 버튼
-            var fieldHtml1='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-
-            $(".author .add_btn").click(function(){
-                $(".author.btn_add_wrap").append(fieldHtml1);
+            $(".brand .add_btn").click(function(){
+                $(".brand.btn_add_wrap").append(fieldHtml);
             });
 
-            $(".author .remove_btn,.cat1 .remove_btn,.cat2 .remove_btn,.key .remove_btn").click(function(){
+            $(".brand .remove_btn").click(function(){
                 $(this).parent('div').remove();
             })
 
-            $(".author.btn_add_wrap,.cat1.btn_add_wrap,.cat2.btn_add_wrap,.key.btn_add_wrap").on('click', '.remove_btn', function(e){
+            $(".brand.btn_add_wrap").on('click', '.remove_btn', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove();
+            });
+
+            // 저자 추가, 삭제 버튼
+            var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+
+            $(".author .add_btn").click(function(){
+                $(".author.btn_add_wrap").append(fieldHtml2);
+            });
+
+            $(".author .remove_btn").click(function(){
+                $(this).parent('div').remove();
+            })
+
+            $(".author.btn_add_wrap").on('click', '.remove_btn', function(e){
                 e.preventDefault();
                 $(this).parent('div').remove();
             });
 
             // 카테고리1 추가, 삭제 버튼
-            var fieldHtml2='<div><select name="category_1" id="category_1" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-
             $(".cat1 .add_btn").click(function(){
-                $(".cat1.btn_add_wrap").append(fieldHtml2);
+                $(".cat1.btn_add_wrap").append(fieldHtml);
             });
 
+            $(".cat1 .remove_btn").click(function(){
+                $(this).parent('div').remove();
+            })
+
+            $(".cat1.btn_add_wrap").on('click', '.remove_btn', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove();
+            });
 
             // 카테고리2 추가, 삭제 버튼
-             var fieldHtml3='<div><select name="category_2" id="category_2" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
             $(".cat2 .add_btn").click(function(){
-                $(".cat2.btn_add_wrap").append(fieldHtml3);
+                $(".cat2.btn_add_wrap").append(fieldHtml);
+            });
+
+            $(".cat2 .remove_btn").click(function(){
+                $(this).parent('div').remove();
+            })
+
+            $(".cat2.btn_add_wrap").on('click', '.remove_btn', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove();
             });
 
 
-            // 검색 키워드 추가, 삭제 버튼
-            var fieldHtml4='<div><select name="search_key" id="search_key" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-            $(".key .add_btn").click(function(){
-                $(".key.btn_add_wrap").append(fieldHtml4);
-            });
-
-         
             // 저자 소개내용 modal 띄우기
             $(".btn_add_wrap").on('click','.a_open_popup',function(){
                 $(".a_modal").css({

@@ -86,278 +86,125 @@
                         <table id="t_sales_details" class="display">
                             <caption>정산 내역</caption>
                             <thead>
-                                <th scope="col">정산기간</th>
-                                <th scope="col">매출 기간</th>
-                                <th scope="col" class="">구독 대여</th>
-                                <th scope="col">공급 Copy</th>
+                                <th scope="col"><!--정산기간-->발생일</th>
+                                <th scope="col"><!--매출 기간-->대상기간</th>
+                                <th scope="col" class=""><!--구독 대여-->구분</th>
+                                <th scope="col"><!--공급 Copy-->제작</th>
                                 <th scope="col">구독매출</th>
-                                <th scope="col">소장</th>
+                                <!--<th scope="col">소장</th>-->
                                 <th scope="col">소장 매출</th>
-                                <th scope="col">대여</th>
+                                <!--<th scope="col">대여</th>-->
                                 <th scope="col">대여 매출</th>
-                                <th scope="col">정산 금액</th>
+                                <!--<th scope="col">정산 금액</th>-->
                                 <th scope="col">지금 금액</th>
-                                <th scope="col">정산 여부</th>
-                                <th scope="col">정산일</th>
+                                <th scope="col"><!--정산 여부-->미정산잔액</th>
+                                <th scope="col"><!--정산일-->비고</th>
                             </thead>
                     
                             <tbody>
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" ></td>
+                                    <td id="target_prd"></td>
+                                    <td id="dsn" class="">이전잔액</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r"></td>
+                                    <td id="c_sales" class="txt_r"></td>
+                                    <td id="r_sales" class="txt_r"></td>
+                                    <td id="pm_at" class="txt_r"></td>
+                                    <td id="unset_blc" class="txt_r">-</td>
+                                    <td id="note" class=""></td>
                                 </tr>
 
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" >2023-03-01</td>
+                                    <td id="target_prd">2023-02</td>
+                                    <td id="dsn" class="">제작비</td>
+                                    <td id="pdc" class="txt_r">300,000</td>
+                                    <td id="s_sales" class="txt_r"></td>
+                                    <td id="c_sales" class="txt_r"></td>
+                                    <td id="r_sales" class="txt_r"></td>
+                                    <td id="pm_at" class="txt_r"></td>
+                                    <td id="unset_blc" class="txt_r">300,000</td>
+                                    <td id="note" class="">전자책제작</td>
                                 </tr>
 
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" >2023-03-01</td>
+                                    <td id="target_prd">2023-02</td>
+                                    <td id="dsn" class="">매출</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r">120,000</td>
+                                    <td id="c_sales" class="txt_r">50,000</td>
+                                    <td id="r_sales" class="txt_r">30,000</td>
+                                    <td id="pm_at" class="txt_r"></td>
+                                    <td id="unset_blc" class="txt_r">100,000</td>
+                                    <td id="note" class=""></td>
                                 </tr>
 
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-                    
-                                  <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" >2023-04-01</td>
+                                    <td id="target_prd">2023-03</td>
+                                    <td id="dsn" class="">매출</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r">150,000</td>
+                                    <td id="c_sales" class="txt_r">70,000</td>
+                                    <td id="r_sales" class="txt_r">30,000</td>
+                                    <td id="pm_at" class="txt_r"></td>
+                                    <td id="unset_blc" class="txt_r">150,000</td>
+                                    <td id="note" class=""></td>
                                 </tr>
 
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" >2023-04-10</td>
+                                    <td id="target_prd">2023-03</td>
+                                    <td id="dsn" class="">지급</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r"></td>
+                                    <td id="c_sales" class="txt_r"></td>
+                                    <td id="r_sales" class="txt_r"></td>
+                                    <td id="pm_at" class="txt_r">150,000</td>
+                                    <td id="unset_blc" class="txt_r">-</td>
+                                    <td id="note" class=""></td>
+                                </tr>
+                              
+                                <tr>
+                                    <td scope="row" id="d_ocr" >2023-05-01</td>
+                                    <td id="target_prd">2023-04</td>
+                                    <td id="dsn" class="">매출</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r">150,000</td>
+                                    <td id="c_sales" class="txt_r">70,000</td>
+                                    <td id="r_sales" class="txt_r">30,000</td>
+                                    <td id="pm_at" class="txt_r"></td>
+                                    <td id="unset_blc" class="txt_r">250,000</td>
+                                    <td id="note" class=""></td>
                                 </tr>
 
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" >2023-05-10</td>
+                                    <td id="target_prd">2023-04</td>
+                                    <td id="dsn" class="">지급</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r"></td>
+                                    <td id="c_sales" class="txt_r"></td>
+                                    <td id="r_sales" class="txt_r"></td>
+                                    <td id="pm_at" class="txt_r">250,000</td>
+                                    <td id="unset_blc" class="txt_r">-</td>
+                                    <td id="note" class=""></td>
                                 </tr>
 
                                 <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
+                                    <td scope="row" id="d_ocr" ></td>
+                                    <td id="target_prd"></td>
+                                    <td id="dsn" class="">현잔액</td>
+                                    <td id="pdc" class="txt_r"></td>
+                                    <td id="s_sales" class="txt_r"></td>
+                                    <td id="c_sales" class="txt_r"></td>
+                                    <td id="r_sales" class="txt_r"></td>
+                                    <td id="pm_at" class="txt_r"></td>
+                                    <td id="unset_blc" class="txt_r">-</td>
+                                    <td id="note" class=""></td>
                                 </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-
-                                <tr>
-                                    <td scope="row" id="" >2023-03</td>
-                                    <td id="">2023-02</td>
-                                    <td id="" class="txt_r">327</td>
-                                    <td id="" class="txt_r">10</td>
-                                    <td id="" class="txt_r">82,320</td>
-                                    <td id="" class="txt_r">100</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">2</td>
-                                    <td id="" class="txt_r">O O O</td>
-                                    <td id="" class="txt_r">92,320</td>
-                                    <td id="" class="txt_r">_</td>
-                                    <td id="">미완료</td>
-                                    <td id="" class="">_</td>
-                                </tr>
-                         
                             </tbody>
                         </table>
                     </div>
@@ -406,19 +253,16 @@
                 // 셀 너비 고정
                 bAutoWidth:false,
                 columnDefs:[
-                    {width:"6%",targets:0},
-                    {width:"6%",targets:1},
-                    {width:"5%",targets:2},
-                    {width:"6%",targets:3},
-                    {width:"6%",targets:4},
-                    {width:"6%",targets:5},
-                    {width:"6%",targets:6},
-                    {width:"5%",targets:7},
-                    {width:"6%",targets:8},
-                    {width:"6%",targets:9},
-                    {width:"6%",targets:10},
-                    {width:"6%",targets:11},
-                    {width:"6%",targets:12},
+                    {width:"7%",targets:0},
+                    {width:"9%",targets:1},
+                    {width:"8%",targets:2},
+                    {width:"8%",targets:3},
+                    {width:"10%",targets:4},
+                    {width:"10%",targets:5},
+                    {width:"10%",targets:6},
+                    {width:"10%",targets:7},
+                    {width:"8%",targets:8},
+                    {width:"10%",targets:9},
                 ]
             });
 

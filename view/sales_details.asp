@@ -137,7 +137,7 @@
                                     <td scope="row" id="b_barcode">E230100002</td>
                                     <td id="b_type">EPUB</td>
                                     <td id="b_name" class="txt_l">그리스도인의 초자연적 회복력</td>
-                                    <td id="b_author">존 엘드리지</td>
+                                    <td id="b_author">김요셉</td>
                                     <td id="b_list_price" class="txt_r">15,000</td>
                                     <td id="b_price" class="txt_r">15,000</td>
                                     <td id="b_rental_price" class="txt_r">7,500</td>
