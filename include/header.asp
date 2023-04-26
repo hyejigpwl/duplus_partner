@@ -2,6 +2,7 @@
 <OBJECT PROGID=Scripting.FileSystemObject   	id=fso 		RUNAT=server> </OBJECT>
 <OBJECT PROGID=DAL.DBHelper id=dbh RUNAT=server> </OBJECT>
 <!--#include file="connect.asp"-->
+<!--#include file="function.asp"-->
 <%
 Response.CharSet="utf-8"
 'Session.codepage="949"
@@ -160,4 +161,4 @@ Response.ContentType="text/html;charset=utf-8"
                 $(this).addClass('on')
             })
         });
-    </script>
+    </script> 
