@@ -1,3 +1,12 @@
+<%
+BRD_ID = request("BRD_ID")
+IF ID  <> ""THEN 
+
+END IF 
+
+
+'파일 저장시 blob 에 올려야 함.. 
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -59,7 +68,7 @@
 
                     <!-- 질문 등록 START -->
                     <div class="qna_wrap">
-                        <form action="" method="post" id="qna_regist_form" class="form_primary" onsubmit="return form_check()">
+                        <form action="qna_treat.asp" method="post" id="qna_regist_form" class="form_primary" onsubmit="return form_check()">
                             <fieldset>
                                 <legend class="blind">문의하기 질문 등록</legend>
 
