@@ -2,7 +2,7 @@
 
 
  <%
- 'guid 생성 
+ 'guid 생성  테스트
  Function Lguid ()
 guid = LCase(server.createobject("scriptlet.typelib").guid)
 guid = Mid(guid,2,36)

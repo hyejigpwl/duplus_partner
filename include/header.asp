@@ -4,8 +4,7 @@
 <!--#include file="connect.asp"-->
 <!--#include file="function.asp"-->
 <%
-Response.CharSet="utf-8"
-'Session.codepage="949"
+Response.CharSet="utf-8" 
 Response.codepage="65001"
 Response.ContentType="text/html;charset=utf-8"
 
@@ -68,7 +67,14 @@ Response.ContentType="text/html;charset=utf-8"
     <script src="../js/daterangepicker.js"></script>
     <script src="../js/jquery.ui.monthpicker.js"></script>
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1"></script>-->
+    <script type="text/javascript" src="../js/jquery.analytics_dashboard.init3.js" charset="utf-8"></script>
     <script src="../js/chart.js"></script>
+    <!-- bos  관련 스크립트 -->
+    <script src="https://prd-dplus-bos-krc.azurewebsites.net/js/dx.all.js"></script>
+    <link href="https://cdn3.devexpress.com/jslib/22.1.5/css/dx.light.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.4.0/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
 
      <!-- 엑셀 다운로드 START -->
      <script src="../js/dataTables.buttons.min.js"></script>
@@ -77,6 +83,7 @@ Response.ContentType="text/html;charset=utf-8"
      <script src="../js/vfs_fonts.js"></script>
       <script src="../js/buttons.html5.min.js"></script>
       <script src="../js/buttons.print.min.js"></script>
+      <script src="../js/main.js"></script>
       <!-- 엑셀 다운로드 END -->
     
 <%

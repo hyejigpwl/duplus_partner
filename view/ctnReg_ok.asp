@@ -1,6 +1,16 @@
+<OBJECT PROGID=ASP.PagingHelperMall 		ID=phm  RunAt=Server></OBJECT>
+<OBJECT PROGID=Scripting.FileSystemObject   	id=fso 		RUNAT=server> </OBJECT>
+<OBJECT PROGID=DAL.DBHelper id=dbh RUNAT=server> </OBJECT>
+<!--#include file="connect.asp"-->
+<!--#include file="function.asp"-->
 <%
 
 ' 저장되는 파일을 받은 부분 
+
+'파일을 업로드 하고 
+
+' 여기서 azure 에 파일을 업로드 해야 하는가.. ? 
+
 For i=1 To Request.Form.Count
 
 response.write "<br>ID : " & Request.Form.Key(i) & " | Value : " &  Request.Form(i)

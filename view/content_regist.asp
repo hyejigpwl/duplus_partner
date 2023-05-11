@@ -21,6 +21,9 @@
     <!--#include virtual="/partner/include/header.asp"-->
 <%
 ' 상품 코드가 있으면 수정모드.   
+
+guid = Uguid()
+
 pCode = request("pCode")
 if pCode <> ""  then
  
@@ -29,8 +32,16 @@ end if
 
 %>
     <script>
+ 
+
         // 유효성 검사
         function form_check(){
+
+            console.log("form_check 시작 ")
+   //              return false; 
+
+            
+
             const b_name=document.getElementById("b_name");
             const sub_name=document.getElementById("sub_name");
             //const brand_name=document.getElementById("brand_name");
@@ -52,7 +63,15 @@ end if
 
             const b_price=document.getElementById("b_price");
             
-
+                // test region
+            /* 도서파일 입력 여부 */
+            if(b_file_name.value==""){
+                alert("도서파일을 입력하세요.");
+                b_file_name.focus();
+                return false;
+            }
+        
+                // test region
 
             /* 도서명 입력 여부 */
             if(b_name.value==""){
@@ -274,7 +293,8 @@ end if
 
                     <!-- 콘텐츠 등록 START -->
                     <div class="content_regist">
-                        <form action="" method="post" id="cont_regist_form" class="form_primary" onsubmit="return form_check()">
+                        <form action="regOk.asp" method="post" id="cont_regist_form" class="form_primary" onsubmit="return form_check()">
+                        <input type="hidden" id="HIddenGuid" value="<%=guid%>">
                             <fieldset>
                                 <legend class="blind">콘텐츠 등록</legend>
     
@@ -354,7 +374,7 @@ end if
                                             <tr class="long_input">
                                                 <th>도서명 <span class="orange">*</span></th>
                                                 <td colspan="3">
-                                                    <input type="text" id="b_name" name="b_name">
+                                                    <input type="text" id="b_name" name="b_name" >
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
@@ -477,6 +497,7 @@ end if
                                                 <th scope="row">책소개 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <textarea rows="5" cols id="book_info" name="book_info_txt"></textarea>
+                                                    <div class="col-md-10" id="summernote" />
                                                 </td>
                                             </tr>
                                             <tr>
@@ -551,6 +572,16 @@ end if
 
                                 <div class="resource table_wrap">
                                     <h3 class="sub_t">리소스</h3>
+
+                                  <div class="form-group row">
+                                    <label class="col-form-label col-md-2" style="float: left;text-align: center;"><span style="color: red">*</span>파일</label>
+                                    <div class="col-md-4" id="file-uploaderMedia" style=" padding: 0px; margin-top: -12px;"></div>
+                                    <label class="col-md-1" id="MediaName"></label>
+                                    <div class="col-md-5">
+                                        <a class="btn btn-primary btn-sm" id="mediaDownload" href="#">다운로드</a>
+                                    </div>
+                                </div>
+
                                     <table class="table_input">
                                         <colgroup>
                                             <col class="th">
@@ -564,7 +595,7 @@ end if
                                                 <td class="file_box">
                                                     <input type="text" id="b_file_name" name="b_file_name" readonly>
                                                     <label for="b_file">파일선택</label>
-                                                    <input type="file" id="b_file">
+                                                    <input type="file" id="b_file" onchange="checkFile(event)">
                                                 </td>
 
                                                 <th>다운로드 여부</th>
@@ -764,7 +795,7 @@ end if
 
                                 <!-- 초기 작성 시 하단 버튼 START -->
                                 <div class="btn_wrap">
-                                    <button type="button" class="btn_md btn_primary">저장하기</button>
+                                    <button type="submit" class="btn_md btn_primary">저장하기</button>
                                     <button type="reset" class="btn_md btn_primary btn_light_gray">취소(초기화)</button>
                                     <!--<button type="submit" class="btn_md btn_primary">승인신청</button>-->
                                 </div>
@@ -804,236 +835,181 @@ end if
     
     
 
-    <script>
-
-        // 파일 업로드-표지
-        function setThumbnail(event) {
-        var reader = new FileReader();
-
-        reader.onload = function(event) {
-          var img = document.createElement("img");
-          img.setAttribute("src", event.target.result);
-          document.querySelector("div#image_container").appendChild(img);
-        };
-
-        reader.readAsDataURL(event.target.files[0]);
-      }
-
-      // 파일 업로드-상세
-      function setThumbnail2(event) {
-        var reader = new FileReader();
-
-        reader.onload = function(event) {
-          var img = document.createElement("img");
-          img.setAttribute("src", event.target.result);
-          document.querySelector("div#image_container2").appendChild(img);
-        };
-
-        reader.readAsDataURL(event.target.files[0]);
-      };
+<script>
+function checkFile(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onloadend = function() {
+    const content = reader.result;
+    const sizeInBytes = content.length;
+    const sizeInKilobytes = sizeInBytes / 1024;
+    console.log(`File size: ${sizeInKilobytes} KB`);
+    $("#file_size").html(byteCalculation(sizeInBytes))
+  }
+  reader.readAsText(file);
 
 
-      
+        var imageForm = new FormData();
+        imageForm.append("file", file);
+        imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+        imageForm.append("fileName", file.name);
 
-        $(document).ready(function () {
-           
-            
 
-            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"],input[name="ecs_prd"]').daterangepicker(
-                {
-                singleDatePicker: true,
-                autoApply:true,
-                
-                locale: {
-                    format: "YYYY-MM-DD",
-                    applyLabel: "확인",
-                    cancelLabel: "취소",
-                    customRangeLabel: "Custom",
-                    weekLabel: "W",
-                    daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
-                    monthNames: [
-                    "1월",
-                    "2월",
-                    "3월",
-                    "4월",
-                    "5월",
-                    "6월",
-                    "7월",
-                    "8월",
-                    "9월",
-                    "10월",
-                    "11월",
-                    "12월",
-                    ],
+//  $.ajax({ 
+//             url: "https://prd-dplus-bos-krc.azurewebsites.net/System/FileUpload"
+ 
+
+            $.ajax({
+                url: "https://prd-dplus-bos-krc.azurewebsites.net/System/FileUpload",
+                type: "POST",
+                data: imageForm,
+                async: false,
+                success: function (data) {
+                    console.log(data)
+                    // if (editor != null) {
+                    //     $(editor).summernote('pasteHTML', "<img src='" + "@Configuration.GetSection("AzureUrl").Value" + data + "' style='width:200px;' />");
+                    // }
+
+                    // if (imageType == "main") {
+                    //     fileData = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    // } else if (imageType == "thumbnail") {
+                    //     fileData2 = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    // } else if (imageType == "webView") {
+                    //     fileData4 = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    // } else if (imageType == "promotion") {
+                    //     fileData3 = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    // } else if (imageType == "AudioThumnail") {
+                    //     fileData6 = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    // } else if (imageType == "ClassThumnail") {
+                    //     fileData7 = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    // } else if (imageType == "file") {
+                    //     AttachFileData[i] = "@Configuration.GetSection("AzureUrl").Value" + data;
+                    //     i++;
+                    // }
+
                 },
-                
-                },
-            );
-            
-            // 시리즈 정보 추가
-            $(".series_add_info").hide();
-            $("input:checkbox[name='series_chk']").click(function(){
-                if($(this).is(":checked")){
-                    $(".series_add_info").show();
-                }else{
-                    $(".series_add_info").hide();
+                contentType: false,
+                processData: false,
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    if (errorThrown == "Unauthorized") {
+
+                        alertBox("인증 기한 만료. 로그인 페이지로 돌아갑니다.");
+                       // location.href = "/Account/Login";
+                    }
+                    else {
+                        alertBox("error : " + textStatus);
+                    }
                 }
-            });
+
+            }); 
 
 
-            // 저자 추가, 삭제 버튼
-            var fieldHtml1='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+}
 
-            $(".author .add_btn").click(function(){
-                $(".author.btn_add_wrap").append(fieldHtml1);
-            });
-
-            $(".author .remove_btn,.cat1 .remove_btn,.cat2 .remove_btn,.key .remove_btn").click(function(){
-                $(this).parent('div').remove();
-            })
-
-            $(".author.btn_add_wrap,.cat1.btn_add_wrap,.cat2.btn_add_wrap,.key.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                $(this).parent('div').remove();
-            });
-
-            // 카테고리1 추가, 삭제 버튼
-            var fieldHtml2='<div><select name="category_1" id="category_1" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-
-            $(".cat1 .add_btn").click(function(){
-                $(".cat1.btn_add_wrap").append(fieldHtml2);
-            });
+ //파일 등록 열기6 (도서)
+    function FileOpenMedia() {
 
 
-            // 카테고리2 추가, 삭제 버튼
-             var fieldHtml3='<div><select name="category_2" id="category_2" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-            $(".cat2 .add_btn").click(function(){
-                $(".cat2.btn_add_wrap").append(fieldHtml3);
-            });
+        $("#file-uploaderMedia").dxFileUploader({
+            selectButtonText: "파일 선택",
+            accept: "*",
+            uploadMode: "UseForm",
+            multiple: false,
+            chunkSize: 200000,
+            onValueChanged: function (e) {
 
 
-            // 검색 키워드 추가, 삭제 버튼
-            var fieldHtml4='<div><select name="search_key" id="search_key" class="add_sel" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-            $(".key .add_btn").click(function(){
-                $(".key.btn_add_wrap").append(fieldHtml4);
-            });
 
-         
-            // 저자 소개내용 modal 띄우기
-            $(".btn_add_wrap").on('click','.a_open_popup',function(){
-                $(".a_modal").css({
-                    "display":"block",
-                });
-                $("body").css({
-                    "overflow":"hidden",
-                })
+                if (e.value.length != 0) {
 
-                $(".btn_close_popup,.modal .btn_wrap button").click(function(){
-                    $(".a_modal").css({
-                        "display":"none",
-                    });
-                    $("body").css({
-                        "overflow":"auto",
-                    });
-                })
-            });
 
-            // 판매중지 소개내용 modal 띄우기
-            $(".s_open_popup").click(function(){
-                $(".s_modal").css({
-                    "display":"block",
-                });
-                $("body").css({
-                    "overflow":"hidden",
-                })
+                    file = [];
 
-                $(".btn_close_popup,.modal .btn_wrap button").click(function(){
-                    $(".s_modal").css({
-                        "display":"none",
-                    });
-                    $("body").css({
-                        "overflow":"auto",
-                    });
-                })
-            });
+                    file[0] = e.value;
+                    file[1] = "book";
 
-            // 판매중지에서 기타 텍스트 입력 시 기타 라디오 선택
-            $("textarea[id=etc_txt]").on('click',function(){
-                $("input:radio[id='etc']").prop("checked",true);
-                $("input:radio[id='expire'],input:radio[id='revision']").removeAttr("checked");
-            });
+                    fileAll[4] = file;
 
-        });
+                    var f = e.value;
 
-        // input=file 파일명 연결
-        $("#b_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#b_file_name").val(fileName);
-        });
-        
-        $("#t_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#t_file_name").val(fileName);
-        });
-        $("#d_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#d_file_name").val(fileName);
-        });
-        $("#f_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#f_file_name").val(fileName);
-        });
+                    BookFileName = f[0].name;
+                    booksize = f[0].size;
+                    //파일 사이즈 바인딩
+                    var size = byteCalculation(f[0].size);
+                    $("#fileSize").html(size);
 
-        // 파일 1mb 제한
-        $(".under_1mb").bind( 'change', function (e)
-        {
-            if( !$(this).val() ) return;
-             
-            var f = this.files[0];
-            var size = f.size || f.fileSize;
-             
-            var limit = 1000000;
-                         
-            if( size > limit )
-            {
-                alert( '파일용량은 1mb 를 넘을수 없습니다.' );
-                $(this).val('');
-                return;
+
+                        var last = e.value[0].name.substring(e.value[0].name.lastIndexOf('.') + 1);
+
+                    if ($("input[name='fileType']:checked").val() == "epub") { // 001
+
+                        if (last != "epub") {
+                            alertBox("EPUB 파일을 등록해주세요.");
+                            $("#file-uploaderMedia").dxFileUploader("instance").reset();
+                            $("#fileSize").html("");
+
+                        }
+                    } else if ($("input[name='fileType']:checked").val() == "pdf") {  //002 
+
+                        if (last != "pdf") {
+                            alertBox("PDF 파일을 등록해주세요.");
+                            $("#file-uploaderMedia").dxFileUploader("instance").reset();
+                            $("#fileSize").html("");
+
+                        }
+                    }
+                    // }else if ($("input[name='fileType']:checked").val() == "004") {
+
+                    //     if (last != "zip") {
+                    //         alertBox("ZIP 파일을 등록해주세요.");
+                    //         $("#file-uploaderMedia").dxFileUploader("instance").reset();
+                    //         $("#fileSize").html("");
+
+                    //     } else {
+
+                    //         mediafile = [];
+                    //         mediafile[0] = f[0];
+                    //         mediafile[1] = "zip";
+                    //         mediafile[2] = f[0].size;
+                    //         handleFileSelect();
+                    //         mediaAll.push(mediafile);
+                    //     }
+                    // }
+
+                } else {
+                    fileAll.splice(4, 1);
+                    mediaAll = [];
+                    BookFileName = "";
+                    booksize = 0;
+                    $("#fileSize").html("");
+
+                }
+
+                var f = e.value;
+
+        //    @*     if (f.length > 0) {
+        //             BookFileName = f[0].name;
+
+        //             booksize = f[0].size;
+        //             //파일 사이즈 바인딩
+        //             var size = byteCalculation(f[0].size);
+        //             $("#fileSize").html(size);
+
+        //         } else {
+
+        //             BookFileName = "";
+        //             booksize = 0;
+        //             $("#fileSize").html("");
+
+        //          //   $("#dropzone-image3").attr("src", "");
+
+        //         };*@
             }
         });
 
-        // 파일 30mb 제한
-        $(".under_30mb").bind( 'change', function (e)
-        {
-            if( !$(this).val() ) return;
-             
-            var f = this.files[0];
-            var size = f.size || f.fileSize;
-             
-            var limit = 30000000;
-                         
-            if( size > limit )
-            {
-                alert( '파일용량은 30mb 를 넘을수 없습니다.' );
-                $(this).val('');
-                return;
-            }
-        });
-
-
-
-        // datatables.js 수정
-        // 한 화면에 20개 항목씩 보이게 수정 230306 혜지
-        // 10447줄, 11453줄
-        
-        // ~개씩 보기로 수정 230306 혜지
-        // 11888줄
-
-        // 테이블 밑에 상품 총 개수 명시 230307 혜지
-        // 11725줄
-
-        
-    </script>
+    }
+FileOpenMedia()
+</script>
 </body>
 
 </html>
