@@ -1,27 +1,23 @@
-<%
-startDate = Request.Form("startDate")
-endDate = Request.Form("endDate")
-if startDate = "" then startDate = date() - 30 
-if endDate = "" then endDate = date()
-brand_code_sel = Request.Form("brand_code_sel")
-pbcmCode_sel = Request.Form("pbcmCode_sel")
-b_name = Request.Form("b_name")
-a_name = Request.Form("a_name")
-goods = Request.Form("goods")
-'"&"&&
-cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand_code_sel&"&pbcmCode_sel="&pbcmCode_sel&"&b_name="&b_name&"&a_name="&a_name&"&goods="&goods
-
-
-%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="두플러스 콘텐츠 파트너 시스템" />
+    <meta name="keywords" content="두플러스, 두플, 두란노, 복음, 콘텐츠, 오리지널, 오디오북, 전자책, 강의, 구독, 큐티, 신앙, 교회, 목회" />
+    <meta name="author" content="duranno" />-->
     <title>두플러스 콘텐츠 파트너 시스템</title>
     <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- 파비콘 -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //구글 아이콘폰트 --> 
- 
+    <!-- sns tag -->
+	<!--<meta property="og:type" content="website">
+	<meta property="og:site_name" content="두플러스 콘텐츠 파트너 시스템">
+	<meta property="og:title" content="두플러스 콘텐츠 파트너 시스템">
+	<meta property="og:url" content="https://www.du.plus/duplus.html">
+	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
+	<meta property="og:description" content="두플러스 콘텐츠 파트너 시스템">-->
+    
+
     <!-- 헤더 START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
@@ -48,17 +44,17 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     <span class="f_title">상품</span>
     
                                     <span class="chk">
-                                        <input type="checkbox" name="goods" id="all" onclick="selectAll(this)" value="all" checked>
+                                        <input type="checkbox" name="goods" id="all" onclick="selectAll(this)" value="all">
                                         <label for="all">전체</label>
                                     </span>
     
                                     <span class="chk">
-                                        <input type="checkbox" id="unr_book" name="goods" value="unr_book" checked>
+                                        <input type="checkbox" id="unr_book" name="goods" value="unr_book">
                                         <label for="unr_book">E-ISBN 미등록 도서</label>
                                     </span>
                                     
                                     <span class="chk">
-                                        <input type="checkbox" id="n_book" name="goods" value="n_book" checked>
+                                        <input type="checkbox" id="n_book" name="goods" value="n_book">
                                         <label for="n_book">일반도서</label>
                                     </span>
                                     
@@ -69,7 +65,7 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     
     
                                     <span class="chk">
-                                        <input type="checkbox" id="a_book" name="goods" value="a_book" checked>
+                                        <input type="checkbox" id="a_book" name="goods" value="a_book">
                                         <label for="a_book">오디오북</label>
                                     </span>
                                     
@@ -86,15 +82,15 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                 <p class="regist_date">
                                     <span class="f_title">등록일자</span>
     
-                                    <input type="text" name="startDate" value="<%=startDate%>" autocomplete="off" id="startDate">
+                                    <input type="text" name="startDate" value="" autocomplete="off" id="startDate">
                                     ~
-                                    <input type="text" name="endDate" value="<%=endDate%>" autocomplete="off" id="endDate">
+                                    <input type="text" name="endDate" value="" autocomplete="off" id="endDate">
     
-                                    <button type="button" id="btn_period_1w" onclick="selectrange(1)">1주</button>
-                                    <button type="button" id="btn_period_1m" onclick="selectrange(2)">1개월</button>
-                                    <button type="button" id="btn_period_3m" onclick="selectrange(3)">3개월</button>
-                                    <button type="button" id="btn_period_1y" onclick="selectrange(4)">1년</button>
-                                    <button type="button" id="btn_period_all" onclick="selectrange(5)">전체</button>
+                                    <button type="button" id="btn_period_1w">1주</button>
+                                    <button type="button" id="btn_period_1m">1개월</button>
+                                    <button type="button" id="btn_period_3m">3개월</button>
+                                    <button type="button" id="btn_period_1y">1년</button>
+                                    <button type="button" id="btn_period_all">전체</button>
                                 </p>
                                 <!-- 등록일자 END -->
     
@@ -114,12 +110,12 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     <p class="state">
                                         <span class="f_title">상태</span>
                                         <select name="pbcmCode_sel" id="pbcmCode_sel">
-                                            <option value="all"  >전체</option>
-                                            <option value="approval_wait" <%=iif(pbcmCode_sel="approval_wait","selected","")%>>승인대기</option>
-                                            <option value="approval_hold" <%=iif(pbcmCode_sel="approval_hold","selected","")%>>승인보류</option>
-                                            <option value="sale_wait" <%=iif(pbcmCode_sel="sale_wait","selected","")%>>판매대기</option>
-                                            <option value="sale_stop" <%=iif(pbcmCode_sel="sale_stop","selected","")%>>판매중단</option>
-                                            <option value="sale" <%=iif(pbcmCode_sel="sale","selected","")%>>판매중</option>
+                                            <option value="all" selected>전체</option>
+                                            <option value="approval_wait">승인대기</option>
+                                            <option value="approval_hold">승인보류</option>
+                                            <option value="sale_wait">판매대기</option>
+                                            <option value="sale_stop">판매중단</option>
+                                            <option value="sale">판매중</option>
                                         </select>
                                     </p>
                                     <!-- 상태 END -->
@@ -129,14 +125,14 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     <!-- 도서명 START -->
                                     <p class="book_name">
                                         <span class="f_title">도서명</span>
-                                        <input type="text" name="b_name" value="<%=b_name%>">
+                                        <input type="text" name="b_name">
                                     </p>
                                     <!-- 도서명 END -->
     
                                     <!-- 저자명 START -->
                                     <p class="author_name">
                                         <span class="f_title">저자명</span>
-                                        <input type="text" name="a_name" value="<%=a_name%>">
+                                        <input type="text" name="a_name">
                                     </p>
                                     <!-- 저자명 END -->
                                 </div>
@@ -149,24 +145,7 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                         </fieldset>
                     </form>
                     <!-- 콘텐츠 목록 필터 END -->
-    <%
-For i = 1 To Request.Form.Count
-    response.write "<br>"&Request.Form.key(i)
-Next    
-response.write "<br>"
-For i = 1 To Request.Form.Count
-    response.write "<br>ID: "&Request.Form.key(i) & "| value:"& request.Form(i)
-Next
-
-response.write "<br>"
-response.write cur_search
-' For i=1 To Request.Form.Count
-
-' response.write "<br>ID : " & Request.Form.Key(i) & " | Value : " &  Request.Form(i)
-
-' Next
-
-%>
+    
                     <div class="table_cont">
                         <h3 class="sub_t">콘텐츠 목록</h3>
     
@@ -397,7 +376,176 @@ response.write cur_search
                                             <td>승인보류</td>
                                             <td>2022-12-21</td>
                                         </tr>
-                             
+                            
+                                        <tr>
+                                            <td scope="row">10</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">9</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">8</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">7</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">6</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">5</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">4</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">3</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">2</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
+                            
+                                        <tr>
+                                            <td scope="row">1</td>
+                                            <td>E230100012</td>
+                                            <td>EPUB</td>
+                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)</a></td>
+                                            <td>두란노 편집부</td>
+                                            <td>두란노</td>
+                                            <td>9788953143746</td>
+                                            <td class="txt_r">9,100</td>
+                                            <td class="txt_r">8,190</td>
+                                            <td class="txt_r">0</td>
+                                            <td>믿음과성장</td>
+                                            <td>N</td>
+                                            <td>승인보류</td>
+                                            <td>2022-12-21</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -423,40 +571,13 @@ response.write cur_search
     <script>
         // 체크박스 전체 클릭시
         function selectAll(selectAll)  {
-        const checkboxes = document.getElementsByName('goods');
+        const checkboxes 
+            = document.getElementsByName('goods');
         
         checkboxes.forEach((checkbox) => {
             checkbox.checked = selectAll.checked;
         })
         }
-        
-        
-        
-        
-            function selectrange(ran){
-                let currentDate = new Date();
-                $('input[name="endDate"]').val(((dateFormat(currentDate))));
-            switch (ran){
-                case 1: 
-                    $('input[name="startDate"]').val( dateFormat(dateCalculator(currentDate,-7)) );
-                    break;
-                case 2:
-                    $('input[name="startDate"]').val( dateFormat(dateCalculator(currentDate,-30)) );
-                    break;
-                case 3:
-                    $('input[name="startDate"]').val(  dateFormat(dateCalculator(currentDate,-90)) );
-                    break;
-                case 4:
-                    $('input[name="startDate"]').val(  dateFormat(dateCalculator(currentDate,-365)) );
-                    break;
-                case 5:
-                    $('input[name="startDate"]').val('1900-01-01');
-                    break;
-                default :
-                    $('input[name="startDate"]').val( dateFormat(dateCalculator(currentDate,-30)) );
-                    break;
-                }
-            }
 
         $(document).ready(function () {
             $('#t_b_list_all').DataTable({
@@ -503,7 +624,6 @@ response.write cur_search
                 {
                 singleDatePicker: true,
                 autoApply:true,
-               // autoUpdateInput: false,
                 
                 locale: {
                     format: "YYYY-MM-DD",
@@ -526,22 +646,13 @@ response.write cur_search
                     "11월",
                     "12월",
                     ],
-                }//,
-                // startDate: $('input[name="startDate"]').val(),
-                // endDate: $('input[name="endDate"]').val(),
-                // drops: "auto"//,
-                // },
-                // function (start, end, label) {
-                // $('input[name="startDate"]').val(start.format("YYYY-MM-DD"));
-                // $('input[name="endDate"]').val(end.format("YYYY-MM-DD"));
-                // console.log("A new date selection was made: " +
-                //     start.format("YYYY-MM-DD") +
-                //     " to " +
-                //     end.format("YYYY-MM-DD")
-                // );
-                 }
+                },
+                
+                },
             );
-            });
+            
+            
+        });
 
         
         

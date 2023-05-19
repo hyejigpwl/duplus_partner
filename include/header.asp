@@ -69,6 +69,7 @@ Response.ContentType="text/html;charset=utf-8"
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1"></script>-->
     <script type="text/javascript" src="../js/jquery.analytics_dashboard.init3.js" charset="utf-8"></script>
     <script src="../js/chart.js"></script>
+    <script src="../js/main.js"></script>
     <!-- bos  관련 스크립트 -->
     <script src="https://prd-dplus-bos-krc.azurewebsites.net/js/dx.all.js"></script>
     <link href="https://cdn3.devexpress.com/jslib/22.1.5/css/dx.light.css" rel="stylesheet"/>

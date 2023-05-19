@@ -29,30 +29,6 @@ pCode = request("pCode")
 if pCode <> ""  then
  
 end if 
-dim ContentPublisherNo,  businessNumber
-businessNumber= "2148204203"  '두란노서원 
-' businessnum 으로 출판사 브랜드 검출 
-sql = "select ContentPublisherNo from  TbCM_ContentPublisher where businessNumber = "& businessNumber
-set rs = dbh.runSQLreturnRS(sql, "", conn_duplus)
- ContentPublisherNo = rs(0)
- rs.close 
-
-
-' paramInfo = Array( _
-' 			dbh.mp("@mct_sid",	advarchar,	10,	sid_num), _	
-' 			dbh.mp("@mbr_num",	advarchar,	10,	mbr_num), _
-' 			dbh.mp("@ord_div",	adchar,		1,		"C"))	
-'브랜드 목록 
-
-		paramInfo = Array( _
-			dbh.mp("@ContentPublisherNo",	advarchar,	10,	ContentPublisherNo) )	
-
-            
-set rs=dbh.RunSPReturnRS("PrCMS_PublisherBrand",paramInfo , conn_duplus)	
-if not (rs.eof or rs.bof) then 
-brandList = rs.getRows()
-end if 
-rs.close 
 
 ' 카테고리1  셀렉트 박스(주제별)  PrCMS_ContentCategoryType_1
 ' 카테고리2  셀렉트 박스(대상별)  PrCMS_ContentCategoryType_2
@@ -86,11 +62,7 @@ category1 = rs.getRows()
 end if 
 rs.close 
 
-set rs=dbh.RunSPReturnRS("PrCMS_ContentCategoryType_2","" , conn_duplus)	
-if not (rs.eof or rs.bof) then 
-category2 = rs.getRows()
-end if 
-rs.close 
+
     
               'response.end 
 
@@ -279,16 +251,7 @@ set rs = nothing
                                                 </td>
                                                 <th>브랜드명 <span class="orange">*</span></th>
                                                 <td class="brand btn_add_wrap">
-                                                    <select name="sel_brand" style="width:200px;">
-                                                    <%if isArray(brandList) then %>
-                                                            <option value="0" selected>선택해 주세요</option>
-                                                            <% for i = 0 to Ubound(brandList,2)%>
-                                                            <option value="<%=brandList(0,i)%>"  data-value="<%=brandList(2,i)%>"><%=brandList(1,i)%></option>
-                                                            <%
-                                                        next
-                                                    end if %>
-                                                    
-                                                    </select>
+                                                    <select name="sel_brand" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
                                                 </td>
                                             </tr>
                                             <!--<tr>
@@ -437,24 +400,14 @@ set rs = nothing
                                                     </select>
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
-                                                    <input type="text"  name="category_1_hidden" value=""/>
                                                 </td>
                                                 <th>카테고리2 (대상별) <span class="orange">*</span></th>
                                                 <td class="cat2 btn_add_wrap">
                                                     <!--<input type="text" id="category_2" name="category_2">-->
 
-                                                    <select name="category_2" id="category_2" style="width:200px;">
-                                                    <%if isArray(category2) then %>
-                                                            <option value="0" selected>선택해 주세요</option>
-                                                            <% for i = 0 to Ubound(category2,2)%>
-                                                            <option value="<%=category2(0,i)%>"  ><%=category2(1,i)%></option>
-                                                            <%
-                                                        next
-                                                    end if %>
-                                                    </select>
+                                                    <select name="category_2" id="category_2" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
-                                                    <input type="text"  name="category_2_hidden" value=""/>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -949,48 +902,229 @@ FileOpenMedia()
 
     <script>
  
- 
-    </script>
 
+        // 유효성 검사
+        function form_check(){
 
+            console.log("form_check 시작 ")
+   //              return false; 
 
-
-    <script>
-
-        // 파일 업로드-표지
-        function setThumbnail(event) {
-        var reader = new FileReader();
-
-        reader.onload = function(event) {
-          var img = document.createElement("img");
-          img.setAttribute("src", event.target.result);
-          document.querySelector("div#image_container").appendChild(img);
-        };
-
-        reader.readAsDataURL(event.target.files[0]);
-      }
-
-      // 파일 업로드-상세
-      function setThumbnail2(event) {
-        var reader = new FileReader();
-
-        reader.onload = function(event) {
-          var img = document.createElement("img");
-          img.setAttribute("src", event.target.result);
-          document.querySelector("div#image_container2").appendChild(img);
-        };
-
-        reader.readAsDataURL(event.target.files[0]);
-      };
-
-
-      
-
-        $(document).ready(function () {
-           
             
 
-            $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"]').daterangepicker(
+            const b_name=document.getElementById("b_name");
+            const sub_name=document.getElementById("sub_name");
+            //const brand_name=document.getElementById("brand_name");
+            //const author_name=document.getElementById("author_name");
+            const author_info=document.getElementById("author_info");
+            const b_list_price=document.getElementById("b_list_price");
+            const eb_list_price=document.getElementById("eb_list_price");
+            const isbn_num=document.getElementById("isbn_num");
+            const e_isbn_num=document.getElementById("e_isbn_num");
+            const page_num=document.getElementById("page_num");
+
+            const book_info=document.getElementById("book_info");
+            const book_list=document.getElementById("book_list");
+            const category_1=document.getElementById("category_1");
+            const category_2=document.getElementById("category_2");
+
+            const b_file_name=document.getElementById("b_file_name");
+            const t_file_name=document.getElementById("t_file_name");
+
+            const b_price=document.getElementById("b_price");
+            
+                // test region
+            /* 도서파일 입력 여부 */
+            if(b_file_name.value==""){
+                alert("도서파일을 입력하세요.");
+                b_file_name.focus();
+                return false;
+            }
+        
+                // test region
+
+            /* 도서명 입력 여부 */
+            if(b_name.value==""){
+                alert("도서명을 입력하세요.");
+                b_name.focus();
+                return false;
+            }
+
+            /* 부제 입력 여부 */
+            if(sub_name.value==""){
+                alert("부제를 입력하세요.");
+                sub_name.focus();
+                return false;
+            }
+
+
+             /* 저자 입력 여부 */
+             if(author_info.value==""){
+                alert("저자를 입력하세요.");
+                author_info.focus();
+                return false;
+            }
+
+
+            const regExp = /^[0-9]*$/;
+
+            /* 종이책 정가 입력 여부, 숫자, 13자리 */
+            if(b_list_price.value==""){
+                alert("종이책 정가를 입력하세요.");
+                b_list_price.focus();
+                return false;
+            } else if (!regExp.test(b_list_price.value)){
+                alert("숫자만 입력 가능합니다. 다시 입력해주세요.");
+                b_list_price.focus();
+                return false;
+            }
+            
+
+            /* 전자책 정가 입력 여부, 숫자 */
+            if(eb_list_price.value==""){
+                alert("전자책 정가를 입력하세요.");
+                eb_list_price.focus();
+                return false;
+            } else if (!regExp.test(eb_list_price.value)){
+                alert("숫자만 입력 가능합니다. 다시 입력해주세요.");
+                eb_list_price.focus();
+                return false;
+            }
+
+            const regExp2 = /^[0-9]{13,13}$/;
+
+            /* isbn 입력 여부, 숫자만, 13자리인지 확인 */
+            if(isbn_num.value==""){
+                alert("ISBN을 입력하세요.");
+                isbn_num.focus();
+                return false;
+            } else if(!regExp2.test(isbn_num.value)){
+                alert("ISBN 13자리 숫자를 입력하세요.");
+                isbn_num.focus();
+                return false;
+            }
+
+             /* e_isbn 입력 여부, 숫자만, 13자리인지 확인 */
+             if(e_isbn_num.value==""){
+                alert("E-ISBN을 입력하세요.");
+                e_isbn_num.focus();
+                return false;
+            } else if(!regExp2.test(e_isbn_num.value)){
+                alert("E-ISBN 13자리 숫자를 입력하세요.");
+                e_isbn_num.focus();
+                return false;
+            }
+
+            /* 페이지 수 입력 여부, 숫자만 */
+            if(page_num.value==""){
+                alert("페이지 수를 입력하세요.");
+                page_num.focus();
+                return false;
+            } else if (!regExp.test(page_num.value)){
+                alert("숫자만 입력 가능합니다. 다시 입력해주세요.");
+                page_num.focus();
+                return false;
+            }
+
+            /* 책소개 입력 여부 */
+            if(book_info.value==""){
+                alert("책소개를 입력하세요.");
+                book_info.focus();
+                return false;
+            }
+
+            /* 목차 입력 여부 */
+            if(book_list.value==""){
+                alert("목차를 입력하세요.");
+                book_list.focus();
+                return false;
+            }
+
+           
+
+            /* 카테고리1 입력 여부 */
+            if(category_1.value==""){
+                alert("카테고리1(주제별)을 입력하세요.");
+                category_1.focus();
+                return false;
+            }
+
+            /* 카테고리2 입력 여부 */
+            if(category_2.value==""){
+                alert("카테고리2(대상별)을 입력하세요.");
+                category_2.focus();
+                return false;
+            }
+
+            /* 도서파일 입력 여부 */
+            if(b_file_name.value==""){
+                alert("도서파일을 입력하세요.");
+                b_file_name.focus();
+                return false;
+            }
+
+            /* 표지 입력 여부 */
+            if(t_file_name.value==""){
+                alert("표지를 입력하세요.");
+                t_file_name.focus();
+                return false;
+            }
+            
+            /* 판매가 입력 여부, 숫자만 */
+            if(b_price.value==""){
+                alert("판매가를 입력하세요.");
+                b_price.focus();
+                return false;
+            } else if (!regExp.test(b_price.value)){
+                alert("숫자만 입력 가능합니다. 다시 입력해주세요.");
+                b_price.focus();
+                return false;
+            }
+
+        }
+
+
+        $(document).ready(function () {
+            $('#t_b_list_all').DataTable({
+                aaSorting : [],
+                "searching":false,
+
+                dom:'Bfrtip',
+                
+                buttons: [
+                    {
+                        extend: 'excel'
+                        ,text: '엑셀다운로드'
+                        ,filename: '콘텐츠 목록'
+				        ,title: '엑셀파일 안에 쓰일 제목'
+                    },
+                ],
+
+                // 세로 스크롤
+                // scrollY: '489px',
+                // scrollCollapse: true,
+
+                // 셀 너비 고정
+                bAutoWidth:false,
+                columnDefs:[
+                    {width:"4%",targets:0},
+                    {width:"6%",targets:1},
+                    {width:"7%",targets:2},
+                    {width:"16%",targets:3},
+                    {width:"8%",targets:4},
+                    {width:"5%",targets:5},
+                    {width:"10%",targets:6},
+                    {width:"4%",targets:7},
+                    {width:"5%",targets:8},
+                    {width:"5%",targets:9},
+                    {width:"6%",targets:10},
+                    {width:"6%",targets:11},
+                    {width:"5%",targets:12},
+                    {width:"10%",targets:13},
+                ]
+            });
+            
+
+            $('input[name="bookDate"],input[name="ebookDate"],input[name="endDate"]').daterangepicker(
                 {
                 singleDatePicker: true,
                 autoApply:true,
@@ -1022,211 +1156,10 @@ FileOpenMedia()
                 },
             );
             
-            // 시리즈 정보 추가
-            $(".series_add_info").hide();
-            $("input:checkbox[name='series_chk']").click(function(){
-                if($(this).is(":checked")){
-                    $(".series_add_info").show();
-                }else{
-                    $(".series_add_info").hide();
-                }
-            });
-
-            // 브랜드명 추가, 삭제 버튼
-            var fieldHtml='<div><input type="text" class="add_ipt"><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-
-            $(".brand .add_btn").click(function(){
-                
-                $(".brand.btn_add_wrap").append(fieldHtml);
-            });
-
-            $(".brand .remove_btn").click(function(){
-                $(this).parent('div').remove();
-            })
-
-            $(".brand.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                $(this).parent('div').remove();
-            });
-
-            // 저자 추가, 삭제 버튼
-            var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><option value="author" selected>저자</option><option value="translator">역자</option><option value="painter">그린이</option></select><input type="text" class="add_ipt"><button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-
-            $(".author .add_btn").click(function(){
-                $(".author.btn_add_wrap").append(fieldHtml2);
-            });
-
-            $(".author .remove_btn").click(function(){
-                $(this).parent('div').remove();
-            })
-
-            $(".author.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                $(this).parent('div').remove();
-            });
-
-            // 카테고리1 추가, 삭제 버튼
-            $(".cat1 .add_btn").click(function(){
-                var thisVal = $(this).prev().val();
-                if(thisVal ==0){return;}
-                var thistxt = $("#category_1 option:selected").text();
-                var fieldHtml='<div><input type="text" name="" class="add_ipt" value="'+thistxt+'" data-value="'+thisVal+'"><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-                var curVal = $("input[name=category_1_hidden]").val()
-                if(curVal.indexOf(thisVal) == -1){
-                    $("input[name=category_1_hidden]").val(curVal+thisVal+',','') 
-                    $(".cat1.btn_add_wrap").append(fieldHtml);
-                }
-            });  
-            $(".cat1.btn_add_wrap").on('click', '.remove_btn', function(e){                
-                e.preventDefault();
-                var thisVal = $(this).prev().data("value");
-                var curVal = $("input[name=category_1_hidden]").val() 
-                $("input[name=category_1_hidden]").val(curVal.replace(thisVal+',','') )
-                $(this).parent('div').remove();
-                
-            });
-
-            // 카테고리2 추가, 삭제 버튼
-            $(".cat2 .add_btn").click(function(){
-                var thisVal = $(this).prev().val();
-                if(thisVal ==0){return;}
-                var thistxt = $("#category_2 option:selected").text();
-                var fieldHtml='<div><input type="text" name="" class="add_ipt" value="'+thistxt+'" data-value="'+thisVal+'"><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
-                var curVal = $("input[name=category_2_hidden]").val()
-                if(curVal.indexOf(thisVal) == -1){
-                    $("input[name=category_2_hidden]").val(curVal+thisVal+',','') 
-                    $(".cat2.btn_add_wrap").append(fieldHtml);
-                }
-            });
-
-            // $(".cat2 .remove_btn").click(function(){
-            //     $(this).parent('div').remove();
-            // })
-
-            $(".cat2.btn_add_wrap").on('click', '.remove_btn', function(e){
-                e.preventDefault();
-                var thisVal = $(this).prev().data("value");
-                var curVal = $("input[name=category_2_hidden]").val() 
-                $("input[name=category_2_hidden]").val(curVal.replace(thisVal+',','') )
-                $(this).parent('div').remove();
-            });
-
-
-            // 저자 소개내용 modal 띄우기
-            $(".btn_add_wrap").on('click','.a_open_popup',function(){
-                $(".a_modal").css({
-                    "display":"block",
-                });
-                $("body").css({
-                    "overflow":"hidden",
-                })
-
-                $(".btn_close_popup,.modal .btn_wrap button").click(function(){
-                    $(".a_modal").css({
-                        "display":"none",
-                    });
-                    $("body").css({
-                        "overflow":"auto",
-                    });
-                })
-            });
-
-            // 판매중지 소개내용 modal 띄우기
-            $(".s_open_popup").click(function(){
-                $(".s_modal").css({
-                    "display":"block",
-                });
-                $("body").css({
-                    "overflow":"hidden",
-                })
-
-                $(".btn_close_popup,.modal .btn_wrap button").click(function(){
-                    $(".s_modal").css({
-                        "display":"none",
-                    });
-                    $("body").css({
-                        "overflow":"auto",
-                    });
-                })
-            });
-
-            // 판매중지에서 기타 텍스트 입력 시 기타 라디오 선택
-            $("textarea[id=etc_txt]").on('click',function(){
-                $("input:radio[id='etc']").prop("checked",true);
-                $("input:radio[id='expire'],input:radio[id='revision']").removeAttr("checked");
-            });
-
+            
         });
-
-        // input=file 파일명 연결
-        $("#b_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#b_file_name").val(fileName);
-        });
-        
-        $("#t_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#t_file_name").val(fileName);
-        });
-        $("#d_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#d_file_name").val(fileName);
-        });
-        $("#f_file").on('change',function(){
-            var fileName = $(this).val();
-            $("#f_file_name").val(fileName);
-        });
-
-        // 파일 1mb 제한
-        $(".under_1mb").bind( 'change', function (e)
-        {
-            if( !$(this).val() ) return;
-             
-            var f = this.files[0];
-            var size = f.size || f.fileSize;
-             
-            var limit = 1000000;
-                         
-            if( size > limit )
-            {
-                alert( '파일용량은 1mb 를 넘을수 없습니다.' );
-                $(this).val('');
-                return;
-            }
-        });
-
-        // 파일 30mb 제한
-        $(".under_30mb").bind( 'change', function (e)
-        {
-            if( !$(this).val() ) return;
-             
-            var f = this.files[0];
-            var size = f.size || f.fileSize;
-             
-            var limit = 30000000;
-                         
-            if( size > limit )
-            {
-                alert( '파일용량은 30mb 를 넘을수 없습니다.' );
-                $(this).val('');
-                return;
-            }
-        });
-
-
-
-        // datatables.js 수정
-        // 한 화면에 20개 항목씩 보이게 수정 230306 혜지
-        // 10447줄, 11453줄
-        
-        // ~개씩 보기로 수정 230306 혜지
-        // 11888줄
-
-        // 테이블 밑에 상품 총 개수 명시 230307 혜지
-        // 11725줄
-
-        
     </script>
+
 </body>
 
 </html>

@@ -16,5 +16,13 @@ guid = Mid(guid,2,36)
 Uguid = guid
 End Function
 
+' form 전달 매개변수 확인용 
+Sub formList()
+ For i=1 To Request.Form.Count
+ 'response.write "<br>ID : " & Request.Form.Key(i) & " | Value : " &  Request.Form(i)
+ response.write "<br>" & Request.Form.Key(i)
+ 'response.write "<br>" & Request.Form(i)
+ Next
+end sub
     
 %>
