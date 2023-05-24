@@ -60,6 +60,7 @@ Response.ContentType="text/html;charset=utf-8"
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/main.css">
 
+    <script src="../js/main.js"></script>
     <script src="../js/jquery-1.11.2.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
     <script src="../js/moment.min.js"></script>
@@ -108,26 +109,26 @@ Response.ContentType="text/html;charset=utf-8"
             <ul>
                 <li><a href="#none"><img src="../img/icon_home.svg" alt="">홈화면</a>
                     <ul>
-                        <li><a href="index.asp"><span></span>대시보드</a></li>
-                        <li><a href="notice.asp"><span></span>공지사항</a></li>
+                        <li class="<%=iif(Pcode="0101","on","")%>"><a href="index.asp"><span></span>대시보드</a></li>
+                        <li class="<%=iif(Pcode="0102","on","")%>"><a href="notice.asp"><span></span>공지사항</a></li>
                     </ul>
                 </li>
                 <li><a href="#none"><img src="../img/icon_contents.svg" alt="">콘텐츠</a>
                     <ul>
-                        <li><a href="content_lookup.asp"><span></span>콘텐츠 조회</a></li>
-                        <li class="on"><a href="content_regist.asp"><span></span>콘텐츠 등록</a></li>
+                        <li class="<%=iif(Pcode="0201","on","")%>"><a href="content_lookup.asp"><span></span>콘텐츠 조회</a></li>
+                        <li class="<%=iif(Pcode="0202","on","")%>"><a href="content_regist.asp"><span></span>콘텐츠 등록</a></li>
                     </ul>
                 </li>
                 <li><a href="#none"><img src="../img/icon_graph.svg" alt="">결산</a>
                     <ul>
-                        <li><a href="sales_details.asp"><span></span>매출내역</a></li>
-                        <li><a href="settlement_details.asp"><span></span>정산내역</a></li>
+                        <li class="<%=iif(Pcode="0301","on","")%>"><a href="sales_details.asp"><span></span>매출내역</a></li>
+                        <li class="<%=iif(Pcode="0302","on","")%>"><a href="settlement_details.asp"><span></span>정산내역</a></li>
                     </ul>
                 </li>
                 <li><a href="#none"><img src="../img/icon_my.svg" alt="">마이페이지</a>
                     <ul>
-                        <li><a href="my_page.asp"><span></span>출판사 정보</a></li>
-                        <li><a href="qna.asp"><span></span>문의하기</a></li>
+                        <li class="<%=iif(Pcode="0401","on","")%>"><a href="my_page.asp"><span></span>출판사 정보</a></li>
+                        <li class="<%=iif(Pcode="0402","on","")%>"><a href="qna.asp"><span></span>문의하기</a></li>
                     </ul>
                 </li>
             </ul>
@@ -164,7 +165,7 @@ Response.ContentType="text/html;charset=utf-8"
 
 
             // gnb 스타일
-            $("nav ul li ul li").removeClass('on');
+          //  $("nav ul li ul li").removeClass('on');
             $("nav ul li ul li").click(function(){
                 $(this).addClass('on')
             })

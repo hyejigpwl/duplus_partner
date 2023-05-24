@@ -1,8 +1,9 @@
-<OBJECT PROGID=DAL.DBHelper 			id=dbh RUNAT=server></OBJECT>
-<OBJECT PROGID=Scripting.Dictionary 		id=dic RUNAT=server></OBJECT>
-<OBJECT PROGID="AesCrypto2.AES"		id=AES RUNAT=server></OBJECT>
-<!--#include virtual="/Common/Common.asp"-->
-<!--#include virtual="api/include/JSON_2.0.4.asp"--> 
+<OBJECT PROGID=ASP.PagingHelperMall 		ID=phm  RunAt=Server></OBJECT>
+<OBJECT PROGID=Scripting.FileSystemObject   	id=fso 		RUNAT=server> </OBJECT>
+<OBJECT PROGID=DAL.DBHelper id=dbh RUNAT=server> </OBJECT>
+<!--#include virtual="PARTNER/include/connect.asp"-->
+<!--#include virtual="PARTNER/include/function.asp"-->
+<!--#include virtual="PARTNER/include/JSON_2.0.4.asp"--> 
 
 <%
  Response.CodePage = 65001
@@ -19,6 +20,7 @@ Response.Expires = -1
 
 '================== 아래는 post 용 
 mode = trim(request("mode"))
+mode= 1
 SDate = trim(request("SDate"))
 EDade = trim(request("EDate"))
 
@@ -27,20 +29,22 @@ Dim isSuccess,   resultMsg   ,sql
 Dim rs, jsa
 		
 		if mode <> "" then 
-		sql = "exec UP_DPLUS_bos_dashboard_select  '"& mode &"','"& SDate &"','"& EDade &"' "
-                
+		sql = "exec PrCM_ContentList_Q "
+                sql = "exec PrCMS_ContentCategoryType_1"
 		else 
 		response.write "{""result"":""No Data""}"
 		response.end 
 		end if 
  
-		set rs=dbh.RunSQLReturnRS(sql,"", CONN_Main) 
+		set rs=dbh.RunSQLReturnRS(sql,"", conn_duplus) 
         Set jsa = jsArray() 
 		
         While Not (rs.EOF Or rs.BOF)
                 Set jsa(Null) = jsObject()
                 For Each col In rs.Fields
                         jsa(Null)(col.Name) = col.Value
+
+                        
                 Next
         rs.MoveNext
         Wend

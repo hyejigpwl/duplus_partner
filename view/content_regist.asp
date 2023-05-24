@@ -1,4 +1,7 @@
-
+<%
+' position code gnb 표시용 
+Pcode = "0202"
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,9 +28,65 @@
 
 guid = Uguid()
 
-pCode = request("pCode")
-if pCode <> ""  then
- 
+cnum = request("cnum")
+if cnum <> ""  then
+paramInfo = Array( _
+dbh.mp("@cms_contentno",	advarchar,	10,	cnum) )	
+
+set rs=dbh.RunSPReturnRS("[PrCMS_TbCms_Content_Contentno_Q]",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+CMS_ID=rs("CMS_ID")
+CMS_Contentno=rs("CMS_Contentno")  ' contentno
+CMS_State_code=rs("CMS_State_code") ' 상태코드 
+R1.CodeNameKor=rs("R1.CodeNameKor") ' 상태명 
+CMS_div1=rs("CMS_div1") '  구분 
+R2.CodeNameKor=rs("R2.CodeNameKor" ' 구분명 (일반도서, 장르도서, 오디오북, 동영상)
+CMS_File_div=rs("CMS_File_div")  ' 파일타입 
+R3.CodeNameKor=rs("R3.CodeNameKor")    ' 파일타입명 
+CMS_SerisesYN=rs("CMS_SerisesYN")  ' 시리즈 여부  1 Y, 0 N
+CMS_Title=rs("CMS_Title")  
+CMS_Sub_Title=rs("CMS_Sub_Title")  ' 부제
+CMS_ORG_tITLE=rs("CMS_ORG_tITLE")  '원서명 
+CMS_Publish=rs("CMS_Publish") ' 출판사 
+CMS_BRAND=rs("CMS_BRAND")  '브랜드 
+CMS_Paper_Pub_Day=rs("CMS_Paper_Pub_Day") ' 종이책 출간일 
+CMS_Digital_Pub_Day=rs("CMS_Digital_Pub_Day") ' 전자책 출간일 
+CMS_Paper_Price=rs("CMS_Paper_Price") ' 종이책 정가 
+CMS_Digital_Price=rs("CMS_Digital_Price") ' 전자책 정가 
+CMS_ISBN=rs("CMS_ISBN")
+CMS_EISBN=rs("CMS_EISBN")
+CMS_PAGE=rs("CMS_PAGE") ' 종이책 페이지 
+CMS_DIV2=rs("CMS_DIV2") ' 도서구분 
+R4.CodeNameKor=rs("R4.CodeNameKor")   ' 국내/ 번역 
+CMS_ContentText=rs("CMS_ContentText") ' 책소개 
+CMS_MarketingCopyText=rs("CMS_MarketingCopyText")  '출판사 서평 
+CMS_ContentList=rs("CMS_ContentList")  ' 목차 
+CMS_File_Link=rs("CMS_File_Link")   ' 도서파일 링크 
+CMS_Download_YN=rs("CMS_Download_YN")  ' 다운로드 여부  YN 
+CMS_MAIN_IMG_LINK=rs("CMS_MAIN_IMG_LINK")  ' 메인이미지 
+CMS_SUB_IMG_LINK=rs("CMS_SUB_IMG_LINK") ' 서브 이미지 
+CMS_Trial_Content_Link=rs("CMS_Trial_Content_Link") ' 체험판 
+CMS_SAL_DIV=rs("CMS_SAL_DIV") '  판매형태  (전체, 소장, 대여 )  구독은 필수 
+CMS_SAL_PRICE=rs("CMS_SAL_PRICE")  ' 판매가 
+CMS_RENTAL_PRICE=rs("CMS_RENTAL_PRICE") ' 대여가 
+CMS_RENTAL_DAY=rs("CMS_RENTAL_DAY")  ' 대여기간 일수 int 
+CMS_SERVICE_YN=rs("CMS_SERVICE_YN") '  서비스 여부  0 즉시 ,1 지정 
+CMS_SERVICE_DAY=rs("CMS_SERVICE_DAY")  ' 서비스 시작일 
+CMS_MEMO=rs("CMS_MEMO")   ' 메모 (전달 사항 )
+CMS_Resouce_YN=rs("CMS_Resouce_YN")   '리소스 제작 위탁 여부 (0 부, 1 위탁) 
+CMS_Exclusive_day=rs("CMS_Exclusive_day")   ' 독점기간 (일수 int  )  화면에 표시 
+CMS_EXCLUSIVE_DATE=rs("CMS_EXCLUSIVE_DATE")  '  환산기간 
+CMS_Sup_Brand=rs("CMS_Sup_Brand")  ' 공급처 
+CMS_SAL_SUP_PRICE=rs("CMS_SAL_SUP_PRICE")   ' 소장공급가 
+CMS_RENTAL_SUP_PRICE=rs("CMS_RENTAL_SUP_PRICE")  '대여 공급가 
+CMS_SUB_SUP_PRICE=rs("CMS_SUB_SUP_PRICE")  ' 구독 공급가 
+CMS_SUB_SUP_COUNT=rs("CMS_SUB_SUP_COUNT")  ' 구독 정산 기준 수량 
+CMS_DELFLAG=rs("CMS_DELFLAG")  ' 삭제 여부 1 삭제 
+CMS_EDITDATE=rs("CMS_EDITDATE")  ' 수정일 
+CMS_WDATE=rs("CMS_WDATE")  ' 작성일 
+
+end if 
+rs.close 
 end if 
 dim ContentPublisherNo,  businessNumber
 businessNumber= "2148204203"  '두란노서원 
@@ -44,10 +103,9 @@ set rs = dbh.runSQLreturnRS(sql, "", conn_duplus)
 ' 			dbh.mp("@ord_div",	adchar,		1,		"C"))	
 '브랜드 목록 
 
-		paramInfo = Array( _
-			dbh.mp("@ContentPublisherNo",	advarchar,	10,	ContentPublisherNo) )	
+paramInfo = Array( _
+dbh.mp("@ContentPublisherNo",	advarchar,	10,	ContentPublisherNo) )	
 
-            
 set rs=dbh.RunSPReturnRS("PrCMS_PublisherBrand",paramInfo , conn_duplus)	
 if not (rs.eof or rs.bof) then 
 brandList = rs.getRows()
@@ -195,7 +253,7 @@ set rs = nothing
                                                 <th scope="row">구분</th>
                                                 <td>
                                                     <span class="radio">
-                                                        <input type="radio" name="category" id="c_normal" value="normal_book" checked>
+                                                        <input type="radio" name="category" id="c_normal" value="1" checked>
                                                         <label for="c_normal">일반도서</label>
                                                     </span>
                     

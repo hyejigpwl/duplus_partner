@@ -39,6 +39,20 @@ function dateFormat(date) {
 	return dateFormat2;
 }
 
+
+//콤마찍기
+function comma(str) {
+  str = String(str);
+  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+}
+
+//콤마풀기
+function uncomma(str) {
+  str = String(str);
+  return str.replace(/[^\d]+/g, '');
+}
+
+
 // let curDateYYMMDD = today.getFullYear() +
 // 	'-' + ( (today.getMonth()+1) < 9 ? "0" + (today.getMonth()+1) : (today.getMonth()+1) )+
 // 	'-' + ( (today.getDate()) < 9 ? "0" + (today.getDate()) : (today.getDate()) );

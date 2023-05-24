@@ -1,17 +1,6 @@
 <%
-startDate = Request.Form("startDate")
-endDate = Request.Form("endDate")
-if startDate = "" then startDate = date() - 30 
-if endDate = "" then endDate = date()
-brand_code_sel = Request.Form("brand_code_sel")
-pbcmCode_sel = Request.Form("pbcmCode_sel")
-b_name = Request.Form("b_name")
-a_name = Request.Form("a_name")
-goods = Request.Form("goods")
-'"&"&&
-cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand_code_sel&"&pbcmCode_sel="&pbcmCode_sel&"&b_name="&b_name&"&a_name="&a_name&"&goods="&goods
-
-
+' position code gnb 표시용 
+Pcode = "0201"
 %>
 <!DOCTYPE html>
 <html lang="ko">
@@ -24,7 +13,45 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
  
     <!-- 헤더 START -->
     <!--#include virtual="/partner/include/header.asp"-->
+<%
+' position code gnb 표시용 
+Pcode = "0201"
 
+startDate = Request.Form("startDate")
+endDate = Request.Form("endDate")
+if startDate = "" then startDate = date() - 30 
+if endDate = "" then endDate = date()
+brand_code_sel = Request.Form("brand_code_sel")
+pbcmCode_sel = Request.Form("pbcmCode_sel")
+b_name = Request.Form("b_name")
+a_name = Request.Form("a_name")
+goods = Request.Form("goods")
+if goods = "" then goods = "all"
+'
+'"&"&&
+cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand_code_sel&"&pbcmCode_sel="&pbcmCode_sel&"&b_name="&b_name&"&a_name="&a_name&"&goods="&goods
+
+
+'브랜드 목록  
+' paramInfo = Array( _
+' dbh.mp("@ContentPublisherNo",	advarchar,	10,	"R01") )	
+' set rs=dbh.RunSPReturnRS("PrCMS_CommonCode_Q",paramInfo , conn_duplus)	
+' if not (rs.eof or rs.bof) then 
+' StateList = rs.getRows()
+' end if 
+' rs.close 
+
+'상태목록 
+paramInfo = Array( _
+dbh.mp("@ContentPublisherNo",	advarchar,	10,	"R01") )	
+set rs=dbh.RunSPReturnRS("PrCMS_CommonCode_Q",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+StateList = rs.getRows()
+end if 
+rs.close 
+
+set rs = nothing 
+%>
     <div class="page_right">
         <main id="content" class="content p_book_list">
             <section class="book_list_wrap">
@@ -48,17 +75,17 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     <span class="f_title">상품</span>
     
                                     <span class="chk">
-                                        <input type="checkbox" name="goods" id="all" onclick="selectAll(this)" value="all" checked>
+                                        <input type="checkbox" name="goods" id="all" onclick="selectAll(this)" value="all" <%=iif(instr(goods,"all")>0,"checked","")%>>
                                         <label for="all">전체</label>
                                     </span>
     
                                     <span class="chk">
-                                        <input type="checkbox" id="unr_book" name="goods" value="unr_book" checked>
+                                        <input type="checkbox" id="unr_book" name="goods" onclick="unselectAll(this)" value="unr_book" <%=iif(instr(goods,"unr_book")>0,"checked","")%>>
                                         <label for="unr_book">E-ISBN 미등록 도서</label>
                                     </span>
                                     
                                     <span class="chk">
-                                        <input type="checkbox" id="n_book" name="goods" value="n_book" checked>
+                                        <input type="checkbox" id="n_book" name="goods"onclick="unselectAll(this)"  value="n_book" <%=iif(instr(goods,"n_book")>0,"checked","")%>>
                                         <label for="n_book">일반도서</label>
                                     </span>
                                     
@@ -69,7 +96,7 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     
     
                                     <span class="chk">
-                                        <input type="checkbox" id="a_book" name="goods" value="a_book" checked>
+                                        <input type="checkbox" id="a_book" name="goods" onclick="unselectAll(this)" value="a_book" <%=iif(instr(goods,"a_book")>0,"checked","")%>>
                                         <label for="a_book">오디오북</label>
                                     </span>
                                     
@@ -101,11 +128,11 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                 <div class="form_c_wrap">
                                     <!-- 출판사 START -->
                                     <p class="brand">
-                                        <span class="f_title">브랜드</span>
+                                        <span class="f_title">출판사</span>
                                         <select name="brand_code_sel" id="brand_code_sel">
                                             <option value="all" selected>전체</option>
-                                            <option value="b1">두란노</option>
-                                            <option value="b2">한국성서학연구소</option>
+                                            <option value="10001" selected>두란노</option>
+                                            
                                         </select>
                                     </p>
                                     <!-- 출판사 END -->
@@ -114,12 +141,13 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                                     <p class="state">
                                         <span class="f_title">상태</span>
                                         <select name="pbcmCode_sel" id="pbcmCode_sel">
-                                            <option value="all"  >전체</option>
-                                            <option value="approval_wait" <%=iif(pbcmCode_sel="approval_wait","selected","")%>>승인대기</option>
-                                            <option value="approval_hold" <%=iif(pbcmCode_sel="approval_hold","selected","")%>>승인보류</option>
-                                            <option value="sale_wait" <%=iif(pbcmCode_sel="sale_wait","selected","")%>>판매대기</option>
-                                            <option value="sale_stop" <%=iif(pbcmCode_sel="sale_stop","selected","")%>>판매중단</option>
-                                            <option value="sale" <%=iif(pbcmCode_sel="sale","selected","")%>>판매중</option>
+                                            <option value="all">전체</option>
+                                            <%if isArray(StateList) then %>
+                                            <% for i = 0 to Ubound(StateList,2)%>
+                                            <option value="<%=StateList(0,i)%>" <%=iif(pbcmCode_sel=StateList(0,i),"selected","")%>><%=StateList(1,i)%></option>
+                                            <%
+                                            next
+                                            end if %>
                                         </select>
                                     </p>
                                     <!-- 상태 END -->
@@ -150,16 +178,16 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
                     </form>
                     <!-- 콘텐츠 목록 필터 END -->
     <%
-For i = 1 To Request.Form.Count
-    response.write "<br>"&Request.Form.key(i)
-Next    
-response.write "<br>"
-For i = 1 To Request.Form.Count
-    response.write "<br>ID: "&Request.Form.key(i) & "| value:"& request.Form(i)
-Next
+' For i = 1 To Request.Form.Count
+'     response.write "<br>"&Request.Form.key(i)
+' Next    
+' response.write "<br>"
+' For i = 1 To Request.Form.Count
+'     response.write "<br>ID: "&Request.Form.key(i) & "| value:"& request.Form(i)
+' Next
 
-response.write "<br>"
-response.write cur_search
+' response.write "<br>"
+' response.write cur_search
 ' For i=1 To Request.Form.Count
 
 ' response.write "<br>ID : " & Request.Form.Key(i) & " | Value : " &  Request.Form(i)
@@ -180,9 +208,9 @@ response.write cur_search
                                         <th scope="col">No.</th>
                                         <th scope="col">상품코드</th>
                                         <th scope="col">파일타입</th>
-                                        <th scope="col" class="txt_l">도서명</th>
+                                        <th scope="col" xclass="txt_l">도서명</th>
                                         <th scope="col">저자</th>
-                                        <th scope="col">브랜드</th>
+                                        <th scope="col">출판사</th>
                                         <th scope="col">E-ISBN</th>
                                         <th scope="col">정가</th>
                                         <th scope="col">판매가</th>
@@ -210,193 +238,7 @@ response.write cur_search
                                             <td id="b_state">승인대기</td>
                                             <td id="b_regist_date">2023-01-05</td>
                                         </tr>
-                            
-                                        <tr>
-                                            <td scope="row">21</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">5,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">20</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">19</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">18</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">17</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">16</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">15</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">14</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">13</td>
-                                            <td>E230100002</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">그리스도인의 초자연적 회복력</a></td>
-                                            <td>존 엘드리지</td>
-                                            <td>두란노</td>
-                                            <td>9788953143876</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">15,000</td>
-                                            <td class="txt_r">7,500</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2023-01-05</td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td scope="row">12</td>
-                                            <td>E230100001</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">삶으로 가르치는 것만 남는다</a></td>
-                                            <td>김요셉</td>
-                                            <td>두란노</td>
-                                            <td>9788953143753</td>
-                                            <td class="txt_r">9,800</td>
-                                            <td class="txt_r">8,820</td>
-                                            <td class="txt_r">0</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인대기</td>
-                                            <td>2022-12-23</td>
-                                        </tr>
-                            
-                                        <tr>
-                                            <td scope="row">11</td>
-                                            <td>E230100012</td>
-                                            <td>EPUB</td>
-                                            <td class="txt_l"><a href="content_regist.asp">더 바이블 플러스 : 신약 1 (사복음서)더 바이블 플러스 : 신약 1 (사복음서)</a></td>
-                                            <td>두란노 편집부</td>
-                                            <td>두란노</td>
-                                            <td>9788953143746</td>
-                                            <td class="txt_r">9,100</td>
-                                            <td class="txt_r">8,190</td>
-                                            <td class="txt_r">0</td>
-                                            <td>믿음과성장</td>
-                                            <td>N</td>
-                                            <td>승인보류</td>
-                                            <td>2022-12-21</td>
-                                        </tr>
+                             
                              
                                     </tbody>
                                 </table>
@@ -418,7 +260,6 @@ response.write cur_search
     </div>
     
 
-    
 
     <script>
         // 체크박스 전체 클릭시
@@ -428,6 +269,28 @@ response.write cur_search
         checkboxes.forEach((checkbox) => {
             checkbox.checked = selectAll.checked;
         })
+        }
+
+        if("<%=goods%>" =="all"){
+               
+                const checkboxes = document.getElementsByName('goods');
+        
+                checkboxes.forEach((checkbox) => {
+                    checkbox.checked = "true"
+                })
+            }
+
+           // 체크박스 전체 클릭시
+        function unselectAll(a)  {
+        const checkboxes = document.getElementsByName('goods');
+        const idx = a.id
+            console.log($("#"+idx).prop("checked"))
+        if($("#"+idx).prop("checked")){
+           $("#"+idx).attr("checked",true)
+            }else{
+            $("#"+idx).attr("checked",false)
+            }
+        $("#all").attr("checked",false)
         }
         
         
@@ -458,8 +321,87 @@ response.write cur_search
                 }
             }
 
+ 
+            // "fnRowCallback" : function(nRow, aData, iDisplayIndex){
+            //     $("td:first", nRow).html(iDisplayIndex +1);
+            //    return nRow;
+            // }
         $(document).ready(function () {
             $('#t_b_list_all').DataTable({
+                ajax: {url:"../ajax/cntList.asp?<%=cur_search%>", dataSrc: ''},
+                columns: [{data:"CMS_ID" }
+                            ,{data:"CMS_Contentno"}
+                            // ,{data:"CMS_ContentGuid"}
+                            // ,{data:"CMS_div1"}
+                             ,{data:"CMS_File_div"}
+                            ,{data:"CMS_Title", render: function(data, type, row, meta) {
+                                if (type === 'display') {
+                                    return '<a href="content_regist.asp?cnum=' + row.CMS_Contentno + '">' + data + '</a>';
+                                }
+                                return data;
+                                }
+                                }
+                            ,{data:"Authkr"} 
+                            // ,{data:"CMS_Sub_Title"}
+                            // ,{data:"CMS_ORG_tITLE"}
+                            ,{data:"contentPublisherName"}
+                            //,{data:"CMS_BRAND"}
+                            // ,{data:"CMS_Paper_Pub_Day"}
+                            // ,{data:"CMS_Digital_Pub_Day"}
+                            // ,{data:"CMS_Paper_Price"}
+                            // ,{data:"CMS_ISBN"}
+                            ,{data:"CMS_EISBN"}
+                            // ,{data:"CMS_PAGE"}
+                            // ,{data:"CMS_DIV2"}
+                            // ,{data:"CMS_ContentText"}
+                            // ,{data:"CMS_MarketingCopyText"}
+                            // ,{data:"CMS_ContentList"}
+                            // ,{data:"CMS_File_Link"}
+                            // ,{data:"CMS_FILE_SIZE"}
+                            // ,{data:"CMS_Download_YN"}
+                            // ,{data:"CMS_MAIN_IMG_LINK"}
+                            // ,{data:"CMS_SUB_IMG_LINK"}
+                            // ,{data:"CMS_Trial_Content_Link"}
+                            // ,{data:"CMS_SAL_DIV"}
+                             ,{data:"CMS_Digital_Price", render: function(data, type, row, meta) {
+                                if (type === 'display') {
+                                    return    comma(data)+"원"  ;
+                                }
+                                return data;
+                                }
+                                }
+                             ,{data:"CMS_SAL_PRICE", render: function(data, type, row, meta) {
+                                if (type === 'display') {
+                                    return   comma(data)+"원"  ;
+                                }
+                                return data;
+                                }
+                                }
+                             ,{data:"CMS_RENTAL_PRICE", render: function(data, type, row, meta) {
+                                if (type === 'display') {
+                                    return   comma(data)+"원"  ;
+                                }
+                                return data;
+                                }
+                                }
+                            // ,{data:"CMS_RENTAL_DAY"}
+                            // ,{data:"CMS_SERVICE_YN"}
+                            // ,{data:"CMS_SERVICE_DAY"}
+                            // ,{data:"CMS_MEMO"}
+                            // ,{data:"CMS_Resouce_YN"}
+                            // ,{data:"CMS_Exclusive_day"}
+                            // ,{data:"CMS_Sup_Brand"}
+                            // ,{data:"CMS_SAL_SUP_PRICE"}
+                            // ,{data:"CMS_RENTAL_SUP_PRICE"}
+                            // ,{data:"CMS_SUB_SUP_PRICE"}
+                            // ,{data:"CMS_SUB_SUP_COUNT"}
+                            // ,{data:"CMS_DELFLAG"}
+                             ,{data:"ContentcategoryNo"}
+                             ,{data:"CMS_SerisesYN"}
+                             ,{data:"CMS_State_code"}
+                            ,{data:"CMS_WDATE"} 
+                            
+                    ],
                 aaSorting : [],
                 "searching":false,
 
@@ -469,7 +411,7 @@ response.write cur_search
                     {
                         extend: 'excel'
                         ,text: '엑셀다운로드'
-                        ,filename: '콘텐츠 목록'
+                        ,filename: '콘텐츠 목록<%=date()%>'
 				        ,title: '엑셀파일 안에 쓰일 제목'
                     },
                 ],
@@ -496,7 +438,8 @@ response.write cur_search
                     {width:"5%",targets:12},
                     {width:"10%",targets:13},
                 ]
-            });
+            }
+            );
             
 
             $('input[name="startDate"],input[name="endDate"]').daterangepicker(

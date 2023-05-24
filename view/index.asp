@@ -1,22 +1,17 @@
+<%
+' position code gnb 표시용 
+Pcode = "0101"
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-    <!--<meta name="description" content="두플러스 콘텐츠 파트너 시스템" />
-    <meta name="keywords" content="두플러스, 두플, 두란노, 복음, 콘텐츠, 오리지널, 오디오북, 전자책, 강의, 구독, 큐티, 신앙, 교회, 목회" />
-    <meta name="author" content="duranno" />-->
+ 
     <title>두플러스 콘텐츠 파트너 시스템</title>
     <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- 파비콘 -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //구글 아이콘폰트 --> 
-    <!-- sns tag -->
-	<!--<meta property="og:type" content="website">
-	<meta property="og:site_name" content="두플러스 콘텐츠 파트너 시스템">
-	<meta property="og:title" content="두플러스 콘텐츠 파트너 시스템">
-	<meta property="og:url" content="https://www.du.plus/duplus.html">
-	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
-	<meta property="og:description" content="두플러스 콘텐츠 파트너 시스템">-->
-
+ 
     <!-- 헤더 START -->
     <!--#include virtual="/partner/include/header.asp"-->
 
@@ -35,11 +30,13 @@
                 <section class="cont_current">
                     <h3 class="blind">디지털 콘텐츠 현황</h3>
                     <ul>
-                        <li><a href="content_lookup.asp"><span>임시저장</span><span id="save_num">1</span></a></li>
-                        <li><a href="content_lookup.asp"><span>승인대기</span><span id="stand_num">16</span></a></li>
-                        <li><a href="content_lookup.asp"><span>보류</span><span id="hold_num">1</span></a></li>
-                        <li><a href="content_lookup.asp"><span>판매중지</span><span id="stop_num">1</span></a></li>
-                        <li><a href="content_lookup.asp"><span>등록완료</span><span id="complete_num">856</span></a></li>
+                        <!--li><a href="content_lookup.asp?pbcmCode_sel=approval_wait"><span>임시저장</span><span id="save_num">1</span></a></~li-->
+                        <li><a href="content_lookup.asp?pbcmCode_sel=2"><span>승인대기</span><span id="stand_num">16</span></a></li>
+                        <li><a href="content_lookup.asp?pbcmCode_sel=3"><span>등록보류</span><span id="hold_num">1</span></a></li>
+                        <li><a href="content_lookup.asp?pbcmCode_sel=4"><span>수정대기</span><span id="hold_num">1</span></a></li>
+                        <li><a href="content_lookup.asp?pbcmCode_sel=5"><span>판매중</span><span id="hold_num">1</span></a></li>
+                        <li><a href="content_lookup.asp?pbcmCode_sel=6"><span>판매중지</span><span id="hold_num">1</span></a></li>
+                        
                     </ul>
                 </section>
                 <!-- 디지털 콘텐츠 현황 END -->
