@@ -12,24 +12,42 @@ Response.codepage="65001"
  formList()
 
 BRD_ID = Request.Form("BRD_ID")  ' 존재하면 수정 
-BRD_LINK1 = Request.Form("BRD_LINK1")  ' 존재하면 파일 url 
 qna_title = Request.Form("qna_title")
 qna_cont = Request.Form("qna_cont")
-qna_file_name = Request.Form("qna_file_name")
+BRD_LINK1 = Request.Form("BRD_LINK1")  ' 존재하면 파일 url 
 
-
-' paramInfo = Array( _
-' dbh.mp( "@id",		advarchar, 	16,     "2148204203"), _
-' dbh.mp( "@id",		advarchar, 	16,     "2148204203"), _
-' dbh.mp( "@id",		advarchar, 	16,     "2148204203"), _
-' dbh.mp( "@id",		advarchar, 	16,     "2148204203"), _
-' dbh.mp( "@id",		advarchar, 	16,     "2148204203"), _
-' )
-' set rs=dbh.RunSPReturnRS("up_sel_ptn_ContentPublisher",paramInfo , conn_duplus)	
-' if not (rs.eof or rs.bof) then 
-' data = rs.getRows()
-' end if 
-' rs.close 
-' set rs = nothing
+if BRD_ID <> "" then 
+mode = request("mode")
+code = "005"   '문의사항 
+paramInfo = Array( _
+dbh.mp( "@MODE",		adVarWChar, 	20,     mode), _
+dbh.mp( "@BRD_ID",		adVarWChar, 	8,     BRD_ID), _
+dbh.mp( "@BRD_DIV2",		adVarWChar, 	3,     code), _
+dbh.mp( "@BRD_TITLE",		adVarWChar, 	500,     qna_title), _
+dbh.mp( "@BRD_CONTENTS",		adVarWChar, 	4000,     qna_cont), _
+dbh.mp( "@BRD_LINK1",		adVarWChar, 	1000,     BRD_LINK1), _
+dbh.mp( "@BRD_USER_ID",		adVarWChar, 	16,     CPNum) _
+)
+Call dbh.RunSP("PrCMS_Board_Treat",paramInfo , conn_duplus) 
+    if mode <> "delete" then 
+    response.redirect "qna.asp?BRD_ID="&BRD_ID
+    else 
+    response.redirect "qna.asp"
+    end if 
+else 
+code = "005"   '문의사항 
+response.write CPNum
+paramInfo = Array( _
+dbh.mp( "@MODE",		adVarWChar, 	20,     "insert"), _
+dbh.mp( "@BRD_ID",		adVarWChar, 	8,     1), _
+dbh.mp( "@BRD_DIV2",		adVarWChar, 	3,     code), _
+dbh.mp( "@BRD_TITLE",		adVarWChar, 	500,     qna_title), _
+dbh.mp( "@BRD_CONTENTS",		adVarWChar, 	4000,     qna_cont), _
+dbh.mp( "@BRD_LINK1",		adVarWChar, 	1000,     BRD_LINK1), _
+dbh.mp( "@BRD_USER_ID",		adVarWChar, 	50,     CPNum) _
+)
+Call dbh.RunSP("PrCMS_Board_Treat",paramInfo , conn_duplus) 
+response.redirect "qna.asp"
+end if 
 
 %>

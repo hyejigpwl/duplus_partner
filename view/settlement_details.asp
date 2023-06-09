@@ -1,3 +1,7 @@
+<%@ codepage="65001" language="VBScript" %>
+<%
+CPNum = "0302"
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

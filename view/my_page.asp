@@ -1,18 +1,61 @@
+<%@ codepage="65001" language="VBScript" %>
+<%
+' position code gnb 표시용 
+Pcode = "0401"
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!--<meta name="description" content="두플러스 콘텐츠 파트너 시스템" />
-    <meta name="keywords" content="두플러스, 두플, 두란노, 복음, 콘텐츠, 오리지널, 오디오북, 전자책, 강의, 구독, 큐티, 신앙, 교회, 목회" />
-    <meta name="author" content="duranno" />-->
+ 
     <title>두플러스 콘텐츠 파트너 시스템</title>
     <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- 파비콘 -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //구글 아이콘폰트 --> 
  
     <!-- 헤더 START -->
     <!--#include virtual="/partner/include/header.asp"-->
+<%
 
+CPNum = 10001
+'PrCM_ContentPublisher_Q
+
+
+paramInfo = Array( _
+dbh.mp("@ContentPublisherNo",	advarchar,	10,	CPNum) )	
+set rs=dbh.RunSPReturnRS("PrCMS_ContentPublisher_Q",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+ContentPublisherNo = rs("ContentPublisherNo")
+ContentPublisherName = rs("ContentPublisherName")
+ContentPublisherIntroText = rs("ContentPublisherIntroText")
+BusinessNumber = rs("BusinessNumber")
+RepresentativeName = rs("RepresentativeName")
+Address1 = rs("Address1")
+Address2 = rs("Address2")
+ZipCode = rs("ZipCode")
+ChargePersonName = rs("ChargePersonName")
+CompanyEmail = rs("CompanyEmail")
+CompanyPhone = rs("CompanyPhone")
+ChargePersonPhone = rs("ChargePersonPhone")
+CalculatePersonName = rs("CalculatePersonName")
+CalculatePersonEmail = rs("CalculatePersonEmail")
+CalculatePersonPhone = rs("CalculatePersonPhone")
+AccountBank = rs("AccountBank")
+AccountNumber = rs("AccountNumber")
+DealStatusKindCode = rs("DealStatusKindCode")
+InternalChargePersonName = rs("InternalChargePersonName")
+BusinessNumberFileUrl = rs("BusinessNumberFileUrl")
+AccontNumberFileUrl = rs("AccontNumberFileUrl")
+AccountManager = rs("AccountManager")
+RegPersonNo = rs("RegPersonNo")
+RegDt = rs("RegDt")
+UpdatePersonNo = rs("UpdatePersonNo")
+UpdateDt = rs("UpdateDt")
+Password = rs("Password")
+end if 
+rs.close  
+set rs = nothing 
+%>
 
 
     <div class="page_right">
@@ -48,13 +91,13 @@
                                             <tr>
                                                 <th scope="row">아이디</th>
                                                 <td colspan="3">
-                                                    <input type="text" value="2148204203" name="u_id" disabled>
+                                                    <input type="text" value="<%=BusinessNumber%>" name="u_id" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">비밀번호 변경</th>
                                                 <td>
-                                                    <input type="password" name="u_pw" id="u_pw">
+                                                    <input type="password" name="u_pw" id="u_pw" value="<%=Password%>">
                                                 </td>
                                                 <th scope="row">비밀번호 확인</th>
                                                 <td>
@@ -64,17 +107,17 @@
                                             <tr>
                                                 <th>출판사명</th>
                                                 <td colspan="3">
-                                                    <input type="text" value="두란노서원" name="brand_name" disabled>
+                                                    <input type="text" value="<%=ContentPublisherName%>" name="brand_name" disabled>
                                                 </td>
                                             </tr>
                                             <tr class="">
                                                 <th>대표자명</th>
                                                 <td>
-                                                    <input type="text" value="하용조" name="repre_name" disabled>
+                                                    <input type="text" value="<%=RepresentativeName%>" name="repre_name" disabled>
                                                 </td>
                                                 <th>사업자번호</th>
                                                 <td>
-                                                    <input type="text" value="2148204203" name="business_num" disabled>
+                                                    <input type="text" value="<%=BusinessNumber%>" name="business_num" disabled>
                                                 </td>
                                             </tr>
                                             <tr class="">
@@ -82,12 +125,12 @@
                                                 <td colspan="3">
                                                     <p>
                                                         <input type="text" id="address" name="address">
-                                                        <button type="button" class="btn_line gray_btn_line">주소검색</button>
+                                                        <button type="button" id="adsearch" class="btn_line gray_btn_line">주소검색</button>
                                                     </p>
                                                     
                                                     <p class="middle_input last">
-                                                        <input type="text" id="basic_address" name="basic_address" value="서울 용산구 서빙고로65길 38">
-                                                        <input type="text" id="detail_address" name="detail_address" value="두란노빌딩 501호 (사) 두란노서원">
+                                                        <input type="text" id="basic_address" name="basic_address" value="<%=address1%>">
+                                                        <input type="text" id="detail_address" name="detail_address" value="<%=address2%>">
                                                     </p> 
                                                 </td>
                                             </tr>
@@ -108,25 +151,25 @@
                                             <tr>
                                                 <th scope="row">이름</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="cont_m_name" name="cont_m_name" value="정옥희">
+                                                    <input type="text" id="cont_m_name" name="cont_m_name" value="<%=ChargePersonName%>">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">전화번호</th>
                                                 <td>
-                                                    <input type="text" id="cont_m_phe" name="cont_m_phe" value="000-0000-0000">
-                                                    <span class="chk">
+                                                    <input type="text" id="cont_m_phe" name="cont_m_phe" value="<%=CompanyPhone%>">
+                                                    <!--span class="chk">
                                                         <input type="checkbox" id="cont_phone_rec" name="cont_phone_rec" value="Y">
                                                         <label for="cont_phone_rec">수신 여부</label>
-                                                    </span>
+                                                    </!--span-->
                                                 </td>
                                                 <th scope="row">이메일</th>
                                                 <td>
                                                     <input type="text" id="cont_m_eml" name="cont_m_eml" value="000-0000-0000">
-                                                    <span class="chk">
+                                                    <!--span class="chk">
                                                         <input type="checkbox" id="cont_mail_rec" name="cont_mail_rec" value="Y">
                                                         <label for="cont_mail_rec">수신 여부</label>
-                                                    </span>
+                                                    </!--span-->
                                                 </td>
                                             </tr>
                                            
@@ -147,25 +190,25 @@
                                             <tr>
                                                 <th scope="row">이름</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="cal_m_name" name="cal_m_name" value="정옥희">
+                                                    <input type="text" id="cal_m_name" name="cal_m_name" value="<%=CalculatePersonName%>">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">전화번호</th>
                                                 <td>
-                                                    <input type="text" id="cal_m_phe" name="cal_m_phe" value="000-0000-0000">
-                                                    <span class="chk">
+                                                    <input type="number" id="cal_m_phe" name="cal_m_phe" value="<%=CalculatePersonPhone%>">
+                                                    <!--span class="chk">
                                                         <input type="checkbox" id="cal_phone_rec" name="cal_phone_rec" value="Y">
                                                         <label for="cal_phone_rec">수신 여부</label>
-                                                    </span>
+                                                    </!--span-->
                                                 </td>
                                                 <th scope="row">이메일</th>
                                                 <td>
-                                                    <input type="text" id="cal_m_eml" name="cal_m_eml" value="000-0000-0000">
-                                                    <span class="chk">
+                                                    <input type="text" id="cal_m_eml" name="cal_m_eml" value="<%=CalculatePersonEmail%>">
+                                                    <!--span class="chk">
                                                         <input type="checkbox" id="cal_mail_rec" name="cal_mail_rec" value="Y">
                                                         <label for="cal_mail_rec">수신 여부</label>
-                                                    </span>
+                                                    </!--span-->
                                                 </td>
                                             </tr>
                                            
@@ -190,13 +233,13 @@
                                             <tr>
                                                 <th scope="row">은행</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="bank" name="bank" value="">
+                                                    <input type="text" id="bank" name="bank" value="<%=AccountBank%>">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">계좌번호</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="account_num" name="account_num" value="">
+                                                    <input type="text" id="account_num" name="account_num" value="<%=AccountNumber%>">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -421,6 +464,21 @@
             }
         }
     </script>
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+$("#adsearch").on("click",function(){
+    new daum.Postcode({
+        oncomplete: function(data) {
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+            $("#address").val(data.zonecode)
+            $("#basic_address").val(data.address) 
+        }
+    }).open();
+})
+    
+</script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+<%@ codepage="65001" language="VBScript" %>
 <%
 ' position code gnb 표시용 
 Pcode = "0201"
@@ -33,13 +34,13 @@ cur_search = "startDate="&startDate&"&endDate="&endDate&"&brand_code_sel="&brand
 
 
 '브랜드 목록  
-' paramInfo = Array( _
-' dbh.mp("@ContentPublisherNo",	advarchar,	10,	"R01") )	
-' set rs=dbh.RunSPReturnRS("PrCMS_CommonCode_Q",paramInfo , conn_duplus)	
-' if not (rs.eof or rs.bof) then 
-' StateList = rs.getRows()
-' end if 
-' rs.close 
+paramInfo = Array( _
+dbh.mp("@CPNum",	advarchar,	10,	CPNum) )	
+set rs=dbh.RunSPReturnRS("PrCMS_BrandList",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+BrandList = rs.getRows()
+end if 
+rs.close 
 
 '상태목록 
 paramInfo = Array( _
@@ -58,11 +59,28 @@ set rs = nothing
                 <!-- 콘텐츠 조회 제목 START -->
                 <h2>
                     <a href="#none" title="메뉴열기" class="open_gnb">
-                        <span>콘텐츠 조회</span> 
+                        <span>콘텐츠 조회 <%'=cur_search%></span> 
                     </a>
                 </h2>
                 <!-- 콘텐츠 조회 제목 END -->
-    
+        <%
+' For i = 1 To Request.Form.Count
+'     response.write "<br>"&Request.Form.key(i)
+' Next    
+' response.write "<br>"
+' For i = 1 To Request.Form.Count
+'     response.write "<br>ID: "&Request.Form.key(i) & "| value:"& request.Form(i)
+' Next
+
+' response.write "<br>"
+ 'response.write cur_search & "zzz"
+' For i=1 To Request.Form.Count
+
+' response.write "<br>ID : " & Request.Form.Key(i) & " | Value : " &  Request.Form(i)
+
+' Next
+
+%>
                 <div class="page_wrap">
                     <!-- 콘텐츠 목록 필터 START -->
                     <form action="" method="post" id="cont_lookup_form" class="form_primary">
@@ -128,10 +146,15 @@ set rs = nothing
                                 <div class="form_c_wrap">
                                     <!-- 출판사 START -->
                                     <p class="brand">
-                                        <span class="f_title">출판사</span>
+                                        <span class="f_title">브랜드</span>
                                         <select name="brand_code_sel" id="brand_code_sel">
-                                            <option value="all" selected>전체</option>
-                                            <option value="10001" selected>두란노</option>
+                                            <option value="0">전체</option>
+                                            <%if isArray(BrandList) then %>
+                                            <% for i = 0 to Ubound(BrandList,2)%>
+                                            <option value="<%=BrandList(2,i)%>" <%=iif( Cint(brand_code_sel) = Cint(BrandList(2,i)),"selected","")%>><%=BrandList(1,i)%></option>
+                                            <%
+                                            next
+                                            end if %>
                                             
                                         </select>
                                     </p>
@@ -141,7 +164,7 @@ set rs = nothing
                                     <p class="state">
                                         <span class="f_title">상태</span>
                                         <select name="pbcmCode_sel" id="pbcmCode_sel">
-                                            <option value="all">전체</option>
+                                            <option value="0">전체</option>
                                             <%if isArray(StateList) then %>
                                             <% for i = 0 to Ubound(StateList,2)%>
                                             <option value="<%=StateList(0,i)%>" <%=iif(pbcmCode_sel=StateList(0,i),"selected","")%>><%=StateList(1,i)%></option>
@@ -177,24 +200,7 @@ set rs = nothing
                         </fieldset>
                     </form>
                     <!-- 콘텐츠 목록 필터 END -->
-    <%
-' For i = 1 To Request.Form.Count
-'     response.write "<br>"&Request.Form.key(i)
-' Next    
-' response.write "<br>"
-' For i = 1 To Request.Form.Count
-'     response.write "<br>ID: "&Request.Form.key(i) & "| value:"& request.Form(i)
-' Next
 
-' response.write "<br>"
-' response.write cur_search
-' For i=1 To Request.Form.Count
-
-' response.write "<br>ID : " & Request.Form.Key(i) & " | Value : " &  Request.Form(i)
-
-' Next
-
-%>
                     <div class="table_cont">
                         <h3 class="sub_t">콘텐츠 목록</h3>
     
@@ -206,7 +212,7 @@ set rs = nothing
                                     <caption>도서 목록</caption>
                                     <thead>
                                         <th scope="col">No.</th>
-                                        <th scope="col">상품코드</th>
+                                        <th scope="col">ID[상품코드]</th>
                                         <th scope="col">파일타입</th>
                                         <th scope="col" xclass="txt_l">도서명</th>
                                         <th scope="col">저자</th>
@@ -329,14 +335,20 @@ set rs = nothing
         $(document).ready(function () {
             $('#t_b_list_all').DataTable({
                 ajax: {url:"../ajax/cntList.asp?<%=cur_search%>", dataSrc: ''},
-                columns: [{data:"CMS_ID" }
-                            ,{data:"CMS_Contentno"}
+                columns: [{data:"ord_ID" }
+                            ,{data:"CMS_ID", render: function(data, type, row, meta) {
+                                if (type === 'display') {
+                                    return '<a href="content_regist.asp?cmsID=' + row.CMS_ID + '">' + data +' ['+row.CMS_Contentno+']</a>';
+                                }
+                                return data;
+                                }
+                                }
                             // ,{data:"CMS_ContentGuid"}
                             // ,{data:"CMS_div1"}
                              ,{data:"CMS_File_div"}
                             ,{data:"CMS_Title", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return '<a href="content_regist.asp?cnum=' + row.CMS_Contentno + '">' + data + '</a>';
+                                    return '<a href="content_regist.asp?cmsID=' + row.CMS_ID + '">' + data + '</a>';
                                 }
                                 return data;
                                 }
@@ -396,14 +408,14 @@ set rs = nothing
                             // ,{data:"CMS_SUB_SUP_PRICE"}
                             // ,{data:"CMS_SUB_SUP_COUNT"}
                             // ,{data:"CMS_DELFLAG"}
-                             ,{data:"ContentcategoryNo"}
+                             ,{data:"ContentcategoryName"}
                              ,{data:"CMS_SerisesYN"}
                              ,{data:"CMS_State_code"}
-                            ,{data:"CMS_WDATE"} 
+                            ,{data:"CMS_WDATE" }
                             
                     ],
                 aaSorting : [],
-                "searching":false,
+                "searching":true,
 
                 dom:'Bfrtip',
                 

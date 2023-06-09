@@ -1,3 +1,4 @@
+<%@ codepage="65001" language="VBScript" %>
 <%
 ' position code gnb 표시용 
 Pcode = "0101"
@@ -30,7 +31,7 @@ Pcode = "0101"
                 <section class="cont_current">
                     <h3 class="blind">디지털 콘텐츠 현황</h3>
                     <ul>
-                        <!--li><a href="content_lookup.asp?pbcmCode_sel=approval_wait"><span>임시저장</span><span id="save_num">1</span></a></~li-->
+                        <li><a href="content_lookup.asp?pbcmCode_sel=1"><span>임시저장</span><span id="save_num">1</span></a></li>
                         <li><a href="content_lookup.asp?pbcmCode_sel=2"><span>승인대기</span><span id="stand_num">16</span></a></li>
                         <li><a href="content_lookup.asp?pbcmCode_sel=3"><span>등록보류</span><span id="hold_num">1</span></a></li>
                         <li><a href="content_lookup.asp?pbcmCode_sel=4"><span>수정대기</span><span id="hold_num">1</span></a></li>

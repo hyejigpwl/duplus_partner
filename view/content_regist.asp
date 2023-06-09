@@ -1,3 +1,4 @@
+<%@ codepage="65001" language="VBScript" %>
 <%
 ' position code gnb 표시용 
 Pcode = "0202"
@@ -7,94 +8,135 @@ Pcode = "0202"
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!--<meta name="description" content="두플러스 콘텐츠 파트너 시스템" />
-    <meta name="keywords" content="두플러스, 두플, 두란노, 복음, 콘텐츠, 오리지널, 오디오북, 전자책, 강의, 구독, 큐티, 신앙, 교회, 목회" />
-    <meta name="author" content="duranno" />-->
+ 
     <title>두플러스 콘텐츠 파트너 시스템</title>
     <link rel="icon" href="//www.duranno.com/duplus/img/core/favicon-16x16.png" type="/duranno/image/x-icon"> <!-- 파비콘 -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- //구글 아이콘폰트 --> 
-    <!-- sns tag -->
-	<!--<meta property="og:type" content="website">
-	<meta property="og:site_name" content="두플러스 콘텐츠 파트너 시스템">
-	<meta property="og:title" content="두플러스 콘텐츠 파트너 시스템">
-	<meta property="og:url" content="https://www.du.plus/duplus.html">
-	<meta property="og:image" content="http://www.duranno.com/duplus/img/intro/thumbnail.jpg">
-	<meta property="og:description" content="두플러스 콘텐츠 파트너 시스템">-->
+<!-- include libraries(jQuery, bootstrap) -->
 
+<!--script src="https://code.jquery.com/jquery-3.5.1.min.js"></!--script-->
+
+
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../js/summernote-0.8.18-dist/summernote.min.css" rel="stylesheet">
     <!-- 헤더 START -->
     <!--#include virtual="/partner/include/header.asp"-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <!-- include summernote css/js -->
+    <script src="../js/summernote-0.8.18-dist/summernote.min.js"></script>
+ 
+
+
 <%
 ' 상품 코드가 있으면 수정모드.   
 
 guid = Uguid()
 
-cnum = request("cnum")
-if cnum <> ""  then
-paramInfo = Array( _
-dbh.mp("@cms_contentno",	advarchar,	10,	cnum) )	
-
-set rs=dbh.RunSPReturnRS("[PrCMS_TbCms_Content_Contentno_Q]",paramInfo , conn_duplus)	
-if not (rs.eof or rs.bof) then 
-CMS_ID=rs("CMS_ID")
-CMS_Contentno=rs("CMS_Contentno")  ' contentno
-CMS_State_code=rs("CMS_State_code") ' 상태코드 
-R1.CodeNameKor=rs("R1.CodeNameKor") ' 상태명 
-CMS_div1=rs("CMS_div1") '  구분 
-R2.CodeNameKor=rs("R2.CodeNameKor" ' 구분명 (일반도서, 장르도서, 오디오북, 동영상)
-CMS_File_div=rs("CMS_File_div")  ' 파일타입 
-R3.CodeNameKor=rs("R3.CodeNameKor")    ' 파일타입명 
-CMS_SerisesYN=rs("CMS_SerisesYN")  ' 시리즈 여부  1 Y, 0 N
-CMS_Title=rs("CMS_Title")  
-CMS_Sub_Title=rs("CMS_Sub_Title")  ' 부제
-CMS_ORG_tITLE=rs("CMS_ORG_tITLE")  '원서명 
-CMS_Publish=rs("CMS_Publish") ' 출판사 
-CMS_BRAND=rs("CMS_BRAND")  '브랜드 
-CMS_Paper_Pub_Day=rs("CMS_Paper_Pub_Day") ' 종이책 출간일 
-CMS_Digital_Pub_Day=rs("CMS_Digital_Pub_Day") ' 전자책 출간일 
-CMS_Paper_Price=rs("CMS_Paper_Price") ' 종이책 정가 
-CMS_Digital_Price=rs("CMS_Digital_Price") ' 전자책 정가 
-CMS_ISBN=rs("CMS_ISBN")
-CMS_EISBN=rs("CMS_EISBN")
-CMS_PAGE=rs("CMS_PAGE") ' 종이책 페이지 
-CMS_DIV2=rs("CMS_DIV2") ' 도서구분 
-R4.CodeNameKor=rs("R4.CodeNameKor")   ' 국내/ 번역 
-CMS_ContentText=rs("CMS_ContentText") ' 책소개 
-CMS_MarketingCopyText=rs("CMS_MarketingCopyText")  '출판사 서평 
-CMS_ContentList=rs("CMS_ContentList")  ' 목차 
-CMS_File_Link=rs("CMS_File_Link")   ' 도서파일 링크 
-CMS_Download_YN=rs("CMS_Download_YN")  ' 다운로드 여부  YN 
-CMS_MAIN_IMG_LINK=rs("CMS_MAIN_IMG_LINK")  ' 메인이미지 
-CMS_SUB_IMG_LINK=rs("CMS_SUB_IMG_LINK") ' 서브 이미지 
-CMS_Trial_Content_Link=rs("CMS_Trial_Content_Link") ' 체험판 
-CMS_SAL_DIV=rs("CMS_SAL_DIV") '  판매형태  (전체, 소장, 대여 )  구독은 필수 
-CMS_SAL_PRICE=rs("CMS_SAL_PRICE")  ' 판매가 
-CMS_RENTAL_PRICE=rs("CMS_RENTAL_PRICE") ' 대여가 
-CMS_RENTAL_DAY=rs("CMS_RENTAL_DAY")  ' 대여기간 일수 int 
-CMS_SERVICE_YN=rs("CMS_SERVICE_YN") '  서비스 여부  0 즉시 ,1 지정 
-CMS_SERVICE_DAY=rs("CMS_SERVICE_DAY")  ' 서비스 시작일 
-CMS_MEMO=rs("CMS_MEMO")   ' 메모 (전달 사항 )
-CMS_Resouce_YN=rs("CMS_Resouce_YN")   '리소스 제작 위탁 여부 (0 부, 1 위탁) 
-CMS_Exclusive_day=rs("CMS_Exclusive_day")   ' 독점기간 (일수 int  )  화면에 표시 
-CMS_EXCLUSIVE_DATE=rs("CMS_EXCLUSIVE_DATE")  '  환산기간 
-CMS_Sup_Brand=rs("CMS_Sup_Brand")  ' 공급처 
-CMS_SAL_SUP_PRICE=rs("CMS_SAL_SUP_PRICE")   ' 소장공급가 
-CMS_RENTAL_SUP_PRICE=rs("CMS_RENTAL_SUP_PRICE")  '대여 공급가 
-CMS_SUB_SUP_PRICE=rs("CMS_SUB_SUP_PRICE")  ' 구독 공급가 
-CMS_SUB_SUP_COUNT=rs("CMS_SUB_SUP_COUNT")  ' 구독 정산 기준 수량 
-CMS_DELFLAG=rs("CMS_DELFLAG")  ' 삭제 여부 1 삭제 
-CMS_EDITDATE=rs("CMS_EDITDATE")  ' 수정일 
-CMS_WDATE=rs("CMS_WDATE")  ' 작성일 
-
-end if 
+cmsID = request("cmsID")
+if cmsID <> ""  then
+    paramInfo = Array( _
+    dbh.mp("@cms_contentno",	advarchar,	10,	cmsID) )	
+    set rs=dbh.RunSPReturnRS("[PrCMS_TbCms_Content_cms_id_Q]",paramInfo , conn_duplus)	
+    if not (rs.eof or rs.bof) then 
+    CMS_ID=rs("CMS_ID")
+    CMS_Contentno=rs("CMS_Contentno")  ' contentno
+    CMS_State_code=rs("CMS_State_code") ' 상태코드 
+    'CMS_CodeNameKor=rs("CodeNameKor") ' 상태명 
+    CMS_div1=rs("CMS_div1") '  구분 
+    'CMS_CodeNameKor=rs("CodeNameKor") ' 구분명 (일반도서, 장르도서, 오디오북, 동영상)
+    CMS_File_div=rs("CMS_File_div")  ' 파일타입 
+    'CodeNameKor=rs("R3.CodeNameKor")    ' 파일타입명 
+    CMS_SerisesYN=rs("CMS_SerisesYN")  ' 시리즈 여부  1 Y, 0 N
+    CMS_Title=rs("CMS_Title")  
+    CMS_Sub_Title=rs("CMS_Sub_Title")  ' 부제
+    CMS_ORG_tITLE=rs("CMS_ORG_tITLE")  '원서명 
+    CMS_Publish=rs("CMS_Publish") ' 출판사 
+    CMS_BRAND=rs("CMS_BRAND")  '브랜드 
+    CMS_Paper_Pub_Day=rs("CMS_Paper_Pub_Day") ' 종이책 출간일 
+    CMS_Digital_Pub_Day=rs("CMS_Digital_Pub_Day") ' 전자책 출간일 
+    CMS_Paper_Price=rs("CMS_Paper_Price") ' 종이책 정가 
+    CMS_Digital_Price=rs("CMS_Digital_Price") ' 전자책 정가 
+    CMS_ISBN=rs("CMS_ISBN")
+    CMS_EISBN=rs("CMS_EISBN")
+    CMS_PAGE=rs("CMS_PAGE") ' 종이책 페이지 
+    CMS_DIV2=rs("CMS_DIV2") ' 도서구분 
+    'R4.CodeNameKor=rs("R4.CodeNameKor")   ' 국내/ 번역 
+    CMS_ContentText=rs("CMS_ContentText") ' 책소개 
+    CMS_MarketingCopyText=rs("CMS_MarketingCopyText")  '출판사 서평 
+    CMS_ContentList=rs("CMS_ContentList")  ' 목차 
+    CMS_File_Link=rs("CMS_File_Link")   ' 도서파일 링크 
+    CMS_FILE_SIZE = rs("CMS_FILE_SIZE")
+    CMS_Download_YN=rs("CMS_Download_YN")  ' 다운로드 여부  YN 
+    CMS_MAIN_IMG_LINK=rs("CMS_MAIN_IMG_LINK")  ' 메인이미지 
+    CMS_SUB_IMG_LINK=rs("CMS_SUB_IMG_LINK") ' 서브 이미지 
+    CMS_Trial_Content_Link=rs("CMS_Trial_Content_Link") ' 체험판 
+    CMS_SAL_DIV=rs("CMS_SAL_DIV") '  판매형태  (전체, 소장, 대여 )  구독은 필수 
+    CMS_SAL_PRICE=rs("CMS_SAL_PRICE")  ' 판매가 
+    CMS_RENTAL_PRICE=rs("CMS_RENTAL_PRICE") ' 대여가 
+    CMS_RENTAL_DAY=rs("CMS_RENTAL_DAY")  ' 대여기간 일수 int 
+    CMS_SERVICE_YN=rs("CMS_SERVICE_YN") '  서비스 여부  0 즉시 ,1 지정 
+    CMS_SERVICE_DAY=rs("CMS_SERVICE_DAY")  ' 서비스 시작일 
+    CMS_MEMO=rs("CMS_MEMO")   ' 메모 (전달 사항 )
+    CMS_Resouce_YN=rs("CMS_Resouce_YN")   '리소스 제작 위탁 여부 (0 부, 1 위탁) 
+    CMS_Exclusive_day=rs("CMS_Exclusive_day")   ' 독점기간 (일수 int  )  화면에 표시 
+    CMS_EXCLUSIVE_DATE=rs("CMS_EXCLUSIVE_DATE")  '  환산기간 
+    CMS_Sup_Brand=rs("CMS_Sup_Brand")  ' 공급처 
+    CMS_SAL_SUP_PRICE=rs("CMS_SAL_SUP_PRICE")   ' 소장공급가 
+    CMS_RENTAL_SUP_PRICE=rs("CMS_RENTAL_SUP_PRICE")  '대여 공급가 
+    CMS_SUB_SUP_PRICE=rs("CMS_SUB_SUP_PRICE")  ' 구독 공급가 
+    CMS_SUB_SUP_COUNT=rs("CMS_SUB_SUP_COUNT")  ' 구독 정산 기준 수량 
+    CMS_DELFLAG=rs("CMS_DELFLAG")  ' 삭제 여부 1 삭제 
+    CMS_EDITDATE=rs("CMS_EDITDATE")  ' 수정일 
+    CMS_WDATE=rs("CMS_WDATE")  ' 작성일 
+    end if 
 rs.close 
+
+
+
+    '저자select 
+    'AUT_ID,aut_div, CodeNameKor, AUT_NAME, AUT_DTL from TbCMS_Author 
+    paramInfo = Array( _
+    dbh.mp("@CMS_ID",	advarchar,	10,	cmsID) )	
+    set rs=dbh.RunSPReturnRS("PrCMS_Author_Q",paramInfo , conn_duplus)	
+    if not (rs.eof or rs.bof) then 
+    AuthorList = rs.getRows()
+    end if 
+    rs.close   
+' 주제별 카테고리 
+    paramInfo = Array( _
+    dbh.mp("@CMS_ID",	advarchar,	10,	cmsID) )	
+    set rs=dbh.RunSPReturnRS("PrCMS_Category_Q",paramInfo , conn_duplus)	
+    if not (rs.eof or rs.bof) then 
+    CATE1 = cInt(RS(0))
+    ELSE 
+    CATE1 = 0
+    end if 
+    rs.close   
+' 대상별  카테고리 
+    paramInfo = Array( _
+    dbh.mp("@CMS_ID",	advarchar,	10,	cmsID),  dbh.mp("@GUBN",	advarchar,	10,	2))	
+    set rs=dbh.RunSPReturnRS("PrCMS_Category_Q",paramInfo , conn_duplus)	
+    if not (rs.eof or rs.bof) then 
+    CATE2 = cInt(RS(0))
+    ELSE 
+    CATE2 = 0
+    end if 
+    rs.close     
+' 검색 키워드 PrCMS_Keyword_Q  
+    paramInfo = Array( _
+    dbh.mp("@CMS_ID",	advarchar,	10,	cmsID) )	
+    set rs=dbh.RunSPReturnRS("PrCMS_Keyword_Q",paramInfo , conn_duplus)	
+    if not (rs.eof or rs.bof) then 
+    KWlist = rs.getRows()
+    end if 
+    rs.close   
+
+
 end if 
-dim ContentPublisherNo,  businessNumber
-businessNumber= "2148204203"  '두란노서원 
-' businessnum 으로 출판사 브랜드 검출 
-sql = "select ContentPublisherNo from  TbCM_ContentPublisher where businessNumber = "& businessNumber
-set rs = dbh.runSQLreturnRS(sql, "", conn_duplus)
- ContentPublisherNo = rs(0)
- rs.close 
+
+ 
+
 
 
 ' paramInfo = Array( _
@@ -102,20 +144,34 @@ set rs = dbh.runSQLreturnRS(sql, "", conn_duplus)
 ' 			dbh.mp("@mbr_num",	advarchar,	10,	mbr_num), _
 ' 			dbh.mp("@ord_div",	adchar,		1,		"C"))	
 '브랜드 목록 
-
 paramInfo = Array( _
-dbh.mp("@ContentPublisherNo",	advarchar,	10,	ContentPublisherNo) )	
+dbh.mp("@ContentPublisherNo",	advarchar,	10,	CPNum) )	
 
 set rs=dbh.RunSPReturnRS("PrCMS_PublisherBrand",paramInfo , conn_duplus)	
 if not (rs.eof or rs.bof) then 
 brandList = rs.getRows()
 end if 
-rs.close 
+rs.close  
 
-' 카테고리1  셀렉트 박스(주제별)  PrCMS_ContentCategoryType_1
-' 카테고리2  셀렉트 박스(대상별)  PrCMS_ContentCategoryType_2
-' 브랜드  PrCMS_PublisherBrand  @
-' 브랜드를 선택하면  해당 출판사명도  display 
+'저자 공통코드 
+
+paramInfo = Array( _
+dbh.mp("@Gcode",	advarchar,	10,	"A01") )	
+set rs=dbh.RunSPReturnRS("PrCMS_CommonCode_Q",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+ authCodeList = rs.getRows()
+end if 
+rs.close   
+
+' 검색 키워드 목록 
+'PrCM_ContentSearchKeyword_Q '001'
+paramInfo = Array( _
+dbh.mp("@ContentTypeCode",	advarchar,	3,	"001") )	
+set rs=dbh.RunSPReturnRS("PrCM_ContentSearchKeyword_Q",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+ srList = rs.getRows()
+end if 
+rs.close   
 
 ' <검색>
 ' PrCMS_TbCms_Content_Contentno_Q    -- Contentno 로 검색할 때
@@ -250,47 +306,47 @@ set rs = nothing
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">구분</th>
+                                                <th scope="row">구분  </th>
                                                 <td>
                                                     <span class="radio">
-                                                        <input type="radio" name="category" id="c_normal" value="1" checked>
+                                                        <input type="radio" name="category" id="c_normal" value="1" <%=IIF(CMS_div1=1,"checked","")%>>
                                                         <label for="c_normal">일반도서</label>
                                                     </span>
                     
                                                     <span class="radio">
-                                                        <input type="radio" id="c_genre" name="category" value="genre_book">
+                                                        <input type="radio" id="c_genre" name="category" value="2" <%=IIF(CMS_div1=2,"checked","")%>>
                                                         <label for="c_genre">장르도서</label>
                                                     </span>
 
                                                     <span class="radio">
-                                                        <input type="radio" id="c_audio" name="category" value="audio_book">
+                                                        <input type="radio" id="c_audio" name="category" value="3" <%=IIF(CMS_div1=3,"checked","")%>>
                                                         <label for="c_audio">오디오북</label>
                                                     </span>
 
                                                     <span class="radio">
-                                                        <input type="radio" id="c_video" name="category" value="video">
+                                                        <input type="radio" id="c_video" name="category" value="4" <%=IIF(CMS_div1=4,"checked","")%>>
                                                         <label for="c_video">동영상</label>
                                                     </span>
                                                 </td>
                                                 <th scope="row">상품코드</th>
-                                                <td><span id="b_code">(자동으로)</span></td>
+                                                <td><span id="b_code"><%=IIF(cms_contentno <> "",cms_contentno,"not register")%></span></td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">파일 타입 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <span class="radio">
-                                                        <input type="radio" name="file_type" id="type_epub" value="epub" checked>
+                                                        <input type="radio" id="type_epub" name="file_type"  value="1" <%=IIF(CMS_File_div=1,"checked","")%>>
                                                         <label for="type_epub">EPUB</label>
                                                     </span>
                     
                                                     <span class="radio">
-                                                        <input type="radio" id="type_pdf" name="file_type" value="pdf">
+                                                        <input type="radio" id="type_pdf" name="file_type" value="2" <%=IIF(CMS_CMS_File_divdiv1=2,"checked","")%>>
                                                         <label for="type_pdf">PDF</label>
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>시리즈 여부</th>
+                                                <th>시리즈 여부 - 미개발</th>
                                                 <td colspan="3">
                                                     <span class="chk">
                                                         <input type="checkbox" id="series_chk" name="series_chk" value="N">
@@ -315,33 +371,33 @@ set rs = nothing
                                             <tr class="long_input">
                                                 <th>도서명 <span class="orange">*</span></th>
                                                 <td colspan="3">
-                                                    <input type="text" id="b_name" name="b_name"  value="테스트북명">
+                                                    <input type="text" id="b_name" name="b_name"  value="<%=CMS_Title%>">
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
                                                 <th>부제 <span class="orange">*</span></th>
                                                 <td colspan="3">
-                                                    <input type="text" id="sub_name" name="sub_name" value="테스트북부제">
+                                                    <input type="text" id="sub_name" name="sub_name" value="<%=CMS_Sub_Title%>">
                                                 </td>
                                             </tr>
                                             <tr class="long_input">
                                                 <th>원서명</th>
                                                 <td colspan="3">
-                                                    <input type="text" name="origin_name" value="테스트북원서명">
+                                                    <input type="text" name="origin_name" value="<%=CMS_ORG_tITLE%>">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>출판사</th>
                                                 <td>
-                                                    <span id="publisher">(비활성/브랜드 명에 따라 자동)</span>
+                                                    <span id="publisher"><%=CPName%></span>
                                                 </td>
                                                 <th>브랜드명 <span class="orange">*</span></th>
                                                 <td class="brand btn_add_wrap">
                                                     <select name="sel_brand" style="width:200px;">
                                                     <%if isArray(brandList) then %>
-                                                            <option value="0" selected>선택해 주세요</option>
+                                                            <option value="0">선택해 주세요</option>
                                                             <% for i = 0 to Ubound(brandList,2)%>
-                                                            <option value="<%=brandList(0,i)%>"  data-value="<%=brandList(2,i)%>"><%=brandList(1,i)%></option>
+                                                            <option value="<%=brandList(0,i)%>"  data-value="<%=brandList(2,i)%>" <%=iif(CMS_BRAND=brandList(0,i),"selected","")%> ><%=brandList(1,i)%></option>
                                                             <%
                                                         next
                                                     end if %>
@@ -364,67 +420,95 @@ set rs = nothing
                                             <tr>
                                                 <th scope="row">저자 <span class="orange">*</span></th>
                                                 <td colspan="3" class="author btn_add_wrap">
+                                                    <%if  not isArray(AuthorList) then   ' 저자 목록이 없으면 ..%>
                                                     <select name="sel_author_name">
-                                                        <option value="author" selected>저자</option>
-                                                        <option value="translator">역자</option>
-                                                        <option value="painter">그린이</option>
+                                                        <%if isArray(authCodeList) then %>
+                                                            
+                                                            <% for i = 0 to Ubound(authCodeList,2)%>
+                                                            <option value="<%=authCodeList(0,i)%>" <%=iif(111=authCodeList(0,i),"selected","")%>  ><%=authCodeList(1,i)%></option>
+                                                            <%
+                                                        next
+                                                    end if %>
                                                     </select>
-                                                    <input type="text" id="author_info" name="author_info" value="테스트북저자">
+                                                    <input type="text"  name="author_info" value="테스트북저자">
 
                                                     <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
 
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                    <%else ' 저자 목록 이 있다면 ... %>
+                                                    <%for ii = 0 to ubound(AuthorList,2)%>
+                                                    <div>
+                                                        <select name="sel_author_name">
+                                                            <%if isArray(authCodeList) then %>
+                                                                <% for i = 0 to Ubound(authCodeList,2)%>
+                                                                <option value="<%=authCodeList(0,i)%>" <%=iif(AuthorList(1,ii)=authCodeList(0,i),"selected","")%>  ><%=authCodeList(1,i)%></option>
+                                                                <%
+                                                            next
+                                                        end if %>
+                                                        </select>
+                                                        <input type="text"   name="author_info" value="<%=AuthorList(3,ii)%>" data-value="<%=AuthorList(0,ii)%>">
+                                                        <input type="hidden" name="author_desc" value="<%=AuthorList(4,ii)%>">
+
+                                                        <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
+
+                                                        <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                        </div>
+                                                    <%next %>
+
+
+
+                                                    <%end if %>
                                                 </td>
                                             </tr>
 
                                             <tr>
                                                 <th>종이책 출간일 <span class="orange">*</span></th>
                                                 <td class="regist_date">
-                                                    <input type="text" name="bookDate" value="2023-05-01" autocomplete="off"> 
+                                                    <input type="text" name="bookDate" value="<%=CMS_Paper_Pub_Day%>" autocomplete="off"> 
                                                 </td>
                                                 <th>전자책 출간일 <span class="orange">*</span></th>
                                                 <td class="regist_date">
-                                                    <input type="text" name="ebookDate" value="2023-05-01" autocomplete="off">
+                                                    <input type="text" name="ebookDate" value="<%=CMS_Digital_Pub_Day%>" autocomplete="off">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>종이책 정가 <span class="orange">*</span></th>
                                                 <td>
-                                                    <input type="text" id="b_list_price" name="b_list_price" value="10,000">
+                                                    <input type="text" id="b_list_price" name="b_list_price" value="<%=CMS_Paper_Price%>">
                                                     원
                                                 </td>
                                                 <th>전자책 정가 <span class="orange">*</span></th>
                                                 <td>
-                                                    <input type="text" id="eb_list_price" name="eb_list_price" value="10,000">
+                                                    <input type="text" id="eb_list_price" name="eb_list_price" value="<%=CMS_Digital_Price%>">
                                                     원
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>ISBN 13자리 <span class="orange">*</span></th>
                                                 <td>
-                                                    <input type="text" id="isbn_num" name="isbn_num" value="123456789123">
+                                                    <input type="text" id="isbn_num" name="isbn_num" value="<%=CMS_ISBN%>">
                                                 </td>
                                                 <th>E-ISBN 13자리 <span class="orange">*</span></th>
                                                 <td>
-                                                    <input type="text" id="e_isbn_num" name="e_isbn_num" value="E23456789123">
+                                                    <input type="text" id="e_isbn_num" name="e_isbn_num" value="<%=CMS_EISBN%>">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>페이지 수 <span class="orange">*</span></th>
                                                 <td colspan="3">
-                                                    <input type="text" id="page_num" name="page_num" value="530"> Pages
+                                                    <input type="text" id="page_num" name="page_num" value="<%=CMS_PAGE%>"> Pages
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>도서 구분 <span class="orange">*</span></th>
                                                 <td colspan="3">
                                                     <span class="radio">
-                                                        <input type="radio" name="book_devision" id="book_domestic" value="domestic_book" checked>
-                                                        <label for="book_domestic">국내서</label>
+                                                        <input type="radio" name="book_devision" id="book_domestic" value="domestic_book" <%=iif(CMS_DIV2 = "001","","")%>>
+                                                        <label for="book_domestic">국내서  <%=CMS_DIV2%></label>
                                                     </span>
                     
                                                     <span class="radio">
-                                                        <input type="radio" id="book_translation" name="book_devision" value="translation_book">
+                                                        <input type="radio" id="book_translation" name="book_devision" value="translation_book" <%=iif(CMS_DIV2 = "002","","")%>>
                                                         <label for="book_translation">번역서</label>
                                                     </span>
                                                 </td>
@@ -446,34 +530,19 @@ set rs = nothing
                                             <tr>
                                                 <th scope="row">책소개 <span class="orange">*</span></th>
                                                 <td colspan="3">
-                                                    <textarea rows="5" cols id="book_info" name="book_info_txt"> 책 소개 
-                                                    이것이 책소개다 
-                                                    이것이 책소개다 
-                                                    이것이 책소개다 
-                                                    
-                                                    </textarea>
-                                                    <div class="col-md-10" id="summernote" />
+                                                    <div class="summernote" id="CMS_ContentText"><%=CMS_ContentText%></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">출판사서평</th>
                                                 <td colspan="3">
-                                                    <textarea rows="5" cols name="brand_review">
-                                                    이것이 출판사 서평이다. 
-                                                    이것이 출판사 서평이다. 
-                                                    이것이 출판사 서평이다. 
-                                                    </textarea>
+                                                <div class="summernote" id="CMS_MarketingCopyText"><%=CMS_MarketingCopyText%></div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">목차 <span class="orange">*</span></th>
                                                 <td colspan="3">
-                                                    <textarea rows="5" cols id="book_list" name="book_list">
-                                                    이것이 목차이다.
-                                                    이것이 목차이다.
-                                                    이것이 목차이다.
-
-                                                    </textarea>
+                                                    <div class="summernote" id="CMS_ContentList"><%=CMS_ContentList%></textarea>
                                                 </td>
                                             </tr>
                                            
@@ -485,17 +554,17 @@ set rs = nothing
 
                                                     <select name="category_1" id="category_1" style="width:200px;">
                                                     <%if isArray(category1) then %>
-                                                            <option value="0" selected>선택해 주세요</option>
+                                                            <option value="0" <%=IIF(CATE1=0,"selected","")%>>선택해 주세요</option>
                                                             <% for i = 0 to Ubound(category1,2)%>
-                                                            <option value="<%=category1(0,i)%>"  ><%=category1(1,i)%></option>
+                                                            <option value="<%=category1(0,i)%>"  <%=IIF(CATE1=category1(0,i),"selected","")%>><%=category1(1,i)%></option>
                                                             <%
                                                         next
                                                     end if %>
                                                     
                                                     </select>
                                         
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
-                                                    <input type="text"  name="category_1_hidden" value=""/>
+                                                    <!--button type="button" class="btn_line b_btn_line add_btn">+ 추가</!--button>
+                                                    <input type="text"  name="category_1_hidden" value=""/-->
                                                 </td>
                                                 <th>카테고리2 (대상별) <span class="orange">*</span></th>
                                                 <td class="cat2 btn_add_wrap">
@@ -503,32 +572,47 @@ set rs = nothing
 
                                                     <select name="category_2" id="category_2" style="width:200px;">
                                                     <%if isArray(category2) then %>
-                                                            <option value="0" selected>선택해 주세요</option>
+                                                            <option value="0" <%=IIF(CATE2=0,"selected","")%>>선택해 주세요</option>
                                                             <% for i = 0 to Ubound(category2,2)%>
-                                                            <option value="<%=category2(0,i)%>"  ><%=category2(1,i)%></option>
+                                                            <option value="<%=category2(0,i)%>"  <%=IIF(CATE2=category2(0,i),"selected","")%>><%=category2(1,i)%></option>
+                                                            <%
+                                                        next
+                                                    end if %>
+                                                    </select>
+                                        
+                                                    <!--button type="button" class="btn_line b_btn_line add_btn">+ 추가</!--button>
+                                                    <input type="text"  name="category_2_hidden" value=""/-->
+                                                </td>
+                                            </tr>
+                                            <!--tr>
+                                                <th>카테고리3 (상황별)</th>
+                                                <td colspan="3">
+                                                    <span id="category_3">(비활성/추후)</span>
+                                                </td>
+                                            </!--tr-->
+                                            <tr>
+                                                <th>검색 키워드</th>
+                                                <td colspan="3" class="key btn_add_wrap">
+                                                    <!--<input type="text" name="search_key"> -->
+
+                                                    <select name="search_key" id="search_key" style="width:200px;">
+                                                    <%if isArray(srList) then %>
+                                                            <option value="0" selected>선택해 주세요</option>
+                                                            <% for i = 0 to Ubound(srList,2)%>
+                                                            <option value="<%=srList(0,i)%>"  ><%=srList(2,i)%></option>
                                                             <%
                                                         next
                                                     end if %>
                                                     </select>
                                         
                                                     <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
-                                                    <input type="text"  name="category_2_hidden" value=""/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>카테고리3 (상황별)</th>
-                                                <td colspan="3">
-                                                    <span id="category_3">(비활성/추후)</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>검색 키워드</th>
-                                                <td colspan="3" class="key btn_add_wrap">
-                                                    <!--<input type="text" name="search_key"> -->
-
-                                                    <select name="search_key" id="search_key" style="width:200px;"><option value="" selected>두란노</option><option value="">한국성서학연구소</option><option value="">두란노</option></select>
-                                        
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                    <input type="text"  name="search_key_hidden" value=""/>
+                                                    <%if isArray(KWlist) then %>
+                                                        <% for i = 0 to Ubound(KWlist,2)%> 
+                                                        <input type="text"  name="KWlist" class="add_ipt"  value="<%=KWlist(2,i)%>" />
+                                                        <button type="button" class="btn_linke g_btn_line remove_btn"> - 삭제</button>
+                                                        <%next
+                                                    end if %>
                                                 </td>
                                                 
                                             </tr>
@@ -539,7 +623,7 @@ set rs = nothing
                                                         <option value="youtube" selected>유튜브</option>
                                                         <option value="vimeo">비메오</option>
                                                     </select>
-                                                    <input type="text" name="video_url">
+                                                    <input type="text" name="video_url" value="test_비디오 경로 ">
                                                 </td>
                                                 <th>미리보기 여부</th>
                                                 <td>
@@ -553,17 +637,17 @@ set rs = nothing
                                     </table>
                                 </div>
 
-                                <div class="resource table_wrap">
+                                <!--div class="resource table_wrap">
                                     <h3 class="sub_t">리소스</h3>
 
-                                  <div class="form-group row">
+                                  <div-- class="form-group row">
                                     <label class="col-form-label col-md-2" style="float: left;text-align: center;"><span style="color: red">*</span>파일</label>
                                     <div class="col-md-4" id="file-uploaderMedia" style=" padding: 0px; margin-top: -12px;"></div>
                                     <label class="col-md-1" id="MediaName"></label>
                                     <div class="col-md-5">
                                         <a class="btn btn-primary btn-sm" id="mediaDownload" href="#">다운로드</a>
                                     </div>
-                                </div>
+                                </div-->
 
                                     <table class="table_input">
                                         <colgroup>
@@ -574,7 +658,7 @@ set rs = nothing
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">도서 파일 <span class="orange">*</span></th>
+                                                <th scope="row">src="https://prd-dplus-bos-krc.azurewebsites.net/HTML/ <span class="orange">*</span></th>
                                                 <td class="file_box">
                                                     <input type="text" id="b_file_name" name="b_file_name" readonly>
                                                     <label for="b_file">파일선택</label>
@@ -591,8 +675,9 @@ set rs = nothing
                                             </tr>
                                             <tr>
                                                 <th scope="row">파일사이즈</th>
-                                                <td colspan="3">
-                                                    <span id="file_size">(자동으로 뿌림)</span>
+                                                <td colspan="3"> 
+                                                    <span id="file_size"><%=iif(CMS_FILE_SIZE <> "" ,filesizechk(CMS_FILE_SIZE),"(자동으로 뿌림)")%></span>
+                                                     
                                                 </td>
                                             </tr>
                                             <tr>
@@ -601,7 +686,11 @@ set rs = nothing
                                                     <input type="text" id="t_file_name" name="t_file_name" readonly>
                                                     <label for="t_file">파일선택</label>
                                                     <input type="file" id="t_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail(event)">
-                                                    <div id="image_container" class="thumb_img"></div>
+                                                    <div id="image_container" class="thumb_img">
+                                                    <%if CMS_MAIN_IMG_LINK <> "" THEN %>
+                                                        <IMG SRC="<%=CMS_MAIN_IMG_LINK%>" width="200" />
+                                                    <%END IF %>
+                                                    </div>
                                                     <ul class="file_txt">
                                                         <li>지원포맷 : .jpg, .png</li>
                                                         <li>최대용량 : 1MB 이하</li>
@@ -616,6 +705,9 @@ set rs = nothing
                                                     <label for="d_file">파일선택</label>
                                                     <input type="file" id="d_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail2(event)">
                                                     <div id="image_container2" class="thumb_img"></div>
+                                                    <%if CMS_SUB_IMG_LINK <> "" THEN %>
+                                                        <IMG SRC="<%=CMS_SUB_IMG_LINK%>" width="200" />
+                                                    <%END IF %>
                                                     <ul class="file_txt">
                                                         <li>지원포맷 : .jpg, .png</li>
                                                         <li>최대용량 : 1MB 이하</li>
@@ -799,7 +891,9 @@ set rs = nothing
                                 <!-- 승인 완료 이후 도서 목록에서 들어왔을 때 하단 버튼 END -->
                                 
 
-                            </fieldset>
+
+
+                             </fieldset>
                         </form>
                     </div>
                     <!-- 콘텐츠 등록 END -->                    
@@ -807,8 +901,7 @@ set rs = nothing
 
             </section>
         </main>
-        
-
+ 
         <!-- 푸터 & 하단 탭 & 플로팅 START -->
         <!--#include virtual="/partner/include/footer.asp"-->
         <!-- 푸터 & 하단 탭 & 플로팅 END -->
@@ -1007,6 +1100,296 @@ FileOpenMedia()
 
     <script>
  
+        //DevExtream Editor 로드
+    function EditorLoad() {
+        $('.summernote').summernote({
+            enterHtml: '<br>',
+            lineWrapping: false,
+            disableDragAndDrop: true,
+            height: "300px",
+            width: "83%", // 에디터 높이
+            minHeight: null,             // 최소 높이
+            maxHeight: null,             // 최대 높이
+            focus: false,                  // 에디터 로딩후 포커스를 맞출지 여부
+            lang: "ko-KR",					// 한글 설정
+            placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정,
+            toolbar: [
+                // [groupName, [list of button]]
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+                ['color', ['forecolor', 'color']],
+                ['table', ['table']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['picture', 'link']],
+                ['view', ['codeview', 'help']]
+            ],
+            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+            fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+            callbacks: {
+                onPaste: function (e) {
+                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    bufferText = bufferText.replace(/\r?\n/g, '<br>');
+                    document.execCommand('insertHtml', false, bufferText);
+                },
+
+                onImageUpload: function (files) {
+
+                    for (i = 0; i < files.length; i++) {
+
+                        var imageForm = new FormData();
+                        imageForm.append("file", files[i]);
+                        imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+                        imageForm.append("fileName", files[i].name);
+                        AzureUpload(imageForm,null, this);
+
+                    }
+                }
+            }
+
+        });
+        // $('.summernote').summernote({
+        //     lineWrapping: true,
+        //     disableDragAndDrop: true,
+        //     height: "300px",
+        //     width: "83%", // 에디터 높이
+        //     minHeight: null,             // 최소 높이
+        //     maxHeight: null,             // 최대 높이
+        //     focus: false,                  // 에디터 로딩후 포커스를 맞출지 여부
+        //     lang: "ko-KR",					// 한글 설정
+        //     placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정,
+        //     toolbar: [
+        //         // [groupName, [list of button]]
+        //         ['fontname', ['fontname']],
+        //         ['fontsize', ['fontsize']],
+        //         ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+        //         ['color', ['forecolor', 'color']],
+        //         ['table', ['table']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //         ['height', ['height']],
+        //         ['insert', ['picture', 'link']],
+        //         ['view', ['codeview', 'help']]
+        //     ],
+        //     fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+        //     fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+        //     callbacks: {
+
+        //         onPaste: function (e) {
+        //             var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+        //             e.preventDefault();
+        //             bufferText = bufferText.replace(/\r?\n/g, '<br>');
+        //             document.execCommand('insertHtml', false, bufferText);
+        //         },
+        //         onImageUpload: function (files) {
+
+        //             for (i = 0; i < files.length; i++) {
+
+        //                 var imageForm = new FormData();
+        //                 imageForm.append("file", files[i]);
+        //                 imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+        //                 imageForm.append("fileName", files[i].name);
+        //                 AzureUpload(imageForm, null,this);
+
+        //             }
+        //         }
+        //     }
+
+        // });
+
+        // $('#summernote2').summernote({
+        //     lineWrapping: true,
+        //     disableDragAndDrop: true,
+        //     height: "300px",
+        //     width: "83%", // 에디터 높이
+        //     minHeight: null,             // 최소 높이
+        //     maxHeight: null,             // 최대 높이
+        //     focus: false,                  // 에디터 로딩후 포커스를 맞출지 여부
+        //     lang: "ko-KR",					// 한글 설정
+        //     placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정,
+        //     toolbar: [
+        //         // [groupName, [list of button]]
+        //         ['fontname', ['fontname']],
+        //         ['fontsize', ['fontsize']],
+        //         ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+        //         ['color', ['forecolor', 'color']],
+        //         ['table', ['table']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //         ['height', ['height']],
+        //         ['insert', ['picture', 'link']],
+        //         ['view', ['codeview', 'help']]
+        //     ],
+        //     fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+        //     fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+        //     callbacks: {
+
+        //         onPaste: function (e) {
+        //             var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+        //             e.preventDefault();
+        //             bufferText = bufferText.replace(/\r?\n/g, '<br>');
+        //             document.execCommand('insertHtml', false, bufferText);
+        //         },
+        //         onImageUpload: function (files) {
+
+        //             for (i = 0; i < files.length; i++) {
+
+        //                 var imageForm = new FormData();
+        //                 imageForm.append("file", files[i]);
+        //                 imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+        //                 imageForm.append("fileName", files[i].name);
+        //                 AzureUpload(imageForm,null,this);
+
+        //             }
+        //         }
+        //     }
+
+        // });
+
+        // $('#summernote3').summernote({
+        //     lineWrapping: true,
+        //     disableDragAndDrop: true,
+        //     height: "300px",
+        //     width: "83%", // 에디터 높이
+        //     minHeight: null,             // 최소 높이
+        //     maxHeight: null,             // 최대 높이
+        //     focus: false,                  // 에디터 로딩후 포커스를 맞출지 여부
+        //     lang: "ko-KR",					// 한글 설정
+        //     placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정,
+        //     toolbar: [
+        //         // [groupName, [list of button]]
+        //         ['fontname', ['fontname']],
+        //         ['fontsize', ['fontsize']],
+        //         ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+        //         ['color', ['forecolor', 'color']],
+        //         ['table', ['table']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //         ['height', ['height']],
+        //         ['insert', ['picture', 'link']],
+        //         ['view', ['codeview', 'help']]
+        //     ],
+        //     fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+        //     fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+        //     callbacks: {
+
+        //         onPaste: function (e) {
+        //             var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+        //             e.preventDefault();
+        //             bufferText = bufferText.replace(/\r?\n/g, '<br>');
+        //             document.execCommand('insertHtml', false, bufferText);
+        //         },
+        //         onImageUpload: function (files) {
+
+        //             for (i = 0; i < files.length; i++) {
+
+        //                 var imageForm = new FormData();
+        //                 imageForm.append("file", files[i]);
+        //                 imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+        //                 imageForm.append("fileName", files[i].name);
+        //                 AzureUpload(imageForm,null,this);
+
+        //             }
+        //         }
+        //     }
+
+        // });
+        // $('#summernote4').summernote({
+        //     lineWrapping: true,
+        //     disableDragAndDrop: true,
+        //     height: "300px",
+        //     width: "83%", // 에디터 높이
+        //     minHeight: null,             // 최소 높이
+        //     maxHeight: null,             // 최대 높이
+        //     focus: false,                  // 에디터 로딩후 포커스를 맞출지 여부
+        //     lang: "ko-KR",					// 한글 설정
+        //     placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정,
+        //     toolbar: [
+        //         // [groupName, [list of button]]
+        //         ['fontname', ['fontname']],
+        //         ['fontsize', ['fontsize']],
+        //         ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+        //         ['color', ['forecolor', 'color']],
+        //         ['table', ['table']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //         ['height', ['height']],
+        //         ['insert', ['picture', 'link']],
+        //         ['view', ['codeview', 'help']]
+        //     ],
+        //     fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+        //     fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+        //     callbacks: {
+
+        //         onPaste: function (e) {
+        //             var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+        //             e.preventDefault();
+        //             bufferText = bufferText.replace(/\r?\n/g, '<br>');
+        //             document.execCommand('insertHtml', false, bufferText);
+        //         },
+        //         onImageUpload: function (files) {
+
+        //             for (i = 0; i < files.length; i++) {
+
+        //                 var imageForm = new FormData();
+        //                 imageForm.append("file", files[i]);
+        //                 imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+        //                 imageForm.append("fileName", files[i].name);
+        //                 AzureUpload(imageForm, null,this);
+
+        //             }
+        //         }
+        //     }
+
+        // });
+        // $('#summernote5').summernote({
+        //     lineWrapping: true,
+        //     disableDragAndDrop: true,
+        //     height: "300px",
+        //     width: "83%", // 에디터 높이
+        //     minHeight: null,             // 최소 높이
+        //     maxHeight: null,             // 최대 높이
+        //     focus: false,                  // 에디터 로딩후 포커스를 맞출지 여부
+        //     lang: "ko-KR",					// 한글 설정
+        //     placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정,
+        //     toolbar: [
+        //         // [groupName, [list of button]]
+        //         ['fontname', ['fontname']],
+        //         ['fontsize', ['fontsize']],
+        //         ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+        //         ['color', ['forecolor', 'color']],
+        //         ['table', ['table']],
+        //         ['para', ['ul', 'ol', 'paragraph']],
+        //         ['height', ['height']],
+        //         ['insert', ['picture', 'link']],
+        //         ['view', ['codeview', 'help']]
+        //     ],
+        //     fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', '맑은 고딕', '궁서', '굴림체', '굴림', '돋움체', '바탕체'],
+        //     fontSizes: ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '28', '30', '36', '50', '72'],
+        //     callbacks: {
+
+        //         onPaste: function (e) {
+        //             var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+        //             e.preventDefault();
+        //             bufferText = bufferText.replace(/\r?\n/g, '<br>');
+        //             document.execCommand('insertHtml', false, bufferText);
+        //         },
+        //         onImageUpload: function (files) {
+
+        //             for (i = 0; i < files.length; i++) {
+
+        //                 var imageForm = new FormData();
+        //                 imageForm.append("file", files[i]);
+        //                 imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
+        //                 imageForm.append("fileName", files[i].name);
+        //                 AzureUpload(imageForm, null,this);
+
+        //             }
+        //         }
+        //     }
+
+        // });
+
+
+    }
  
     </script>
 
@@ -1045,7 +1428,9 @@ FileOpenMedia()
       
 
         $(document).ready(function () {
-           
+          // $('.summernote').summernote();
+
+          EditorLoad();
             
 
             $('input[name="bookDate"],input[name="ebookDate"],input[name="serviceDate"]').daterangepicker(
@@ -1135,6 +1520,7 @@ FileOpenMedia()
                     $(".cat1.btn_add_wrap").append(fieldHtml);
                 }
             });  
+
             $(".cat1.btn_add_wrap").on('click', '.remove_btn', function(e){                
                 e.preventDefault();
                 var thisVal = $(this).prev().data("value");
@@ -1156,6 +1542,29 @@ FileOpenMedia()
                     $(".cat2.btn_add_wrap").append(fieldHtml);
                 }
             });
+
+            // 검색 추가 
+            $(".key .add_btn").click(function(){
+                var thisVal = $(this).prev().val();
+                if(thisVal ==0){return;}
+                var thistxt = $("#search_key option:selected").text();
+                var fieldHtml='<div><input type="text" name="" class="add_ipt" value="'+thistxt+'" data-value="'+thisVal+'"><button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
+                var curVal = $("input[name=search_key_hidden]").val()
+                if(curVal.indexOf(thisVal) == -1){
+                    $("input[name=search_key_hidden]").val(curVal+thisVal+',','') 
+                    $(".key.btn_add_wrap").append(fieldHtml);
+                }
+            });
+            // 검색 삭제 
+            $(".key.btn_add_wrap").on('click', '.remove_btn', function(e){                
+                e.preventDefault();
+                var thisVal = $(this).prev().data("value");
+                var curVal = $("input[name=search_key_hidden]").val() 
+                $("input[name=search_key_hidden]").val(curVal.replace(thisVal+',','') )
+                $(this).parent('div').remove();
+                
+            });
+
 
             // $(".cat2 .remove_btn").click(function(){
             //     $(this).parent('div').remove();
@@ -1213,6 +1622,10 @@ FileOpenMedia()
                 $("input:radio[id='etc']").prop("checked",true);
                 $("input:radio[id='expire'],input:radio[id='revision']").removeAttr("checked");
             });
+
+
+
+                  $('.summernote').summernote();
 
         });
 
@@ -1283,7 +1696,6 @@ FileOpenMedia()
         // 테이블 밑에 상품 총 개수 명시 230307 혜지
         // 11725줄
 
-        
     </script>
 </body>
 

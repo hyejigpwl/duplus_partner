@@ -1,3 +1,4 @@
+<%@ codepage="65001" language="VBScript" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

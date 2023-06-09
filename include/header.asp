@@ -78,6 +78,9 @@ Response.ContentType="text/html;charset=utf-8"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.1.1/exceljs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
 
+
+
+
      <!-- 엑셀 다운로드 START -->
      <script src="../js/dataTables.buttons.min.js"></script>
      <script src="../js/jszip.min.js"></script>
@@ -87,6 +90,8 @@ Response.ContentType="text/html;charset=utf-8"
       <script src="../js/buttons.print.min.js"></script>
       <script src="../js/main.js"></script>
       <!-- 엑셀 다운로드 END -->
+
+
     
 <%
 
@@ -98,7 +103,7 @@ Response.ContentType="text/html;charset=utf-8"
             <h1><a href="index.asp"><img src="../img/logo.svg" alt="두플러스 로고">Contents Partner System</a></h1>
 
             <div class="header_info">
-                <span><a href="my_page.asp" id="u_id"><img src="../img/img_profile.svg" alt="">두란노서원 (2148204203)님</a></span>
+                <span><a href="my_page.asp" id="u_id"><img src="../img/img_profile.svg" alt=""><%=CPName%> 님</a></span>
                 <span id="logout"><a href="login.asp">로그아웃</a></span>
             </div>
         </div>
