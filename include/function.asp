@@ -6,7 +6,7 @@
 CPNum = session("CPNum")
 CPName = session("CPName")
 if CPNum = "" then  CPNum = "10003"
-if CPName = "" then  CPName = "홍성사"
+if CPName = "" then  CPName = "hongSungSa"
 
 ' CPNum = "10001"
 ' CPName = "duranno"
@@ -62,4 +62,12 @@ End If
 '   }
 end function
 
+
+
+function fname(arg)
+dim f , l
+f = split(arg,"/")
+l = Ubound(f)
+fname=f(l)
+end function 
 %>

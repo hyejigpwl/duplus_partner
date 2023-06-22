@@ -19,6 +19,8 @@ Response.Expires = -1
 goods = request("goods")
 startDate = Request("startDate")
 endDate = Request("endDate")
+endDate = DateAdd("d",1, CDate(endDate))
+
 brand_code_sel = Request("brand_code_sel")
 pbcmCode_sel = Request("pbcmCode_sel")
 b_name = trim(Request("b_name"))
