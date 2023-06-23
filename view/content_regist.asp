@@ -47,6 +47,8 @@ if CMS_ID <> ""  then
     if not (rs.eof or rs.bof) then 
     CMS_ID=rs("CMS_ID")
     CMS_Contentno=rs("CMS_Contentno")  ' contentno
+    CMS_ContentGuid = rs("CMS_ContentGuid")  '최초 저장 위치 폴더 
+    guid = CMS_ContentGuid '   guid 대체 수정 파일 업로드시 해당 폴더로 업로드 처리 ... 
     CMS_State_code=rs("CMS_State_code") ' 상태코드 
     'CMS_CodeNameKor=rs("CodeNameKor") ' 상태명 
     CMS_div1=rs("CMS_div1") '  구분 
@@ -931,7 +933,7 @@ set rs = nothing
                                 <!-- 초기 작성 시 하단 버튼 START -->
                                 <div class="btn_wrap">
                                     <button type="button" onclick="regOk(1)" class="btn_md btn_primary">저장하기</button>
-                                    <button type="reset" class="btn_md btn_primary btn_light_gray">취소(초기화)</button>
+                                    <button type="reset" class="btn_md btn_primary btn_light_gray" onclick="location.reload()">취소(초기화)<%=guid%></button>
                                     <!--<button type="submit" class="btn_md btn_primary">승인신청</button>-->
                                 </div>
                                 <!-- 초기 작성 시 하단 버튼 END -->
@@ -985,7 +987,7 @@ set rs = nothing
     
 
 <script>
-function checkFile(event) {
+function xxxcheckFile(event) {
   const file = event.target.files[0];
   const reader = new FileReader();
   reader.onloadend = function() {
@@ -1006,10 +1008,7 @@ function checkFile(event) {
 
 //  $.ajax({ 
 //             url: "https://prd-dplus-bos-krc.azurewebsites.net/System/FileUpload"
- 
-
-
-
+  
 }
 
 function AzureUpload(F , pos){
@@ -1808,26 +1807,35 @@ function AzureUpload(F , pos){
                 case "b" : 
                 fileAll.splice(0,1)
                 $("#b_file_name").val("")
+                $("#CMS_File_Link").data("value","")
                 break;
                 case "t" : 
                 fileAll.splice(1,1)
                 //$("#Ximage_container1").hide();
                 $("#image_container1").html("")
                 $("#t_file_name").val("")
+                $("#CMS_MAIN_IMG_LINK").data("value","")
                 break;
                 case "d" : 
                 fileAll.splice(2,1)
                 //$("#Ximage_container2").hide();
                 $("#image_container2").html("")
                 $("#d_file_name").val("")
+                $("#CMS_SUB_IMG_LINK").data("value","")
                 break;
                 case "f" : 
                 fileAll.splice(3,1)
                 $("#f_file_name").val("")
+                $("#CMS_Trial_Content_Link").data("value","")
                 break;
             }
 
-            }
+        }
+
+
+
+
+
 
     </script>
 </body>
