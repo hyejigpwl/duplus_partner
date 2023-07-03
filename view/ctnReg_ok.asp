@@ -40,9 +40,9 @@ file_type=request.Form("file_type")
 series_name=request.Form("series_name")
 series_num=request.Form("series_num")
 if series_name <>"" then 
-cms_SerisesYN = "N"
-else 
 cms_SerisesYN = "Y"
+else 
+cms_SerisesYN = "N"
 end if 
 b_name=request.Form("b_name")
 sub_name=request.Form("sub_name")
@@ -52,6 +52,8 @@ sel_brand=request.Form("sel_brand")
 sel_author_name=request.Form("sel_author_name")
 author_info=request.Form("author_info")
 author_desc=request.Form("author_desc")
+aut_id =request.Form("aut_id") 
+
 '=========== 별도 테이블 저장 
 bookDate=request.Form("bookDate")
 ebookDate=request.Form("ebookDate")
@@ -231,51 +233,62 @@ end if
 '#####################'#####################'#####################'#####################
 ' 저자정보 관리 
 '#####################'#####################'#####################'#####################
-' if instr(sel_author_name,",") > 0  then  ' 멀티 저자 저장 / 업데이트 
-'    sel_author_name=split(sel_author_name,",")
-'    author_info=split(author_info,",")
-'    author_desc=split(author_desc,",")
-'    aut_id=split(aut_id,",")
-'    for i = 0 to Ubound(sel_author_name)
-'       if aut_id(i) = "0" then  ' 입력이면 
-'          paramInfo = Array( _ 
-'          dbh.mp("@AUT_CMS_ID",	adInteger,	4,	CMS_ID ),_
-'          dbh.mp("@AUT_DIV",	adVarWChar,	3,	sel_author_name(i)),_
-'          dbh.mp("@aut_name",	adVarWChar,	500,	author_info(i)),_
-'          dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc(i)),_
-'          dbh.mp("@aut_id",	adInteger,	4,	0 ) _
-'          ) 
-'          call dbh.runSP("PrCMS_Author_I",paramInfo, conn_duplus) 
-'       else 
-'          paramInfo = Array( _ 
-'          dbh.mp("@aut_id",	adInteger,	4,	aut_id(i) ),_
-'          dbh.mp("@AUT_DIV",	adVarWChar,	3,	sel_author_name(i)),_
-'          dbh.mp("@aut_name",	adVarWChar,	500,	author_info(i)),_
-'          dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc(i))_
-'          ) 
-'          call dbh.runSP("PrCMS_Author_U",paramInfo, conn_duplus)	 
-'       end if 
-'    next  
-' else   '단일저자 저장/ 업데이트 
-'    if aut_id = "0" then  ' 입력이면 
-'       paramInfo = Array( _ 
-'       dbh.mp("@AUT_CMS_ID",	adInteger,	4,	CMS_ID ),_
-'       dbh.mp("@AUT_DIV",	adVarWChar,	3,	 sel_author_name),_
-'       dbh.mp("@aut_name",	adVarWChar,	500,	author_info),_
-'       dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc ),_
-'       dbh.mp("@aut_id",	adInteger,	4,	0 ) _
-'       ) 
-'       call dbh.runSP("PrCMS_Author_I",paramInfo, conn_duplus)	 
-'    else 
-'       paramInfo = Array( _ 
-'       dbh.mp("@aut_id",	adInteger,	4,	aut_id ),_
-'       dbh.mp("@AUT_DIV",	adVarWChar,	3,	 sel_author_name),_
-'       dbh.mp("@aut_name",	adVarWChar,	500,	author_info),_
-'       dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc )_
-'       ) 
-'       call dbh.runSP("PrCMS_Author_U",paramInfo, conn_duplus)	 
-'    end if  
-' end if  
+if instr(sel_author_name,",") > 0  then  ' 멀티 저자 저장 / 업데이트 
+   sel_author_name=split(sel_author_name,",")
+   author_info=split(author_info,",")
+   author_desc=split(author_desc,",")
+   aut_id=split(aut_id,",")
+   ' response.write aut_id
+' response.end 
+   
+
+   for i = 0 to Ubound(sel_author_name)
+     
+      if author_desc(i) = "" then author_desc(i) = " "
+      if aut_id(i) = 0 then  ' 입력이면 
+      '     response.write  CMS_ID & "<br>"
+      ' response.write  sel_author_name(i) & "<br>"
+      ' response.write  author_info(i) & "<br>"
+      ' response.write  author_desc(i) & "<br>"
+         paramInfo = Array( _ 
+         dbh.mp("@AUT_CMS_ID",	adInteger,	4,	CMS_ID ),_
+         dbh.mp("@AUT_DIV",	adVarWChar,	3,	trim(sel_author_name(i))),_
+         dbh.mp("@aut_name",	adVarWChar,	500,	author_info(i)),_
+         dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc(i)),_
+         dbh.mp("@aut_id",	adInteger,	4,	0 ) _
+         ) 
+         call dbh.runSP("PrCMS_Author_I",paramInfo, conn_duplus) 
+      else 
+   
+         paramInfo = Array( _ 
+         dbh.mp("@aut_id",	adInteger,	4,	aut_id(i) ),_
+         dbh.mp("@AUT_DIV",	adVarWChar,	3,	trim(sel_author_name(i))),_
+         dbh.mp("@aut_name",	adVarWChar,	500,	author_info(i)),_
+         dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc(i))_
+         ) 
+         call dbh.runSP("PrCMS_Author_U",paramInfo, conn_duplus)	 
+      end if 
+   next  
+else   '단일저자 저장/ 업데이트 
+   if aut_id = 0 then  ' 입력이면 
+      paramInfo = Array( _ 
+      dbh.mp("@AUT_CMS_ID",	adInteger,	4,	CMS_ID ),_
+      dbh.mp("@AUT_DIV",	adVarWChar,	3,	 trim(sel_author_name)),_
+      dbh.mp("@aut_name",	adVarWChar,	500,	author_info),_
+      dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc ),_
+      dbh.mp("@aut_id",	adInteger,	4,	0 ) _
+      ) 
+      call dbh.runSP("PrCMS_Author_I",paramInfo, conn_duplus)	 
+   else 
+      paramInfo = Array( _ 
+      dbh.mp("@aut_id",	adInteger,	4,	aut_id ),_
+      dbh.mp("@AUT_DIV",	adVarWChar,	3,	 trim(sel_author_name)),_
+      dbh.mp("@aut_name",	adVarWChar,	500,	author_info),_
+      dbh.mp("@aut_dtl",	adVarWChar,	4000,	author_desc )_
+      ) 
+      call dbh.runSP("PrCMS_Author_U",paramInfo, conn_duplus)	 
+   end if  
+end if  
 
 '#####################'#####################'#####################'#####################
 ' 검색어 관리 

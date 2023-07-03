@@ -90,8 +90,8 @@ CPNum = "0302"
                         <table id="t_sales_details" class="display">
                             <caption>정산 내역</caption>
                             <thead>
-                                <th scope="col"><!--정산기간-->발생일</th>
-                                <th scope="col"><!--매출 기간-->대상기간</th>
+                                <th scope="col"><!--정산기간-->정산일</th>
+                                <th scope="col"><!--매출 기간-->매출기간</th>
                                 <th scope="col" class=""><!--구독 대여-->구분</th>
                                 <th scope="col"><!--공급 Copy-->제작</th>
                                 <th scope="col">구독매출</th>

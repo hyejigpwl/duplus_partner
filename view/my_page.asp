@@ -233,19 +233,19 @@ set rs = nothing
                                             <tr>
                                                 <th scope="row">은행</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="bank" name="bank" value="<%=AccountBank%>">
+                                                    <%=AccountBank%>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">계좌번호</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="account_num" name="account_num" value="<%=AccountNumber%>">
+                                                    <%=AccountNumber%>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">예금주</th>
                                                 <td colspan="3">
-                                                    <input type="text" id="account_hdr" name="account_hdr" value="">
+                                                    
                                                 </td>
                                             </tr>                                          
                                         </tbody>
@@ -268,11 +268,11 @@ set rs = nothing
                                             <tr>
                                                 <th scope="row">계약 등록일</th>
                                                 <td colspan="2">
-                                                    <input type="text" id="ctt_date" name="ctt_date" value="20100126">
+                                                     
                                                 </td>
                                                 <th scope="row">계약 담당자</th>
                                                 <td colspan="2">
-                                                    <input type="text" id="ctt_mgr" name="ctt_mgr" value="">
+                                                     
                                                 </td>
                                             </tr>
                                             <tr>

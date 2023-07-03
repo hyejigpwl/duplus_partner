@@ -157,7 +157,17 @@ rs.close
     rs.close   
 
 ' 시리즈  ..
-
+' SER_ID , SER_NAME ,SEC_BOOKNUM
+' 저상시 넘겨야 할 DATA 는  SEC 에 들어갈 DATA 와 BOOKNUM 
+    ' paramInfo = Array( _
+    ' dbh.mp("@CMS_ID",	advarchar,	10,	CMS_ID) )	
+    ' set rs=dbh.RunSPReturnRS("PrCMS_SEC_Q",paramInfo , conn_duplus)	
+    ' if not (rs.eof or rs.bof) then 
+    ' SER_ID =rs(0)
+    ' SER_NAME =rs(2)
+    ' CMM_MOV_LINK =rs(3)
+    ' end if 
+    ' rs.close   
 
 end if 
 
@@ -221,6 +231,19 @@ category2 = rs.getRows()
 end if 
 rs.close 
     
+
+'시리즈 리스트 
+paramInfo = Array( _
+dbh.mp("@GUBN",	advarchar,	10,	"SELECT"), _ 
+dbh.mp("@SER_CP_ID",	adInteger,	4,	CPNum) _
+)
+set rs=dbh.RunSPReturnRS("PrCMS_SER_TREAT",paramInfo , conn_duplus)	
+if not (rs.eof or rs.bof) then 
+SERList = rs.getRows()
+end if 
+rs.close  
+
+
 set rs = nothing
 %>
 
@@ -297,7 +320,7 @@ set rs = nothing
                 <!-- 제목 START -->
                 <h2>
                     <a href="#none" title="메뉴열기" class="open_gnb">
-                        <span>콘텐츠 등록</span>
+                        <span>콘텐츠 등록  <%=CPNum%>   상태: <%=CMS_State_code%></span>
                     </a>
                     
                 </h2>
@@ -357,17 +380,17 @@ set rs = nothing
                                                 <td colspan="3">
                                                     <span class="radio">
                                                         <input type="radio" id="type_epub" name="file_type"  value="1" <%=IIF(CMS_File_div="1","checked","")%>>
-                                                        <label for="type_epub">EPUB</label>
+                                                        <label for="type_epub" style="line-height: 19px;">EPUB</label>
                                                     </span>
                     
                                                     <span class="radio">
                                                         <input type="radio" id="type_pdf" name="file_type" value="2" <%=IIF(CMS_File_div="2","checked","")%>>
-                                                        <label for="type_pdf">PDF</label>
+                                                        <label for="type_pdf" style="line-height: 19px;" >PDF</label>
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>시리즈 여부 - 미개발 시리즈를 검색할 수 있어야  </th>
+                                                <th>시리즈 여부</th>
                                                 <td colspan="3">
                                                     <span class="chk">
                                                         <input type="checkbox" id="series_chk" name="series_chk" value="N">
@@ -378,11 +401,26 @@ set rs = nothing
                                             <tr class="series_add_info add_info">
                                                 <th>시리즈명</th>
                                                 <td>
+                                                    <select id="serlist" name="serlist" style="width:200px">
+                                                    <%if isArray(SERList) then %>
+                                                            <option value="0">선택해 주세요</option>
+                                                            <% for i = 0 to Ubound(SERList,2)%>
+                                                            <option value="<%=SERList(0,i)%>"  data-value="<%=SERList(3,i)%>"   <%=iif("1"=SERList(0,i),"selected","")%> ><%=SERList(2,i)%></option>
+                                                            <%
+                                                        next
+                                                    end if %>
+                                                    </select><button type="button" class="btn_line g_btn_line" onclick="serSelect()">선택</button><br>
                                                     <input type="text" name="series_name">
+                                                    <input type="hidden" name="ser_id" id="ser_id" >
+                                                    <br>
+                                                    <button type="button" class="btn_line g_btn_line" onclick="serInsert()" style="width:100px">신규입력</button>
+                                                    <button type="button" class="btn_line g_btn_line" onclick="serUpdate()">수정</button>
+                                                    <button type="button" class="btn_line g_btn_line" onclick="serDel()">삭제</button>
                                                 </td>
                                                 <th>권수</th>
                                                 <td>
                                                     <input type="text" name="series_num">
+                                                    
                                                     <span class="chk series_complete">
                                                         <input type="checkbox" id="complete" name="complete" value="Y">
                                                         <label for="complete">완간</label>
@@ -442,21 +480,23 @@ set rs = nothing
                                                 <th scope="row">저자 <span class="orange">*</span></th>
                                                 <td colspan="3" class="author btn_add_wrap">
                                                     <%if  not isArray(AuthorList) then   ' 저자 목록이 없으면 ..%>
-                                                    <select name="sel_author_name">
-                                                        <%if isArray(authCodeList) then %>
-                                                            
-                                                            <% for i = 0 to Ubound(authCodeList,2)%>
-                                                            <option value="<%=authCodeList(0,i)%>" <%=iif(111=authCodeList(0,i),"selected","")%>  ><%=authCodeList(1,i)%></option>
-                                                            <%
-                                                        next
-                                                    end if %>
-                                                    </select>
-                                                    <input type="hidden" name="aut_id" value="0" >
-                                                    <input type="text"  name="author_info" value="테스트북저자">
-                                                    <input type="hidden" name="author_desc" data-value="0">
-                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
-
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                    <div>
+                                                        <select name="sel_author_name">
+                                                            <%if isArray(authCodeList) then %>
+                                                                
+                                                                <% for i = 0 to Ubound(authCodeList,2)%>
+                                                                <option value="<%=authCodeList(0,i)%>" <%=iif(111=authCodeList(0,i),"selected","")%>  ><%=authCodeList(1,i)%></option>
+                                                                <%
+                                                            next
+                                                        end if %>
+                                                        </select>
+                                                        <input type="hidden" name="aut_id" value="0" >
+                                                        <input type="text"  name="author_info" value="테스트북저자">
+                                                        <textarea  style="display:none" name="author_desc" data-value="0"></textarea>
+                                                        <button type="button" class="btn_line gray_btn_line a_open_popup mg">소개내용</button>
+    
+                                                        <button type="button" class="btn_line b_btn_line add_btn" style="margin-left:3px;">+ 추가</button>
+                                                    </div>
                                                     <%else ' 저자 목록 이 있다면 ... %>
                                                     <%for ii = 0 to ubound(AuthorList,2)%>
                                                     <div>
@@ -470,10 +510,10 @@ set rs = nothing
                                                         </select>
                                                         <input type="hidden" name="aut_id" value="<%=AuthorList(0,ii)%>" >
                                                         <input type="text"   name="author_info" value="<%=AuthorList(3,ii)%>" data-value="<%=AuthorList(0,ii)%>">
-                                                        <input type="hidden" name="author_desc" value="<%=AuthorList(4,ii)%>" data-value="<%=ii%>">
+                                                        <textarea name="author_desc" style="display:none;"  data-value="<%=ii%>"><%=AuthorList(4,ii)%></textarea>
                                                         <button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button>
                                                         <%if ii= 0 then %>
-                                                        <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                        <button type="button" class="btn_line b_btn_line add_btn" style="margin-left:3px;">+ 추가</button>
                                                         <%else %>
                                                         <button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button>
                                                         <%end if %>
@@ -624,7 +664,7 @@ set rs = nothing
                                                 <td colspan="3" class="key btn_add_wrap">
                                                     <!--<input type="text" name="search_key"> -->
 
-                                                    <select name="search_key" id="search_key" style="width:200px;">
+                                                    <select name="search_key" id="search_key" style="width:200px; margin-right:0px;">
                                                     <%if isArray(srList) then %>
                                                             <option value="0" selected>선택해 주세요</option>
                                                             <% for i = 0 to Ubound(srList,2)%>
@@ -659,9 +699,9 @@ set rs = nothing
                                                     <input type="hidden" id="CMM_ID" NAME="CMM_ID" VALUE="<%=CMM_ID%>"/>
                                                     <input type="text" name="video_url" style="width:70%" value="<%=CMM_MOV_LINK%>"  />
                                                     <%if CMM_MOV_LINK <> "" THEN %>
-                                                    <A href="<%=CMM_MOV_LINK%>" target=_blank><button type="button" class="btn_line g_btn_line" >미리보기 </button></a>
+                                                    <A href="<%=CMM_MOV_LINK%>" target=_blank><button type="button" class="btn_line g_btn_line" style="margin:0;" >미리보기 </button></a>
                                                     <%ELSE%>
-                                                    <button  type="button" class="btn_line g_btn_line" >미리보기 </button>
+                                                    <button  type="button" class="btn_line g_btn_line" style="margin:0;">미리보기 </button>
                                                     <%END IF %>
                                                 </td>
                                                  
@@ -698,10 +738,12 @@ set rs = nothing
                                                     
                                                     <label for="b_file">파일선택</label>
                                                     <input type="file" id="b_file" accept=".epub,.pdf" >
+                                                
+                                                    <button type="button" id="Ximage_container0" name="Ximage_container0" class="btn_line g_btn_line"  onclick="del('b')" >삭제</button>
+
                                                     <%if CMS_File_Link <> "" then %> 
                                                     <%=fname(CMS_File_Link)%>
                                                     <%end if%>
-                                                    <button type="button" id="Ximage_container0" name="Ximage_container0" class="btn_line g_btn_line"  style="display: ;" onclick="del('b')" >삭제</button>
                                                 </td>
 
                                                 <th>다운로드 여부</th>
@@ -731,7 +773,7 @@ set rs = nothing
                                                     <input type="hidden" id="CMS_MAIN_IMG_LINK" name="CMS_MAIN_IMG_LINK" value="" data-value="<%=CMS_MAIN_IMG_LINK%>">
                                                     <label for="t_file">파일선택</label>
                                                     <input type="file" id="t_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail(event)">
-                                                    <button type="button" id="Ximage_container1" name="Ximage_container1" class="btn_line g_btn_line"  style="display: ;" onclick="del('t')" >삭제</button>
+                                                    <button type="button" id="Ximage_container1" name="Ximage_container1" class="btn_line g_btn_line"  onclick="del('t')" >삭제</button>
                                                     <div id="image_container1" class="thumb_img">
                                                     <%if CMS_MAIN_IMG_LINK <> "" THEN %>
                                                         <IMG SRC="<%=CMS_MAIN_IMG_LINK%>" width="200" />
@@ -752,7 +794,7 @@ set rs = nothing
                                                     <input type="hidden" id="CMS_SUB_IMG_LINK" name="CMS_SUB_IMG_LINK" value="" data-value="<%=CMS_SUB_IMG_LINK%>">
                                                     <label for="d_file">파일선택</label>
                                                     <input type="file" id="d_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail2(event)">
-                                                    <button type="button" id="Ximage_container2" name="Ximage_container2" class="btn_line g_btn_line"  style="display: ;" onclick="del('d')" >삭제</button>
+                                                    <button type="button" id="Ximage_container2" name="Ximage_container2" class="btn_line g_btn_line"  onclick="del('d')" >삭제</button>
                                                     <div id="image_container2" class="thumb_img">
                                                     <%if CMS_SUB_IMG_LINK <> "" THEN %>
                                                         <IMG SRC="<%=CMS_SUB_IMG_LINK%>" width="200" />
@@ -776,7 +818,7 @@ set rs = nothing
                                                     <%if CMS_Trial_Content_Link <> "" then %> 
                                                     <%=fname(CMS_Trial_Content_Link)%>
                                                     <%end if%>
-                                                    <button type="button" id="Ximage_container3" name="Ximage_container3" class="btn_line g_btn_line"  style="display: ;" onclick="del('f')" >삭제</button>
+                                                    <button type="button" id="Ximage_container3" name="Ximage_container3" class="btn_line g_btn_line"  onclick="del('f')" >삭제</button>
 
                                                     <ul class="file_txt" style="margin-top:10px;">
                                                         <li>최대용량 : 30MB 이하</li>
@@ -807,7 +849,7 @@ set rs = nothing
                                         </colgroup>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">판매 형태 <%=CMS_SAL_DIV%><span class="orange">*</span></th>
+                                                <th scope="row">판매 형태  소장이 기본이어야 함.  <%=CMS_SAL_DIV%><span class="orange">*</span></th>
                                                 <td colspan="5">
                                                     <select name="CMS_SAL_DIV">
                                                         <%if isArray(SALDivlist) then %>
@@ -815,14 +857,14 @@ set rs = nothing
                                                         <option value="<%=SALDivlist(0,i)%>" <%=iif(SALDivlist(0,i)=CMS_SAL_DIV,"selected","")%>><%=SALDivlist(1,i)%></option>
                                                         <%Next %>
                                                         <%end if %>
-                                                    </select>
+                                                    </select><span class="orange"> 전체인 경우 대여가와 대여기간을 설정 해야 합니다. 
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">판매가 <span class="orange">*</span></th>
                                                 <td colspan="5">
-                                                    <input type="text" id="b_price" name="b_price" value="<%=formatNumber(CMS_SAL_PRICE,0)%>">
-                                                    원
+                                                    <input type="text" id="b_price" name="b_price" value="<%=formatNumber(CMS_SAL_PRICE,0)%>"> 원 <span class="orange">* 판매가는 정가를 초과할 수 없습니다. </span>
+                                                    
                                                 </td>
                                             </tr>
                                             <tr>
@@ -859,7 +901,7 @@ set rs = nothing
 
                                             <!-- 정산율 START -->
                                             <tr>
-                                                <th scope="row" rowspan="3">정산율</th>
+                                                <th scope="row" rowspan="3">정산율 은 건드릴수 없다. </th>
                                                 <th>구독정산(매입)가</th>
                                                 <td colspan="1">
                                                     <input type="text" id="CMS_SUB_SUP_PRICE" name="CMS_SUB_SUP_PRICE" value="<%=formatnumber(CMS_SUB_SUP_PRICE,0)%>">
@@ -1228,7 +1270,7 @@ function AzureUpload(F , pos){
             var fieldHtml2='<div><select name="sel_author_name" id="add_sel_author"><% for i = 0 to Ubound(authCodeList,2)%><option value="<%=authCodeList(0,i)%>"><%=authCodeList(1,i)%></option><%next%></select>'
             +'<input type="hidden" name="aut_id" value="0" >'
             +'<input type="text"   name="author_info" value="" data-value="">'
-            +'<input type="hidden" name="author_desc" value="" data-value="'+cnt+'">'
+            +'<textarea name="author_desc" style="display:none" value="" data-value="'+cnt+'"></textarea>'
             +'<button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button>'
             +'<button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button></div>';
             $(".author.btn_add_wrap").append(fieldHtml2);
@@ -1336,7 +1378,8 @@ function AzureUpload(F , pos){
 
                 $(".btn_close_popup,.modal .btn_wrap button").click(function(){
                     aut_sort = $("input[name=aut_sort]").val()
-                    $("input[name=author_desc]").eq(aut_sort).val( $("#a_info_txt").summernote("code"))
+                    $("textarea[name=author_desc]").eq(aut_sort).text( $("#a_info_txt").summernote("code"))
+                    //$("input[name=author_desc]").eq(aut_sort).val( $("#a_info_txt").summernote("code"))
                     $(".a_modal").css({
                         "display":"none",
                     });
@@ -1834,9 +1877,68 @@ function AzureUpload(F , pos){
 
 
 
+ // 시리즈 선택 기능 
+    function serSelect(){
+            var v = $("#serlist option:selected").val()
+            var thistxt = $("#serlist option:selected").text();
+            //var num = $("#serlist option:selected").data("value")
+            if(v !=='0'){
+                    $("input[name=series_name]").val(thistxt)
+                    $("input[name=ser_id]").val(v)
+                  //  $("input[name=series_num]").val(num)
+                }
+        }
+        // 시리즈 신규 입력 기능 
+        function serInsert(){
+                var thistxt =$("input[name=series_name]").val();
+                if( thistxt == ""){
+                        alert("내용을 입력해 주세요 ");
+                        return false;
+                   }
+                if(confirm(thistxt+"를 새로운 시리즈로 등록하시겠습니까?") ){
+                    $("#serlist").empty().load("/partner/Ajax/serList.asp","mode=IN&CPNum=<%=CPNum%>&name="+thistxt,function(){
+                        alert("새로운 시리즈가 저장되었습니다. 선택해 주세요")
+                        $("input[name=series_name]").val("");
+                    })
 
+                }
 
+            }
 
+        function serDel(){
+                var thisID =$("input[name=ser_id]").val();
+                var thistxt =$("input[name=series_name]").val();
+                  if( thisID == ""){
+                        alert("삭제할 시리즈명을 선택해 주세요 ");
+                        return false;
+                   }
+                if(confirm(thistxt+" 시리즈를 삭제 하시겠습니까?") ){
+                    $("#serlist").empty().load("/partner/Ajax/serList.asp","mode=OUT&CPNum=<%=CPNum%>&ser_id="+thisID,function(){
+                        alert("시리즈가 삭제되었습니다. 시리즈를 선택해 주세요")
+                        $("input[name=series_name]").val("");
+                        $("input[name=ser_id]").val("");
+                    })
+                }
+            }
+
+            serUpdate
+            function serUpdate(){  
+                var thisID =$("input[name=ser_id]").val();
+                var thistxt =$("input[name=series_name]").val();
+                var thistxt2 = $("#serlist option:selected").text();
+                  if( thistxt == "" || thistxt == thistxt2){
+                        alert("수정할 내용을 입력해 주세요 ");
+                        return false;
+                   }
+
+                if(confirm(thistxt2+" 시리즈명을 "+thistxt+" 로 변경 하시겠습니까?") ){
+                    $("#serlist").empty().load("/partner/Ajax/serList.asp","mode=UP&CPNum=<%=CPNum%>&ser_id="+thisID+"&name="+thistxt,function(){
+                        alert("시리즈명이 변경되었습니다. 다시 선택해 주세요")
+                        $("input[name=series_name]").val("");
+                        $("input[name=ser_id]").val("");
+                    })
+                }
+            }            
     </script>
 </body>
 

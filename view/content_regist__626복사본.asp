@@ -357,17 +357,17 @@ set rs = nothing
                                                 <td colspan="3">
                                                     <span class="radio">
                                                         <input type="radio" id="type_epub" name="file_type"  value="1" <%=IIF(CMS_File_div="1","checked","")%>>
-                                                        <label for="type_epub">EPUB</label>
+                                                        <label for="type_epub" style="line-height: 19px;">EPUB</label>
                                                     </span>
                     
                                                     <span class="radio">
                                                         <input type="radio" id="type_pdf" name="file_type" value="2" <%=IIF(CMS_File_div="2","checked","")%>>
-                                                        <label for="type_pdf">PDF</label>
+                                                        <label for="type_pdf" style="line-height: 19px;" >PDF</label>
                                                     </span>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th>시리즈 여부 - 미개발 시리즈를 검색할 수 있어야  </th>
+                                                <th>시리즈 여부</th>
                                                 <td colspan="3">
                                                     <span class="chk">
                                                         <input type="checkbox" id="series_chk" name="series_chk" value="N">
@@ -378,11 +378,17 @@ set rs = nothing
                                             <tr class="series_add_info add_info">
                                                 <th>시리즈명</th>
                                                 <td>
-                                                    <input type="text" name="series_name">
+                                                    <select >
+                                                    <option>시리즈 선택</option>
+                                                    <option>시리즈 선택</option>
+                                                    <option>시리즈 선택</option>
+                                                    </select><button type="button" class="" >선택</button><br>
+                                                    <input type="text" name="series_name"><button type="button" class="" >신규입력</button>
                                                 </td>
                                                 <th>권수</th>
                                                 <td>
                                                     <input type="text" name="series_num">
+                                                    
                                                     <span class="chk series_complete">
                                                         <input type="checkbox" id="complete" name="complete" value="Y">
                                                         <label for="complete">완간</label>
@@ -442,21 +448,23 @@ set rs = nothing
                                                 <th scope="row">저자 <span class="orange">*</span></th>
                                                 <td colspan="3" class="author btn_add_wrap">
                                                     <%if  not isArray(AuthorList) then   ' 저자 목록이 없으면 ..%>
-                                                    <select name="sel_author_name">
-                                                        <%if isArray(authCodeList) then %>
-                                                            
-                                                            <% for i = 0 to Ubound(authCodeList,2)%>
-                                                            <option value="<%=authCodeList(0,i)%>" <%=iif(111=authCodeList(0,i),"selected","")%>  ><%=authCodeList(1,i)%></option>
-                                                            <%
-                                                        next
-                                                    end if %>
-                                                    </select>
-                                                    <input type="hidden" name="aut_id" value="0" >
-                                                    <input type="text"  name="author_info" value="테스트북저자">
-                                                    <input type="hidden" name="author_desc" data-value="0">
-                                                    <button type="button" class="btn_line gray_btn_line a_open_popup">소개내용</button>
-
-                                                    <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                    <div>
+                                                        <select name="sel_author_name">
+                                                            <%if isArray(authCodeList) then %>
+                                                                
+                                                                <% for i = 0 to Ubound(authCodeList,2)%>
+                                                                <option value="<%=authCodeList(0,i)%>" <%=iif(111=authCodeList(0,i),"selected","")%>  ><%=authCodeList(1,i)%></option>
+                                                                <%
+                                                            next
+                                                        end if %>
+                                                        </select>
+                                                        <input type="hidden" name="aut_id" value="0" >
+                                                        <input type="text"  name="author_info" value="테스트북저자">
+                                                        <input type="hidden" name="author_desc" data-value="0">
+                                                        <button type="button" class="btn_line gray_btn_line a_open_popup mg">소개내용</button>
+    
+                                                        <button type="button" class="btn_line b_btn_line add_btn" style="margin-left:3px;">+ 추가</button>
+                                                    </div>
                                                     <%else ' 저자 목록 이 있다면 ... %>
                                                     <%for ii = 0 to ubound(AuthorList,2)%>
                                                     <div>
@@ -473,7 +481,7 @@ set rs = nothing
                                                         <input type="hidden" name="author_desc" value="<%=AuthorList(4,ii)%>" data-value="<%=ii%>">
                                                         <button type="button" class="btn_line gray_btn_line mg a_open_popup">소개내용</button>
                                                         <%if ii= 0 then %>
-                                                        <button type="button" class="btn_line b_btn_line add_btn">+ 추가</button>
+                                                        <button type="button" class="btn_line b_btn_line add_btn" style="margin-left:3px;">+ 추가</button>
                                                         <%else %>
                                                         <button type="button" class="btn_line g_btn_line remove_btn">- 삭제</button>
                                                         <%end if %>
@@ -624,7 +632,7 @@ set rs = nothing
                                                 <td colspan="3" class="key btn_add_wrap">
                                                     <!--<input type="text" name="search_key"> -->
 
-                                                    <select name="search_key" id="search_key" style="width:200px;">
+                                                    <select name="search_key" id="search_key" style="width:200px; margin-right:0px;">
                                                     <%if isArray(srList) then %>
                                                             <option value="0" selected>선택해 주세요</option>
                                                             <% for i = 0 to Ubound(srList,2)%>
@@ -659,9 +667,9 @@ set rs = nothing
                                                     <input type="hidden" id="CMM_ID" NAME="CMM_ID" VALUE="<%=CMM_ID%>"/>
                                                     <input type="text" name="video_url" style="width:70%" value="<%=CMM_MOV_LINK%>"  />
                                                     <%if CMM_MOV_LINK <> "" THEN %>
-                                                    <A href="<%=CMM_MOV_LINK%>" target=_blank><button type="button" class="btn_line g_btn_line" >미리보기 </button></a>
+                                                    <A href="<%=CMM_MOV_LINK%>" target=_blank><button type="button" class="btn_line g_btn_line" style="margin:0;" >미리보기 </button></a>
                                                     <%ELSE%>
-                                                    <button  type="button" class="btn_line g_btn_line" >미리보기 </button>
+                                                    <button  type="button" class="btn_line g_btn_line" style="margin:0;">미리보기 </button>
                                                     <%END IF %>
                                                 </td>
                                                  
@@ -698,10 +706,12 @@ set rs = nothing
                                                     
                                                     <label for="b_file">파일선택</label>
                                                     <input type="file" id="b_file" accept=".epub,.pdf" >
+                                                
+                                                    <button type="button" id="Ximage_container0" name="Ximage_container0" class="btn_line g_btn_line"  onclick="del('b')" >삭제</button>
+
                                                     <%if CMS_File_Link <> "" then %> 
                                                     <%=fname(CMS_File_Link)%>
                                                     <%end if%>
-                                                    <button type="button" id="Ximage_container0" name="Ximage_container0" class="btn_line g_btn_line"  style="display: ;" onclick="del('b')" >삭제</button>
                                                 </td>
 
                                                 <th>다운로드 여부</th>
@@ -731,7 +741,7 @@ set rs = nothing
                                                     <input type="hidden" id="CMS_MAIN_IMG_LINK" name="CMS_MAIN_IMG_LINK" value="" data-value="<%=CMS_MAIN_IMG_LINK%>">
                                                     <label for="t_file">파일선택</label>
                                                     <input type="file" id="t_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail(event)">
-                                                    <button type="button" id="Ximage_container1" name="Ximage_container1" class="btn_line g_btn_line"  style="display: ;" onclick="del('t')" >삭제</button>
+                                                    <button type="button" id="Ximage_container1" name="Ximage_container1" class="btn_line g_btn_line"  onclick="del('t')" >삭제</button>
                                                     <div id="image_container1" class="thumb_img">
                                                     <%if CMS_MAIN_IMG_LINK <> "" THEN %>
                                                         <IMG SRC="<%=CMS_MAIN_IMG_LINK%>" width="200" />
@@ -752,7 +762,7 @@ set rs = nothing
                                                     <input type="hidden" id="CMS_SUB_IMG_LINK" name="CMS_SUB_IMG_LINK" value="" data-value="<%=CMS_SUB_IMG_LINK%>">
                                                     <label for="d_file">파일선택</label>
                                                     <input type="file" id="d_file" class="under_1mb" accept=".jpg,.png" onchange="setThumbnail2(event)">
-                                                    <button type="button" id="Ximage_container2" name="Ximage_container2" class="btn_line g_btn_line"  style="display: ;" onclick="del('d')" >삭제</button>
+                                                    <button type="button" id="Ximage_container2" name="Ximage_container2" class="btn_line g_btn_line"  onclick="del('d')" >삭제</button>
                                                     <div id="image_container2" class="thumb_img">
                                                     <%if CMS_SUB_IMG_LINK <> "" THEN %>
                                                         <IMG SRC="<%=CMS_SUB_IMG_LINK%>" width="200" />
@@ -776,7 +786,7 @@ set rs = nothing
                                                     <%if CMS_Trial_Content_Link <> "" then %> 
                                                     <%=fname(CMS_Trial_Content_Link)%>
                                                     <%end if%>
-                                                    <button type="button" id="Ximage_container3" name="Ximage_container3" class="btn_line g_btn_line"  style="display: ;" onclick="del('f')" >삭제</button>
+                                                    <button type="button" id="Ximage_container3" name="Ximage_container3" class="btn_line g_btn_line"  onclick="del('f')" >삭제</button>
 
                                                     <ul class="file_txt" style="margin-top:10px;">
                                                         <li>최대용량 : 30MB 이하</li>
@@ -1552,11 +1562,7 @@ function AzureUpload(F , pos){
                 imageForm.append("mainFolder", "CM/Content/" + $("#HIddenGuid").val());
                 imageForm.append("fileName", last);
                 imageForm.append("Type", fileAll[i][1]);
-                 await   AzureUpload(imageForm,fileAll[i][2]);
-                // console.log(fileAll[i])
-                // console.log(fileAll[i][0].name)
-                // console.log(fileAll[i][1])
-                // console.log(fileAll[i][2])
+                 await   AzureUpload(imageForm,fileAll[i][2]); 
                 }
             }
  
@@ -1585,12 +1591,7 @@ function AzureUpload(F , pos){
     
         // 유효성 검사
         function form_check(){
-               
-            console.log("form_check 시작 ")
-                  
-
-            
-
+                 
             const b_name=document.getElementById("b_name");
             const sub_name=document.getElementById("sub_name");
             //const brand_name=document.getElementById("brand_name");

@@ -312,7 +312,7 @@ set rs = nothing
         })
 
 
-  let file=""
+let file=""
 function checkFile(event) {
   file = event.target.files[0];
   //console.log(file)
@@ -328,12 +328,12 @@ function checkFile(event) {
 }
 
   function AzureUpload(){
-    
+        var last = file.name.substring(file.name.lastIndexOf('.') + 1);
         var imageForm = new FormData();
         var today = new Date().toISOString().substring(0,10).replace(/-/g,'');
         imageForm.append("file", file);
         imageForm.append("mainFolder", "CM/Parthner/"+today+"/" + $("#HIddenGuid").val());
-        imageForm.append("fileName", file.name); 
+        imageForm.append("fileName", last); 
               $.ajax({
                 url: "https://prd-dplus-bos-krc.azurewebsites.net/System/FileUpload",
                 type: "POST",

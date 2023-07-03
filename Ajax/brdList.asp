@@ -1,3 +1,4 @@
+<%@ codepage="65001" language="VBScript" %>
 <OBJECT PROGID=ASP.PagingHelperMall 		ID=phm  RunAt=Server></OBJECT>
 <OBJECT PROGID=Scripting.FileSystemObject   	id=fso 		RUNAT=server> </OBJECT>
 <OBJECT PROGID=DAL.DBHelper id=dbh RUNAT=server> </OBJECT>

@@ -110,7 +110,7 @@ rs.close
                                     <input type="text" name="endDate" value="<%=endDate%>" autocomplete="off" id="endDate">
     
                                     <button type="button" id="btn_period_1w" onclick="selectrange(1)">이번달</button>
-                                    <button type="button" id="btn_period_1m" onclick="selectrange(2)">이전달</button>
+                                    <button type="button" id="btn_period_1m" onclick="selectrange(2)">전달</button>
                                     
                                     
                                 </p>
@@ -190,10 +190,9 @@ rs.close
                                 <th scope="col">판매가</th>
                                 <th scope="col">대여가</th>
                                 <!--th scope="col">구독가</th-->
-                                <th scope="col">전달 이월 </th>
                                 <th scope="col">구독 열람수</th>
                                 <th scope="col">구독정산수량</th>
-                                <!--th scope="col">X이월 수량 </!--th-->
+                                <th scope="col">X이월 수량 </th>
                                 <th scope="col">구독 이월 </th>
                                 <th scope="col">구독 매출</th>
                                 <th scope="col">소장</th>
@@ -213,7 +212,7 @@ rs.close
                                     <td id="b_price" class="txt_r">15,000</td>
                                      
                                     <td id="b_rental_price" class="txt_r">7,500</td>
-                                    <td id="b_rent_num" class="txt_r">35</td>
+                                    <td id="b_rental_price" class="txt_r">7,500</td>
                                     <td id="b_rent_num" class="txt_r">35</td>
                                     <td id="b_supply_copy" class="txt_r">2</td>
                                     <td id="b_rent_sales" class="txt_r">30,000</td>
@@ -278,7 +277,7 @@ rs.close
                 columns: [ 
                             {data:"CMS_Contentno", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return '<a href="content_regist.asp?cmsID=' + row.CMS_ID + '"> ['+row.CMS_ID+']'+ data +  '</a>';
+                                    return '<a href="content_regist.asp?cmsID=' + row.CMS_ID + '">' + data + '</a>';
                                 }
                                 return data;
                                 }
@@ -295,105 +294,62 @@ rs.close
                              
                             ,{data:"CMS_Digital_Price", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return    comma(data)  ;
+                                    return    comma(data)+"원"  ;
                                 }
                                 return data;
                                 }
                                 }
                             ,{data:"CMS_SAL_PRICE", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return   comma(data)  ;
+                                    return   comma(data)+"원"  ;
                                 }
                                 return data;
                                 }
                                 }
                             ,{data:"CMS_RENTAL_PRICE", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return   comma(data)  ;
+                                    return   comma(data)+"원"  ;
                                 }
                                 return data;
                                 }
                                 }
                             // ,{data:"CMS_SUB_SUP_PRICE", render: function(data, type, row, meta) {
                             //     if (type === 'display') {
-                            //         return   comma(data)  ;
+                            //         return   comma(data)+"원"  ;
                             //     }
                             //     return data;
                             //     }
-                            //     }            
-                            //,{data:"Bfocnt"}
-                             ,{data:"Bfocnt", render: function(data, type, row, meta) {
-                                if (type === 'display') {
-                                    return   comma(data)  ;
-                                }
-                                return data;
-                                }
-                                }                     
-                             //,{data:"subcnt"}
-                             ,{data:"subcnt", render: function(data, type, row, meta) {
-                                if (type === 'display') {
-                                    return   comma(data)  ;
-                                }
-                                return data;
-                                }
-                                }  
-                             //,{data:"subcopy"}
-                             ,{data:"subcopy", render: function(data, type, row, meta) {
-                                if (type === 'display') {
-                                    return   comma(data)  ;
-                                }
-                                return data;
-                                }
-                                }  
-                             
-                             //,{data:"NextCnt"}
-                             ,{data:"NextCnt", render: function(data, type, row, meta) {
-                                if (type === 'display') {
-                                    return   comma(data)  ;
-                                }
-                                return data;
-                                }
-                                }  
+                            //     }                                
+                             ,{data:"subcnt"}
+                             ,{data:"subcopy"}
+                             ,{data:"Bfocnt"}
+                             ,{data:"NextCnt"}
                              ,{data:"subPri", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return   comma(data)  ;
+                                    return   comma(data)+"원"  ;
                                 }
                                 return data;
                                 }
                                 }   
-                             //,{data:"소장cnt"}
-                                ,{data:"소장cnt", render: function(data, type, row, meta) {
-                                if (type === 'display') {
-                                    return   comma(data)  ;
-                                }
-                                return data;
-                                }
-                                } 
+                             ,{data:"소장cnt"}
                              ,{data:"소장pri", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return   comma(data)  ;
+                                    return   comma(data)+"원"  ;
                                 }
                                 return data;
                                 }
                                 }                          
-                             //,{data:"대여cnt"}
-                               ,{data:"대여cnt", render: function(data, type, row, meta) {
-                                if (type === 'display') {
-                                    return   comma(data)  ;
-                                }
-                                return data;
-                                }
-                                } 
+                             ,{data:"대여cnt"}
                              ,{data:"대여pri", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return   comma(data)  ;
+                                    return   comma(data)+"원"  ;
                                 }
                                 return data;
                                 }
                                 }                          
                              ,{data:"정산예정금액", render: function(data, type, row, meta) {
                                 if (type === 'display') {
-                                    return   comma(data)  ;
+                                    return   comma(data)+"원"  ;
                                 }
                                 return data;
                                 }

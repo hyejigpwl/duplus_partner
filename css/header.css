@@ -122,6 +122,8 @@ nav ul li ul li:hover{
 nav ul li ul li:hover a{
     opacity:1;
     font-weight:600;
+    color:#fff;
+    text-decoration: none;
 }
 nav ul li ul li:hover span{
     background-color: #FFCE00;

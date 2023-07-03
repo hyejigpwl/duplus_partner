@@ -166,6 +166,10 @@ input[type=search]{
 .table_wrap:first-of-type{
     margin-top:0;
 }
+.table_wrap.resource .g_btn_line{
+    margin:0;
+}
+
 .table_input{
     width:100%;
     border-top:1px solid #000;
@@ -177,7 +181,7 @@ input[type=search]{
     width:40%;
 }
 .table_input th{
-    padding-left: 20px;
+    padding:0 20px;
     font-weight: 500;
     color: #767676;
     text-align: left;
@@ -216,6 +220,19 @@ input[type=search]{
 }
 .table_input #notice_cont{
     white-space: pre-line;
+}
+.table_input .btn_add_wrap>div{
+    display:flex;
+    margin-top:5px;
+}
+.table_input .btn_add_wrap.author>div:first-of-type{
+    margin-top:0;
+}
+.table_input .btn_add_wrap .remove_btn{
+    margin-top:0px;
+}
+.table_input .btn_add_wrap select{
+    margin-right:3px;
 }
 
 /* 콘텐츠 목록 필터 : 콘텐츠조회, 판매내역, 정산내역, 공지사항 */
@@ -350,14 +367,19 @@ input[type=search]{
 }
 .form_primary .file_box label {
     display: inline-block;
-    padding: 10px 20px;
+    /* padding: 11px 20px; */
+    height: 38px;
+    line-height: 38px;
+    width: 90px;
     color: #fff;
     vertical-align: middle;
     background-color: #767676;
     cursor: pointer;
-    margin-left: 5px;
-    font-size:13px;
+    /* margin-left: 5px; */
+    font-size: 12px;
     border-radius: 6px;
+    font-weight: normal;
+    text-align: center;
 }
 .form_primary .btn_wrap{
     text-align: center;
@@ -380,6 +402,7 @@ input[type=search]{
     position: relative;
     padding-left: 26px;
     cursor: pointer;
+    line-height: 25px;
 }
 .form_primary input[type="checkbox"] + label:before {
     content: "";
@@ -430,6 +453,7 @@ input[type=search]{
     position: relative;
     padding-left: 26px;
     cursor: pointer;
+    line-height:23px;
 }
 .form_primary input[type="radio"] + label:before {
     content: "";
@@ -495,7 +519,7 @@ input[type=search]{
     background-color: #94949410;
 }
 .gray_btn_line.mg{
-    margin-top:5px;
+    /*margin-top:5px;*/
     margin-left:3px;
 }
 .b_btn_line{
@@ -508,15 +532,16 @@ input[type=search]{
 .g_btn_line{
     color:#3c9a17;
     border:1px solid #3c9a17;
+    margin:5px 0 0 3px;
 }
 .g_btn_line:hover{
     background-color: #3c9a1710;
 }
-.remove_btn,.add_ipt,.add_sel{
-    margin-top:5px;
+.add_ipt,.add_sel{
+    /*margin-top:5px;*/
 }
 .remove_btn{
-    margin-left:3px;
+    /*margin-left:3px;*/
 }
 .btn_primary{
     color:#fff;
@@ -560,7 +585,7 @@ input[type=search]{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 80%;
+    /*width: 80%;*/
     height:max-content;
     padding: 40px;
     /* text-align: center; */
@@ -1036,8 +1061,8 @@ input::-webkit-search-results-decoration{
     width:100px;
 }
 .p_content_regist #add_sel_author{
-    margin-right:4px;
-    margin-top:4px;
+    /*margin-right:4px;*/
+    /*margin-top:4px;*/
 }
 
 /* 파일타입 라디오버튼 위치 조정 */

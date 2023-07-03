@@ -523,72 +523,72 @@ Pcode = "0101"
     </div>
 
     <script>
-        var ctx1 = document.getElementById('myChart_1');
-        var myChart1 = new Chart(ctx1, {
-            type: 'line',
-            data: {
-                labels: ['2022-03', '2022-04', '2022-05', '2022-06', '2022-07', '2022-08', '2022-09', '2022-10', '2022-11', '2022-12', '2023-01','2023-02'],
-                datasets: [{
-                    label: '',
-                    data: [10000, 11000, 9000, 11000, 9500, 10000, 10200, 9100, 8500, 9500, 13002, 10500],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
+        // var ctx1 = document.getElementById('myChart_1');
+        // var myChart1 = new Chart(ctx1, {
+        //     type: 'line',
+        //     data: {
+        //         labels: ['2022-03', '2022-04', '2022-05', '2022-06', '2022-07', '2022-08', '2022-09', '2022-10', '2022-11', '2022-12', '2023-01','2023-02'],
+        //         datasets: [{
+        //             label: '',
+        //             data: [10000, 11000, 9000, 11000, 9500, 10000, 10200, 9100, 8500, 9500, 13002, 10500],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
                         
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(255, 99, 132, 1)',
-                    ],
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(255, 99, 132, 1)',
+        //             ],
                         
-                    borderWidth: 2,
-                    tension:0.3,
-                }]
-            },
-            options: {
-                responsive: false,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            max:14000,
-                        }
-                    }]
-                },
-                plugins:{
-                    filler:{
-                        propagate: false,
-                    },
-                    legend:{
-                        display:false
-                    },
+        //             borderWidth: 2,
+        //             tension:0.3,
+        //         }]
+        //     },
+        //     options: {
+        //         responsive: false,
+        //         scales: {
+        //             yAxes: [{
+        //                 ticks: {
+        //                     beginAtZero: true,
+        //                     max:14000,
+        //                 }
+        //             }]
+        //         },
+        //         plugins:{
+        //             filler:{
+        //                 propagate: false,
+        //             },
+        //             legend:{
+        //                 display:false
+        //             },
                    
-                },
-                interaction: {
-                    intersect: false,
-                }
-            }
-        });
+        //         },
+        //         interaction: {
+        //             intersect: false,
+        //         }
+        //     }
+        // });
 
         var ctx2 = document.getElementById('myChart_2');
         var myChart2 = new Chart(ctx2, {
@@ -683,6 +683,43 @@ Pcode = "0101"
                 $(this).parent().find('.faq_answer').slideToggle('fast')
             });
         })
+
+
+
+        $(() => {
+  $('#chart').dxChart({
+    dataSource,
+    commonSeriesSettings: {
+      argumentField: 'state',
+      type: 'bar',
+      hoverMode: 'allArgumentPoints',
+      selectionMode: 'allArgumentPoints',
+      label: {
+        visible: true,
+        format: {
+          type: 'fixedPoint',
+          precision: 0,
+        },
+      },
+    },
+    series: [
+      { valueField: 'year2018', name: '2018' },
+      { valueField: 'year2017', name: '2017' },
+      { valueField: 'year2016', name: '2016' },
+    ],
+    title: 'Gross State Product within the Great Lakes Region',
+    legend: {
+      verticalAlignment: 'bottom',
+      horizontalAlignment: 'center',
+    },
+    export: {
+      enabled: true,
+    },
+    onPointClick(e) {
+      e.target.select();
+    },
+  });
+});
     </script>
 
 
